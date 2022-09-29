@@ -27,8 +27,8 @@ const Hero = () => {
         </h1>
 
         <div className="pt-6">
-          <Link href="#about">
-            <button className="heroButton">About</button>
+          <Link href="#contact">
+            <button className="heroButton">Contact</button>
           </Link>
         </div>
       </div>

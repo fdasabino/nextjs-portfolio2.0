@@ -9,7 +9,7 @@ const Technologies = () => {
       <h3 className="mt-20 uppercase tracking-[10px] text-gray-400 text-lg md:text-2xl lg:text-3xl">
         Technologies
       </h3>
-      <h5 className="mt-5 text-center uppercase text-gray-400 text-sm md:text-md ">
+      <h5 className="mt-5 text-center uppercase text-gray-400 text-sm md:text-md">
         {" "}
         Here are some languages and frameworks I have used in the past to create some awesome
         projects.

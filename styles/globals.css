@@ -82,12 +82,17 @@ section {
   backdrop-filter: blur(5px) !important;
   -webkit-backdrop-filter: blur(5px) !important;
   border: 1px solid rgba(101, 94, 94, 0.3) !important;
-  min-height: 600px !important;
+  min-height: 700px !important;
 }
 
 @layer components {
   .mainButton {
     @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest 
-    text-black bg-gray-600 transition-all hover:bg-teal-600;
+    text-black bg-gray-600 transition-all hover:bg-teal-600 focus:bg-teal-600 focus:outline-none;
+  }
+
+  .contactInput {
+    @apply outline-none bg-slate-400/10 rounded-sm border-b border-[#14a08442] px-6 py-4 text-gray-500
+    placeholder-gray-500 transition-all focus:border-[#f7ab0a]/40  focus:text-[#f7ab0a]/40 hover:border-[#f7ab0a]/40 resize-none;
   }
 }

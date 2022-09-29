@@ -1,5 +1,5 @@
 import { DiReact, DiHtml5, DiCss3, DiJavascript1 } from "react-icons/di";
-import { SiRedux, SiNextdotjs } from "react-icons/si";
+import { SiRedux, SiNextdotjs, SiTailwindcss, SiBootstrap } from "react-icons/si";
 
 export const TechArray = [
   {
@@ -43,6 +43,20 @@ export const TechArray = [
     icon: <SiRedux color="#663399" size={"4rem"} />,
     skill: 40,
     label: "40%",
+  },
+  {
+    id: 6,
+    title: "Tailwind",
+    icon: <SiTailwindcss color="#1E90FF" size={"4rem"} />,
+    skill: 60,
+    label: "60%",
+  },
+  {
+    id: 7,
+    title: "Bootstrap",
+    icon: <SiBootstrap color="#663399" size={"4rem"} />,
+    skill: 60,
+    label: "60%",
   },
 ];
 

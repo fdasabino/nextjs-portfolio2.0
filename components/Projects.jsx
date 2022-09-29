@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Carousel } from "react-responsive-carousel";
 import { Card } from "antd";
 import { ProjectsData } from "../constants/constants";
@@ -9,7 +10,18 @@ const Projects = () => {
       <h3 className="mt-20 uppercase tracking-[10px] text-gray-400 text-lg md:text-2xl lg:text-3xl">
         Projects
       </h3>
-      <div className="flex items-center justify-center text-center overflow-hidden">
+      <motion.div
+        initial={{
+          opacity: 0,
+        }}
+        whileInView={{
+          opacity: 1,
+        }}
+        transition={{
+          duration: 2,
+        }}
+        className="flex items-center justify-center text-center overflow-hidden"
+      >
         <Carousel
           className="max-w-xs md:max-w-md lg:max-w-2xl"
           infiniteLoop={true}
@@ -64,7 +76,7 @@ const Projects = () => {
             </Card>
           ))}
         </Carousel>
-      </div>
+      </motion.div>
     </div>
   );
 };

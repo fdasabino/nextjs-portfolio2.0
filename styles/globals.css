@@ -68,6 +68,7 @@ input[type="number"] {
 
 section {
   min-height: 100vh;
+  overflow: hidden;
 }
 
 @layer components {

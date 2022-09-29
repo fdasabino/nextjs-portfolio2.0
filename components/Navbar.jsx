@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { Spin as Hamburger } from "hamburger-react";
-import { Button, Drawer } from "antd";
+import { Drawer } from "antd";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -17,44 +18,118 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 bg-opacity-40 backdrop-blur-sm rounded drop-shadow-md z-50">
       <div className="flex justify-between items-center">
-        <div className="flex items-center justify-between py-3 md:py-5 md:block">
+        <motion.div
+          initial={{
+            x: -500,
+            opacity: 0,
+            scale: 0.5,
+          }}
+          animate={{
+            x: 0,
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 1.5,
+          }}
+          className="flex items-center justify-between py-3 md:py-5 md:block"
+        >
           <div className="flex justify-evenly gap-4">
             <a
-              className=" text-gray-600 text-2xl hover:text-cyan-500"
+              className=" text-gray-600 text-2xl hover:text-teal-500"
               href="https://github.com/fdasabino"
               target="_blank"
             >
               <BsGithub />
             </a>
             <a
-              className=" text-gray-600 text-2xl hover:text-cyan-500"
+              className=" text-gray-600 text-2xl hover:text-teal-500"
               href="https://www.linkedin.com/in/francisco-sabino/"
               target="_blank"
             >
               <BsLinkedin />
             </a>
           </div>
-        </div>
-        <Hamburger toggled={open} toggle={showDrawer} duration={0.8} />
+        </motion.div>
+        <motion.div
+          initial={{
+            x: 500,
+            opacity: 0,
+            scale: 0.5,
+          }}
+          animate={{
+            x: 0,
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 1.5,
+          }}
+        >
+          <Hamburger toggled={open} toggle={showDrawer} duration={0.8} />
+        </motion.div>
       </div>
-      <Drawer title="Menu" placement="right" onClose={onClose} open={open}>
-        <div className="flex flex-col justify-center items-center gap-4">
-          <Link spy={true} isDynamic={true} to="hero" onClick={onClose}>
+      <Drawer
+        placement="right"
+        onClose={onClose}
+        open={open}
+        width={"fit-content"}
+        bodyStyle={{ backgroundColor: "#334155be" }}
+        headerStyle={{ backgroundColor: "#334155be", border: "none" }}
+      >
+        <div className="flex flex-col justify-center items-start gap-6">
+          <Link
+            spy={true}
+            isDynamic={true}
+            to="hero"
+            onClick={onClose}
+            className="text-gray-800 text-md uppercase tracking-wide hover:text-teal-500"
+          >
             Home
           </Link>
-          <Link spy={true} isDynamic={true} to="about" onClick={onClose}>
+          <Link
+            spy={true}
+            isDynamic={true}
+            to="about"
+            onClick={onClose}
+            className="text-gray-800 text-md uppercase tracking-wide hover:text-teal-500"
+          >
             About
           </Link>
-          <Link spy={true} isDynamic={true} to="tech" onClick={onClose}>
+          <Link
+            spy={true}
+            isDynamic={true}
+            to="tech"
+            onClick={onClose}
+            className="text-gray-800 text-md uppercase tracking-wide hover:text-teal-500"
+          >
             Technologies
           </Link>
-          <Link spy={true} isDynamic={true} to="projects" onClick={onClose}>
+          <Link
+            spy={true}
+            isDynamic={true}
+            to="projects"
+            onClick={onClose}
+            className="text-gray-800 text-md uppercase tracking-wide hover:text-teal-500"
+          >
             Projects
           </Link>
-          <Link spy={true} isDynamic={true} to="testimonials" onClick={onClose}>
+          <Link
+            spy={true}
+            isDynamic={true}
+            to="testimonials"
+            onClick={onClose}
+            className="text-gray-800 text-md uppercase tracking-wide hover:text-teal-500"
+          >
             Testimonials
           </Link>
-          <Link spy={true} isDynamic={true} to="contact" onClick={onClose}>
+          <Link
+            spy={true}
+            isDynamic={true}
+            to="contact"
+            onClick={onClose}
+            className="text-gray-800 text-md uppercase tracking-wide hover:text-teal-500"
+          >
             Contact
           </Link>
         </div>

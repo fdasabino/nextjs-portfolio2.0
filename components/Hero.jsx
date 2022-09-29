@@ -21,12 +21,12 @@ const Hero = () => {
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-widest">
           Front End Developer
         </h2>
-        <h1 className="text-2xl lg:text-4xl font-semibold px-10">
+        <h1 className="text-lg md:text-2xl lg:text-4xl font-semibold px-5">
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="#14a085" />
         </h1>
 
-        <div className="pt-5">
+        <div className="pt-6">
           <Link href="#about">
             <button className="heroButton">About</button>
           </Link>

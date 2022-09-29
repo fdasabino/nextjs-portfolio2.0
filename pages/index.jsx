@@ -17,24 +17,24 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-slate-900">
+      <main className="bg-slate-700 px-10 md:px-20 lg:px-40">
         <Navbar />
-        <section>
+        <section id="hero">
           <Hero />
         </section>
-        <section>
+        <section id="about">
           <About />
         </section>
-        <section>
+        <section id="tech">
           <Technologies />
         </section>
-        <section>
+        <section id="projects">
           <Projects />
         </section>
-        <section>
+        <section id="testimonials">
           <Testimonials />
         </section>
-        <section>
+        <section id="contact">
           <Contact />
         </section>
       </main>

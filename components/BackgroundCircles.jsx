@@ -14,11 +14,11 @@ export default function BackgroundCircles() {
       }}
       className="relative flex justify-center items-center"
     >
-      <div className="absolute border border-[#4d4c4c33] rounded-full h-[300px] w-[300px] mt-52" />
-      <div className="absolute border border-[#4d4c4c33] rounded-full h-[400px] w-[400px] mt-52" />
-      <div className="absolute border border-[#14a08442] rounded-full h-[300px] w-[300px] mt-52 animate-ping" />
-      <div className="absolute border border-[#1772605d] rounded-full h-[180px] w-[180px] mt-52 animate-ping" />
-      <div className="absolute border border-[#14a0843d] rounded-full h-[500px] w-[500px] mt-52 animate-pulse" />
+      <div className="absolute border border-[#48837744] rounded-full h-[300px] w-[300px] mt-52" />
+      <div className="absolute border border-[#4883774d] rounded-full h-[400px] w-[400px] mt-52" />
+      <div className="absolute border border-[#4883775e] rounded-full h-[300px] w-[300px] mt-52 animate-ping" />
+      <div className="absolute border border-[#48837780] rounded-full h-[180px] w-[180px] mt-52 animate-ping" />
+      <div className="absolute border border-[#48837780] rounded-full h-[500px] w-[500px] mt-52 animate-pulse" />
     </motion.div>
   );
 }

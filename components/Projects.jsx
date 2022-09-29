@@ -29,35 +29,30 @@ const Projects = () => {
           showStatus={false}
           showIndicators={true}
           emulateTouch={true}
-          showArrows={false}
+          showArrows={true}
           autoPlay={false}
         >
           {ProjectsData?.map((item) => (
-            <Card
-              className="max-w-[100%] h-[700px] p-3"
-              key={item.id}
-              bordered={false}
-              cover={
-                <img
-                  className="max-w-[70%] object-scale-down p-6"
-                  alt={item.title}
-                  src={item.image}
-                />
-              }
-            >
+            <div key={item.id} className="max-w-[100%] h-[700px] p-3">
+              <img
+                className="max-w-[70%] object-scale-down p-6"
+                alt={item.title}
+                src={item.image}
+              />
+
               <div className="p-1">
                 <h3 className="uppercase tracking-wide text-gray-400 text-lg md:text-1xl pb-3">
                   {item.title}
                 </h3>
               </div>
 
-              <div className="p-1">
-                <article className="tracking-wide text-gray-400 text-sm pb-3 leading-6">
+              <div className="px-5">
+                <article className="tracking-wide text-sm pb-3 leading-6">
                   {item.description}
                 </article>
               </div>
 
-              <div className="p-1">
+              <div className="my-7">
                 <ul className="flex items-center justify-center gap-6 p-3">
                   {item.tags.map((tag, i) => (
                     <li key={i} className="list-disc border-b-2 border-teal-600">
@@ -71,11 +66,11 @@ const Projects = () => {
                 <a href={item.source} target="_blank">
                   <button className="mainButton">Source Code</button>
                 </a>
-                <a className="" href={item.visit} target="_blank">
+                <a href={item.visit} target="_blank">
                   <button className="mainButton">Live Project</button>
                 </a>
               </div>
-            </Card>
+            </div>
           ))}
         </Carousel>
       </motion.div>

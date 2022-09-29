@@ -126,7 +126,7 @@ export const TimeLineData = [
   },
   {
     year: "2022/24",
-    text: "Started studying at Hyper Island Stockholm, Front End Developer Course.",
+    text: "Studying at Hyper Island Stockholm, Front End Developer Course.",
   },
 ];
 

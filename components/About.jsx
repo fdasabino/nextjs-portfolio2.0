@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { AboutData } from "../constants/constants";
+import { AboutData, TimeLineData } from "../constants/constants";
+import { Timeline } from "antd";
 
 const About = () => {
   return (
@@ -8,7 +9,7 @@ const About = () => {
       <h3 className="mt-20 uppercase tracking-[10px] text-gray-400 text-lg md:text-2xl lg:text-3xl">
         About
       </h3>
-      <div className="h-screen flex flex-col items-center justify-center text-center overflow-hidden">
+      <div className="flex flex-col items-center justify-evenly text-center overflow-hidden">
         {AboutData.map((item) => (
           <motion.div
             initial={{
@@ -20,12 +21,12 @@ const About = () => {
             transition={{
               duration: 1.5,
             }}
-            className="flex flex-col h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-center gap-5 mx-auto items-center z-20"
+            className="text-center flex flex-col md:text-left lg:flex-row max-w-5xl justify-center gap-5 mx-auto items-center z-20"
             key={item.id}
           >
             <motion.img
               initial={{
-                x: -200,
+                x: 200,
                 opacity: 0,
               }}
               transition={{
@@ -35,12 +36,37 @@ const About = () => {
                 x: 0,
                 opacity: 1,
               }}
-              className="mb-1 flex flex-shrink-0 w-56 h-56 rounded-full object-cover border-solid border-2 border-teal-500 p-1"
+              className="p-1 w-36 h-36 rounded-full object-cover border-solid border-2 border-teal-500 md:w-56 md:h-56 lg:w-65 lg:h-65 lg:rounded-lg"
               src={item.image}
             />
-            <div className="space-y-8 px-0 md:px-10">
-              <p className="text-base text-justify flex-shrink-0">{item.text}</p>
-            </div>
+            <motion.div
+              className="shadow-2xl p-3"
+              initial={{
+                opacity: 0,
+                x: 200,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              transition={{
+                duration: 1.5,
+              }}
+            >
+              <p className="flex flex-wrap text-justify leading-7 text-sm md:text-md md:mb-3">
+                {item.text}
+              </p>
+              <br />
+              <div>
+                <Timeline>
+                  {TimeLineData?.map((item, index) => (
+                    <Timeline.Item key={index} className="text-left text-lg font-bold">
+                      <span>{item.year}</span> {item.text}
+                    </Timeline.Item>
+                  ))}
+                </Timeline>
+              </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>

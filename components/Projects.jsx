@@ -52,7 +52,9 @@ const Projects = () => {
               </div>
 
               <div className="p-1">
-                <article className="text-sm tracking leading-6">{item.description}</article>
+                <article className="tracking-wide text-gray-400 text-sm pb-3 leading-6">
+                  {item.description}
+                </article>
               </div>
 
               <div className="p-1">

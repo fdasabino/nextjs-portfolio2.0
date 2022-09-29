@@ -71,8 +71,20 @@ section {
   overflow: hidden;
 }
 
+.carousel .carousel-slider {
+  background: #555555 !important;
+  border-radius: 16px !important;
+}
+.ant-card {
+  background: rgba(101, 94, 94, 0.2) !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(101, 94, 94, 0.3) !important;
+}
+
 @layer components {
-  .heroButton {
+  .mainButton {
     @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest 
     text-black bg-gray-600 transition-all hover:bg-teal-600;
   }

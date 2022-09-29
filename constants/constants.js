@@ -64,7 +64,7 @@ export const AboutData = [
   },
 ];
 
-export const projects = [
+export const ProjectsData = [
   {
     title: "STOREADO",
     description:

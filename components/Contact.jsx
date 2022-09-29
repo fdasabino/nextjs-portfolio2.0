@@ -49,15 +49,17 @@ const Contact = () => {
       });
   };
   return (
-    <div className="relative flex flex-col items-center">
-      <h3 className="mt-20 uppercase tracking-[10px] text-gray-400 text-lg md:text-2xl lg:text-3xl">
-        Contact
-      </h3>
-      <h4 className="my-10 max-w-md text-center uppercase text-gray-400 text-sm md:text-md ">
-        Just now, I am looking for projects or collaborations where I can show my skills and learn
-        more. Send me a message if you have something in mind.{" "}
-        <span className="underline decoration-[#14a085]">Let's chat!</span>
-      </h4>
+    <>
+      <div className="relative flex flex-col items-center">
+        <h3 className="mt-20 uppercase tracking-[10px] text-gray-400 text-lg md:text-2xl lg:text-3xl">
+          Contact
+        </h3>
+        <h4 className="my-10 max-w-md text-center uppercase text-gray-400 text-sm md:text-md ">
+          Just now, I am looking for projects or collaborations where I can show my skills and learn
+          more. Send me a message if you have something in mind.{" "}
+          <span className="underline decoration-[#14a085]">Let's chat!</span>
+        </h4>
+      </div>
       <motion.div
         initial={{
           opacity: 0,
@@ -68,29 +70,26 @@ const Contact = () => {
         transition={{
           duration: 1.5,
         }}
-        className="flex flex-col items-center justify-center text-center overflow-hidden"
+        className="max-w-md mx-auto text-center overflow-hidden"
       >
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-fit mx-auto">
-          <div className="flex space-x-2">
-            {/* Name */}
-            <input
-              type="text"
-              {...register("name", { required: true })}
-              placeholder={!errors.name ? "Name" : "Name"}
-              className={`contactInput ${errors.name && "error"}`}
-            />
-
-            {/* Phone */}
-            <input
-              type="number"
-              {...register("phone", {
-                pattern: /^(([+]46)\s*(7)|07)[02369]\s*(\d{4})\s*(\d{3})$/i,
-                required: true,
-              })}
-              placeholder={!errors.phone ? "Phone Number" : "Phone Number"}
-              className={`contactInput ${errors.phone && "error"}`}
-            />
-          </div>
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-4">
+          {/* Name */}
+          <input
+            type="text"
+            {...register("name", { required: true })}
+            placeholder={!errors.name ? "Name" : "Name"}
+            className={`contactInput ${errors.name && "error"}`}
+          />
+          {/* Phone */}
+          <input
+            type="number"
+            {...register("phone", {
+              pattern: /^(([+]46)\s*(7)|07)[02369]\s*(\d{4})\s*(\d{3})$/i,
+              required: true,
+            })}
+            placeholder={!errors.phone ? "Phone Number" : "Phone Number"}
+            className={`contactInput ${errors.phone && "error"}`}
+          />
 
           {/* Email*/}
           <input
@@ -121,7 +120,7 @@ const Contact = () => {
           <button className="mainButton">Submit</button>
         </form>
       </motion.div>
-    </div>
+    </>
   );
 };
 

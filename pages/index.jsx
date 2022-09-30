@@ -19,7 +19,7 @@ export default function Home() {
         <meta name="keywords" content="HTML, CSS, JavaScript, React, NextJs, Python, Django" />
         <meta name="author" content="Francisco Sabino" />
       </Head>
-      <main className="bg-slate-700 px-10 md:px-20 lg:px-40">
+      <main className="mainContainer">
         <Navbar />
         <section id="hero">
           <Hero />

@@ -11,6 +11,16 @@
   font-family: "Fira Sans", sans-serif;
 }
 
+section {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.carousel .carousel-slider {
+  background: #555555 !important;
+  border-radius: 16px !important;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
   transition: background-color 600000s 0s, color 600000s 0s;
@@ -66,24 +76,29 @@ input[type="number"] {
   color: red;
 }
 
-section {
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-.carousel .carousel-slider {
-  background: #555555 !important;
-  border-radius: 16px !important;
-}
-
 @layer components {
+  .mainContainer {
+    @apply bg-slate-900 px-10 md:px-20 lg:px-40;
+  }
   .mainButton {
     @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest 
     text-black bg-gray-600 transition-all hover:bg-teal-600 focus:bg-teal-600 focus:outline-none;
+  }
+  .sectionTitle {
+    @apply mt-5 uppercase tracking-[10px] text-gray-400 text-lg md:text-2xl lg:text-3xl;
+  }
+  .sectionSubTitle {
+    @apply mt-5 text-center uppercase text-gray-400 text-sm;
+  }
+  .sectionDisclaimer {
+    @apply mt-5 text-center uppercase text-gray-400;
   }
 
   .contactInput {
     @apply outline-none bg-slate-400/10 rounded-sm border-b border-[#14a08442] px-6 py-4 text-teal-500
     placeholder-gray-500 transition-all  focus:border-teal-600  focus:text-teal-600 hover:border-teal-600 resize-none;
+  }
+  .sectionDivider {
+    @apply w-12 h-[2px] rounded-r-lg bg-white bg-gradient-to-r from-teal-400 to-gray-600 mt-20 mx-auto md:w-20 md:h-1 lg:w-40 lg:h-2;
   }
 }

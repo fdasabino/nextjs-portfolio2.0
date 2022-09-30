@@ -1,15 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Carousel } from "react-responsive-carousel";
-import { Card } from "antd";
 import { ProjectsData } from "../constants/constants";
 
 const Projects = () => {
   return (
     <div className=" relative flex flex-col items-center">
-      <h3 className="mt-20 uppercase tracking-[10px] text-gray-400 text-lg md:text-2xl lg:text-3xl">
-        Projects
-      </h3>
+      <div className="sectionDivider" />
+      <h3 className="sectionTitle">Projects</h3>
       <motion.div
         initial={{
           opacity: 0,
@@ -47,7 +45,7 @@ const Projects = () => {
               </div>
 
               <div className="px-5">
-                <article className="tracking-wide text-sm pb-3 leading-6">
+                <article className="tracking-wide text-sm text-justify pb-3 leading-6">
                   {item.description}
                 </article>
               </div>

@@ -51,9 +51,8 @@ const Contact = () => {
   return (
     <>
       <div className="relative flex flex-col items-center">
-        <h3 className="mt-20 uppercase tracking-[10px] text-gray-400 text-lg md:text-2xl lg:text-3xl">
-          Contact
-        </h3>
+        <div className="sectionDivider" />
+        <h3 className="sectionTitle">Contact</h3>
         <h4 className="my-10 max-w-md text-center uppercase text-gray-400 text-sm md:text-md ">
           Just now, I am looking for projects or collaborations where I can show my skills and learn
           more. Send me a message if you have something in mind.{" "}

@@ -6,15 +6,14 @@ import { TechArray } from "../constants/constants";
 const Technologies = () => {
   return (
     <div className=" relative flex flex-col items-center">
-      <h3 className="mt-20 uppercase tracking-[10px] text-gray-400 text-lg md:text-2xl lg:text-3xl">
-        Technologies
-      </h3>
-      <h5 className="mt-5 text-center uppercase text-gray-400 text-sm md:text-md">
+      <div className="sectionDivider" />
+      <h3 className="sectionTitle">Technologies</h3>
+      <h5 className="sectionSubTitle">
         {" "}
         Here are some languages and frameworks I have used in the past to create some awesome
         projects.
       </h5>
-      <small className="mt-5 text-center uppercase text-gray-400">
+      <small className="sectionDisclaimer">
         The levels represented are not necessarily a skill level, but how confident I am working
         with it.
       </small>

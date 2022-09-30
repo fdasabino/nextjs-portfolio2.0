@@ -6,9 +6,8 @@ import { Carousel } from "react-responsive-carousel";
 const Testimonials = () => {
   return (
     <div className=" relative flex flex-col items-center">
-      <h3 className="mt-20 uppercase tracking-[10px] text-gray-400 text-lg md:text-2xl lg:text-3xl">
-        Testimonials
-      </h3>
+      <div className="sectionDivider" />
+      <h3 className="sectionTitle">Testimonials</h3>
       <div className="flex flex-col items-center justify-center text-center overflow-hidden">
         <motion.div
           initial={{

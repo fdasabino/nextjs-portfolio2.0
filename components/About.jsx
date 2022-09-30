@@ -13,9 +13,11 @@ const About = () => {
           <motion.div
             initial={{
               opacity: 0,
+              scale: 0.5,
             }}
             whileInView={{
               opacity: 1,
+              scale: 1,
             }}
             transition={{
               duration: 1.5,
@@ -25,14 +27,12 @@ const About = () => {
           >
             <motion.img
               initial={{
-                x: 100,
                 opacity: 0,
               }}
               transition={{
                 duration: 1,
               }}
               whileInView={{
-                x: 0,
                 opacity: 1,
               }}
               className="p-1 w-36 h-36 rounded-full object-cover border-solid border-2 border-teal-500 md:w-56 md:h-56 lg:w-65 lg:h-65 lg:rounded-lg"
@@ -42,11 +42,9 @@ const About = () => {
               className="shadow-2xl p-3"
               initial={{
                 opacity: 0,
-                x: 200,
               }}
               whileInView={{
                 opacity: 1,
-                x: 0,
               }}
               transition={{
                 duration: 1.5,

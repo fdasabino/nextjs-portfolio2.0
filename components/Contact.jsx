@@ -56,7 +56,7 @@ const Contact = () => {
         <h4 className="my-10 max-w-md text-center uppercase text-gray-400 text-sm md:text-md ">
           Just now, I am looking for projects or collaborations where I can show my skills and learn
           more. Send me a message if you have something in mind.{" "}
-          <span className="underline decoration-[#14a085]">Let's chat!</span>
+          <span className="underline decoration-[#14a085]">Let&apos;s chat!</span>
         </h4>
       </div>
       <motion.div

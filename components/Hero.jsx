@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Link } from "react-scroll";
+import Image from "next/image";
 import { HeroData } from "../constants/constants";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
@@ -16,11 +17,15 @@ const Hero = () => {
       <BackgroundCircles />
       {HeroData?.map((item) => (
         <Fragment key={item.id}>
-          <img
-            key={item.id}
-            className="relative h-40 w-40 mx-auto object-cover rounded-full border-solid border-2 border-teal-500 p-1 my-3"
-            src={item.image}
-          />
+          <div className="relative h-40 w-40 mx-auto rounded-full border-solid border-2 border-teal-500 p-1 my-3">
+            <Image
+              layout="fill"
+              key={item.id}
+              src={item.image}
+              alt={item.title}
+              className="rounded-full object-cover"
+            />
+          </div>
           <div className="z-20">
             <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-widest">{item.title}</h2>
             <h1 className="text-sm md:text-2xl lg:text-4xl font-semibold px-5">

@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Carousel } from "react-responsive-carousel";
 import { ProjectsData } from "../constants/constants";
+import Image from "next/image";
 
 const Projects = () => {
   return (
@@ -32,11 +33,14 @@ const Projects = () => {
         >
           {ProjectsData?.map((item) => (
             <div key={item.id} className="max-w-[100%] h-[700px] p-3">
-              <img
-                className="max-w-[70%] object-scale-down p-6"
-                alt={item.title}
-                src={item.image}
-              />
+              <div className="relative h-40 w-40 md:w-72 md:h-72 lg:w-80 lg:h-80  mx-auto p-1 my-3">
+                <Image
+                  layout="fill"
+                  alt={item.title}
+                  src={item.image}
+                  className="object-scale-down p-6"
+                />
+              </div>
 
               <div className="p-1">
                 <h3 className="uppercase tracking-wide text-gray-400 text-lg md:text-1xl pb-3">
@@ -59,10 +63,10 @@ const Projects = () => {
               </div>
 
               <div className="flex justify-center items-center flex-row gap-10 mt-2">
-                <a href={item.source} target="_blank">
+                <a href={item.source} target="_blank" rel="noreferrer">
                   <button className="mainButton">Source Code</button>
                 </a>
-                <a href={item.visit} target="_blank">
+                <a href={item.visit} target="_blank" rel="noreferrer">
                   <button className="mainButton">Live Project</button>
                 </a>
               </div>

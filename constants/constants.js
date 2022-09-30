@@ -165,6 +165,6 @@ export const TestimonialsData = [
     position: "Media Manager",
     company: "Arla Foods",
     img: "https://res.cloudinary.com/frank2021/image/upload/v1652792468/portfolio/linda.ba3c7e269a0b60095db4_za9dny.jpg",
-    text: "I know Francisco Sabino personally since a few years back. Francisco is hard working, great at project management and has the ability of planning ahead. He is reliable, service minded, sociable, positive and always takes on a challenge with a smile on his face. I’ve been impressed with the dedication and drive Francisco has shown in regards to his career change. Francisco has always had a natural interest for IT and tech, and based on his talents I believe he will have a bright future as a Full stack developer. I can give Francisco Sabino my warmest recommendations.",
+    text: "I know Francisco Sabino personally since a few years back. Francisco is hard working, great at project management and has the ability of planning ahead. He is reliable, service minded, sociable, positive and always takes on a challenge with a smile on his face. I have been impressed with the dedication and drive Francisco has shown in regards to his career change. Francisco has always had a natural interest for IT and tech, and based on his talents I believe he will have a bright future as a Full stack developer. I can give Francisco Sabino my warmest recommendations.",
   },
 ];

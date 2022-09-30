@@ -39,6 +39,7 @@ const Navbar = () => {
               className=" text-gray-600 text-2xl hover:text-teal-500"
               href="https://github.com/fdasabino"
               target="_blank"
+              rel="noreferrer"
             >
               <BsGithub />
             </a>
@@ -46,6 +47,7 @@ const Navbar = () => {
               className=" text-gray-600 text-2xl hover:text-teal-500"
               href="https://www.linkedin.com/in/francisco-sabino/"
               target="_blank"
+              rel="noreferrer"
             >
               <BsLinkedin />
             </a>

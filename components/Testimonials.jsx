@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { TestimonialsData } from "../constants/constants";
 import { Carousel } from "react-responsive-carousel";
+import Image from "next/image";
 
 const Testimonials = () => {
   return (
@@ -34,8 +35,13 @@ const Testimonials = () => {
             {TestimonialsData?.map((item) => (
               <div className="p-5" key={item.id}>
                 {/* Image */}
-                <div className="relative h-40 w-40 mx-auto object-cover rounded-full border-solid border-2 border-teal-500 p-1 my-3">
-                  <img src={item.img} alt={item.name} className="rounded-full" />
+                <div className="relative h-40 w-40 mx-auto rounded-full border-solid border-2 border-teal-500 p-1 my-3">
+                  <Image
+                    layout="fill"
+                    src={item.img}
+                    alt={item.name}
+                    className="object-scale-down p-6 rounded-full"
+                  />
                 </div>
 
                 <div className="p-1">
@@ -46,7 +52,7 @@ const Testimonials = () => {
                   <h5 className="uppercase tracking-wide text-gray-400 text-md pb-3">
                     {item.company}
                   </h5>
-                  <p className="carouselText">" {item.text} "</p>
+                  <p className="carouselText">&apos; {item.text} &apos;</p>
                 </div>
               </div>
             ))}

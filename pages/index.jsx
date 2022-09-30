@@ -15,7 +15,7 @@ export default function Home() {
       <Head>
         <title>Francisco Sabino - Portfolio</title>
         <meta charSet="utf-8" />
-        <meta name="description" content="Fullstack Developer - Stockholm" />
+        <meta name="description" content="Front End Developer - Stockholm" />
         <meta name="keywords" content="HTML, CSS, JavaScript, React, NextJs, Python, Django" />
         <meta name="author" content="Francisco Sabino" />
       </Head>

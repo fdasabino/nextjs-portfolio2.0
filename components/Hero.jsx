@@ -19,6 +19,7 @@ const Hero = () => {
         <Fragment key={item.id}>
           <div className="relative h-40 w-40 mx-auto rounded-full border-solid border-2 border-teal-500 p-1 my-3">
             <Image
+              priority
               layout="fill"
               key={item.id}
               src={item.image}

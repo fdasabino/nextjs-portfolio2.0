@@ -6,7 +6,7 @@ import BackgroundCircles from "./BackgroundCircles";
 
 const Hero = () => {
   const [text] = useTypewriter({
-    words: ["<Hi, I'm Francisco Sabino />", "<Student at Hyper Island />"],
+    words: ["<Front end developer/>", "<Student at Hyper Island />"],
     loop: true,
     delaySpeed: 2000,
   });
@@ -23,8 +23,8 @@ const Hero = () => {
           />
           <div className="z-20">
             <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-widest">{item.title}</h2>
-            <h1 className="text-lg md:text-2xl lg:text-4xl font-semibold px-5">
-              <span className="mr-3">{text}</span>
+            <h1 className="text-sm md:text-2xl lg:text-4xl font-semibold px-5">
+              <span className="mr-3 text-gray-700">{text}</span>
               <Cursor cursorColor="#14a085" />
             </h1>
 

@@ -65,7 +65,7 @@ export const HeroData = [
     id: 0,
     image:
       "https://res.cloudinary.com/frank2021/image/upload/v1652788529/portfolio/me.ee24849d87fd96da986a_jqze0d.jpg",
-    title: "Front end developer",
+    title: "Hi, I'm Francisco Sabino",
   },
 ];
 

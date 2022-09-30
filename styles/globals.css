@@ -16,6 +16,13 @@ section {
   overflow: hidden;
 }
 
+.active {
+  color: rgb(45 212 191) !important;
+  padding: 5px;
+  border-bottom: 1px solid rgb(45 212 191) !important;
+  transform: scale(1.1);
+}
+
 .carousel .carousel-slider {
   background: #555555 !important;
   border-radius: 16px !important;

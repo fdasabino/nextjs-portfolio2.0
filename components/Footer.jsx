@@ -20,11 +20,6 @@ const Footer = () => {
       <div className="flex justify-evenly items-center">
         <div className="flex gap-10 text-center flex-wrap">
           <div className="flex flex-col px-5 mx-auto">
-            <div className="flex justify-start gap-5 ">
-              <BsFillPinMapFill size={24} />
-              <p className="footerLink flex mx-auto p-0">Hildebrandsvägen 20A, Stockholm, Sweden</p>
-            </div>
-
             <div className="flex justify-start gap-5">
               <BsTelephoneForward size={24} />
               <a className="footerLink flex" href="tel:+46762416529">

@@ -29,7 +29,7 @@ const Hero = () => {
             </h1>
 
             <div className="pt-6">
-              <Link href="#contact">
+              <Link to="#contact">
                 <button className="mainButton">Contact</button>
               </Link>
             </div>

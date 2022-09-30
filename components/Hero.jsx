@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import Link from "next/link";
+import { Link } from "react-scroll";
 import { HeroData } from "../constants/constants";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";

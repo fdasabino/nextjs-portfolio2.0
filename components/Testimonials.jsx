@@ -46,9 +46,7 @@ const Testimonials = () => {
                   <h5 className="uppercase tracking-wide text-gray-400 text-md pb-3">
                     {item.company}
                   </h5>
-                  <p className="tracking-wide  text-sm text-justify pb-3 leading-6 my-10">
-                    " {item.text} "
-                  </p>
+                  <p className="carouselText">" {item.text} "</p>
                 </div>
               </div>
             ))}

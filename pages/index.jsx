@@ -39,8 +39,8 @@ export default function Home() {
         <section id="contact">
           <Contact />
         </section>
-        <Footer />
       </main>
+      <Footer />
       {/* Toaster notifications */}
       <Toaster
         position="top-center"

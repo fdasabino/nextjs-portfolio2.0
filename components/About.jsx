@@ -25,7 +25,7 @@ const About = () => {
           >
             <motion.img
               initial={{
-                x: 200,
+                x: 100,
                 opacity: 0,
               }}
               transition={{
@@ -52,14 +52,12 @@ const About = () => {
                 duration: 1.5,
               }}
             >
-              <p className="flex flex-wrap text-justify leading-7 text-sm md:text-md md:mb-3">
-                {item.text}
-              </p>
+              <p className="aboutText">{item.text}</p>
               <br />
               <div>
                 <Timeline>
                   {TimeLineData?.map((item, index) => (
-                    <Timeline.Item key={index} className="text-left text-lg font-bold">
+                    <Timeline.Item key={index} className="timelineText">
                       <span>{item.year}</span> {item.text}
                     </Timeline.Item>
                   ))}

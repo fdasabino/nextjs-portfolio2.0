@@ -50,7 +50,7 @@ const Contact = () => {
   };
   return (
     <>
-      <div className="relative flex flex-col items-center">
+      <div className="relative flex flex-col items-center pb-10">
         <div className="sectionDivider" />
         <h3 className="sectionTitle">Contact</h3>
         <h4 className="my-10 max-w-md text-center uppercase text-gray-400 text-sm md:text-md ">
@@ -119,6 +119,7 @@ const Contact = () => {
           <button className="mainButton">Submit</button>
         </form>
       </motion.div>
+      <div className="sectionEnding" />
     </>
   );
 };

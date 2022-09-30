@@ -45,15 +45,13 @@ const Projects = () => {
               </div>
 
               <div className="px-5">
-                <article className="tracking-wide text-sm text-justify pb-3 leading-6">
-                  {item.description}
-                </article>
+                <article className="carouselText">{item.description}</article>
               </div>
 
               <div className="my-7">
                 <ul className="flex items-center justify-center gap-6 p-3">
                   {item.tags.map((tag, i) => (
-                    <li key={i} className="list-disc border-b-2 border-teal-600">
+                    <li key={i} className="carouselText">
                       {tag}
                     </li>
                   ))}

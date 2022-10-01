@@ -23,7 +23,7 @@ const Testimonials = () => {
           className="flex items-center justify-center text-center overflow-hidden"
         >
           <Carousel
-            className="max-w-xs md:max-w-md lg:max-w-2xl "
+            className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl"
             infiniteLoop={true}
             showThumbs={false}
             showStatus={false}

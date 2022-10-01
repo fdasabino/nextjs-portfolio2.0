@@ -1,8 +1,5 @@
 import React from "react";
 import { Link } from "react-scroll/modules";
-import { BsTelephoneForward, BsFillPinMapFill } from "react-icons/bs";
-import { MdOutlineAlternateEmail } from "react-icons/md";
-
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -18,22 +15,7 @@ const Footer = () => {
   return (
     <div className="p-5 bg-gray-600">
       <div className="flex justify-evenly items-center">
-        <div className="flex gap-10 text-center flex-wrap">
-          <div className="flex flex-col px-5 mx-auto">
-            <div className="flex justify-start gap-5">
-              <BsTelephoneForward size={24} />
-              <a className="footerLink flex" href="tel:+46762416529">
-                +46762416529
-              </a>
-            </div>
-
-            <div className="flex justify-start gap-5">
-              <MdOutlineAlternateEmail size={24} />
-              <a className="footerLink flex" href="mailto:fdasabino@gmail.com">
-                fdasabino@gmail.com
-              </a>
-            </div>
-          </div>
+        <div className="flex gap-1 text-center flex-wrap">
           <div className="px-5 text-center mx-auto">
             <div className="flex justify-center">
               <FacebookShareButton
@@ -81,9 +63,19 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="px-5 text-center mx-auto">
-            <div className="flex gap-3">
-              <div className="col-span-6">
+          <div className="flex justify-center items-center mx-auto gap-3">
+            <div className="flex flex-col items-center px-5">
+              <a className="footerLink flex" href="tel:+46762416529">
+                +46762416529
+              </a>
+
+              <a className="footerLink flex" href="mailto:fdasabino@gmail.com">
+                fdasabino@gmail.com
+              </a>
+            </div>
+
+            <div className="flex justify-center gap-3">
+              <div className="">
                 <Link className="footerLink" to="hero">
                   Home
                 </Link>
@@ -95,8 +87,6 @@ const Footer = () => {
                 <Link className="footerLink" to="tech">
                   Technologies
                 </Link>
-              </div>
-              <div className="col-span-6">
                 <Link className="footerLink" to="projects">
                   Projects
                 </Link>

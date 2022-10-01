@@ -35,7 +35,7 @@ const About = () => {
               whileInView={{
                 opacity: 1,
               }}
-              className="p-1 w-36 h-36 rounded-full object-cover border-solid border-2 border-teal-500 md:w-56 md:h-56 lg:w-65 lg:h-65 lg:rounded-lg"
+              className="w-36 h-36 rounded-full object-cover border-solid border-2 border-teal-500 md:w-56 md:h-56 lg:w-65 lg:h-65 lg:rounded-lg"
               src={item.image}
             />
             <motion.div

@@ -91,26 +91,14 @@ export const ProjectsData = [
     id: 0,
   },
   {
-    title: "Daniela's Art Shop",
-    description:
-      "The main goal with this project is to create a small size e-commerce store that sells original paintings and prints, created by the artist. Generally speaking I believe the project to bring the feeling of a small art store, with personal touch, going away from the usual conventions in some cases.",
+    title: "Pro-Shop",
+    description: "M-E-R-N - Fullstack project created using MongoDB, Express, Redux and Node.js.",
     image:
-      "https://res.cloudinary.com/frank2021/image/upload/v1637611261/Danielas%20art%20shop/Art-shop_lmlgrl.jpg",
-    tags: ["Python", "SQL", "HTML", "CSS", "JavaScript"],
-    source: "https://github.com/fdasabino/art-shop-p5",
-    visit: "https://danielasartshop.herokuapp.com/",
+      "https://res.cloudinary.com/frank2021/image/upload/v1664664470/portfolio/devices-format_hsrpjm.png",
+    tags: ["Mongo ", "Express ", "React ", "Node"],
+    source: "https://github.com/fdasabino/proshopv2",
+    visit: "https://proshoappudemy.herokuapp.com/",
     id: 1,
-  },
-  {
-    title: "Stockholm foodies",
-    description:
-      "This application was developed to host a multi-product store, that can accommodate a variety of products. Including different categories, by utilizing MPTT-(Modified Pre-order Tree Traversal) database structure.",
-    image:
-      "https://res.cloudinary.com/frank2021/image/upload/v1639559966/STHLM-foodies/frame-sthlm_vxctvo.png",
-    tags: ["Python", "SQL", "HTML", "CSS", "JavaScript"],
-    source: "https://github.com/fdasabino/fullstack_toolkit",
-    visit: "https://sthlm-foodies.herokuapp.com/",
-    id: 2,
   },
   {
     title: "Nasa vs Aliens Spaceship Game",
@@ -120,7 +108,7 @@ export const ProjectsData = [
       "https://res.cloudinary.com/frank2021/image/upload/v1642585365/portfolio/screencapture-github-fdasabino-Project-python-mls3-2022-01-19-10_41_24_cftmki.png",
     tags: ["Python"],
     source: "https://github.com/fdasabino/Project_python_mls3",
-    id: 3,
+    id: 2,
   },
   {
     title: "Rock, Paper, Scissors Game",
@@ -131,7 +119,7 @@ export const ProjectsData = [
     tags: ["HTML ", "CSS ", "JavaScript"],
     source: "https://github.com/fdasabino/rock-paper-scissor_game",
     visit: "https://fdasabino.github.io/rock-paper-scissor_game/",
-    id: 4,
+    id: 3,
   },
 ];
 

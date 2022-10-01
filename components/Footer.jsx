@@ -87,6 +87,7 @@ const Footer = () => {
                 <Link className="footerLink" to="tech">
                   Technologies
                 </Link>
+                <br />
                 <Link className="footerLink" to="projects">
                   Projects
                 </Link>

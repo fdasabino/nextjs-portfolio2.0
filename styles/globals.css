@@ -2,7 +2,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 * {
   padding: 0;
   margin: 0;
@@ -10,24 +9,20 @@
   scroll-behavior: smooth;
   font-family: "Fira Sans", sans-serif;
 }
-
 section {
   min-height: 100vh;
   overflow: hidden;
 }
-
 .active {
   color: rgb(45 212 191) !important;
   padding: 5px;
   border-bottom: 1px solid rgb(45 212 191) !important;
   transform: scale(1.1);
 }
-
 .carousel .carousel-slider {
   background: #555555 !important;
   border-radius: 16px !important;
 }
-
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
   transition: background-color 600000s 0s, color 600000s 0s;
@@ -35,54 +30,44 @@ input:-webkit-autofill:focus {
 input[data-autocompleted] {
   background-color: transparent !important;
 }
-
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 input[type="number"] {
   -moz-appearance: textfield;
 }
-
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 /* Track */
 ::-webkit-scrollbar-track {
   background: teal;
 }
-
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
 }
-
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: cyan;
 }
-
 .error::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: red;
   opacity: 1; /* Firefox */
 }
-
 .error:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: red;
 }
-
 .error::-ms-input-placeholder {
   /* Microsoft Edge */
   color: red;
 }
-
 @layer components {
   .mainContainer {
     @apply bg-slate-900 px-10 md:px-20 lg:px-40;
@@ -100,7 +85,6 @@ input[type="number"] {
   .sectionDisclaimer {
     @apply mt-5 text-center uppercase text-gray-400;
   }
-
   .contactInput {
     @apply outline-none bg-slate-400/10 rounded-sm border-b border-[#14a08442] px-6 py-4 text-teal-500
     placeholder-gray-500 transition-all  focus:border-teal-600  focus:text-teal-600 hover:border-teal-600 resize-none;

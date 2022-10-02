@@ -33,12 +33,12 @@ const Projects = () => {
         >
           {ProjectsData?.map((item) => (
             <div key={item.id} className="max-w-[100%] h-[700px] p-3">
-              <div className="relative h-40 w-40 md:w-72 md:h-72 lg:w-80 lg:h-80  mx-auto p-1 my-3">
+              <div className="relative h-48 w-48 md:w-72 md:h-72 lg:w-80 lg:h-80 border-solid border-2 border-teal-500 bg-black rounded-lg mx-auto my-3">
                 <Image
                   layout="fill"
                   alt={item.title}
                   src={item.image}
-                  className="object-scale-down p-6"
+                  className="object-contain rounded-lg"
                 />
               </div>
 

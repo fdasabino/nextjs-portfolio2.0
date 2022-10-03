@@ -17,13 +17,22 @@ const Footer = () => {
       <div className="flex justify-evenly items-center">
         <div className="flex gap-1 text-center flex-wrap">
           <div className="px-5 text-center mx-auto">
+            <p className="max-w-md text-center uppercase text-gray-400 text-sm md:text-md ">
+              Share this page on:
+            </p>
             <div className="flex justify-center">
               <FacebookShareButton
                 url={"https://franciscosabino.com"}
                 quote={"Fullstack Developer"}
                 hashtag="#fullstack"
               >
-                <FacebookIcon className="mx-3" size={36} />
+                <FacebookIcon
+                  className="mx-3"
+                  size={36}
+                  bgStyle={{ fill: "#0F172A" }}
+                  round={true}
+                  iconFillColor="#14b7a5"
+                />
               </FacebookShareButton>
 
               <TwitterShareButton
@@ -31,21 +40,39 @@ const Footer = () => {
                 quote={"Fullstack Developer"}
                 hashtag="#fullstack"
               >
-                <TwitterIcon className="mx-3" size={36} />
+                <TwitterIcon
+                  className="mx-3"
+                  size={36}
+                  bgStyle={{ fill: "#0F172A" }}
+                  round={true}
+                  iconFillColor="#14b7a5"
+                />
               </TwitterShareButton>
               <WhatsappShareButton
                 url={"https://franciscosabino.com"}
                 quote={"Fullstack Developer"}
                 hashtag="#fullstack"
               >
-                <WhatsappIcon className="mx-3" size={36} />
+                <WhatsappIcon
+                  className="mx-3"
+                  size={36}
+                  bgStyle={{ fill: "#0F172A" }}
+                  round={true}
+                  iconFillColor="#14b7a5"
+                />
               </WhatsappShareButton>
               <LinkedinShareButton
                 url={"https://franciscosabino.com"}
                 quote={"Fullstack Developer"}
                 hashtag="#fullstack"
               >
-                <LinkedinIcon className="mx-3" size={36} />
+                <LinkedinIcon
+                  className="mx-3"
+                  size={36}
+                  bgStyle={{ fill: "#0F172A" }}
+                  round={true}
+                  iconFillColor="#14b7a5"
+                />
               </LinkedinShareButton>
             </div>
             <p className="pt-3 text-center my-2">

@@ -63,8 +63,7 @@ export const TechArray = [
 export const HeroData = [
   {
     id: 0,
-    image:
-      "https://res.cloudinary.com/frank2021/image/upload/v1652788529/portfolio/me.ee24849d87fd96da986a_jqze0d.jpg",
+    image: "https://res.cloudinary.com/frank2021/image/upload/v1664808618/portfolio/IMG_0100_abrxzc.jpg",
     title: "Hi, I'm Francisco Sabino",
   },
 ];
@@ -83,8 +82,7 @@ export const ProjectsData = [
     title: "STOREADO",
     description:
       "M-E-R-N - Fullstack project created using MongoDB, Express, Redux and Node.js. STOREADO demonstrates how to implement a front and back-end from scratch using React and Node.",
-    image:
-      "https://res.cloudinary.com/frank2021/image/upload/v1664668644/portfolio/frames_jklkjf.png",
+    image: "https://res.cloudinary.com/frank2021/image/upload/v1664668644/portfolio/frames_jklkjf.png",
     tags: ["Mongo ", "Express ", "React ", "Node"],
     source: "https://github.com/fdasabino/react-redux-ecommerce-fullstack",
     visit: "https://storeado.herokuapp.com/",

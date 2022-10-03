@@ -17,7 +17,7 @@ const Hero = () => {
       <BackgroundCircles />
       {HeroData?.map((item) => (
         <Fragment key={item.id}>
-          <div className="relative h-40 w-40 mx-auto rounded-full border-solid border-2 border-teal-500 p-1 my-3">
+          <div className="relative h-48 w-48 mx-auto rounded-full border-solid border-2 border-teal-500 p-1 my-3">
             <Image
               priority
               layout="fill"
@@ -28,9 +28,9 @@ const Hero = () => {
             />
           </div>
           <div className="z-20">
-            <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-widest">{item.title}</h2>
+            <h2 className="text-sm uppercase text-teal-500 pb-2 tracking-widest">{item.title}</h2>
             <h1 className="text-sm md:text-2xl lg:text-4xl font-semibold px-5">
-              <span className="mr-3 text-gray-700">{text}</span>
+              <span className="mr-3 text-gray-600">{text}</span>
               <Cursor cursorColor="#14a085" />
             </h1>
 

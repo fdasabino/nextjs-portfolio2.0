@@ -17,7 +17,7 @@ const Footer = () => {
       <div className="flex justify-evenly items-center">
         <div className="flex gap-1 text-center flex-wrap">
           <div className="px-5 text-center mx-auto">
-            <p className="max-w-md text-center uppercase text-gray-400 text-sm md:text-md ">
+            <p className="max-w-md text-center uppercase text-gray-800 text-sm md:text-md ">
               Share this page on:
             </p>
             <div className="flex justify-center">

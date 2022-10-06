@@ -102,7 +102,7 @@ input[type="number"] {
     @apply text-left text-lg font-bold  text-gray-400 pb-3 leading-6;
   }
   .carouselText {
-    @apply tracking-wide text-sm text-justify text-gray-400 pb-3 leading-6;
+    @apply tracking-wide text-sm text-justify text-gray-400 pb-3 leading-6 md:text-center;
   }
   .footerLink {
     @apply tracking-wide text-sm text-center text-gray-800 hover:text-teal-400 pb-3 leading-6 w-fit;

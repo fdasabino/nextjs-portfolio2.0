@@ -120,6 +120,17 @@ export const ProjectsData = [
     visit: "https://fdasabino.github.io/rock-paper-scissor_game/",
     id: 3,
   },
+  {
+    title: "Ayrton Senna - Tribute",
+    description:
+      "This page was developed using basic HTML, CSS and JavaScript. This page was created as the first project at Hyper Island Stockholm (FED24).",
+    image:
+      "https://res.cloudinary.com/frank2021/image/upload/v1665056001/portfolio/hyper_models_white_rjjyhu.png",
+    tags: ["HTML ", "CSS ", "JavaScript"],
+    source: "https://github.com/fdasabino/90s_web_page",
+    visit: "https://quiet-twilight-401223.netlify.app/",
+    id: 4,
+  },
 ];
 
 export const TimeLineData = [

@@ -21,8 +21,8 @@
     "react-icons": "^4.4.0",
     "react-responsive-carousel": "^3.2.23",
     "react-scroll": "^1.8.7",
-    "react-share": "^4.4.0",
-    "react-simple-typewriter": "^4.0.2"
+    "react-simple-typewriter": "^4.0.2",
+    "simple-sharer": "^4.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",

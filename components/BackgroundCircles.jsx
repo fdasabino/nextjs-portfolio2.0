@@ -18,11 +18,16 @@ export default function BackgroundCircles() {
       }}
       className="relative flex justify-center items-center"
     >
-      <div className="absolute border border-[#48837744] rounded-full h-[300px] w-[300px] mt-52" />
-      <div className="absolute border border-[#4883774d] rounded-full h-[400px] w-[400px] mt-52" />
-      <div className="absolute border border-[#4883775e] rounded-full h-[300px] w-[300px] mt-52 animate-ping" />
-      <div className="absolute border border-[#48837780] rounded-full h-[180px] w-[180px] mt-52 animate-ping" />
-      <div className="absolute border border-[#48837780] rounded-full h-[500px] w-[500px] mt-52 animate-pulse" />
+      <div className="absolute border border-[#48837780] rounded-full h-[190px] w-[190px] mt-52 animate-ping" />
+      <div className="absolute border border-[#48837780] rounded-full md:h-[210px] md:w-[210px] mt-52 animate-pulse" />
+      <div className="absolute border border-[#48837780] rounded-full md:h-[240px] md:w-[240px] mt-52 animate-pulse" />
+      <div className="absolute border border-[#48837780] rounded-full md:h-[270px] md:w-[270px] mt-52 animate-pulse" />
+      <div className="absolute border border-[#48837744] rounded-full md:h-[300px] md:w-[300px] mt-52 animate-pulse" />
+      <div className="absolute border border-[#48837744] rounded-full md:h-[330px] md:w-[330px] mt-52 animate-pulse" />
+      <div className="absolute border border-[#48837744] rounded-full md:h-[360px] md:w-[360px] mt-52 animate-pulse" />
+      <div className="absolute border border-[#48837744] rounded-full md:h-[390px] md:w-[390px] mt-52 animate-pulse" />
+      <div className="absolute border border-[#4883775e] rounded-full md:h-[420px] md:w-[420px] mt-52 animate-pulse" />
+      <div className="absolute border border-[#48837744] rounded-full md:h-[450px] md:w-[450px] mt-52 animate-pulse" />
     </motion.div>
   );
 }

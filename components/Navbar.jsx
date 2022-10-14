@@ -64,7 +64,12 @@ const Navbar = () => {
             duration: 1.5,
           }}
         >
-          <Hamburger toggled={open} toggle={showDrawer} duration={0.8} color="#13aa9b" />
+          <Hamburger
+            toggled={open}
+            toggle={showDrawer}
+            duration={0.8}
+            color="#13aa9b"
+          />
         </motion.div>
       </div>
       <Drawer

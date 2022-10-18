@@ -46,12 +46,8 @@ const Testimonials = () => {
 
                 <div className="p-1">
                   <h3 className="uppercase tracking-wide text-gray-400 text-2xl">{item.name}</h3>
-                  <h4 className="uppercase tracking-wide text-gray-400 text-1xl ">
-                    {item.position}
-                  </h4>
-                  <h5 className="uppercase tracking-wide text-gray-400 text-md pb-3">
-                    {item.company}
-                  </h5>
+                  <h4 className="uppercase tracking-wide text-gray-400 text-1xl ">{item.position}</h4>
+                  <h5 className="uppercase tracking-wide text-gray-400 text-md pb-3">{item.company}</h5>
                   <p className="carouselText">&apos; {item.text} &apos;</p>
                 </div>
               </div>

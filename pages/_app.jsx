@@ -6,6 +6,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 function MyApp({ Component, pageProps }) {
   return (
     <>
+      <Component {...pageProps} />
       {/* Toaster notifications */}
       <Toaster
         position="top-center"
@@ -31,7 +32,6 @@ function MyApp({ Component, pageProps }) {
           },
         }}
       />
-      <Component {...pageProps} />;
     </>
   );
 }

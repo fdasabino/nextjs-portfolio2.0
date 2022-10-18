@@ -30,46 +30,31 @@ const Footer = () => {
             </p>
             <div className="flex justify-center">
               <Tooltip title="Share on Facebook">
-                <button
-                  onClick={() => sh.facebook()}
-                  className="w-10 footerSharingSocial"
-                >
+                <button onClick={() => sh.facebook()} className="w-10 footerSharingSocial">
                   <FaFacebookF />
                 </button>
               </Tooltip>
 
               <Tooltip title="Share on Twitter">
-                <button
-                  onClick={() => sh.twitter()}
-                  className="w-10 footerSharingSocial"
-                >
+                <button onClick={() => sh.twitter()} className="w-10 footerSharingSocial">
                   <FaTwitter />
                 </button>
               </Tooltip>
 
               <Tooltip title="Share on WhatsApp">
-                <button
-                  onClick={() => sh.whatsapp()}
-                  className="w-10 footerSharingSocial"
-                >
+                <button onClick={() => sh.whatsapp()} className="w-10 footerSharingSocial">
                   <FaWhatsapp />
                 </button>
               </Tooltip>
 
               <Tooltip title="Share on Linkedin">
-                <button
-                  onClick={() => sh.linkedin()}
-                  className="w-10 footerSharingSocial"
-                >
+                <button onClick={() => sh.linkedin()} className="w-10 footerSharingSocial">
                   <FaLinkedin />
                 </button>
               </Tooltip>
 
               <Tooltip title="Copy Link">
-                <button
-                  onClick={() => sh.copy()}
-                  className="w-10 footerSharingSocial"
-                >
+                <button onClick={() => sh.copy()} className="w-10 footerSharingSocial">
                   <FaLink />
                 </button>
               </Tooltip>

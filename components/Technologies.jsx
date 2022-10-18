@@ -10,12 +10,10 @@ const Technologies = () => {
       <h3 className="sectionTitle">Technologies</h3>
       <h5 className="sectionSubTitle">
         {" "}
-        Here are some languages and frameworks I have used in the past to create some awesome
-        projects.
+        Here are some languages and frameworks I have used in the past to create some awesome projects.
       </h5>
       <small className="sectionDisclaimer">
-        The levels represented are not necessarily a skill level, but how confident I am working
-        with it.
+        The levels represented are not necessarily a skill level, but how confident I am working with it.
       </small>
       <motion.div
         initial={{
@@ -33,9 +31,7 @@ const Technologies = () => {
       >
         {TechArray?.map((item) => (
           <div key={item.id} className="relative h-32 w-32">
-            <div className="absolute inset-0 top-[32px] left-[32px] translate-2/4 ">
-              {item.icon}
-            </div>
+            <div className="absolute inset-0 top-[32px] left-[32px] translate-2/4 ">{item.icon}</div>
             <Tooltip title={item.label}>
               <Progress
                 type="circle"

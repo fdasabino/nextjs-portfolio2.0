@@ -24,6 +24,8 @@ const Projects = () => {
         <Carousel
           className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl"
           infiniteLoop={true}
+          useKeyboardArrows
+          transitionTime={1000}
           showThumbs={false}
           showStatus={false}
           showIndicators={true}

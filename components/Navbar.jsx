@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { FaHome } from "react-icons/fa";
 import { Spin as Hamburger } from "hamburger-react";
 import { Drawer } from "antd";
 import { Link } from "react-scroll";
@@ -76,58 +77,22 @@ const Navbar = () => {
         headerStyle={{ backgroundColor: "#334155be", border: "none" }}
       >
         <div className="flex flex-col justify-center items-start gap-6">
-          <Link
-            spy={true}
-            isDynamic={true}
-            to="hero"
-            onClick={onClose}
-            className="text-gray-800 text-md uppercase tracking-wide hover:text-teal-500"
-          >
+          <Link spy={true} isDynamic={true} to="hero" onClick={onClose} className="menuLinks">
             Home
           </Link>
-          <Link
-            spy={true}
-            isDynamic={true}
-            to="about"
-            onClick={onClose}
-            className="text-gray-800 text-md uppercase tracking-wide hover:text-teal-500"
-          >
+          <Link spy={true} isDynamic={true} to="about" onClick={onClose} className="menuLinks">
             About
           </Link>
-          <Link
-            spy={true}
-            isDynamic={true}
-            to="tech"
-            onClick={onClose}
-            className="text-gray-800 text-md uppercase tracking-wide hover:text-teal-500"
-          >
+          <Link spy={true} isDynamic={true} to="tech" onClick={onClose} className="menuLinks">
             Technologies
           </Link>
-          <Link
-            spy={true}
-            isDynamic={true}
-            to="projects"
-            onClick={onClose}
-            className="text-gray-800 text-md uppercase tracking-wide hover:text-teal-500"
-          >
+          <Link spy={true} isDynamic={true} to="projects" onClick={onClose} className="menuLinks">
             Projects
           </Link>
-          <Link
-            spy={true}
-            isDynamic={true}
-            to="testimonials"
-            onClick={onClose}
-            className="text-gray-800 text-md uppercase tracking-wide hover:text-teal-500"
-          >
+          <Link spy={true} isDynamic={true} to="testimonials" onClick={onClose} className="menuLinks">
             Testimonials
           </Link>
-          <Link
-            spy={true}
-            isDynamic={true}
-            to="contact"
-            onClick={onClose}
-            className="text-gray-800 text-md uppercase tracking-wide hover:text-teal-500"
-          >
+          <Link spy={true} isDynamic={true} to="contact" onClick={onClose} className="menuLinks">
             Contact
           </Link>
         </div>

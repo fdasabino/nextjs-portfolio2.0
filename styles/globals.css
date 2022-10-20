@@ -54,12 +54,17 @@ input[type="number"] {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: teal;
+  background: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67));
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 /* Handle on hover */
@@ -124,5 +129,8 @@ input[type="number"] {
   }
   .footerSharingSocial {
     @apply transition-all duration-500 ease-out text-gray-800 hover:text-teal-400 text-xl pb-3 leading-6 w-fit;
+  }
+  .menuLinks {
+    @apply flex items-center gap-1 text-gray-800 uppercase tracking-wide hover:text-teal-500;
   }
 }

@@ -1,3 +1,4 @@
+import { motion, useScroll, useSpring } from "framer-motion";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
@@ -9,6 +10,12 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
   return (
     <div>
       <Head>
@@ -19,6 +26,7 @@ export default function Home() {
         <meta name="author" content="Francisco Sabino" />
       </Head>
       <main className="mainContainer">
+        <motion.div className="progress-bar" style={{ scaleX }} />
         <Navbar />
         <section id="hero">
           <Hero />

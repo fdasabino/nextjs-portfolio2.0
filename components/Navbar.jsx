@@ -1,13 +1,29 @@
 import React, { useState } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { FaHome } from "react-icons/fa";
-import { Spin as Hamburger } from "hamburger-react";
+import { Sling as Hamburger } from "hamburger-react";
 import { Drawer } from "antd";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+
+  const variants = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 5000, velocity: -200 },
+      },
+    },
+    closed: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000 },
+      },
+    },
+  };
 
   const showDrawer = () => {
     setOpen(true);
@@ -65,7 +81,12 @@ const Navbar = () => {
             duration: 1.5,
           }}
         >
-          <Hamburger toggled={open} toggle={showDrawer} duration={0.8} color="#13aa9b" />
+          <Hamburger
+            toggled={open}
+            toggle={showDrawer}
+            duration={0.8}
+            color={open ? "#4b5563ac" : "#14b7a5"}
+          />
         </motion.div>
       </div>
       <Drawer
@@ -75,26 +96,47 @@ const Navbar = () => {
         width={"fit-content"}
         bodyStyle={{ backgroundColor: "#334155be" }}
         headerStyle={{ backgroundColor: "#334155be", border: "none" }}
+        maskStyle={{
+          backgroundColor: "rgba( 75, 85, 99, 0.45)",
+          boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+          backdropFilter: "blur( 14px )",
+        }}
       >
         <div className="flex flex-col justify-center items-start gap-6">
-          <Link spy={true} isDynamic={true} to="hero" onClick={onClose} className="menuLinks">
-            Home
-          </Link>
-          <Link spy={true} isDynamic={true} to="about" onClick={onClose} className="menuLinks">
-            About
-          </Link>
-          <Link spy={true} isDynamic={true} to="tech" onClick={onClose} className="menuLinks">
-            Technologies
-          </Link>
-          <Link spy={true} isDynamic={true} to="projects" onClick={onClose} className="menuLinks">
-            Projects
-          </Link>
-          <Link spy={true} isDynamic={true} to="testimonials" onClick={onClose} className="menuLinks">
-            Testimonials
-          </Link>
-          <Link spy={true} isDynamic={true} to="contact" onClick={onClose} className="menuLinks">
-            Contact
-          </Link>
+          <motion.div variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+            <Link spy={true} isDynamic={true} to="hero" onClick={onClose} className="menuLinks">
+              Home
+            </Link>
+          </motion.div>
+
+          <motion.div variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+            <Link spy={true} isDynamic={true} to="about" onClick={onClose} className="menuLinks">
+              About
+            </Link>
+          </motion.div>
+
+          <motion.div variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+            <Link spy={true} isDynamic={true} to="tech" onClick={onClose} className="menuLinks">
+              Technologies
+            </Link>
+          </motion.div>
+          <motion.div variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+            <Link spy={true} isDynamic={true} to="projects" onClick={onClose} className="menuLinks">
+              Projects
+            </Link>
+          </motion.div>
+
+          <motion.div variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+            <Link spy={true} isDynamic={true} to="testimonials" onClick={onClose} className="menuLinks">
+              Testimonials
+            </Link>
+          </motion.div>
+
+          <motion.div variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+            <Link spy={true} isDynamic={true} to="contact" onClick={onClose} className="menuLinks">
+              Contact
+            </Link>
+          </motion.div>
         </div>
       </Drawer>
     </nav>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { HeroData } from "../constants/constants";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const [text] = useTypewriter({
@@ -36,7 +37,13 @@ const Hero = () => {
 
             <div className="pt-6">
               <Link to="contact">
-                <button className="mainButton">Contact</button>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="mainButton"
+                >
+                  Contact
+                </motion.button>
               </Link>
             </div>
           </div>

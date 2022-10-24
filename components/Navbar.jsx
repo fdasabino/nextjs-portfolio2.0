@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { Sling as Hamburger } from "hamburger-react";
+import { Squash as Hamburger } from "hamburger-react";
 import { Drawer } from "antd";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
@@ -97,9 +97,8 @@ const Navbar = () => {
         bodyStyle={{ backgroundColor: "#334155be" }}
         headerStyle={{ backgroundColor: "#334155be", border: "none" }}
         maskStyle={{
-          backgroundColor: "rgba( 75, 85, 99, 0.45)",
-          boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-          backdropFilter: "blur( 14px )",
+          backgroundColor: "rgba( 0, 0, 0, 0.65)",
+          backdropFilter: "blur( 16px )",
         }}
       >
         <div className="flex flex-col justify-center items-start gap-6">

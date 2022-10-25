@@ -47,29 +47,8 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-/* width */
 ::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67));
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: cyan;
+  display: none;
 }
 
 .error::placeholder {
@@ -90,7 +69,10 @@ input[type="number"] {
 
 @layer components {
   .mainContainer {
-    @apply bg-gradient-to-br from-gray-700 via-gray-900 to-black px-10 md:px-20 lg:px-40;
+    @apply bg-gradient-to-br from-gray-700 via-gray-900 to-black;
+  }
+  .navbarStyles {
+    @apply sticky top-0 bg-opacity-40 backdrop-blur-sm rounded drop-shadow-md z-50 px-10 pt-5 pb-3 md:px-20 lg:px-40;
   }
   .mainButton {
     @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest 
@@ -134,6 +116,6 @@ input[type="number"] {
     @apply flex items-center gap-1 text-gray-800 uppercase tracking-wide hover:text-teal-500;
   }
   .progress-bar {
-    @apply fixed bottom-0 left-0 right-0 h-1 backdrop-blur-sm bg-white/30 origin-left z-50;
+    @apply fixed top-0 left-0 right-0 h-1 backdrop-blur-sm bg-cyan-700 origin-left z-50;
   }
 }

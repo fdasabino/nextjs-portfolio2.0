@@ -33,7 +33,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 bg-opacity-40 backdrop-blur-sm rounded drop-shadow-md z-50">
+    <nav className="navbarStyles">
       <div className="flex justify-between items-center">
         <motion.div
           initial={{

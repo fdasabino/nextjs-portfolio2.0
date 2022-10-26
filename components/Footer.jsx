@@ -64,13 +64,6 @@ const Footer = () => {
           {/* contact */}
           <div className="flex justify-center items-center mx-auto">
             <div className="flex flex-col items-center px-5">
-              <a className="footerLink" href="tel:+46762416529">
-                <span className="text-lg">
-                  <FaPhoneVolume />
-                </span>
-                +46762416529
-              </a>
-
               <a className="footerLink" href="mailto:fdasabino@gmail.com">
                 <span className="text-lg">
                   <FaRegEnvelope />

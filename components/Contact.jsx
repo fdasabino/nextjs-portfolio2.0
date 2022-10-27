@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
-
 import { useForm } from "react-hook-form";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [successMessage, setSuccessMessage] = useState("");

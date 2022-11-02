@@ -2,15 +2,7 @@ import React from "react";
 import { Link } from "react-scroll/modules";
 import { Simplesharer } from "simple-sharer";
 import { Tooltip } from "antd";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaWhatsapp,
-  FaLinkedin,
-  FaLink,
-  FaPhoneVolume,
-  FaRegEnvelope,
-} from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaWhatsapp, FaLinkedin, FaLink, FaRegEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   const sh = new Simplesharer();

@@ -81,7 +81,7 @@ export const ProjectsData = [
   {
     title: "STOREADO",
     description:
-      "M-E-R-N - Fullstack project created using MongoDB, Express, Redux and Node.js. STOREADO demonstrates how to implement a front and back-end from scratch using React and Node.",
+      "M-E-R-N - Fullstack project created using MongoDB, Express, React and Node.js. STOREADO demonstrates how to implement a front and back-end from scratch using React and Node.",
     image: "https://res.cloudinary.com/frank2021/image/upload/v1664668644/portfolio/frames_jklkjf.png",
     tags: ["Mongo ", "Express ", "React ", "Node"],
     source: "https://github.com/fdasabino/react-redux-ecommerce-fullstack",
@@ -90,7 +90,7 @@ export const ProjectsData = [
   },
   {
     title: "Pro-Shop",
-    description: "M-E-R-N - Fullstack project created using MongoDB, Express, Redux and Node.js.",
+    description: "M-E-R-N - Fullstack project created using MongoDB, Express, React and Node.js.",
     image:
       "https://res.cloudinary.com/frank2021/image/upload/v1664664470/portfolio/devices-format_hsrpjm.png",
     tags: ["Mongo ", "Express ", "React ", "Node"],

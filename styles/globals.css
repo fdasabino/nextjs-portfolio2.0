@@ -69,6 +69,10 @@ input[type="number"] {
 }
 
 @layer components {
+  .container {
+    @apply max-w-lg p-3 h-screen flex justify-center align-middle flex-col mx-auto;
+  }
+
   .mainContainer {
     @apply bg-gradient-to-br from-gray-700 via-gray-900 to-black;
   }
@@ -80,7 +84,7 @@ input[type="number"] {
     text-black bg-gray-600 transition-all hover:bg-teal-600 focus:bg-teal-600 focus:outline-none;
   }
   .sectionTitle {
-    @apply mt-5 uppercase tracking-[10px] text-gray-400 text-lg md:text-2xl lg:text-3xl;
+    @apply mt-5 uppercase tracking-[10px] text-gray-400 text-lg md:text-2xl lg:text-3xl text-center;
   }
   .sectionSubTitle {
     @apply mt-5 text-center uppercase text-gray-400 text-sm;

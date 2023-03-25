@@ -82,9 +82,9 @@ export const ProjectsData = [
   {
     title: "STOREADO",
     description:
-      "M-E-R-N - Fullstack project created using MongoDB, Express, React and Node.js. STOREADO demonstrates how to implement a front and back-end from scratch using React and Node.",
+      "M-E-R-N - Fullstack project created using MongoDB, Express, React and Node.js. STOREADO demonstrates how to implement a front and back-end from scratch using React and Node. In this project I have used Tailwind css for faster development.",
     image:
-      "https://res.cloudinary.com/frank2021/image/upload/v1664668644/portfolio/frames_jklkjf.png",
+      "https://res.cloudinary.com/frank2021/image/upload/v1679769452/portfolio/Storeado_rl7zeo.png",
     tags: ["Mongo ", "Express ", "React ", "Node"],
     source: "",
     visit: "https://storeado.herokuapp.com/",

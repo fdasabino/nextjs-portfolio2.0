@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Projects = () => {
   return (
-    <div className=" relative flex flex-col items-center">
+    <div className="relative flex flex-col items-center ">
       <div className="sectionDivider" />
       <h3 className="sectionTitle">Projects</h3>
       <motion.div
@@ -19,7 +19,7 @@ const Projects = () => {
         transition={{
           duration: 2,
         }}
-        className="flex items-center justify-center text-center overflow-hidden"
+        className="flex items-center justify-center overflow-hidden text-center"
       >
         <Carousel
           className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl"
@@ -35,7 +35,7 @@ const Projects = () => {
         >
           {ProjectsData?.map((item) => (
             <div key={item.id} className="max-w-[100%] h-[700px] p-3">
-              <div className="relative h-48 w-48 md:w-72 md:h-72 lg:w-80 lg:h-80 border-solid border-2 border-teal-500 bg-black rounded-lg mx-auto my-3">
+              <div className="relative w-48 h-48 mx-auto my-3 bg-black border-2 border-teal-500 border-solid rounded-lg md:w-72 md:h-72 lg:w-80 lg:h-80">
                 <Image
                   layout="fill"
                   alt={item.title}
@@ -45,7 +45,7 @@ const Projects = () => {
               </div>
 
               <div className="p-1">
-                <h3 className="uppercase tracking-wide text-gray-400 text-lg md:text-1xl pb-3">
+                <h3 className="pb-3 text-lg tracking-wide text-gray-400 uppercase md:text-1xl">
                   {item.title}
                 </h3>
               </div>
@@ -64,10 +64,13 @@ const Projects = () => {
                 </ul>
               </div>
 
-              <div className="flex justify-center items-center flex-row gap-10 mt-2">
-                <a href={item.source} target="_blank" rel="noreferrer">
-                  <button className="mainButton">Source Code</button>
-                </a>
+              <div className="flex flex-row items-center justify-center gap-10 mt-2">
+                {item.source !== "" && (
+                  <a href={item.source} target="_blank" rel="noreferrer">
+                    <button className="mainButton">Source Code</button>
+                  </a>
+                )}
+
                 <a href={item.visit} target="_blank" rel="noreferrer">
                   <button className="mainButton">Live Project</button>
                 </a>

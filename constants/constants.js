@@ -87,7 +87,7 @@ export const ProjectsData = [
       "https://res.cloudinary.com/frank2021/image/upload/v1679769452/portfolio/Storeado_rl7zeo.png",
     tags: ["Mongo ", "Express ", "React ", "Node"],
     source: "",
-    visit: "https://storeado.herokuapp.com/",
+    visit: "https://storeado.vercel.app/",
     id: 0,
   },
   // {

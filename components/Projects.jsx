@@ -36,26 +36,30 @@ const Projects = () => {
                     <div className="flex items-center flex-1 my-auto">
                       <div className="flex flex-col gap-6 mx-10 text-justify md:mr-6 md:mx-0">
                         <p className="text-sm md:text-base">{project.description}</p>
-                        <div className="flex justify-center gap-4">
+                        <div className="flex flex-row gap-4 text-sm text-center md:text-base xs:items-center xs:flex-col justify-evenly">
                           {project.source !== "" && (
-                            <a href={project.source} target="_blank" rel="noreferrer">
+                            <a
+                              className="mainButton"
+                              href={project.source}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
                               Source Code
                             </a>
                           )}
-                          <a href={project.visit} target="_blank" rel="noreferrer">
+                          <a
+                            className="mainButton"
+                            href={project.visit}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
                             Live Project
                           </a>
                         </div>
                       </div>
                     </div>
                     <div className="flex flex-1 max-w-sm my-4">
-                      <Image
-                        src={project.image}
-                        width={1000}
-                        height={1000}
-                        className="object-cover rounded-xl"
-                        alt=""
-                      />
+                      <Image src={project.image} width={1000} height={1000} alt="" />
                     </div>
                   </div>
                 </div>

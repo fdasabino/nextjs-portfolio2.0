@@ -24,6 +24,14 @@ section {
   transform: scale(1.1);
 }
 
+a {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+a:hover {
+  @apply text-black transform scale-x-105;
+}
+
 .carousel .carousel-slider {
   background: #555555 !important;
   border-radius: 16px !important;
@@ -46,6 +54,7 @@ input::-webkit-inner-spin-button {
 }
 input[type="number"] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 ::-webkit-scrollbar {
@@ -85,7 +94,7 @@ input[type="number"] {
   }
 
   .sectionTitle {
-    @apply mt-5 uppercase tracking-[10px] text-gray-400 text-lg md:text-2xl lg:text-3xl text-center;
+    @apply my-5 md:my-10 uppercase tracking-[10px] text-gray-400 text-lg md:text-2xl lg:text-3xl text-center;
   }
   .sectionSubTitle {
     @apply mt-5 text-sm text-center text-gray-400 uppercase;

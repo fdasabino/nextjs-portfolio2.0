@@ -1,5 +1,15 @@
-import { DiReact, DiHtml5, DiCss3, DiJavascript1 } from "react-icons/di";
-import { SiRedux, SiNextdotjs, SiTailwindcss, SiBootstrap } from "react-icons/si";
+import { DiReact, DiHtml5, DiCss3 } from "react-icons/di";
+import { SiReact } from "react-icons/si";
+import {
+  SiRedux,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiTailwindcss,
+  SiBootstrap,
+  SiMongodb,
+  SiExpress,
+  SiJavascript,
+} from "react-icons/si";
 
 export const TechArray = [
   {
@@ -19,7 +29,7 @@ export const TechArray = [
   {
     id: 2,
     title: "JavaScript",
-    icon: <DiJavascript1 color="#FFD700" size={"4rem"} />,
+    icon: <SiJavascript color="#FFD700" size={"4rem"} />,
     skill: 50,
     label: "50%",
   },
@@ -85,50 +95,60 @@ export const ProjectsData = [
       "M-E-R-N - Fullstack project created using MongoDB, Express, React and Node.js. STOREADO demonstrates how to implement a front and back-end from scratch using React and Node. In this project I have used Tailwind css for faster development.",
     image:
       "https://res.cloudinary.com/frank2021/image/upload/v1679769452/portfolio/Storeado_rl7zeo.png",
-    tags: ["Mongo ", "Express ", "React ", "Node"],
+    tags: [
+      <SiMongodb key={0} color="#4CAA3D" size={30} />,
+      <SiExpress key={1} color="#000" size={30} />,
+      <SiReact key={2} color="#5ED4F3" size={30} />,
+      <SiNodedotjs key={3} color="#659B60" size={30} />,
+    ],
     source: "",
     visit: "https://storeado.vercel.app/",
     id: 0,
   },
-  // {
-  //   title: "Pro-Shop",
-  //   description: "M-E-R-N - Fullstack project created using MongoDB, Express, React and Node.js.",
-  //   image:
-  //     "https://res.cloudinary.com/frank2021/image/upload/v1664664470/portfolio/devices-format_hsrpjm.png",
-  //   tags: ["Mongo ", "Express ", "React ", "Node"],
-  //   source: "https://github.com/fdasabino/proshopv2",
-  //   visit: "https://proshoappudemy.herokuapp.com/",
-  //   id: 1,
-  // },
+
   {
     title: "Let's Practice Maths!!!",
     description:
       "This game was developed using basic HTML, CSS and JavaScript, to help kids when developing their math skills. This was created as part of a Code Institute project.",
     image:
       "https://res.cloudinary.com/frank2021/image/upload/v1664667107/portfolio/math_game_hjfg9j.png",
-    tags: ["HTML ", "CSS ", "JavaScript"],
+    tags: [
+      <DiHtml5 key={0} size={30} color="#E34C26" />,
+      <DiCss3 key={1} size={30} color="#264DE4" />,
+      <SiJavascript key={2} size={30} color="#EFD81D" />,
+    ],
     source: "https://github.com/fdasabino/Love-Maths",
     visit: "https://fdasabino.github.io/Love-Maths/",
     id: 2,
   },
+
   {
     title: "Rock, Paper, Scissors Game",
     description:
       "This game was developed using basic HTML, CSS and JavaScript. It is fully responsive. It can be a fun alternative to the classic rock, paper, scissors game.",
     image:
       "https://res.cloudinary.com/frank2021/image/upload/v1642764842/portfolio/screencapture-fdasabino-github-io-rock-paper-scissor-game-2022-01-21-12_31_18_epvy4f.png",
-    tags: ["HTML ", "CSS ", "JavaScript"],
+    tags: [
+      <DiHtml5 key={0} size={30} color="#E34C26" />,
+      <DiCss3 key={1} size={30} color="#264DE4" />,
+      <SiJavascript key={2} size={30} color="#EFD81D" />,
+    ],
     source: "https://github.com/fdasabino/rock-paper-scissor_game",
     visit: "https://fdasabino.github.io/rock-paper-scissor_game/",
     id: 3,
   },
+
   {
     title: "Ayrton Senna - Tribute",
     description:
       "This page was developed using basic HTML, CSS and JavaScript. This page was created as the first project at Hyper Island Stockholm (FED24).",
     image:
       "https://res.cloudinary.com/frank2021/image/upload/v1665056001/portfolio/hyper_models_white_rjjyhu.png",
-    tags: ["HTML ", "CSS ", "JavaScript"],
+    tags: [
+      <DiHtml5 key={0} size={30} color="#E34C26" />,
+      <DiCss3 key={1} size={30} color="#264DE4" />,
+      <SiJavascript key={2} size={30} color="#EFD81D" />,
+    ],
     source: "https://github.com/fdasabino/90s_web_page",
     visit: "https://quiet-twilight-401223.netlify.app/",
     id: 4,
@@ -147,6 +167,10 @@ export const TimeLineData = [
   {
     year: "2022/24",
     text: "Studying at Hyper Island Stockholm, Front End Developer Course.",
+  },
+  {
+    year: "2023",
+    text: "Frontend developer at Iquest Stockholm.",
   },
 ];
 

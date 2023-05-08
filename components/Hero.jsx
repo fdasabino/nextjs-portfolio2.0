@@ -8,29 +8,29 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   const [text] = useTypewriter({
-    words: ["<Front End Developer/>", "<Student at Hyper Island />"],
+    words: ["<Front End Developer at Iquest/>", "<Student at Hyper Island />"],
     loop: true,
     delaySpeed: 2000,
   });
 
   return (
-    <div className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center h-screen overflow-hidden text-center">
       <BackgroundCircles />
       {HeroData?.map((item) => (
         <Fragment key={item.id}>
-          <div className="relative h-48 w-48 mx-auto rounded-full border-solid border-2 border-teal-500 p-1 my-3">
+          <div className="relative w-48 h-48 p-1 mx-auto my-3 border-2 border-teal-500 border-solid rounded-full">
             <Image
               priority
               layout="fill"
               key={item.id}
               src={item.image}
               alt={item.title}
-              className="rounded-full object-cover"
+              className="object-cover rounded-full"
             />
           </div>
           <div className="z-20">
-            <h2 className="text-sm uppercase text-teal-500 pb-2 tracking-widest">{item.title}</h2>
-            <h1 className="text-sm md:text-2xl lg:text-4xl font-semibold px-5">
+            <h2 className="pb-2 text-sm tracking-widest text-teal-500 uppercase">{item.title}</h2>
+            <h1 className="px-5 text-sm font-semibold md:text-2xl lg:text-4xl">
               <span className="mr-3 text-gray-600">{text}</span>
               <Cursor cursorColor="#14a085" />
             </h1>

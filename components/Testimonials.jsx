@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { TestimonialsData } from "../constants/constants";
-import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
 
 const Testimonials = () => {
   return (
@@ -10,6 +11,7 @@ const Testimonials = () => {
       <div className="sectionDivider" />
       <h3 className="sectionTitle">Testimonials</h3>
       <motion.div
+        className="w-full max-w-4xl"
         initial={{
           opacity: 0,
           scale: 0.5,
@@ -21,47 +23,55 @@ const Testimonials = () => {
         transition={{
           duration: 1.5,
         }}
-        className="flex flex-col items-center justify-center overflow-hidden text-center"
       >
-        <div className="flex items-center justify-center overflow-hidden text-center">
-          <Carousel
-            className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl"
-            infiniteLoop={true}
-            useKeyboardArrows
-            transitionTime={1000}
-            showThumbs={false}
-            showStatus={false}
-            showIndicators={true}
-            emulateTouch={true}
-            showArrows={true}
-            autoPlay={false}
-          >
-            {TestimonialsData?.map((item) => (
-              <div className="p-5" key={item.id}>
-                {/* Image */}
-                <div className="relative w-40 h-40 p-1 mx-auto my-3 border-2 border-teal-500 border-solid rounded-full">
-                  <Image
-                    layout="fill"
-                    src={item.img}
-                    alt={item.name}
-                    className="object-scale-down p-6 rounded-full"
-                  />
-                </div>
+        <Swiper
+          pagination={{
+            type: "progressbar",
+          }}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          {TestimonialsData.map((testimonial, index) => (
+            <SwiperSlide key={testimonial.id}>
+              <div className="mySwiper__container">
+                <div className="mySwiper__wrapper">
+                  <div className="my-8 mySwiper__section">
+                    <p className="text-lg font-bold text-gray-400 md:text-xl">{testimonial.name}</p>
+                  </div>
 
-                <div className="p-1">
-                  <h3 className="text-2xl tracking-wide text-gray-400 uppercase">{item.name}</h3>
-                  <h4 className="tracking-wide text-gray-400 uppercase text-1xl ">
-                    {item.position}
-                  </h4>
-                  <h5 className="pb-3 tracking-wide text-gray-400 uppercase text-md">
-                    {item.company}
-                  </h5>
-                  <p className="carouselText">&apos; {item.text} &apos;</p>
+                  <div className="mySwiper__section">
+                    <div className="flex flex-col items-center justify-center gap-4 my-4 md:flex-row">
+                      <div className="flex flex-col items-center justify-center flex-1 max-w-md">
+                        <div className="w-48 h-48 border border-teal-400 rounded-lg md:w-80 md:h-80">
+                          <Image
+                            src={testimonial.img}
+                            width={1000}
+                            height={1000}
+                            alt={testimonial.name}
+                            className="rounded-lg"
+                          />
+                        </div>
+                        <div className="flex gap-10 my-4">
+                          <p className="text-xs font-bold text-gray-400 md:text-base whitespace-nowrap">
+                            {testimonial.position}
+                          </p>
+                          <p className="text-xs font-bold text-gray-400 md:text-base whitespace-nowrap">
+                            {testimonial.company}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center flex-1 my-auto">
+                        <div className="flex flex-col gap-6 mx-10 text-justify md:mr-6 md:mx-0">
+                          <p className="text-sm text-gray-400 md:text-base">{testimonial.text}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            ))}
-          </Carousel>
-        </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </motion.div>
     </div>
   );

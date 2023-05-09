@@ -71,8 +71,14 @@ const Projects = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-1 max-w-sm my-4">
-                      <Image src={project.image} width={1000} height={1000} alt="" />
+                    <div className="flex flex-1 w-48 h-48 my-4 border border-teal-400 rounded-lg md:w-80 md:h-80">
+                      <Image
+                        src={project.image}
+                        width={1000}
+                        height={1000}
+                        alt={project.title}
+                        className="rounded-lg"
+                      />
                     </div>
                   </div>
                 </div>

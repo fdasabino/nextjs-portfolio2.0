@@ -84,20 +84,20 @@ export const AboutData = [
     id: 0,
     image:
       "https://res.cloudinary.com/frank2021/image/upload/v1652788529/portfolio/me.ee24849d87fd96da986a_jqze0d.jpg",
-    text: "I have put this page together to show you a little bit about my latest challenge - changing career paths. I have worked pretty much my entire adult life in the Hospitality Business: bars, hotels, restaurants, and clubs. It is fun!. But like everything in life - things come to an end and I have decided to become a developer. It is a completely different type of job, as you can imagine and I am thrilled to be taking this new step in my life.\n So follow me on my journey. ",
+    text: "Welcome to this page dedicated to showcasing my latest endeavor: a significant transition in my career path. Throughout the majority of my adult life, I have been deeply entrenched in the Hospitality Business, gaining valuable experience in various dynamic settings such as bars, hotels, restaurants, and clubs. Undeniably, it has been an enjoyable journey. However, as with all things in life, there comes a time for change, and I have made the resolute decision to embark on a new professional venture as a developer. This endeavor represents a complete departure from my previous line of work, bringing forth a thrilling and transformative chapter in my life. I invite you to join me as I embark on this exciting journey of growth and discovery.",
   },
 ];
 
 export const ProjectsData = [
   {
-    title: "STOREADO",
+    title: "STOREADO - Eccomerce",
     description:
-      "M-E-R-N - Fullstack project created using MongoDB, Express, React and Node.js. STOREADO demonstrates how to implement a front and back-end from scratch using React and Node. In this project I have used Tailwind css for faster development.",
+      "STOREADO is an exemplary M-E-R-N (MongoDB, Express, React, and Node.js) full-stack project meticulously crafted to illustrate the implementation of a comprehensive front and back-end infrastructure. Developed from the ground up, this project showcases the seamless integration of React and Node, enabling a robust and efficient application. To expedite the development process, the implementation incorporates the utilization of Tailwind CSS, a powerful framework renowned for its expedited workflow.",
     image:
       "https://res.cloudinary.com/frank2021/image/upload/v1679769452/portfolio/Storeado_rl7zeo.png",
     tags: [
       <SiMongodb key={0} color="#4CAA3D" size={30} />,
-      <SiExpress key={1} color="#000" size={30} />,
+      <SiExpress key={1} color="#ccc" size={30} />,
       <SiReact key={2} color="#5ED4F3" size={30} />,
       <SiNodedotjs key={3} color="#659B60" size={30} />,
     ],
@@ -107,9 +107,9 @@ export const ProjectsData = [
   },
 
   {
-    title: "Let's Practice Maths!!!",
+    title: "Let's Practice Maths! - Educational Game",
     description:
-      "This game was developed using basic HTML, CSS and JavaScript, to help kids when developing their math skills. This was created as part of a Code Institute project.",
+      "This educational game was thoughtfully developed using fundamental web technologies, including HTML, CSS, and JavaScript, with the primary aim of nurturing and enhancing children's math skills. Its creation stemmed from a project undertaken at the esteemed Code Institute, showcasing the practical application of acquired knowledge and expertise. By leveraging the simplicity and versatility of HTML, the visual appeal of CSS, and the interactive functionality of JavaScript, this game offers an engaging and effective platform for children to practice and develop their mathematical proficiency.",
     image:
       "https://res.cloudinary.com/frank2021/image/upload/v1664667107/portfolio/math_game_hjfg9j.png",
     tags: [
@@ -123,9 +123,9 @@ export const ProjectsData = [
   },
 
   {
-    title: "Rock, Paper, Scissors Game",
+    title: "Rock, Paper, Scissors Game - Modern Adaptation",
     description:
-      "This game was developed using basic HTML, CSS and JavaScript. It is fully responsive. It can be a fun alternative to the classic rock, paper, scissors game.",
+      "The development of this game entailed utilizing essential web technologies such as HTML, CSS, and JavaScript. Notably, the game boasts a fully responsive design, adapting seamlessly to various screen sizes and devices. Serving as an enjoyable alternative to the traditional rock, paper, scissors game, it offers a captivating and interactive experience. With its intuitive interface and engaging gameplay, players can revel in a dynamic and entertaining pastime while exploring the unique twists and features incorporated into this modern adaptation",
     image:
       "https://res.cloudinary.com/frank2021/image/upload/v1642764842/portfolio/screencapture-fdasabino-github-io-rock-paper-scissor-game-2022-01-21-12_31_18_epvy4f.png",
     tags: [
@@ -141,7 +141,7 @@ export const ProjectsData = [
   {
     title: "Ayrton Senna - Tribute",
     description:
-      "This page was developed using basic HTML, CSS and JavaScript. This page was created as the first project at Hyper Island Stockholm (FED24).",
+      "This meticulously crafted page was developed using fundamental web technologies such as HTML, CSS, and JavaScript. It serves as the inaugural project undertaken at Hyper Island Stockholm (FED24), symbolizing the beginning of a remarkable learning journey. By harnessing the power of HTML, the page structure is defined, while CSS brings forth captivating visual aesthetics. JavaScript, on the other hand, contributes interactive elements and enhanced functionality to elevate the user experience.",
     image:
       "https://res.cloudinary.com/frank2021/image/upload/v1665056001/portfolio/hyper_models_white_rjjyhu.png",
     tags: [

@@ -52,7 +52,7 @@ const Contact = () => {
       <div className="relative flex flex-col items-center pb-10">
         <div className="sectionDivider" />
         <h3 className="sectionTitle">Contact</h3>
-        <h4 className="my-10 max-w-md text-center uppercase text-gray-400 text-sm md:text-md ">
+        <h4 className="max-w-md my-10 text-sm text-center text-gray-400 uppercase md:text-md ">
           Just now, I am looking for projects or collaborations where I can show my skills and learn
           more. Send me a message if you have something in mind.{" "}
           <span className="underline decoration-[#14a085]">Let&apos;s chat!</span>
@@ -61,14 +61,16 @@ const Contact = () => {
       <motion.div
         initial={{
           opacity: 0,
+          scale: 0.5,
         }}
         whileInView={{
           opacity: 1,
+          scale: 1,
         }}
         transition={{
           duration: 1.5,
         }}
-        className="max-w-md mx-auto text-center overflow-hidden"
+        className="max-w-md mx-auto overflow-hidden text-center"
       >
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-4">
           {/* Name */}

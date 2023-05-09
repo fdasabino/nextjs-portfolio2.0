@@ -13,7 +13,20 @@ const Hero = () => {
   });
 
   return (
-    <div className="relative flex flex-col items-center justify-center h-screen overflow-hidden text-center">
+    <motion.div
+      initial={{
+        opacity: 0,
+        scale: 0.5,
+      }}
+      whileInView={{
+        opacity: 1,
+        scale: 1,
+      }}
+      transition={{
+        duration: 1.5,
+      }}
+      className="relative flex flex-col items-center justify-center h-screen overflow-hidden text-center"
+    >
       {HeroData?.map((item) => (
         <Fragment key={item.id}>
           <div className="relative w-48 h-48 p-1 mx-auto my-3 border-2 border-teal-500 border-solid rounded-full md:w-80 md:h-80">
@@ -47,7 +60,7 @@ const Hero = () => {
           </div>
         </Fragment>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

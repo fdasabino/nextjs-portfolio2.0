@@ -51,7 +51,7 @@ const Navbar = () => {
         >
           <div className="flex gap-4 justify-evenly">
             <a
-              className="text-2xl text-gray-600  hover:text-teal-500"
+              className="text-2xl text-gray-600 hover:text-teal-500"
               href="https://github.com/fdasabino"
               target="_blank"
               rel="noreferrer"
@@ -59,7 +59,7 @@ const Navbar = () => {
               <BsGithub />
             </a>
             <a
-              className="text-2xl text-gray-600  hover:text-teal-500"
+              className="text-2xl text-gray-600 hover:text-teal-500"
               href="https://www.linkedin.com/in/francisco-sabino/"
               target="_blank"
               rel="noreferrer"
@@ -81,12 +81,7 @@ const Navbar = () => {
             duration: 1.5,
           }}
         >
-          <Hamburger
-            toggled={open}
-            toggle={showDrawer}
-            duration={0.8}
-            color={open ? "#4b5563ac" : "#14b7a5"}
-          />
+          <Hamburger toggled={open} toggle={showDrawer} duration={0.8} color={"#666"} />
         </motion.div>
       </div>
       <Drawer

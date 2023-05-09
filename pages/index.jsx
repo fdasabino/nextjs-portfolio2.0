@@ -3,7 +3,6 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
-import Technologies from "../components/Technologies";
 import Projects from "../components/Projects";
 import Testimonials from "../components/Testimonials";
 import Contact from "../components/Contact";
@@ -34,9 +33,6 @@ export default function Home() {
         </section>
         <section id="about">
           <About />
-        </section>
-        <section id="tech">
-          <Technologies />
         </section>
         <section id="projects">
           <Projects />

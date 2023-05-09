@@ -34,7 +34,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbarStyles">
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         <motion.div
           initial={{
             opacity: 0,
@@ -49,9 +49,9 @@ const Navbar = () => {
           }}
           className="flex items-center justify-between py-3 md:py-5 md:block"
         >
-          <div className="flex justify-evenly gap-4">
+          <div className="flex gap-4 justify-evenly">
             <a
-              className=" text-gray-600 text-2xl hover:text-teal-500"
+              className="text-2xl text-gray-600  hover:text-teal-500"
               href="https://github.com/fdasabino"
               target="_blank"
               rel="noreferrer"
@@ -59,7 +59,7 @@ const Navbar = () => {
               <BsGithub />
             </a>
             <a
-              className=" text-gray-600 text-2xl hover:text-teal-500"
+              className="text-2xl text-gray-600  hover:text-teal-500"
               href="https://www.linkedin.com/in/francisco-sabino/"
               target="_blank"
               rel="noreferrer"
@@ -101,7 +101,7 @@ const Navbar = () => {
           backdropFilter: "blur( 16px )",
         }}
       >
-        <div className="flex flex-col justify-center items-start gap-6">
+        <div className="flex flex-col items-start justify-center gap-6">
           <motion.div variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
             <Link spy={true} isDynamic={true} to="hero" onClick={onClose} className="menuLinks">
               Home
@@ -115,18 +115,19 @@ const Navbar = () => {
           </motion.div>
 
           <motion.div variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Link spy={true} isDynamic={true} to="tech" onClick={onClose} className="menuLinks">
-              Technologies
-            </Link>
-          </motion.div>
-          <motion.div variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
             <Link spy={true} isDynamic={true} to="projects" onClick={onClose} className="menuLinks">
               Projects
             </Link>
           </motion.div>
 
           <motion.div variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Link spy={true} isDynamic={true} to="testimonials" onClick={onClose} className="menuLinks">
+            <Link
+              spy={true}
+              isDynamic={true}
+              to="testimonials"
+              onClick={onClose}
+              className="menuLinks"
+            >
               Testimonials
             </Link>
           </motion.div>

@@ -39,7 +39,7 @@
 }
 
 .mySwiper__wrapper {
-  @apply relative flex flex-col rounded-[20px] max-w-4xl h-fit bg-clip-border p-4 my-4 bg-gradient-to-r from-cyan-500 to-blue-500;
+  @apply relative flex flex-col max-w-4xl p-4 my-4 bg-white shadow bg-opacity-10 backdrop-blur-lg rounded-xl h-fit;
 }
 
 .mySwiper__section {

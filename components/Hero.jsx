@@ -3,7 +3,6 @@ import { Link } from "react-scroll";
 import Image from "next/image";
 import { HeroData } from "../constants/constants";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import BackgroundCircles from "./BackgroundCircles";
 import { motion } from "framer-motion";
 
 const Hero = () => {
@@ -15,10 +14,9 @@ const Hero = () => {
 
   return (
     <div className="relative flex flex-col items-center justify-center h-screen overflow-hidden text-center">
-      <BackgroundCircles />
       {HeroData?.map((item) => (
         <Fragment key={item.id}>
-          <div className="relative w-48 h-48 p-1 mx-auto my-3 border-2 border-teal-500 border-solid rounded-full">
+          <div className="relative w-48 h-48 p-1 mx-auto my-3 border-2 border-teal-500 border-solid rounded-full md:w-80 md:h-80">
             <Image
               priority
               layout="fill"
@@ -31,7 +29,7 @@ const Hero = () => {
           <div className="z-20">
             <h2 className="pb-2 text-sm tracking-widest text-teal-500 uppercase">{item.title}</h2>
             <h1 className="px-5 text-sm font-semibold md:text-2xl lg:text-4xl">
-              <span className="mr-3 text-gray-600">{text}</span>
+              <span className="mr-3 text-gray-400">{text}</span>
               <Cursor cursorColor="#14a085" />
             </h1>
 

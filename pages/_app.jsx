@@ -1,6 +1,9 @@
 import { Toaster } from "react-hot-toast";
 import "antd/dist/antd.min.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "../styles/globals.css";
 import "../styles/Swiper.css";
 

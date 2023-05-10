@@ -84,7 +84,7 @@ export const AboutData = [
     id: 0,
     image:
       "https://res.cloudinary.com/frank2021/image/upload/v1652788529/portfolio/me.ee24849d87fd96da986a_jqze0d.jpg",
-    text: "Welcome to this page dedicated to showcasing my latest endeavor: a significant transition in my career path. Throughout the majority of my adult life, I have been deeply entrenched in the Hospitality Business, gaining valuable experience in various dynamic settings such as bars, hotels, restaurants, and clubs. Undeniably, it has been an enjoyable journey. However, as with all things in life, there comes a time for change, and I have made the resolute decision to embark on a new professional venture as a developer. This endeavor represents a complete departure from my previous line of work, bringing forth a thrilling and transformative chapter in my life. I invite you to join me as I embark on this exciting journey of growth and discovery.",
+    text: "Welcome to my page, where I showcase my latest endeavor: a significant career transition. After years in the Hospitality Business, I've decided to pursue my passion for frontend development. I've immersed myself in HTML, CSS, and JavaScript, constantly honing my skills to create visually stunning and interactive web experiences. This shift represents an exhilarating new chapter in my life. I'm thrilled to apply my creativity, problem-solving abilities, and attention to detail in crafting intuitive user interfaces and seamless experiences. Join me on this journey of growth and discovery as we push boundaries and create impactful digital solutions together. Let's embark on this exciting adventure!",
   },
 ];
 

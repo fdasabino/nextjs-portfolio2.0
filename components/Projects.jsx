@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import { ProjectsData } from "../constants/constants";
 import { motion } from "framer-motion";
-import "swiper/css";
-import "swiper/css/pagination";
+import { BsChevronDoubleDown } from "react-icons/bs";
+import { Link } from "react-scroll";
 
 const Projects = () => {
   return (
@@ -30,7 +30,8 @@ const Projects = () => {
           pagination={{
             type: "progressbar",
           }}
-          modules={[Pagination]}
+          navigation={true}
+          modules={[Pagination, Navigation]}
           className="mySwiper"
         >
           {ProjectsData.map((project, index) => (
@@ -86,6 +87,11 @@ const Projects = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+      </motion.div>
+      <motion.div className="arrowDown">
+        <Link to="testimonials">
+          <BsChevronDoubleDown />
+        </Link>
       </motion.div>
     </div>
   );

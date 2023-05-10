@@ -3,6 +3,8 @@ import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
+import { Link } from "react-scroll";
+import { BsChevronDoubleUp } from "react-icons/bs";
 
 const Contact = () => {
   const [successMessage, setSuccessMessage] = useState("");
@@ -51,6 +53,11 @@ const Contact = () => {
     <>
       <div className="relative flex flex-col items-center pb-10">
         <div className="sectionDivider" />
+        <motion.div className="arrowUp">
+          <Link to="hero">
+            <BsChevronDoubleUp />
+          </Link>
+        </motion.div>
         <h3 className="sectionTitle">Contact</h3>
         <h4 className="max-w-md my-10 text-sm text-center text-gray-400 uppercase md:text-md ">
           Just now, I am looking for projects or collaborations where I can show my skills and learn
@@ -120,6 +127,7 @@ const Contact = () => {
           <button className="mainButton">Submit</button>
         </form>
       </motion.div>
+
       <div className="sectionEnding" />
     </>
   );

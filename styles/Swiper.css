@@ -30,7 +30,7 @@
 }
 
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-  @apply bg-gradient-to-r from-teal-500 to-red-500 !important;
+  @apply bg-gradient-to-r from-fuchsia-500 to-cyan-500 !important;
 }
 
 .mySwiper__container {

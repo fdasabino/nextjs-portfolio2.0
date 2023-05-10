@@ -4,10 +4,11 @@ import Image from "next/image";
 import { HeroData } from "../constants/constants";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
+import { BsChevronDoubleDown } from "react-icons/bs";
 
 const Hero = () => {
   const [text] = useTypewriter({
-    words: ["<Front End Developer at Iquest/>", "<Student at Hyper Island />"],
+    words: ["<Front End Developer at Iquest/>", "<Student at Hyper Island/>"],
     loop: true,
     delaySpeed: 2000,
   });
@@ -51,6 +52,7 @@ const Hero = () => {
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  transition={{ duration: 0.1 }}
                   className="mainButton"
                 >
                   Contact
@@ -58,6 +60,11 @@ const Hero = () => {
               </Link>
             </div>
           </div>
+          <motion.div className="arrowDown">
+            <Link to="about">
+              <BsChevronDoubleDown />
+            </Link>
+          </motion.div>
         </Fragment>
       ))}
     </motion.div>

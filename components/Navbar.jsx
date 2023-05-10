@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { Squash as Hamburger } from "hamburger-react";
+import { Fade as Hamburger } from "hamburger-react";
 import { Drawer } from "antd";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
@@ -81,11 +81,13 @@ const Navbar = () => {
             duration: 1.5,
           }}
         >
-          <Hamburger toggled={open} toggle={showDrawer} duration={0.8} color={"#666"} />
+          <motion.div whileHover={{ scale: 1.1, rotate: 360 }}>
+            <Hamburger toggled={open} toggle={showDrawer} duration={0.8} color={"#666"} />
+          </motion.div>
         </motion.div>
       </div>
       <Drawer
-        placement="right"
+        placement="left"
         onClose={onClose}
         open={open}
         width={"fit-content"}

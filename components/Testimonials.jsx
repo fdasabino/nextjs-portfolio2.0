@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import { TestimonialsData } from "../constants/constants";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination, Navigation } from "swiper";
+import { Link } from "react-scroll";
+import { BsChevronDoubleDown } from "react-icons/bs";
 
 const Testimonials = () => {
   return (
@@ -28,7 +30,8 @@ const Testimonials = () => {
           pagination={{
             type: "progressbar",
           }}
-          modules={[Pagination]}
+          navigation={true}
+          modules={[Pagination, Navigation]}
           className="mySwiper"
         >
           {TestimonialsData.map((testimonial, index) => (
@@ -72,6 +75,11 @@ const Testimonials = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+      </motion.div>
+      <motion.div className="arrowDown">
+        <Link to="contact">
+          <BsChevronDoubleDown />
+        </Link>
       </motion.div>
     </div>
   );

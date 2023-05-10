@@ -87,11 +87,11 @@ const Projects = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </motion.div>
-      <motion.div className="arrowDown">
-        <Link to="testimonials">
-          <BsChevronDoubleDown />
-        </Link>
+        <motion.div className="arrowDown">
+          <Link to="testimonials">
+            <BsChevronDoubleDown />
+          </Link>
+        </motion.div>
       </motion.div>
     </div>
   );

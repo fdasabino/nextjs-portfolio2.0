@@ -53,7 +53,7 @@ const Contact = () => {
     <>
       <div className="relative flex flex-col items-center pb-10">
         <div className="sectionDivider" />
-        <motion.div className="arrowUp">
+        <motion.div className="mt-8 arrowUp">
           <Link to="hero">
             <BsChevronDoubleUp />
           </Link>

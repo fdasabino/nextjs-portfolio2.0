@@ -4,30 +4,22 @@
 @tailwind utilities;
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+  @apply box-border p-0 m-0 scroll-smooth;
   font-family: "Inconsolata", sans-serif;
   @apply antialiased;
 }
 
 section {
-  min-height: 60vh;
-  overflow: hidden;
-  padding: 1.75rem;
+  @apply min-h-[60vh] overflow-hidden p-7;
 }
 
 .active {
-  color: rgb(45 212 191) !important;
-  padding: 5px;
-  border-bottom: 1px solid rgb(45 212 191) !important;
-  transform: scale(1.1);
+  @apply text-teal-400 border-b-teal-400 p-[5px] border-b border-solid scale-110;
 }
 
 .carousel .carousel-slider {
+  @apply rounded-2xl;
   background: #555555 !important;
-  border-radius: 16px !important;
 }
 
 input:-webkit-autofill,
@@ -36,116 +28,94 @@ input:-webkit-autofill:focus {
 }
 
 input[data-autocompleted] {
-  background-color: transparent !important;
+  @apply bg-transparent;
 }
 
-/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
+  @apply m-0;
   -webkit-appearance: none;
-  margin: 0;
 }
+
 input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  @apply hidden;
 }
 
 .error::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: red;
-  opacity: 1; /* Firefox */
+  @apply text-[red] opacity-100;
 }
 
 .error:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: red;
+  @apply text-[red];
 }
 
 .error::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: red;
+  @apply text-[red];
 }
 
 @layer components {
   .container {
     @apply flex flex-col justify-center max-w-lg p-3 mx-auto align-middle;
   }
-
   .mainContainer {
     @apply bg-black;
   }
-
   .navbarStyles {
     @apply sticky top-0 z-50 px-10 pt-5 pb-3 rounded bg-opacity-40 backdrop-blur-sm drop-shadow-md md:px-20 lg:px-40;
   }
-
   .mainButton {
     @apply px-6 py-2 mx-auto text-xs tracking-widest text-black uppercase transition-all duration-300 bg-gray-400 md:text-base rounded-xl hover:bg-teal-500 hover:text-black focus:bg-teal-600 focus:outline-none;
   }
-
   .arrowDown,
   .arrowUp {
     @apply flex items-end justify-center mx-auto;
   }
-
   .arrowDown svg,
   .arrowUp svg {
     @apply w-6 h-6 md:w-10 md:h-10 fill-teal-500 animate-bounce;
   }
-
   .sectionTitle {
     @apply my-5 md:my-10 uppercase tracking-[10px] text-gray-400 text-lg md:text-2xl lg:text-3xl text-center;
   }
-
   .sectionSubTitle {
     @apply mt-5 text-sm text-center text-gray-400 uppercase;
   }
-
   .sectionDisclaimer {
     @apply mt-5 text-center text-gray-400 uppercase;
   }
-
   .contactInput {
     @apply outline-none bg-slate-400/10 rounded-sm border-b border-[#14a08442] px-6 py-4 text-teal-500
     placeholder-gray-500 transition-all  focus:border-teal-600  focus:text-teal-600 hover:border-teal-600 resize-none;
   }
-
   .sectionDivider {
     @apply w-12 h-[2px] rounded-r-lg bg-white bg-gradient-to-r from-teal-400 to-gray-600 mt-20 mx-auto md:w-20 md:h-1 lg:w-40 lg:h-2;
   }
-
   .sectionEnding {
     @apply w-12 h-[2px] rounded-r-lg bg-transparent mt-20 mx-auto md:w-20 md:h-1 lg:w-40 lg:h-2;
   }
-
   .aboutText {
     @apply pb-3 text-sm leading-6 tracking-wide text-justify text-gray-400 md:text-base;
   }
-
   .timelineText {
     @apply pb-3 text-sm font-semibold leading-6 text-left text-gray-400 md:text-base;
   }
-
   .carouselText {
     @apply pb-3 text-sm leading-6 tracking-wide text-justify text-gray-400 md:text-center;
   }
-
   .footerLink {
     @apply flex items-center gap-1 pb-3 text-sm font-semibold leading-6 tracking-wide text-center text-gray-800 hover:text-teal-400 w-fit;
   }
-
   .footerSharingSocial {
     @apply pb-3 text-xl leading-6 text-gray-800 transition-all duration-500 ease-out hover:text-teal-400 w-fit;
   }
-
   .menuLinks {
     @apply flex items-center gap-1 mx-10 my-2 text-sm font-semibold tracking-wide text-black uppercase md:text-base hover:text-teal-500;
   }
-
   .progress-bar {
     @apply fixed top-0 left-0 right-0 z-50 h-1 origin-left backdrop-blur-sm bg-gradient-to-r from-fuchsia-500 to-cyan-500;
   }

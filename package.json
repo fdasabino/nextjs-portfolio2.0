@@ -11,6 +11,7 @@
   "dependencies": {
     "@emailjs/browser": "^3.7.0",
     "antd": "^4.23.3",
+    "atropos": "^1.0.2",
     "framer-motion": "^7.5.0",
     "hamburger-react": "^2.5.0",
     "mongodb": "^4.13.0",

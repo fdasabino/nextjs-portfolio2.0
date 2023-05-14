@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../styles/globals.css";
 import "../styles/Swiper.css";
+import "atropos/css";
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -53,7 +53,7 @@ const Hero = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   transition={{ duration: 0.1 }}
-                  className="mb-8 mainButton"
+                  className="mb-8 mainButton shake-horizontal"
                 >
                   Contact
                 </motion.button>

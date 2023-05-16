@@ -4,9 +4,11 @@
 @tailwind utilities;
 
 * {
-  @apply box-border p-0 m-0 scroll-smooth;
+  @apply box-border p-0 m-0 antialiased scroll-smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
   font-family: "Inconsolata", sans-serif;
-  @apply antialiased;
 }
 
 section {

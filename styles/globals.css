@@ -205,3 +205,140 @@ input[type="number"] {
   -webkit-animation: none;
   animation: none;
 }
+
+/* Disable zooming on mobile devices */
+@viewport {
+  width: device-width;
+  zoom: 1;
+}
+
+/* Disable user selection on mobile devices */
+body {
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Disable text resizing on mobile devices */
+html {
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove tap highlight on mobile devices */
+a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* Disable autocorrect and autocapitalize on mobile devices */
+input,
+textarea {
+  -webkit-autocorrect: none;
+  -moz-autocorrect: none;
+  -ms-autocorrect: none;
+  -o-autocorrect: none;
+  -webkit-autocapitalize: none;
+  -moz-autocapitalize: none;
+  -ms-autocapitalize: none;
+  -o-autocapitalize: none;
+}
+
+/* Hide the address bar on mobile devices */
+@media screen and (max-width: 767px) {
+  html {
+    height: 100%;
+  }
+  body {
+    height: 100%;
+  }
+  #wrapper {
+    height: auto;
+    min-height: 100%;
+    margin-bottom: -50px;
+  }
+  #footer,
+  .push {
+    height: 50px;
+  }
+}
+
+/* Hide the scroll bar on mobile devices */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Set a maximum width for images on mobile devices */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Set a maximum width for videos on mobile devices */
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Set a maximum width for tables on mobile devices */
+table {
+  max-width: 100%;
+}
+
+/* Set a maximum width for iframes on mobile devices */
+iframe {
+  max-width: 100%;
+}
+
+/* Hide the native number input spinner on mobile devices */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* Disable overscrolling on mobile devices */
+body,
+html {
+  overscroll-behavior: none;
+}
+
+/* Hide horizontal scrollbar on mobile devices */
+body {
+  overflow-x: hidden;
+}
+
+/* Add a subtle bottom border to inputs on mobile devices */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  border-bottom: 1px solid #ddd;
+}
+
+input,
+textarea {
+  font-size: 16px; /* or your desired font size */
+  max-width: 100%;
+  -webkit-text-size-adjust: none;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+textarea {
+  -webkit-autocorrect: off;
+  -webkit-autocapitalize: none;
+}
+
+html {
+  font-size: 16px; /* or your desired base font size */
+  -webkit-text-size-adjust: 100%;
+}

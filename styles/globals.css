@@ -271,12 +271,6 @@ textarea {
   display: none;
 }
 
-/* Set a maximum width for images on mobile devices */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 /* Set a maximum width for videos on mobile devices */
 video {
   max-width: 100%;

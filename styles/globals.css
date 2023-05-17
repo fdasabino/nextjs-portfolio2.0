@@ -247,25 +247,6 @@ textarea {
   -o-autocapitalize: none;
 }
 
-/* Hide the address bar on mobile devices */
-@media screen and (max-width: 767px) {
-  html {
-    height: 100%;
-  }
-  body {
-    height: 100%;
-  }
-  #wrapper {
-    height: auto;
-    min-height: 100%;
-    margin-bottom: -50px;
-  }
-  #footer,
-  .push {
-    height: 50px;
-  }
-}
-
 /* Hide the scroll bar on mobile devices */
 ::-webkit-scrollbar {
   display: none;

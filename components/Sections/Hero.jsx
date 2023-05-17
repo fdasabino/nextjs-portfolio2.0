@@ -31,17 +31,18 @@ const Hero = () => {
       >
         {HeroData?.map((item) => (
           <Fragment key={item.id}>
-            <div className="relative w-48 h-48 p-1 mx-auto my-3 border-2 border-teal-500 border-solid rounded-full md:w-60 md:h-60">
+            <div className="relative w-48 h-48 p-1 mx-auto mt-10 border-2 border-teal-500 border-solid rounded-full md:w-60 md:rounded-none md:h-60">
               <Image
                 priority
-                layout="fill"
+                height={600}
+                width={600}
                 key={item.id}
                 src={item.image}
                 alt={item.title}
-                className="z-50 object-cover transition-opacity duration-300 ease-in-out rounded-full"
+                className="z-50 object-cover w-full h-full mt-8 transition-opacity duration-300 ease-in-out rounded-full md:rounded-none"
               />
             </div>
-            <div className="my-10 bg-black">
+            <div className="my-10">
               <h2 className="pb-2 text-sm tracking-widest text-teal-500 uppercase">{item.title}</h2>
               <h1 className="px-5 text-sm font-semibold md:text-2xl lg:text-4xl">
                 <span className="mr-3 text-gray-400">{text}</span>

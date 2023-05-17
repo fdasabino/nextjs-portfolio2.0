@@ -64,7 +64,7 @@ input[type="number"] {
   .container {
     @apply flex flex-col justify-center max-w-lg p-3 mx-auto align-middle;
   }
-  .mainContainer {
+  .wrapper {
     @apply bg-black;
   }
   .navbarStyles {

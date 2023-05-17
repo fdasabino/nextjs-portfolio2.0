@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { AboutData, TimeLineData } from "../constants/constants";
+import { AboutData, TimeLineData } from "../../constants/constants";
 import { Timeline } from "antd";
 import { BsChevronDoubleDown } from "react-icons/bs";
 import { Link } from "react-scroll";

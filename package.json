@@ -13,6 +13,7 @@
     "antd": "^4.23.3",
     "atropos": "^1.0.2",
     "framer-motion": "^7.5.0",
+    "gsap": "^3.11.5",
     "hamburger-react": "^2.5.0",
     "mongodb": "^4.13.0",
     "next": "12.3.1",

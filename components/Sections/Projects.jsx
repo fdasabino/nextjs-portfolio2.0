@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
-import { ProjectsData } from "../constants/constants";
+import { ProjectsData } from "../../constants/constants";
 import { motion } from "framer-motion";
 import { BsChevronDoubleDown } from "react-icons/bs";
 import { Link } from "react-scroll";

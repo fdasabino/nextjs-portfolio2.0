@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import { SiReact, SiNextdotjs, SiCss3, SiHtml5, SiTailwindcss, SiJavascript } from "react-icons/si";
 import { gsap } from "gsap/dist/gsap";
 import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin";
@@ -6,7 +6,7 @@ import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin";
 gsap.registerPlugin(MotionPathPlugin);
 
 export default function Animation() {
-  useLayoutEffect(() => {
+  useEffect(() => {
     window.onload = window.onload = function () {
       gsap.set(".m1_stage", { x: "50%", opacity: 1 });
     };

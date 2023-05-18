@@ -21,12 +21,12 @@ export default function Layout({ children }) {
         initial={{
           x: 400,
           opacity: 0,
-          scale: 0.5,
+          scale: 0,
         }}
         whileInView={{
+          x: -200,
           opacity: 1,
-          scale: 0.7,
-          x: 0,
+          scale: 0.5,
         }}
         transition={{
           duration: 1.5,

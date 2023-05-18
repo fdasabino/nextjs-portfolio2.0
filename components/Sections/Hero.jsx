@@ -31,7 +31,7 @@ const Hero = () => {
       >
         {HeroData?.map((item) => (
           <Fragment key={item.id}>
-            <div className="relative w-40 h-40 p-1 mx-auto my-3 border-2 border-teal-500 border-solid rounded-full mt-14 md:w-52 md:h-52 lg:w-80 lg:h-80">
+            <div className="relative w-40 h-40 p-1 mx-auto my-3 border-2 border-teal-500 border-solid rounded-full mt-14 md:w-52 md:h-52">
               <Image
                 priority
                 height={600}

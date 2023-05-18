@@ -18,14 +18,14 @@ const Hero = () => {
       <motion.div
         initial={{
           opacity: 0,
-          scale: 0.5,
+          scale: 0,
         }}
         whileInView={{
           opacity: 1,
           scale: 1,
         }}
         transition={{
-          duration: 0.8,
+          duration: 1.5,
         }}
         className="relative z-40 flex flex-col items-center justify-center h-screen overflow-hidden text-center"
       >

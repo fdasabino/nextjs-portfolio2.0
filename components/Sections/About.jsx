@@ -14,27 +14,32 @@ const About = () => {
       <motion.div
         initial={{
           opacity: 0,
-          scale: 0.5,
+          scale: 0,
+          rotateX: 180,
         }}
         whileInView={{
           opacity: 1,
           scale: 1,
+          rotateX: 0,
         }}
         transition={{
-          duration: 1.5,
+          duration: 1,
         }}
         className=""
       >
         <Atropos
-          activeOffset={10}
+          activeOffset={50}
+          alwaysActive={true}
+          duration={300}
+          rotate={true}
+          rotateTouch={false}
           scale={1.1}
           shadow={false}
-          highlight={false}
-          duration={1000}
+          highlight={true}
           className="atropos"
         >
           <div className="mySwiper__container">
-            <div className="mySwiper__wrapper">
+            <div className="mySwiper__wrapper ">
               <div className="flex flex-col items-center overflow-hidden text-center justify-evenly">
                 {AboutData.map((item) => (
                   <div
@@ -65,7 +70,7 @@ const About = () => {
           </div>
         </Atropos>
       </motion.div>
-      <motion.div className="arrowDown">
+      <motion.div className="mt-4 arrowDown">
         <Link to="projects">
           <BsChevronDoubleDown />
         </Link>

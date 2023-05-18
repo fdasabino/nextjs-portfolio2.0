@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "./Navbar";
-import Animation from "./Animation";
 import Footer from "./Footer";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Toaster } from "react-hot-toast";
@@ -16,25 +15,6 @@ export default function Layout({ children }) {
   return (
     <div className="relative wrapper">
       <motion.div className="progress-bar" style={{ scaleX }} />
-
-      <motion.div
-        initial={{
-          x: 400,
-          opacity: 0,
-          scale: 0,
-        }}
-        whileInView={{
-          x: -200,
-          opacity: 1,
-          scale: 0.5,
-        }}
-        transition={{
-          duration: 1.5,
-        }}
-        className="hidden md:block"
-      >
-        <Animation />
-      </motion.div>
       <Navbar />
       <main>{children}</main>
       <Footer />

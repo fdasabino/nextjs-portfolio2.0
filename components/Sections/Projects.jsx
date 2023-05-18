@@ -16,14 +16,16 @@ const Projects = () => {
         className="w-full max-w-4xl"
         initial={{
           opacity: 0,
-          scale: 0.5,
+          scale: 0,
+          rotateX: 180,
         }}
         whileInView={{
           opacity: 1,
           scale: 1,
+          rotateX: 0,
         }}
         transition={{
-          duration: 1.5,
+          duration: 1,
         }}
       >
         <Swiper
@@ -87,11 +89,11 @@ const Projects = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <motion.div className="arrowDown">
-          <Link to="testimonials">
-            <BsChevronDoubleDown />
-          </Link>
-        </motion.div>
+      </motion.div>
+      <motion.div className="arrowDown">
+        <Link to="testimonials">
+          <BsChevronDoubleDown />
+        </Link>
       </motion.div>
     </div>
   );

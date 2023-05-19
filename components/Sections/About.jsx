@@ -13,8 +13,8 @@ const About = () => {
       <h3 className="sectionTitle">About</h3>
       <motion.div
         initial={{
-          opacity: 0,
-          scale: 0,
+          opacity: 0.3,
+          scale: 0.3,
           rotateX: 180,
         }}
         whileInView={{

@@ -28,7 +28,7 @@
 }
 
 .mySwiper__wrapper {
-  @apply relative flex flex-col max-w-4xl p-4 my-4 bg-white bg-opacity-10 backdrop-blur-lg rounded-xl h-fit;
+  @apply relative flex flex-col max-w-4xl p-4 my-4 bg-opacity-40 backdrop-blur-sm drop-shadow-md rounded-xl h-fit;
 }
 
 .mySwiper__section {

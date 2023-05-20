@@ -13,7 +13,7 @@ import {
 } from "react-icons/si";
 
 export default function Animation() {
-  const isTablet = useMediaQuery({ query: "(max-width: 768px)" });
+  const isTablet = useMediaQuery({ query: "(max-width: 900px)" });
   const x = isTablet ? "40%" : "70%";
 
   gsap.registerPlugin(MotionPathPlugin);

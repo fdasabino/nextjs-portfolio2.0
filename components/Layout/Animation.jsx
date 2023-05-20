@@ -8,7 +8,7 @@ export default function Animation() {
     if (typeof window !== "undefined" && window.document) {
       window.onload = function () {
         gsap.set(".m1_stage", {
-          x: "50%",
+          x: "80%",
           y: "50%",
           opacity: 0.5,
           scale: 1.3,
@@ -18,7 +18,7 @@ export default function Animation() {
     }
 
     gsap
-      .timeline({ defaults: { duration: 45 } })
+      .timeline({ defaults: { duration: 20 } })
       .from(".main1", { duration: 1, ease: "power1.inOut" }, 0)
       .fromTo(".m1_cGroup", { opacity: 0 }, { duration: 0.3, opacity: 1, stagger: -0.1 }, 0)
       .from(

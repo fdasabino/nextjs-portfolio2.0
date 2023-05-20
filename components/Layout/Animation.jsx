@@ -1,7 +1,15 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin";
-import { SiCss3, SiHtml5, SiJavascript, SiNextdotjs, SiReact, SiTailwindcss } from "react-icons/si";
+import {
+  SiCss3,
+  SiHtml5,
+  SiJavascript,
+  SiNextdotjs,
+  SiReact,
+  SiRedux,
+  SiTailwindcss,
+} from "react-icons/si";
 
 export default function Animation() {
   gsap.registerPlugin(MotionPathPlugin);
@@ -228,7 +236,7 @@ export default function Animation() {
               <SiTailwindcss size={40} color="#00d6f7" />
             </g>
             <g className="m1Orb orb4">
-              <SiReact size={40} color="#0199ff" />
+              <SiRedux size={40} color="#8801ff" />
             </g>
           </g>
           <g className="m1_cGroup">

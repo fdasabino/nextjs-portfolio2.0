@@ -43,7 +43,32 @@ export default function Animation() {
         0
       )
       .add("orbs", 1.2)
-
+      .add(function () {
+        document.querySelector(".main1").addEventListener("click", function (e) {
+          // Animate elements with the class "m1_cGroup" based on mouse position
+          gsap.to(".m1_cGroup", {
+            duration: 1,
+            x: function (i) {
+              return (e.clientX / window.innerWidth / (i + 1)) * 150;
+            },
+            y: function (i) {
+              return i * -20 * (e.clientY / window.innerHeight);
+            },
+            rotation: Math.random() * 0.1,
+            overwrite: "auto",
+          });
+          // Animate elements with the class "c1_solid" and "c1_line" based on mouse position
+          gsap.to(".c1_solid, .c1_line", {
+            duration: 1,
+            attr: { opacity: 1.1 - 0.75 * (e.clientY / window.innerHeight) },
+          });
+          // Animate elements with the class "m1OrbBlank" based on mouse position
+          gsap.to(".m1OrbBlank", {
+            duration: 1,
+            opacity: 0.2 + 0.55 * (e.clientY / window.innerHeight),
+          });
+        });
+      }, "orbs+=0.5")
       .fromTo(
         ".orb1",
         { xPercent: -35, yPercent: -5 },

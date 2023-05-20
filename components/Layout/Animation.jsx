@@ -11,7 +11,7 @@ export default function Animation() {
           x: "80%",
           y: "50%",
           opacity: 0.5,
-          scale: 1.3,
+          scale: 1.1,
           transformOrigin: "50% 50%",
         });
       };
@@ -26,7 +26,7 @@ export default function Animation() {
         {
           rotation: 180,
           duration: 2.5,
-          scale: 0.5,
+          scale: 0.4,
           transformOrigin: "50% 50%",
           stagger: -0.05,
           ease: "elastic",

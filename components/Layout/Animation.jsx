@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin";
+import { useMediaQuery } from "react-responsive";
 import {
   SiCss3,
   SiHtml5,
@@ -12,13 +13,16 @@ import {
 } from "react-icons/si";
 
 export default function Animation() {
+  const isTablet = useMediaQuery({ query: "(max-width: 768px)" });
+  const x = isTablet ? "40%" : "70%";
+
   gsap.registerPlugin(MotionPathPlugin);
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.document) {
       window.onload = function () {
         gsap.set(".m1_stage", {
-          x: "70%",
+          x,
           y: "10%",
           opacity: 0.5,
           scale: 1,

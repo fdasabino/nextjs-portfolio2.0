@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin";
-import { SiCss3, SiHtml5, SiJavascript, SiNextdotjs, SiReact } from "react-icons/si";
+import { SiCss3, SiHtml5, SiJavascript, SiNextdotjs, SiReact, SiTailwindcss } from "react-icons/si";
 
 export default function Animation() {
   gsap.registerPlugin(MotionPathPlugin);
@@ -10,7 +10,7 @@ export default function Animation() {
     if (typeof window !== "undefined" && window.document) {
       window.onload = function () {
         gsap.set(".m1_stage", {
-          x: "80%",
+          x: "70%",
           y: "10%",
           opacity: 0.5,
           scale: 1,
@@ -20,7 +20,7 @@ export default function Animation() {
     }
 
     gsap
-      .timeline({ defaults: { duration: 20 } })
+      .timeline({ defaults: { duration: 10 } })
       .from(".main1", { duration: 1, ease: "power1.inOut" }, 0)
       .fromTo(".m1_cGroup", { opacity: 0 }, { duration: 0.3, opacity: 1, stagger: -0.1 }, 0)
       .from(
@@ -225,11 +225,7 @@ export default function Animation() {
               opacity="0.4"
             />
             <g className="m1Orb orb4b">
-              <image
-                xlinkHref="https://assets.codepen.io/721952/logoVue.png"
-                width={40}
-                height={40}
-              />
+              <SiTailwindcss size={40} color="#00d6f7" />
             </g>
             <g className="m1Orb orb4">
               <SiReact size={40} color="#0199ff" />

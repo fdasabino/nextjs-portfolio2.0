@@ -8,10 +8,9 @@ export default function Animation() {
     if (typeof window !== "undefined" && window.document) {
       window.onload = function () {
         gsap.set(".m1_stage", {
-          x: "100%",
+          x: "50%",
           y: "50%",
           opacity: 0.5,
-          rotation: 180,
           scale: 1.3,
           transformOrigin: "50% 50%",
         });

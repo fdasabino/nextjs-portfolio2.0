@@ -5,6 +5,7 @@ import { HeroData } from "../../constants/constants";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import { BsChevronDoubleDown } from "react-icons/bs";
+import Animation from "../Layout/Animation";
 
 const Hero = () => {
   const [text] = useTypewriter({
@@ -30,10 +31,14 @@ const Hero = () => {
           duration: 1.4,
           delay: 0.1,
         }}
-        className="relative z-40 flex flex-col items-center justify-center h-screen overflow-hidden text-center"
+        className="relative flex flex-col items-center justify-center h-screen overflow-hidden text-center"
       >
+        <Animation />
         {HeroData?.map((item) => (
-          <Fragment key={item.id}>
+          <div
+            key={item.id}
+            className="z-30 min-w-full bg-opacity-40 backdrop-blur-sm drop-shadow-md"
+          >
             <div className="relative w-40 h-40 p-1 mx-auto my-3 border-2 border-teal-500 border-solid rounded-full mt-14 md:w-52 md:h-52">
               <Image
                 priority
@@ -45,7 +50,7 @@ const Hero = () => {
                 className="z-50 object-cover transition-opacity duration-300 ease-in-out rounded-full"
               />
             </div>
-            <div className="my-10">
+            <div className="my-10 ">
               <h2 className="pb-2 text-sm tracking-widest text-teal-500 uppercase">{item.title}</h2>
               <h1 className="px-5 text-sm font-semibold md:text-2xl lg:text-4xl">
                 <span className="mr-3 text-gray-400">{text}</span>
@@ -70,7 +75,7 @@ const Hero = () => {
                 <BsChevronDoubleDown />
               </Link>
             </motion.div>
-          </Fragment>
+          </div>
         ))}
       </motion.div>
     </>

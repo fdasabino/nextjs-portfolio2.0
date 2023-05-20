@@ -21,7 +21,7 @@ main {
 }
 
 section {
-  @apply min-h-[60vh] overflow-hidden p-7;
+  @apply min-h-[60vh] overflow-hidden px-7;
 }
 
 .active {

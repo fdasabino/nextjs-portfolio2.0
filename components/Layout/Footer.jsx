@@ -19,7 +19,7 @@ const Footer = () => {
   sh.hashtags = ["HTML", "CSS", "JavaScript", "React", "NextJs"]; // a list of hashtags for twitter,also optional
 
   return (
-    <div className="p-5 bg-gray-600">
+    <div className="p-5 bg-gray-400">
       <div className="flex items-center justify-evenly">
         <div className="flex flex-wrap gap-5 text-center">
           {/* social icons */}

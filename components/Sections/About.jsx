@@ -15,20 +15,21 @@ const About = () => {
         initial={{
           opacity: 0.3,
           scale: 0.3,
-          rotateX: 180,
+          y: -400,
         }}
         whileInView={{
           opacity: 1,
           scale: 1,
-          rotateX: 0,
+          y: 0,
         }}
         transition={{
-          duration: 1,
+          duration: 1.4,
+          delay: 0.1,
         }}
         className=""
       >
         <Atropos
-          activeOffset={50}
+          activeOffset={30}
           alwaysActive={true}
           duration={300}
           rotate={true}

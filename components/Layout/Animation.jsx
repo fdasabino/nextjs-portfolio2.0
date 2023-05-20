@@ -4,7 +4,7 @@ import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin";
 import { useMediaQuery } from "react-responsive";
 export default function Animation() {
   const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
-  const x = isMobile ? "30%" : "80%";
+  const x = isMobile ? "100%" : "80%";
   const y = isMobile ? "30%" : "50%";
 
   gsap.registerPlugin(MotionPathPlugin);
@@ -32,7 +32,7 @@ export default function Animation() {
         {
           rotation: 180,
           duration: 2.5,
-          scale: 0.5,
+          scale: isMobile ? 0.2 : 0.5,
           transformOrigin: "50% 50%",
           stagger: -0.05,
           ease: "elastic",
@@ -40,29 +40,7 @@ export default function Animation() {
         0
       )
       .add("orbs", 1.2)
-      // .add(function () {
-      //   document.querySelector(".main1").addEventListener("click", function (e) {
-      //     gsap.to(".m1_cGroup", {
-      //       duration: 1,
-      //       x: function (i) {
-      //         return (e.clientX / window.innerWidth / (i + 1)) * 150;
-      //       },
-      //       y: function (i) {
-      //         return i * -20 * (e.clientY / window.innerHeight);
-      //       },
-      //       rotation: Math.random() * 0.1,
-      //       overwrite: "auto",
-      //     });
-      //     gsap.to(".c1_solid, .c1_line", {
-      //       duration: 1,
-      //       attr: { opacity: 1.1 - 0.75 * (e.clientY / window.innerHeight) },
-      //     });
-      //     gsap.to(".m1OrbBlank", {
-      //       duration: 1,
-      //       opacity: 0.2 + 0.55 * (e.clientY / window.innerHeight),
-      //     });
-      //   });
-      // })
+
       .fromTo(
         ".orb1",
         { xPercent: -35, yPercent: -5 },

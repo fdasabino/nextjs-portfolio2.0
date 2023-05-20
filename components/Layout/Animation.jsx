@@ -32,7 +32,7 @@ export default function Animation() {
         {
           rotation: 180,
           duration: 2.5,
-          scale: isMobile ? 0.2 : 0.5,
+          scale: isMobile ? 0 : 0.2,
           transformOrigin: "50% 50%",
           stagger: -0.05,
           ease: "elastic",

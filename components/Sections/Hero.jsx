@@ -33,7 +33,9 @@ const Hero = () => {
         }}
         className="relative flex flex-col items-center justify-center h-screen overflow-hidden text-center"
       >
-        <Animation />
+        <div className="hidden md:block">
+          <Animation />
+        </div>
         {HeroData?.map((item) => (
           <div
             key={item.id}

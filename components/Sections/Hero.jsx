@@ -33,14 +33,14 @@ const Hero = () => {
         }}
         className="relative flex flex-col items-center justify-center h-screen overflow-hidden text-center"
       >
-        <div className="hidden md:block">
-          <Animation />
-        </div>
         {HeroData?.map((item) => (
           <div
             key={item.id}
-            className="z-30 min-w-full bg-opacity-40 backdrop-blur-sm drop-shadow-md"
+            className="relative z-30 min-w-full min-h-full bg-opacity-40 backdrop-blur-sm drop-shadow-md rounded-2xl md:backdrop-blur-lg md:bg-opacity-50 md:drop-shadow-xl md:rounded-3xl md:mt-20 md:mb-20"
           >
+            <div className="z-0">
+              <Animation />
+            </div>
             <div className="relative w-40 h-40 p-1 mx-auto my-3 border-2 border-teal-500 border-solid rounded-full mt-14 md:w-52 md:h-52">
               <Image
                 priority

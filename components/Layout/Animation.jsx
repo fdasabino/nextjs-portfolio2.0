@@ -1,21 +1,16 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin";
-import { useMediaQuery } from "react-responsive";
 export default function Animation() {
-  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
-  const x = isMobile ? "100%" : "80%";
-  const y = isMobile ? "30%" : "50%";
-
   gsap.registerPlugin(MotionPathPlugin);
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.document) {
       window.onload = function () {
         gsap.set(".m1_stage", {
-          x,
-          y,
-          opacity: 1,
+          x: "100%",
+          y: "50%",
+          opacity: 0.5,
           rotation: 180,
           scale: 1.3,
           transformOrigin: "50% 50%",
@@ -32,7 +27,7 @@ export default function Animation() {
         {
           rotation: 180,
           duration: 2.5,
-          scale: isMobile ? 0 : 0.2,
+          scale: 0.5,
           transformOrigin: "50% 50%",
           stagger: -0.05,
           ease: "elastic",
@@ -204,12 +199,12 @@ export default function Animation() {
   }, []);
 
   return (
-    <div className="absolute top-0 z-0 main1">
+    <div className="absolute top-0 main1">
       <svg width="100vw" height="100vh">
         <defs>
           <linearGradient id="grad1" x1="50%" y1="0%" x2="50%" y2="100%">
-            <stop offset="10%" style={{ stopColor: "rgb(255,255,0)", stopOpacity: "0.9" }} />
-            <stop offset="99%" style={{ stopColor: "rgb(0,255,0)", stopOpacity: "0.1" }} />
+            <stop offset="10%" style={{ stopColor: "transparent", stopOpacity: "0.9" }} />
+            <stop offset="99%" style={{ stopColor: "transparent", stopOpacity: "0.1" }} />
           </linearGradient>
           <linearGradient id="grad2" x1="50%" y1="0%" x2="50%" y2="100%">
             <stop offset="25%" style={{ stopColor: "rgb(0,255,200)", stopOpacity: "0.1" }} />

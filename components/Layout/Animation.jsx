@@ -9,7 +9,7 @@ export default function Animation() {
       window.onload = function () {
         gsap.set(".m1_stage", {
           x: "80%",
-          y: "50%",
+          y: "10%",
           opacity: 0.5,
           scale: 1,
           transformOrigin: "50% 50%",

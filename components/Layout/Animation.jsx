@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin";
 import { useMediaQuery } from "react-responsive";
@@ -18,7 +18,7 @@ export default function Animation() {
 
   gsap.registerPlugin(MotionPathPlugin);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (typeof window !== "undefined" && window.document) {
       window.onload = function () {
         gsap.set(".m1_stage", {

@@ -93,16 +93,16 @@ const Planetarium = () => {
     <motion.div
       initial={{
         opacity: 0,
-        x: -100,
+        x: -300,
       }}
       transition={{
         duration: 1.8,
-        delay: 0.3,
-        ease: "anticipate",
+        delay: 0.5,
+        ease: "backInOut",
         repeat: 0,
       }}
       animate={{
-        opacity: 0.8,
+        opacity: 1,
         x: 0,
       }}
       className="planetarium"

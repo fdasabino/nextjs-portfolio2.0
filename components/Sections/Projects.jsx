@@ -29,6 +29,7 @@ const Projects = () => {
           pagination={{
             type: "progressbar",
           }}
+          grabCursor={true}
           navigation={true}
           modules={[Pagination, Navigation]}
           className="mySwiper"

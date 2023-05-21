@@ -7,9 +7,9 @@
 }
 
 .planet {
-  @apply w-10 h-full m-3 hover:cursor-pointer;
+  @apply w-10 h-full m-3 opacity-70 cursor-pointer transition-all duration-100 hover:scale-125 hover:opacity-100 !important;
 }
 
 .planet-icon svg {
-  @apply w-8 h-8 fill-white;
+  @apply w-8 h-8;
 }

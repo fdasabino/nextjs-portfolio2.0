@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { motion } from "framer-motion";
 import {
-  SiAngular,
   SiCss3,
   SiExpress,
   SiHtml5,
@@ -111,52 +110,47 @@ const Planetarium = () => {
       <div className="planets">
         <div className="planet" ref={(el) => (planetsRef.current[0] = el)}>
           <span className="planet-icon">
-            <SiReact />
+            <SiJavascript color="#ebd302" />
           </span>
         </div>
         <div className="planet" ref={(el) => (planetsRef.current[1] = el)}>
           <span className="planet-icon">
-            <SiAngular />
+            <SiReact color="#009ccc" />
           </span>
         </div>
         <div className="planet" ref={(el) => (planetsRef.current[2] = el)}>
           <span className="planet-icon">
-            <SiRedux />
+            <SiNextdotjs color="#8b8b8b" />
           </span>
         </div>
         <div className="planet" ref={(el) => (planetsRef.current[3] = el)}>
           <span className="planet-icon">
-            <SiNodedotjs />
+            <SiHtml5 color="#cc4008" />
           </span>
         </div>
         <div className="planet" ref={(el) => (planetsRef.current[4] = el)}>
           <span className="planet-icon">
-            <SiExpress />
+            <SiCss3 color="#1900fd" />
           </span>
         </div>
         <div className="planet" ref={(el) => (planetsRef.current[5] = el)}>
           <span className="planet-icon">
-            <SiTailwindcss />
+            <SiTailwindcss color="#13878f" />
           </span>
         </div>
         <div className="planet" ref={(el) => (planetsRef.current[6] = el)}>
           <span className="planet-icon">
-            <SiNextdotjs />
+            <SiRedux color="#5901ac" />
           </span>
         </div>
         <div className="planet" ref={(el) => (planetsRef.current[7] = el)}>
           <span className="planet-icon">
-            <SiHtml5 />
+            <SiNodedotjs color="#00a030" />
           </span>
         </div>
         <div className="planet" ref={(el) => (planetsRef.current[8] = el)}>
           <span className="planet-icon">
-            <SiCss3 />
-          </span>
-        </div>
-        <div className="planet" ref={(el) => (planetsRef.current[9] = el)}>
-          <span className="planet-icon">
-            <SiJavascript />
+            <SiExpress color="#53af08" />
           </span>
         </div>
       </div>

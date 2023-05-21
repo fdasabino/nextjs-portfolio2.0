@@ -1,0 +1,15 @@
+.planetarium {
+  @apply absolute hidden top-10 md:block;
+}
+
+.planets {
+  @apply flex justify-center w-full h-full;
+}
+
+.planet {
+  @apply w-10 h-full m-3 hover:cursor-pointer;
+}
+
+.planet-icon svg {
+  @apply w-8 h-8 fill-white;
+}

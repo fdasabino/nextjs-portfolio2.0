@@ -13,14 +13,10 @@ const About = () => {
       <h3 className="sectionTitle">About</h3>
       <motion.div
         initial={{
-          opacity: 0.3,
-          scale: 0.3,
-          y: -400,
+          opacity: 0,
         }}
         whileInView={{
           opacity: 1,
-          scale: 1,
-          y: 0,
         }}
         transition={{
           duration: 1.4,

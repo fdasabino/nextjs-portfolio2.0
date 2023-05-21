@@ -5,7 +5,7 @@ import { HeroData } from "../../constants/constants";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import { BsChevronDoubleDown } from "react-icons/bs";
-import Animation from "../Layout/Animation";
+import Planetarium from "../Layout/Planetarium";
 
 const Hero = () => {
   const [text] = useTypewriter({
@@ -18,30 +18,23 @@ const Hero = () => {
     <>
       <motion.div
         initial={{
-          opacity: 0.3,
-          scale: 0.3,
-          y: -400,
+          opacity: 0,
         }}
         whileInView={{
           opacity: 1,
-          scale: 1,
-          y: 0,
         }}
         transition={{
           duration: 1.4,
           delay: 0.1,
         }}
-        className="relative flex flex-col items-center justify-center h-screen overflow-hidden text-center"
+        className="relative flex flex-col items-center justify-center h-screen text-center"
       >
         {HeroData?.map((item) => (
           <div
             key={item.id}
-            className="relative z-30 min-w-full min-h-full bg-opacity-40 backdrop-blur-sm drop-shadow-md rounded-2xl md:backdrop-blur-lg md:bg-opacity-50 md:drop-shadow-xl md:rounded-3xl md:mt-20 md:mb-20"
+            className="relative z-40 flex flex-col items-center justify-center min-w-full min-h-full"
           >
-            <div className="z-0 hidden md:block">
-              <Animation />
-            </div>
-            <div className="relative w-40 h-40 p-1 mx-auto my-3 border-2 border-teal-500 border-solid rounded-full mt-14 md:w-52 md:h-52">
+            <div className="relative w-40 h-40 p-1 mx-auto my-3 border-2 border-teal-500 border-solid rounded-full md:w-52 md:h-52">
               <Image
                 priority
                 height={600}
@@ -52,7 +45,8 @@ const Hero = () => {
                 className="z-50 object-cover transition-opacity duration-300 ease-in-out rounded-full"
               />
             </div>
-            <div className="my-10 ">
+            <Planetarium />
+            <div className="z-40 my-10">
               <h2 className="pb-2 text-sm tracking-widest text-teal-500 uppercase">{item.title}</h2>
               <h1 className="px-5 text-sm font-semibold md:text-2xl lg:text-4xl">
                 <span className="mr-3 text-gray-400">{text}</span>

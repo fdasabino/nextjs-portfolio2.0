@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
-import { gsap, Power1 } from "gsap";
+import { gsap } from "gsap";
+import { motion } from "framer-motion";
 import {
   SiAngular,
   SiCss3,
@@ -90,7 +91,23 @@ const Planetarium = () => {
   }, [handleMouseLeave, handleMouseOver]);
 
   return (
-    <div className="planetarium">
+    <motion.div
+      initial={{
+        opacity: 0,
+        x: -100,
+      }}
+      transition={{
+        duration: 1.8,
+        delay: 0.3,
+        ease: "anticipate",
+        repeat: 0,
+      }}
+      animate={{
+        opacity: 0.8,
+        x: 0,
+      }}
+      className="planetarium"
+    >
       <div className="planets">
         <div className="planet" ref={(el) => (planetsRef.current[0] = el)}>
           <span className="planet-icon">
@@ -143,7 +160,7 @@ const Planetarium = () => {
           </span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

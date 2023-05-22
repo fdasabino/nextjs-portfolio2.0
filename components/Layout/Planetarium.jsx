@@ -20,9 +20,9 @@ const Planetarium = () => {
   const rotatePlanet = useCallback((planet) => {
     gsap.to(planet, {
       rotation: 360,
-      repeat: 1,
+      repeat: -1,
       duration: 1.5,
-      ease: "elastic(1, 0.3)",
+      ease: "easeInOut",
       transformOrigin: "50% 50%",
     });
   }, []);
@@ -31,8 +31,8 @@ const Planetarium = () => {
   const restartAnimation = useCallback((planet) => {
     gsap.to(planet, {
       rotation: 0,
-      duration: 0,
-      ease: "elastic(1, 0.3)",
+      duration: 1.5,
+      ease: "easeInOut",
       transformOrigin: "50% 50%",
     });
   }, []);
@@ -51,11 +51,11 @@ const Planetarium = () => {
         pauseRotation(planet);
       } else {
         planet.classList.add("activePlanet");
-        restartAnimation(planet); // <-- Added this line
+        restartAnimation(planet);
         rotatePlanet(planet);
       }
     },
-    [pauseRotation, rotatePlanet, restartAnimation] // <-- Added this line
+    [pauseRotation, rotatePlanet, restartAnimation]
   );
 
   // Function to handle mouseleave event
@@ -83,6 +83,7 @@ const Planetarium = () => {
     // Cleanup the event listeners when the component unmounts
     return () => {
       planets.forEach((planet) => {
+        6;
         planet.removeEventListener("mouseover", handleMouseOver);
         planet.removeEventListener("mouseleave", handleMouseLeave);
       });

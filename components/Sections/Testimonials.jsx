@@ -39,7 +39,7 @@ const Testimonials = () => {
               <div className="mySwiper__container">
                 <div className="mySwiper__wrapper">
                   <div className="my-8 mySwiper__section">
-                    <p className="text-lg font-bold text-gray-400 md:text-xl">{testimonial.name}</p>
+                    <p className="text-lg font-bold text-gray-300 md:text-xl">{testimonial.name}</p>
                   </div>
 
                   <div className="mySwiper__section">
@@ -55,7 +55,7 @@ const Testimonials = () => {
                           />
                         </div>
                         <div className="flex gap-10 my-4">
-                          <p className="text-xs font-bold text-gray-400 md:text-base whitespace-nowrap">
+                          <p className="text-xs font-bold text-gray-300 md:text-base whitespace-nowrap">
                             {testimonial.position}
                           </p>
                           <p className="text-xs font-bold text-gray-400 md:text-base whitespace-nowrap">
@@ -65,7 +65,7 @@ const Testimonials = () => {
                       </div>
                       <div className="flex items-center flex-1 my-auto">
                         <div className="flex flex-col gap-6 mx-10 text-justify md:mr-6 md:mx-0">
-                          <p className="text-sm text-gray-400 md:text-base">{testimonial.text}</p>
+                          <p className="text-sm text-gray-300 md:text-base">{testimonial.text}</p>
                         </div>
                       </div>
                     </div>

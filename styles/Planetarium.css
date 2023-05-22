@@ -13,3 +13,10 @@
 .planet-icon svg {
   @apply w-8 h-8;
 }
+
+@media only screen and (max-width: 1000px) and (orientation: landscape) {
+  /* CSS rules to hide the specific content go here */
+  .planetarium {
+    display: none;
+  }
+}

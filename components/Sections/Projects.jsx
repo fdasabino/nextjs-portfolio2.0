@@ -39,7 +39,7 @@ const Projects = () => {
               <div className="mySwiper__container">
                 <div className="mySwiper__wrapper">
                   <div className="mySwiper__section">
-                    <p className="text-lg font-bold text-gray-400 md:text-xl">{project.title}</p>
+                    <p className="text-lg font-bold text-gray-300 md:text-xl">{project.title}</p>
                     <div className="flex gap-4 my-4">
                       {project.tags?.map((tag, index) => (
                         <span key={index}>{tag}</span>
@@ -49,7 +49,7 @@ const Projects = () => {
                   <div className="mySwiper__section">
                     <div className="flex items-center flex-1 my-auto">
                       <div className="flex flex-col gap-6 mx-10 text-justify md:mr-6 md:mx-0">
-                        <p className="text-sm text-gray-400 md:text-base">{project.description}</p>
+                        <p className="text-sm text-gray-300 md:text-base">{project.description}</p>
                         <div className="flex flex-row gap-4 text-sm text-center md:text-base xs:items-center xs:flex-col justify-evenly">
                           {project.source !== "" && (
                             <a

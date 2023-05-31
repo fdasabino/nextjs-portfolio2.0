@@ -11,8 +11,9 @@ const Planetarium = () => {
     gsap.to(planet, {
       rotation: 360,
       repeat: -1,
+      scale: 1.5,
       duration: 1.5,
-      ease: "easeInOut",
+      ease: "ease",
       transformOrigin: "50% 50%",
     });
   }, []);
@@ -22,14 +23,14 @@ const Planetarium = () => {
     gsap.to(planet, {
       rotation: 0,
       duration: 1.5,
-      ease: "easeInOut",
+      ease: "ease",
       transformOrigin: "50% 50%",
     });
   }, []);
 
   // Function to pause planet rotation animation
   const pauseRotation = useCallback((planet) => {
-    gsap.set(planet, { rotation: 0 });
+    gsap.set(planet, { rotation: 0, ease: "ease", transformOrigin: "50% 50%", scale: 1.1 });
   }, []);
 
   // Function to handle mouseover event
@@ -78,7 +79,7 @@ const Planetarium = () => {
         planet.removeEventListener("mouseleave", handleMouseLeave);
       });
     };
-  }, [handleMouseLeave, handleMouseOver]);
+  }, [handleMouseLeave, handleMouseOver, rotatePlanet]);
 
   return (
     <motion.div

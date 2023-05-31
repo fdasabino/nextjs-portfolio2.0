@@ -1,17 +1,7 @@
 import { useCallback, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { motion } from "framer-motion";
-import {
-  SiCss3,
-  SiExpress,
-  SiHtml5,
-  SiJavascript,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiReact,
-  SiRedux,
-  SiTailwindcss,
-} from "react-icons/si";
+import { TechArray } from "../../constants/constants";
 
 const Planetarium = () => {
   const planetsRef = useRef([]);
@@ -109,51 +99,11 @@ const Planetarium = () => {
       className="planetarium"
     >
       <div className="planets">
-        <div className="planet" ref={(el) => (planetsRef.current[0] = el)}>
-          <span className="planet-icon">
-            <SiJavascript color="#ebd302" />
-          </span>
-        </div>
-        <div className="planet" ref={(el) => (planetsRef.current[1] = el)}>
-          <span className="planet-icon">
-            <SiReact color="#009ccc" />
-          </span>
-        </div>
-        <div className="planet" ref={(el) => (planetsRef.current[2] = el)}>
-          <span className="planet-icon">
-            <SiNextdotjs color="#8b8b8b" />
-          </span>
-        </div>
-        <div className="planet" ref={(el) => (planetsRef.current[3] = el)}>
-          <span className="planet-icon">
-            <SiHtml5 color="#cc4008" />
-          </span>
-        </div>
-        <div className="planet" ref={(el) => (planetsRef.current[4] = el)}>
-          <span className="planet-icon">
-            <SiCss3 color="#1900fd" />
-          </span>
-        </div>
-        <div className="planet" ref={(el) => (planetsRef.current[5] = el)}>
-          <span className="planet-icon">
-            <SiTailwindcss color="#13878f" />
-          </span>
-        </div>
-        <div className="planet" ref={(el) => (planetsRef.current[6] = el)}>
-          <span className="planet-icon">
-            <SiRedux color="#5901ac" />
-          </span>
-        </div>
-        <div className="planet" ref={(el) => (planetsRef.current[7] = el)}>
-          <span className="planet-icon">
-            <SiNodedotjs color="#00a030" />
-          </span>
-        </div>
-        <div className="planet" ref={(el) => (planetsRef.current[8] = el)}>
-          <span className="planet-icon">
-            <SiExpress color="#53af08" />
-          </span>
-        </div>
+        {TechArray.map((tech, index) => (
+          <div key={tech.id} className="planet" ref={(el) => (planetsRef.current[index] = el)}>
+            <span className="planet-icon">{tech.icon}</span>
+          </div>
+        ))}
       </div>
     </motion.div>
   );

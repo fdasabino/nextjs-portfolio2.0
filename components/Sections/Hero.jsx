@@ -67,11 +67,6 @@ const Hero = () => {
                 </Link>
               </div>
             </div>
-            <motion.div className="arrowDown">
-              <Link to="about">
-                <BsChevronDoubleDown />
-              </Link>
-            </motion.div>
           </div>
         ))}
       </motion.div>

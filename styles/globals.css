@@ -149,3 +149,58 @@ input[type="number"] {
     @apply min-h-screen py-10;
   }
 }
+
+.gradient {
+  --size: 200px;
+  --speed: 15s;
+  --easing: ease-in-out;
+
+  z-index: -10;
+  position: absolute;
+  inset: 0;
+  width: var(--size);
+  height: var(--size);
+  filter: blur(calc(var(--size) / 10 * 3));
+  background-image: linear-gradient(
+    #00ffff,
+    #0077ff,
+    #3700ff,
+    #c300ffe8,
+    #ff00aa,
+    #127385,
+    #00a2ff
+  );
+  animation: rotate var(--speed) var(--easing) alternate infinite;
+  animation-delay: 1s;
+  animation-timing-function: ease-in-out;
+  border-radius: 30px 70px 70px 30px / 30px 30px 70px 70px;
+  transition: all 0.2s ease-in-out;
+}
+
+@media (min-width: 720px) {
+  .gradient {
+    --size: 200px;
+  }
+}
+
+@keyframes rotate {
+  5% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  25% {
+    transform: scale(1.1) rotate(90deg);
+  }
+
+  50% {
+    transform: scale(1.2) rotate(180deg);
+  }
+
+  75% {
+    transform: scale(1.3) rotate(270deg);
+  }
+
+  100% {
+    transform: scale(1.4) rotate(360deg);
+  }
+}

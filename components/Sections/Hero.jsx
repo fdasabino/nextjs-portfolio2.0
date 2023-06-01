@@ -34,7 +34,8 @@ const Hero = () => {
             key={item.id}
             className="relative z-40 flex flex-col items-center justify-center min-w-full min-h-full"
           >
-            <div className="relative w-40 h-40 p-1 mx-auto my-3 border-2 border-teal-500 shadow-[0px_0px_100px_40px_rgba(8,_112,_184,_0.6)] border-solid rounded-full md:w-52 md:h-52">
+            <div className="relative w-40 h-40 p-1 mx-auto my-3 border-2 border-teal-500 border-solid rounded-full md:w-52 md:h-52">
+              <div className="gradient" />
               <Image
                 priority
                 height={600}

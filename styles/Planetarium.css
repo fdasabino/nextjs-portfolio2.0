@@ -7,11 +7,11 @@
 }
 
 .planet {
-  @apply w-10 h-full m-3 opacity-70 cursor-pointer transition-all duration-100 hover:scale-125 hover:opacity-100 !important;
+  @apply flex justify-center items-center gap-4 mx-6 w-10 h-10 cursor-pointer transition-all duration-100 rounded-full shadow-[0px_0px_5px_5px_rgba(8,_112,_184,_0.5)] border border-teal-400 !important;
 }
 
 .planet-icon svg {
-  @apply w-8 h-8;
+  @apply w-8 h-8 rounded-full p-1;
 }
 
 @media only screen and (max-width: 1000px) and (orientation: landscape) {

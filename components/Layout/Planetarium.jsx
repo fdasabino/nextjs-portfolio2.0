@@ -8,29 +8,57 @@ const Planetarium = () => {
 
   // Function to handle planet rotation animation
   const rotatePlanet = useCallback((planet) => {
-    gsap.to(planet, {
-      rotation: 360,
-      repeat: -1,
-      scale: 1.5,
-      duration: 1.5,
-      ease: "ease",
-      transformOrigin: "50% 50%",
-    });
+    gsap.fromTo(
+      planet,
+      {
+        y: 0,
+        rotation: 0,
+        repeat: 0,
+        scale: 1,
+        duration: 1.5,
+        ease: "ease",
+      },
+      {
+        y: window.innerHeight - 220,
+        rotation: 360,
+        repeat: 0,
+        scale: 1.6,
+        duration: 1.5,
+        ease: "ease",
+        stagger: 0.2,
+        transformOrigin: "50% 50%",
+      }
+    );
   }, []);
 
   // Function to restart planet rotation animation
   const restartAnimation = useCallback((planet) => {
-    gsap.to(planet, {
-      rotation: 0,
-      duration: 1.5,
-      ease: "ease",
-      transformOrigin: "50% 50%",
-    });
+    gsap.to(
+      planet,
+      {
+        y: window.innerHeight - 220,
+        rotation: 0,
+        repeat: 0,
+        scale: 1,
+        duration: 1.5,
+        ease: "ease",
+      },
+      {
+        y: 0,
+        rotation: 360,
+        repeat: 0,
+        scale: 1.6,
+        duration: 1.5,
+        ease: "ease",
+        stagger: 0.8,
+        transformOrigin: "50% 50%",
+      }
+    );
   }, []);
 
   // Function to pause planet rotation animation
   const pauseRotation = useCallback((planet) => {
-    gsap.set(planet, { rotation: 0, ease: "ease", transformOrigin: "50% 50%", scale: 1.1 });
+    gsap.set(planet, { y: 0, rotation: 0, ease: "ease", transformOrigin: "50% 50%", scale: 1.1 });
   }, []);
 
   // Function to handle mouseover event

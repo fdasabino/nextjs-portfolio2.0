@@ -19,7 +19,7 @@ const Planetarium = () => {
         ease: "ease",
       },
       {
-        y: window.innerHeight - 220,
+        y: window.innerHeight - 70,
         rotation: 360,
         repeat: 0,
         scale: 1.6,

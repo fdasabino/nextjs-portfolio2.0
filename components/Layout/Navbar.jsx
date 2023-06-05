@@ -1,9 +1,9 @@
+import { Drawer } from "antd";
+import { motion } from "framer-motion";
+import { Fade as Hamburger } from "hamburger-react";
 import React, { useState } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { Fade as Hamburger } from "hamburger-react";
-import { Drawer } from "antd";
 import { Link } from "react-scroll";
-import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);

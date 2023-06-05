@@ -1,10 +1,9 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { AboutData, TimeLineData } from "../../constants/constants";
 import { Timeline } from "antd";
+import { motion } from "framer-motion";
+import React from "react";
 import { BsChevronDoubleDown } from "react-icons/bs";
 import { Link } from "react-scroll";
-import Atropos from "atropos/react";
+import { AboutData, TimeLineData } from "../../constants/constants";
 
 const About = () => {
   return (

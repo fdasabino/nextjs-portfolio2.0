@@ -1,10 +1,9 @@
-import React, { Fragment } from "react";
-import { Link } from "react-scroll";
-import Image from "next/image";
-import { HeroData } from "../../constants/constants";
-import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
-import { BsChevronDoubleDown } from "react-icons/bs";
+import Image from "next/image";
+import React from "react";
+import { Link } from "react-scroll";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
+import { HeroData } from "../../constants/constants";
 import Planetarium from "../Layout/Planetarium";
 
 const Hero = () => {

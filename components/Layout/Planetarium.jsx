@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useRef } from "react";
-import { gsap } from "gsap";
 import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { useCallback, useEffect, useRef } from "react";
 import { TechArray } from "../../constants/constants";
 
 const Planetarium = () => {

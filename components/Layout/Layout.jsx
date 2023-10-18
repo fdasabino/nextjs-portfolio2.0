@@ -1,8 +1,8 @@
-import React from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
 import { motion, useScroll, useSpring } from "framer-motion";
+import React from "react";
 import { Toaster } from "react-hot-toast";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 export default function Layout({ children }) {
   const { scrollYProgress } = useScroll();

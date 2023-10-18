@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import toast from "react-hot-toast";
-import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
-import { Link } from "react-scroll";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { BsChevronDoubleUp } from "react-icons/bs";
+import { Link } from "react-scroll";
 
 const Contact = () => {
   const [successMessage, setSuccessMessage] = useState("");

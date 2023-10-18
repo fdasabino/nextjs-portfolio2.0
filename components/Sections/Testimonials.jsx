@@ -1,11 +1,11 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { TestimonialsData } from "../../constants/constants";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
-import { Link } from "react-scroll";
+import React from "react";
 import { BsChevronDoubleDown } from "react-icons/bs";
+import { Link } from "react-scroll";
+import { Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { TestimonialsData } from "../../constants/constants";
 
 const Testimonials = () => {
   return (

@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useRef } from "react";
-import { gsap } from "gsap";
 import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { useCallback, useEffect, useRef } from "react";
 import { TechArray } from "../../constants/constants";
 
 const Planetarium = () => {
@@ -19,7 +19,7 @@ const Planetarium = () => {
         ease: "ease",
       },
       {
-        y: window.innerHeight - 220,
+        y: window.innerHeight - 70,
         rotation: 360,
         repeat: 0,
         scale: 1.6,

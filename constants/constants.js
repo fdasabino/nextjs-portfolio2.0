@@ -1,14 +1,14 @@
-import { DiReact, DiHtml5, DiCss3 } from "react-icons/di";
-import { SiReact } from "react-icons/si";
+import { DiCss3, DiHtml5, DiReact } from "react-icons/di";
 import {
-  SiRedux,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiTailwindcss,
   SiBootstrap,
-  SiMongodb,
   SiExpress,
   SiJavascript,
+  SiMongodb,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiReact,
+  SiRedux,
+  SiTailwindcss,
 } from "react-icons/si";
 
 export const TechArray = [

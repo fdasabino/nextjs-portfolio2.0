@@ -1,0 +1,40 @@
+.hero {
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  padding: 1rem;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 2px solid $base-blue;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+}

@@ -5,7 +5,7 @@ import { BsChevronDoubleDown } from "react-icons/bs";
 import { Link } from "react-scroll";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { TestimonialsData } from "../../constants/constants";
+import { TestimonialsData } from "../../../constants/constants";
 
 const Testimonials = () => {
   return (

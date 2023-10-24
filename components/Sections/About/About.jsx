@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import React from "react";
 import { BsChevronDoubleDown } from "react-icons/bs";
 import { Link } from "react-scroll";
-import { AboutData, TimeLineData } from "../../constants/constants";
+import { AboutData, TimeLineData } from "../../../constants/constants";
 
 const About = () => {
   return (
-    <div className="relative flex flex-col items-center ">
+    <div className="">
       <div className="sectionDivider" />
       <h3 className="sectionTitle">About</h3>
       <motion.div
@@ -21,27 +21,20 @@ const About = () => {
           duration: 1.4,
           delay: 0.1,
         }}
-        className=""
       >
-        <div className="mySwiper__container">
-          <div className="mySwiper__wrapper">
-            <div className="flex flex-col items-center overflow-hidden text-center justify-evenly">
+        <div className="">
+          <div className="">
+            <div className="">
               {AboutData.map((item) => (
-                <div
-                  className="z-20 flex flex-col items-center justify-center max-w-5xl gap-5 mx-auto text-center md:text-left lg:flex-row"
-                  key={item.id}
-                >
-                  <motion.img
-                    className="object-cover border-2 border-teal-500 border-solid rounded-full w-36 h-36 md:w-56 md:h-56 lg:w-65 lg:h-65 lg:rounded-lg"
-                    src={item.image}
-                  />
-                  <div className="p-3 shadow-2xl">
-                    <p className="aboutText">{item.text}</p>
+                <div className="" key={item.id}>
+                  <motion.img className="" src={item.image} />
+                  <div className="">
+                    <p className="">{item.text}</p>
                     <br />
                     <div>
                       <Timeline>
                         {TimeLineData?.map((item, index) => (
-                          <Timeline.Item key={index} className="timelineText">
+                          <Timeline.Item key={index} className="">
                             <span>{item.year}</span> {item.text}
                           </Timeline.Item>
                         ))}
@@ -54,7 +47,7 @@ const About = () => {
           </div>
         </div>
       </motion.div>
-      <motion.div className="mt-4 arrowDown">
+      <motion.div className="">
         <Link to="projects">
           <BsChevronDoubleDown />
         </Link>

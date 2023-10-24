@@ -1,10 +1,9 @@
-import { motion, useScroll, useSpring } from "framer-motion";
 import Head from "next/head";
-import About from "../components/Sections/About";
-import Contact from "../components/Sections/Contact";
-import Hero from "../components/Sections/Hero";
-import Projects from "../components/Sections/Projects";
-import Testimonials from "../components/Sections/Testimonials";
+import About from "../components/Sections/About/About";
+import Contact from "../components/Sections/Contact/Contact";
+import Hero from "../components/Sections/Hero/Hero";
+import Projects from "../components/Sections/Projects/Projects";
+import Testimonials from "../components/Sections/Testimonials/Testimonials";
 
 export default function Home() {
   return (

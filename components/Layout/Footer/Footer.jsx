@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-scroll/modules";
 import { Simplesharer } from "simple-sharer";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
   const sh = new Simplesharer();

@@ -1,8 +1,8 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import React from "react";
 import { Toaster } from "react-hot-toast";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import Footer from "./Footer/Footer";
+import Navbar from "./Navbar/Navbar";
 
 export default function Layout({ children }) {
   const { scrollYProgress } = useScroll();
@@ -13,7 +13,7 @@ export default function Layout({ children }) {
   });
 
   return (
-    <div className="relative wrapper">
+    <>
       <motion.div className="progress-bar" style={{ scaleX }} />
       <Navbar />
       <main>{children}</main>
@@ -43,6 +43,6 @@ export default function Layout({ children }) {
           },
         }}
       />
-    </div>
+    </>
   );
 }

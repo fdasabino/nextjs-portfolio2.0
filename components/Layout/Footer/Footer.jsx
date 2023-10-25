@@ -14,91 +14,66 @@ import styles from "./Footer.module.scss";
 
 const Footer = () => {
   const sh = new Simplesharer();
-  sh.url = "https://franciscosabino.vercel.app/"; //your url
-  sh.title = "Francisco Sabino - Portfolio"; //title for reddit, this is optional
-  sh.text = "Front End Developer - Stockholm"; // description for twitter, not more than a hundred characters, optional.
-  sh.hashtags = ["HTML", "CSS", "JavaScript", "React", "NextJs"]; // a list of hashtags for twitter,also optional
+  sh.url = "https://franciscosabino.vercel.app/";
+  sh.title = "Francisco Sabino - Portfolio";
+  sh.text = "Front End Developer - Stockholm";
+  sh.hashtags = ["HTML", "CSS", "JavaScript", "React", "NextJs"];
 
   return (
-    <div className="p-5 bg-gray-400">
-      <div className="flex items-center justify-evenly">
-        <div className="flex flex-wrap gap-5 text-center">
-          {/* social icons */}
-          <div className="px-5 mx-auto text-center">
-            <p className="max-w-md text-sm text-center text-gray-800 uppercase md:text-md ">
-              Share my page on:
-            </p>
-            <div className="flex justify-center">
-              <Tooltip title="Share on Facebook">
-                <button onClick={() => sh.facebook()} className="w-10 footerSharingSocial">
-                  <FaFacebookF />
-                </button>
-              </Tooltip>
+    <div className={`${styles.footer} ${styles.base_blurry_background}`}>
+      <div className={styles.footer__socials}>
+        <p>Share my page on:</p>
+        <div className={styles.footer__socials_items}>
+          <Tooltip title="Share on Facebook">
+            <button onClick={() => sh.facebook()}>
+              <FaFacebookF />
+            </button>
+          </Tooltip>
 
-              <Tooltip title="Share on Twitter">
-                <button onClick={() => sh.twitter()} className="w-10 footerSharingSocial">
-                  <FaTwitter />
-                </button>
-              </Tooltip>
+          <Tooltip title="Share on Twitter">
+            <button onClick={() => sh.twitter()}>
+              <FaTwitter />
+            </button>
+          </Tooltip>
 
-              <Tooltip title="Share on WhatsApp">
-                <button onClick={() => sh.whatsapp()} className="w-10 footerSharingSocial">
-                  <FaWhatsapp />
-                </button>
-              </Tooltip>
+          <Tooltip title="Share on WhatsApp">
+            <button onClick={() => sh.whatsapp()}>
+              <FaWhatsapp />
+            </button>
+          </Tooltip>
 
-              <Tooltip title="Share on Linkedin">
-                <button onClick={() => sh.linkedin()} className="w-10 footerSharingSocial">
-                  <FaLinkedin />
-                </button>
-              </Tooltip>
+          <Tooltip title="Share on Linkedin">
+            <button onClick={() => sh.linkedin()}>
+              <FaLinkedin />
+            </button>
+          </Tooltip>
 
-              <Tooltip title="Copy Link">
-                <button onClick={() => sh.copy()} className="w-10 footerSharingSocial">
-                  <FaLink />
-                </button>
-              </Tooltip>
-            </div>
-          </div>
+          <Tooltip title="Copy Link">
+            <button onClick={() => sh.copy()}>
+              <FaLink />
+            </button>
+          </Tooltip>
+        </div>
+      </div>
 
-          {/* contact */}
-          <div className="flex items-center justify-center mx-auto">
-            <div className="flex flex-col items-center px-5">
-              <a className="footerLink" href="mailto:fdasabino@gmail.com">
-                <span className="text-lg">
-                  <FaRegEnvelope />
-                </span>
-                fdasabino@gmail.com
-              </a>
-            </div>
-          </div>
+      <div className={styles.footer__email}>
+        <a href="mailto:fdasabino@gmail.com">
+          <FaRegEnvelope />
+          fdasabino@gmail.com
+        </a>
+      </div>
 
-          {/* links */}
-          <div className="flex items-center justify-center w-full gap-3">
-            <div className="flex flex-col items-center">
-              <Link className="footerLink" to="hero">
-                Home
-              </Link>
-              <Link className="footerLink" to="about">
-                About
-              </Link>
-              <Link className="footerLink" to="tech">
-                Technologies
-              </Link>
-            </div>
+      <div className={styles.footer__links}>
+        <div className={styles.footer__links_wrapper}>
+          <Link to="hero">Home</Link>
+          <Link to="about">About</Link>
+          <Link to="tech">Technologies</Link>
+        </div>
 
-            <div className="flex flex-col items-center">
-              <Link className="footerLink" to="projects">
-                Projects
-              </Link>
-              <Link className="footerLink" to="testimonials">
-                Testimonials
-              </Link>
-              <Link className="footerLink" to="contact">
-                Contact
-              </Link>
-            </div>
-          </div>
+        <div className={styles.footer__links_wrapper}>
+          <Link to="projects">Projects</Link>
+          <Link to="testimonials">Testimonials</Link>
+          <Link to="contact">Contact</Link>
         </div>
       </div>
     </div>

@@ -42,7 +42,7 @@ const Hero = () => {
                 key={item.id}
                 src={item.image}
                 alt={item.title}
-                className="z-50 object-cover transition-opacity duration-300 ease-in-out rounded-full "
+                className="z-50 object-cover h-full w-full transition-opacity duration-300 ease-in-out rounded-full "
               />
             </div>
             <Planetarium />

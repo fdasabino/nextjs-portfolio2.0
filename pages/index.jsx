@@ -109,12 +109,14 @@ export default function Home() {
         <Testimonials />
       </section>
 
-      {/* <section id="contact">
-        <h3 className={styles.section__title}>
-          Contact <MdOutlineAlternateEmail />
-        </h3>
+      <section id="contact">
+        <div className={styles.glitch_wrapper}>
+          <div className={styles.glitch} data-text="Contact">
+            Contact
+          </div>
+        </div>
         <Contact />
-      </section> */}
+      </section>
     </div>
   );
 }

@@ -128,27 +128,6 @@ $base-breakpoint-480px: 480px;
   }
 }
 
-@keyframes glitch-it {
-  0% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-2px, 2px);
-  }
-  60% {
-    transform: translate(2px, 2px);
-  }
-  to {
-    transform: translate(0);
-  }
-}
-
-@keyframes move {
-  100% {
-    transform: translate3d(0, 0, 1px) rotate(360deg);
-  }
-}
-
 .background {
   position: fixed;
   width: 100vw;
@@ -618,5 +597,26 @@ $base-breakpoint-480px: 480px;
       transform-origin: 4vw 4vh;
       box-shadow: -18vmin 0 2.820883937895498vmin currentColor;
     }
+  }
+}
+
+@keyframes glitch-it {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
   }
 }

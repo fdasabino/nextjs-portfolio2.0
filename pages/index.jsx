@@ -25,16 +25,71 @@ export default function Home() {
         <meta name="keywords" content="HTML, CSS, JavaScript, React, NextJs" />
         <meta name="author" content="Francisco Sabino" />
       </Head>
+      <div className={styles.background}>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <section id="hero">
         <Hero />
       </section>
       <section id="about">
-        <h3 className={styles.section__title}>
-          About <BsChatText />
-        </h3>
+        <div className={styles.glitch_wrapper}>
+          <div className={styles.glitch} data-text="About">
+            About
+          </div>
+        </div>
         <About />
       </section>
-      <section id="projects">
+
+      {/* <section id="projects">
         <h3 className={styles.section__title}>
           Projects <TbTools />
         </h3>
@@ -51,7 +106,7 @@ export default function Home() {
           Contact <MdOutlineAlternateEmail />
         </h3>
         <Contact />
-      </section>
+      </section> */}
     </div>
   );
 }

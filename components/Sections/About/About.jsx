@@ -25,11 +25,13 @@ const About = () => {
         <div className={styles.about__data}>
           {AboutData.map((item) => (
             <div className={styles.about__data_item} key={item.id}>
-              <motion.img src={item.image} />
+              <div className={styles.about__data_img}>
+                <motion.img src={item.image} />
+              </div>
               <div className={styles.about__data_timeline}>
                 <p>{item.text}</p>
                 <br />
-                <div>
+                <div className={styles.item}>
                   <Timeline>
                     {TimeLineData?.map((item, index) => (
                       <Timeline.Item key={index} className="">

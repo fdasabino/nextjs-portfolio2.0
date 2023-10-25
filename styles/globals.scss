@@ -21,16 +21,17 @@ body {
   font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-}
-
-main {
-  max-width: 1200px;
-  padding-top: 1rem;
-  margin: 0 auto;
+  -moz-osx-font-smoothing: grayscale;
   background-color: $base-dark-secondary;
 }
 
+main {
+  padding-top: 1rem;
+  margin: 0 auto;
+}
+
 section {
+  position: relative;
   min-height: 100vh;
 }
 
@@ -46,6 +47,7 @@ h5,
 h6 {
   font-family: "JetBrains Mono", sans-serif;
   font-weight: 500;
+  color: $base-white;
 }
 
 p,
@@ -56,6 +58,7 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+  color: $base-white;
 }
 
 textarea,
@@ -82,6 +85,11 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  color: $base-white;
+}
+
+li {
+  color: $base-white;
 }
 
 button {

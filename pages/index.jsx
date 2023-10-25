@@ -100,12 +100,14 @@ export default function Home() {
         <Projects />
       </section>
 
-      {/* <section id="testimonials">
-        <h3 className={styles.section__title}>
-          Testimonials <PiTextAUnderlineBold />
-        </h3>
+      <section id="testimonials">
+        <div className={styles.glitch_wrapper}>
+          <div className={styles.glitch} data-text="Testimonials">
+            Testimonials
+          </div>
+        </div>
         <Testimonials />
-      </section> */}
+      </section>
 
       {/* <section id="contact">
         <h3 className={styles.section__title}>

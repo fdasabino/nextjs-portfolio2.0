@@ -1,19 +1,15 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
-import { BsChevronDoubleDown } from "react-icons/bs";
-import { Link } from "react-scroll";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { TestimonialsData } from "../../../constants/constants";
+import styles from "./Testimonials.module.scss";
 
 const Testimonials = () => {
   return (
-    <div className="relative flex flex-col items-center ">
-      <div className="sectionDivider" />
-      <h3 className="sectionTitle">Testimonials</h3>
+    <div className={styles.testimonials}>
       <motion.div
-        className="w-full max-w-4xl"
         initial={{
           opacity: 0,
         }}
@@ -25,61 +21,40 @@ const Testimonials = () => {
           delay: 0.1,
         }}
       >
-        <Swiper
-          pagination={{
-            type: "progressbar",
-          }}
-          grabCursor={true}
-          navigation={true}
-          modules={[Pagination, Navigation]}
-          className="mySwiper"
-        >
-          {TestimonialsData.map((testimonial, index) => (
-            <SwiperSlide key={testimonial.id}>
-              <div className="mySwiper__container">
-                <div className="mySwiper__wrapper">
-                  <div className="my-8 mySwiper__section">
-                    <p className="text-lg font-bold text-gray-300 md:text-xl">{testimonial.name}</p>
+        <div className={`${styles.testimonials__data} ${styles.base_blurry_background}`}>
+          <Swiper
+            pagination={{
+              type: "progressbar",
+            }}
+            grabCursor={true}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className={styles.testimonials__swiper}
+          >
+            {TestimonialsData.map((testimonial) => (
+              <SwiperSlide key={testimonial.id}>
+                <div className={styles.testimonials__swiper_top}>
+                  <div className={styles.testimonials__swiper_top_left}>
+                    <h2>{testimonial.name}</h2>
                   </div>
-
-                  <div className="mySwiper__section">
-                    <div className="flex flex-col items-center justify-center gap-4 my-4 md:flex-row">
-                      <div className="flex flex-col items-center justify-center flex-1 max-w-md">
-                        <div className="w-48 h-48 border border-teal-400 rounded-lg md:w-80 md:h-80">
-                          <Image
-                            src={testimonial.img}
-                            width={1000}
-                            height={1000}
-                            alt={testimonial.name}
-                            className="rounded-lg"
-                          />
-                        </div>
-                        <div className="flex gap-10 my-4">
-                          <p className="text-xs font-bold text-gray-300 md:text-base whitespace-nowrap">
-                            {testimonial.position}
-                          </p>
-                          <p className="text-xs font-bold text-gray-400 md:text-base whitespace-nowrap">
-                            {testimonial.company}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex items-center flex-1 my-auto">
-                        <div className="flex flex-col gap-6 mx-10 text-justify md:mr-6 md:mx-0">
-                          <p className="text-sm text-gray-300 md:text-base">{testimonial.text}</p>
-                        </div>
-                      </div>
-                    </div>
+                  <div className={styles.testimonials__swiper_top_right}>
+                    <p>{testimonial.position}</p>
+                    <p>{testimonial.company}</p>
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </motion.div>
-      <motion.div className="arrowDown">
-        <Link to="contact">
-          <BsChevronDoubleDown />
-        </Link>
+
+                <div className={styles.testimonials__swiper_bottom}>
+                  <div className={styles.testimonials__swiper_bottom_img}>
+                    <Image src={testimonial.img} width={600} height={600} alt={testimonial.name} />
+                  </div>
+                  <div className={styles.testimonials__swiper_bottom_text}>
+                    <p>{testimonial.text}</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </motion.div>
     </div>
   );

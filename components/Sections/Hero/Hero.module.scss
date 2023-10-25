@@ -29,6 +29,11 @@
       border-radius: 50%;
       border: 2px solid $base-blue;
       object-fit: cover;
+
+      @media (max-width: 768px) {
+        width: 150px;
+        height: 150px;
+      }
     }
   }
 
@@ -45,11 +50,19 @@
       font-size: 1.5rem;
       font-weight: 700;
       color: $base-blue;
+
+      @media (max-width: 768px) {
+        font-size: 1.2rem;
+      }
     }
 
     h2 {
       font-size: 1.2rem;
       font-weight: 400;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
     }
   }
 }

@@ -1,8 +1,9 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import React from "react";
 import { Toaster } from "react-hot-toast";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import Footer from "./Footer/Footer";
+import styles from "./Layout.module.scss";
+import Navbar from "./Navbar/Navbar";
 
 export default function Layout({ children }) {
   const { scrollYProgress } = useScroll();
@@ -13,12 +14,12 @@ export default function Layout({ children }) {
   });
 
   return (
-    <div className="relative wrapper">
-      <motion.div className="progress-bar" style={{ scaleX }} />
+    <>
+      <motion.div className={styles.progress_bar} style={{ scaleX }} />
       <Navbar />
       <main>{children}</main>
       <Footer />
-      {/* Toaster notifications */}
+
       <Toaster
         position="top-center"
         reverseOrder={true}
@@ -26,14 +27,12 @@ export default function Layout({ children }) {
         containerClassName=""
         containerStyle={{}}
         toastOptions={{
-          // Define default options
           className: "",
           duration: 5000,
           style: {
             background: "#363636",
             color: "#fff",
           },
-          // Default options for specific types
           success: {
             duration: 3000,
             theme: {
@@ -43,6 +42,6 @@ export default function Layout({ children }) {
           },
         }}
       />
-    </div>
+    </>
   );
 }

@@ -1,10 +1,17 @@
-import { motion, useScroll, useSpring } from "framer-motion";
 import Head from "next/head";
-import About from "../components/Sections/About";
-import Contact from "../components/Sections/Contact";
-import Hero from "../components/Sections/Hero";
-import Projects from "../components/Sections/Projects";
-import Testimonials from "../components/Sections/Testimonials";
+
+import { BsChatText } from "react-icons/bs";
+import { PiTextAUnderlineBold } from "react-icons/pi";
+import { TbTools } from "react-icons/tb";
+
+import About from "../components/Sections/About/About";
+import Contact from "../components/Sections/Contact/Contact";
+import Hero from "../components/Sections/Hero/Hero";
+import Projects from "../components/Sections/Projects/Projects";
+import Testimonials from "../components/Sections/Testimonials/Testimonials";
+
+import { MdOutlineAlternateEmail } from "react-icons/md";
+import styles from "../styles/Home.module.scss";
 
 export default function Home() {
   return (
@@ -18,19 +25,96 @@ export default function Home() {
         <meta name="keywords" content="HTML, CSS, JavaScript, React, NextJs" />
         <meta name="author" content="Francisco Sabino" />
       </Head>
+      <div className={styles.background}>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
       <section id="hero">
         <Hero />
       </section>
+
       <section id="about">
+        <div className={styles.glitch_wrapper}>
+          <div className={styles.glitch} data-text="About">
+            About
+          </div>
+        </div>
         <About />
       </section>
+
       <section id="projects">
+        <div className={styles.glitch_wrapper}>
+          <div className={styles.glitch} data-text="Projects">
+            Projects
+          </div>
+        </div>
         <Projects />
       </section>
+
       <section id="testimonials">
+        <div className={styles.glitch_wrapper}>
+          <div className={styles.glitch} data-text="Testimonials">
+            Testimonials
+          </div>
+        </div>
         <Testimonials />
       </section>
+
       <section id="contact">
+        <div className={styles.glitch_wrapper}>
+          <div className={styles.glitch} data-text="Contact">
+            Contact
+          </div>
+        </div>
         <Contact />
       </section>
     </div>

@@ -34,6 +34,17 @@ $base-button-transition: all 1s linear;
 $base-breakpoint-768px: 768px;
 $base-breakpoint-480px: 480px;
 
+.progress_bar {
+  position: fixed;
+  top: 75px;
+  right: 0;
+  left: 0;
+  z-index: 50;
+  height: 0.25rem;
+  background-image: linear-gradient(to right, $base-blue, $base-lilac);
+  transform-origin: left;
+}
+
 .swiper {
   position: relative;
   width: 100%;

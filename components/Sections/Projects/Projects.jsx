@@ -6,14 +6,14 @@ import { Link } from "react-scroll";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ProjectsData } from "../../../constants/constants";
+import { scrollTo } from "../../../utils/globalFunctions";
+import Button from "../../Layout/Button/Button";
+import styles from "./Projects.module.scss";
 
 const Projects = () => {
   return (
-    <div className="relative flex flex-col items-center ">
-      <div className="sectionDivider" />
-      <h3 className="sectionTitle">Projects</h3>
+    <div className={styles.projects}>
       <motion.div
-        className="w-full max-w-4xl"
         initial={{
           opacity: 0,
         }}
@@ -25,73 +25,56 @@ const Projects = () => {
           delay: 0.1,
         }}
       >
-        <Swiper
-          pagination={{
-            type: "progressbar",
-          }}
-          grabCursor={true}
-          navigation={true}
-          modules={[Pagination, Navigation]}
-          className="mySwiper"
-        >
-          {ProjectsData.map((project) => (
-            <SwiperSlide key={project.id}>
-              <div className="mySwiper__container">
-                <div className="mySwiper__wrapper">
-                  <div className="mySwiper__section">
-                    <p className="text-lg font-bold text-gray-300 md:text-xl">{project.title}</p>
-                    <div className="flex gap-4 my-4">
-                      {project.tags?.map((tag, index) => (
-                        <span key={index}>{tag}</span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="mySwiper__section">
-                    <div className="flex items-center flex-1 my-auto">
-                      <div className="flex flex-col gap-6 mx-10 text-justify md:mr-6 md:mx-0">
-                        <p className="text-sm text-gray-300 md:text-base">{project.description}</p>
-                        <div className="flex flex-row gap-4 text-sm text-center md:text-base xs:items-center xs:flex-col justify-evenly">
-                          {project.source !== "" && (
-                            <a
-                              className="mainButton"
-                              href={project.source}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              Source Code
-                            </a>
-                          )}
-                          <a
-                            className="mainButton"
-                            href={project.visit}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            Live Project
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex flex-1 w-48 h-48 my-4 border border-teal-400 rounded-lg md:w-80 md:h-80">
-                      <Image
-                        src={project.image}
-                        width={1000}
-                        height={1000}
-                        alt={project.title}
-                        className="rounded-lg"
-                      />
-                    </div>
+        <div className={`${styles.projects__data} ${styles.base_blurry_background}`}>
+          <Swiper
+            pagination={{
+              type: "progressbar",
+            }}
+            grabCursor={true}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className={styles.projects__swiper}
+          >
+            {ProjectsData.map((project) => (
+              <SwiperSlide key={project.id}>
+                <div className={styles.projects__swiper_top}>
+                  <h2>{project.title}</h2>
+                  <div className={styles.projects__swiper_top_icons}>
+                    {project.tags?.map((tag, index) => (
+                      <span key={index}>{tag}</span>
+                    ))}
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </motion.div>
-      <motion.div className="arrowDown">
-        <Link to="testimonials">
-          <BsChevronDoubleDown />
-        </Link>
+                <div className={styles.projects__swiper_bottom}>
+                  <div className={styles.projects__swiper_bottom_items}>
+                    <div className={styles.projects__swiper_bottom__description}>
+                      <p>{project.description}</p>
+                    </div>
+                    <div className={styles.projects__swiper_bottom__links}>
+                      {project.source !== "" && (
+                        <a href={project.source} target="_blank" rel="noreferrer">
+                          Source Code
+                        </a>
+                      )}
+                      <a href={project.visit} target="_blank" rel="noreferrer">
+                        Live Project
+                      </a>
+                    </div>
+                  </div>
+                  <div className={styles.projects__swiper_bottom_img}>
+                    <Image
+                      src={project.image}
+                      width={600}
+                      height={600}
+                      alt={project.title}
+                      className=""
+                    />
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </motion.div>
     </div>
   );

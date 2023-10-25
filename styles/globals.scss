@@ -30,7 +30,11 @@ main {
 
 section {
   position: relative;
-  min-height: fit-content;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
   @media (max-width: 768px) {
     padding: 1rem;

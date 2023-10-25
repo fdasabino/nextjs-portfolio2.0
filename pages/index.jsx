@@ -77,9 +77,11 @@ export default function Home() {
         <span></span>
         <span></span>
       </div>
+
       <section id="hero">
         <Hero />
       </section>
+
       <section id="about">
         <div className={styles.glitch_wrapper}>
           <div className={styles.glitch} data-text="About">
@@ -89,19 +91,23 @@ export default function Home() {
         <About />
       </section>
 
-      {/* <section id="projects">
-        <h3 className={styles.section__title}>
-          Projects <TbTools />
-        </h3>
+      <section id="projects">
+        <div className={styles.glitch_wrapper}>
+          <div className={styles.glitch} data-text="Projects">
+            Projects
+          </div>
+        </div>
         <Projects />
       </section>
-      <section id="testimonials">
+
+      {/* <section id="testimonials">
         <h3 className={styles.section__title}>
           Testimonials <PiTextAUnderlineBold />
         </h3>
         <Testimonials />
-      </section>
-      <section id="contact">
+      </section> */}
+
+      {/* <section id="contact">
         <h3 className={styles.section__title}>
           Contact <MdOutlineAlternateEmail />
         </h3>

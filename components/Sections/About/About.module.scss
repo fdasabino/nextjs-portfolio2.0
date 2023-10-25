@@ -10,14 +10,6 @@
   &__data {
     width: 100%;
     max-width: 1200px;
-
-    /* From https://css.glass */
-    background: rgba(39, 39, 39, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(9.3px);
-    -webkit-backdrop-filter: blur(9.3px);
-    border-radius: 1rem;
-
     padding: 2rem;
   }
 

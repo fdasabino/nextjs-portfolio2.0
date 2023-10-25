@@ -47,9 +47,6 @@ const About = () => {
           ))}
         </div>
       </motion.div>
-      <Button onClick={() => scrollTo("projects")}>
-        <BsChevronDoubleDown />
-      </Button>
     </div>
   );
 };

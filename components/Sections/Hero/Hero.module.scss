@@ -29,6 +29,7 @@
       border-radius: 50%;
       border: 2px solid $base-blue;
       object-fit: cover;
+      padding: 0.2rem;
 
       @media (max-width: 768px) {
         width: 150px;

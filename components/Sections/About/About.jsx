@@ -1,7 +1,7 @@
 import { Timeline } from "antd";
 import { motion } from "framer-motion";
 import React from "react";
-import { BsChatText, BsChevronDoubleDown } from "react-icons/bs";
+import { BsChevronDoubleDown } from "react-icons/bs";
 import { AboutData, TimeLineData } from "../../../constants/constants";
 import { scrollTo } from "../../../utils/globalFunctions";
 import Button from "../../Layout/Button/Button";

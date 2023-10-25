@@ -32,6 +32,10 @@ main {
 section {
   position: relative;
   min-height: fit-content;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 }
 
 p,

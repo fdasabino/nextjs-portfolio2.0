@@ -6,7 +6,7 @@
   border-radius: 4px;
   border: none;
   box-sizing: border-box;
-  color: #ffffff;
+  color: #000;
   text-transform: uppercase;
   flex-shrink: 0;
   font-size: 14px;
@@ -90,7 +90,7 @@
 // Buttons
 .btnPrimary {
   @include button-styles;
-  @include button-background(#008cff, #0055ff, 0.98);
+  @include button-background($base-blue, $base-grey, 0.98);
 }
 
 .btnSecondary {

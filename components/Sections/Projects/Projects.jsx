@@ -47,9 +47,6 @@ const Projects = () => {
                 </div>
                 <div className={styles.projects__swiper_bottom}>
                   <div className={styles.projects__swiper_bottom_items}>
-                    <div className={styles.projects__swiper_bottom__description}>
-                      <p>{project.description}</p>
-                    </div>
                     <div className={styles.projects__swiper_bottom__links}>
                       {project.source !== "" && (
                         <a href={project.source} target="_blank" rel="noreferrer">
@@ -59,6 +56,9 @@ const Projects = () => {
                       <a href={project.visit} target="_blank" rel="noreferrer">
                         Live Project
                       </a>
+                    </div>
+                    <div className={styles.projects__swiper_bottom__description}>
+                      <p>{project.description}</p>
                     </div>
                   </div>
                   <div className={styles.projects__swiper_bottom_img}>

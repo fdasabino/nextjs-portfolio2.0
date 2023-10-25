@@ -79,17 +79,35 @@
 
       @media (max-width: 768px) {
         max-width: 100%;
+        font-size: 0.8rem;
       }
     }
 
     .item {
       width: 100%;
       max-width: 700px;
-
       display: flex;
       align-items: center;
       justify-content: flex-start;
       gap: 1rem;
+
+      p {
+        width: 100%;
+        max-width: 100%;
+        font-size: 0.9rem;
+        margin: 0.2rem;
+
+        span {
+          width: 100%;
+          max-width: 100px;
+          font-weight: 300;
+          color: $base-blue;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 0.8rem;
+        }
+      }
 
       @media (max-width: 768px) {
         flex-direction: column;

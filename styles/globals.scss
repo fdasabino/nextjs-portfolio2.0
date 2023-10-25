@@ -1,5 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=JetBrains+Mono:100,200,300,regular,500,600,700,800,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic);
-
+@import url(https://fonts.googleapis.com/css?family=Quicksand:300,regular,500,600,700);
 * {
   padding: 0;
   margin: 0;
@@ -17,7 +16,7 @@
 }
 
 body {
-  font-family: "JetBrains Mono", sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -45,7 +44,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "JetBrains Mono", sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 500;
   color: $base-white;
 }
@@ -66,7 +65,7 @@ select,
 option,
 label {
   transition: all 0.5s linear;
-  font-family: "JetBrains Mono", sans-serif !important;
+  font-family: "Quicksand", sans-serif !important;
 }
 
 img,

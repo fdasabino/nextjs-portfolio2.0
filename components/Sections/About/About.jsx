@@ -34,8 +34,10 @@ const About = () => {
                 <div className={styles.item}>
                   <Timeline>
                     {TimeLineData?.map((item, index) => (
-                      <Timeline.Item key={index} className="">
-                        <span>{item.year}</span> {item.text}
+                      <Timeline.Item key={index}>
+                        <p>
+                          <span>{item.year}</span> {item.text}
+                        </p>
                       </Timeline.Item>
                     ))}
                   </Timeline>

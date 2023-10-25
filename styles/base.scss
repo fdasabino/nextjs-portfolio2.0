@@ -21,8 +21,8 @@ $base-white: #fafafa;
 $base-dark: #2b2a2a;
 $base-dark-secondary: #000;
 
-$color_1: #0000001f;
-$color_2: #ffffff1f;
+$bg-color1: #e6d8d80c;
+$bg-color2: #0d86801f;
 
 $base-shadow-1: #63636333 0px 2px 8px 0px;
 $base-shadow-2: #6363631a 0px 0px 4px 0px;
@@ -33,6 +33,17 @@ $base-button-transition: all 1s linear;
 
 $base-breakpoint-768px: 768px;
 $base-breakpoint-480px: 480px;
+
+.ant-drawer-close {
+  color: $base-white !important;
+  font-size: 1.5rem !important;
+  transition: all 0.3s ease-in-out !important;
+
+  &:hover {
+    color: $base-blue !important;
+    transform: rotate(90deg) !important;
+  }
+}
 
 .glitch_wrapper {
   width: 100%;
@@ -73,6 +84,27 @@ $base-breakpoint-480px: 480px;
   }
 }
 
+@keyframes glitch-it {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
 .background {
   position: fixed;
   width: 100vw;
@@ -93,7 +125,7 @@ $base-breakpoint-480px: 480px;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     &:nth-child(0) {
-      color: $color_1;
+      color: $bg-color1;
       top: 91%;
       left: 58%;
       animation-duration: 78s;
@@ -102,7 +134,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.7018774100725844vmin currentColor;
     }
     &:nth-child(1) {
-      color: $color_1;
+      color: $bg-color1;
       top: 65%;
       left: 74%;
       animation-duration: 193s;
@@ -111,7 +143,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.470838488844514vmin currentColor;
     }
     &:nth-child(2) {
-      color: $color_2;
+      color: $bg-color2;
       top: 83%;
       left: 14%;
       animation-duration: 147s;
@@ -120,7 +152,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.293451020283019vmin currentColor;
     }
     &:nth-child(3) {
-      color: $color_1;
+      color: $bg-color1;
       top: 85%;
       left: 48%;
       animation-duration: 420s;
@@ -129,7 +161,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 2.6550576712676133vmin currentColor;
     }
     &:nth-child(4) {
-      color: $color_2;
+      color: $bg-color2;
       top: 14%;
       left: 22%;
       animation-duration: 21s;
@@ -138,7 +170,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.498709986754038vmin currentColor;
     }
     &:nth-child(5) {
-      color: $color_2;
+      color: $bg-color2;
       top: 81%;
       left: 95%;
       animation-duration: 386s;
@@ -147,7 +179,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 3.222614286767023vmin currentColor;
     }
     &:nth-child(6) {
-      color: $color_2;
+      color: $bg-color2;
       top: 62%;
       left: 60%;
       animation-duration: 50s;
@@ -156,7 +188,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 2.3883956201566354vmin currentColor;
     }
     &:nth-child(7) {
-      color: $color_1;
+      color: $bg-color1;
       top: 57%;
       left: 8%;
       animation-duration: 240s;
@@ -165,7 +197,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 2.314522430578756vmin currentColor;
     }
     &:nth-child(8) {
-      color: $color_1;
+      color: $bg-color1;
       top: 86%;
       left: 73%;
       animation-duration: 274s;
@@ -174,7 +206,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 2.616129212651002vmin currentColor;
     }
     &:nth-child(9) {
-      color: $color_2;
+      color: $bg-color2;
       top: 39%;
       left: 58%;
       animation-duration: 148s;
@@ -183,7 +215,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.2611972575268267vmin currentColor;
     }
     &:nth-child(10) {
-      color: $color_1;
+      color: $bg-color1;
       top: 90%;
       left: 40%;
       animation-duration: 438s;
@@ -192,7 +224,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 2.26001875379918vmin currentColor;
     }
     &:nth-child(11) {
-      color: $color_1;
+      color: $bg-color1;
       top: 29%;
       left: 11%;
       animation-duration: 418s;
@@ -201,7 +233,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.781088261318351vmin currentColor;
     }
     &:nth-child(12) {
-      color: $color_2;
+      color: $bg-color2;
       top: 7%;
       left: 62%;
       animation-duration: 256s;
@@ -210,7 +242,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.7177906394566804vmin currentColor;
     }
     &:nth-child(13) {
-      color: $color_1;
+      color: $bg-color1;
       top: 64%;
       left: 18%;
       animation-duration: 70s;
@@ -219,7 +251,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 2.400728566289619vmin currentColor;
     }
     &:nth-child(14) {
-      color: $color_2;
+      color: $bg-color2;
       top: 39%;
       left: 17%;
       animation-duration: 388s;
@@ -228,7 +260,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.781008682260792vmin currentColor;
     }
     &:nth-child(15) {
-      color: $color_1;
+      color: $bg-color1;
       top: 71%;
       left: 87%;
       animation-duration: 450s;
@@ -237,7 +269,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 3.170545223038805vmin currentColor;
     }
     &:nth-child(16) {
-      color: $color_2;
+      color: $bg-color2;
       top: 14%;
       left: 97%;
       animation-duration: 231s;
@@ -246,7 +278,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 3.2064796079362825vmin currentColor;
     }
     &:nth-child(17) {
-      color: $color_1;
+      color: $bg-color1;
       top: 39%;
       left: 11%;
       animation-duration: 320s;
@@ -255,7 +287,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 2.91992071606074vmin currentColor;
     }
     &:nth-child(18) {
-      color: $color_2;
+      color: $bg-color2;
       top: 93%;
       left: 29%;
       animation-duration: 181s;
@@ -264,7 +296,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 2.95391482019979vmin currentColor;
     }
     &:nth-child(19) {
-      color: $color_2;
+      color: $bg-color2;
       top: 59%;
       left: 85%;
       animation-duration: 75s;
@@ -273,7 +305,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.4507806046234286vmin currentColor;
     }
     &:nth-child(20) {
-      color: $color_2;
+      color: $bg-color2;
       top: 83%;
       left: 32%;
       animation-duration: 138s;
@@ -282,7 +314,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.471658788410385vmin currentColor;
     }
     &:nth-child(21) {
-      color: $color_1;
+      color: $bg-color1;
       top: 30%;
       left: 68%;
       animation-duration: 278s;
@@ -291,7 +323,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 3.2131082273499803vmin currentColor;
     }
     &:nth-child(22) {
-      color: $color_1;
+      color: $bg-color1;
       top: 39%;
       left: 21%;
       animation-duration: 81s;
@@ -300,7 +332,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 3.182250015012113vmin currentColor;
     }
     &:nth-child(23) {
-      color: $color_1;
+      color: $bg-color1;
       top: 23%;
       left: 19%;
       animation-duration: 415s;
@@ -309,7 +341,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.3863578319055487vmin currentColor;
     }
     &:nth-child(24) {
-      color: $color_1;
+      color: $bg-color1;
       top: 55%;
       left: 43%;
       animation-duration: 71s;
@@ -318,7 +350,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 2.7163477169831745vmin currentColor;
     }
     &:nth-child(25) {
-      color: $color_1;
+      color: $bg-color1;
       top: 77%;
       left: 11%;
       animation-duration: 281s;
@@ -327,7 +359,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.9478060562989867vmin currentColor;
     }
     &:nth-child(26) {
-      color: $color_2;
+      color: $bg-color2;
       top: 11%;
       left: 26%;
       animation-duration: 278s;
@@ -336,7 +368,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 3.1147064433572123vmin currentColor;
     }
     &:nth-child(27) {
-      color: $color_1;
+      color: $bg-color1;
       top: 82%;
       left: 98%;
       animation-duration: 335s;
@@ -345,7 +377,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 2.9045178062683923vmin currentColor;
     }
     &:nth-child(28) {
-      color: $color_1;
+      color: $bg-color1;
       top: 25%;
       left: 25%;
       animation-duration: 260s;
@@ -354,7 +386,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 3.2236867752584653vmin currentColor;
     }
     &:nth-child(29) {
-      color: $color_2;
+      color: $bg-color2;
       top: 32%;
       left: 91%;
       animation-duration: 72s;
@@ -363,7 +395,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 3.223877296217239vmin currentColor;
     }
     &:nth-child(30) {
-      color: $color_2;
+      color: $bg-color2;
       top: 17%;
       left: 91%;
       animation-duration: 235s;
@@ -372,7 +404,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 2.4625533701928832vmin currentColor;
     }
     &:nth-child(31) {
-      color: $color_1;
+      color: $bg-color1;
       top: 6%;
       left: 11%;
       animation-duration: 25s;
@@ -381,7 +413,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 3.0305172695222606vmin currentColor;
     }
     &:nth-child(32) {
-      color: $color_1;
+      color: $bg-color1;
       top: 100%;
       left: 39%;
       animation-duration: 200s;
@@ -390,7 +422,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.368999509769475vmin currentColor;
     }
     &:nth-child(33) {
-      color: $color_1;
+      color: $bg-color1;
       top: 54%;
       left: 24%;
       animation-duration: 165s;
@@ -399,7 +431,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.2617495963648384vmin currentColor;
     }
     &:nth-child(34) {
-      color: $color_1;
+      color: $bg-color1;
       top: 49%;
       left: 60%;
       animation-duration: 262s;
@@ -408,7 +440,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 3.148939484596304vmin currentColor;
     }
     &:nth-child(35) {
-      color: $color_2;
+      color: $bg-color2;
       top: 7%;
       left: 25%;
       animation-duration: 218s;
@@ -417,7 +449,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.5258925170644244vmin currentColor;
     }
     &:nth-child(36) {
-      color: $color_1;
+      color: $bg-color1;
       top: 38%;
       left: 83%;
       animation-duration: 156s;
@@ -426,7 +458,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.271387550939909vmin currentColor;
     }
     &:nth-child(37) {
-      color: $color_1;
+      color: $bg-color1;
       top: 30%;
       left: 83%;
       animation-duration: 92s;
@@ -435,7 +467,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 2.2542851460887023vmin currentColor;
     }
     &:nth-child(38) {
-      color: $color_1;
+      color: $bg-color1;
       top: 12%;
       left: 15%;
       animation-duration: 279s;
@@ -444,7 +476,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.594125947750518vmin currentColor;
     }
     &:nth-child(39) {
-      color: $color_2;
+      color: $bg-color2;
       top: 73%;
       left: 11%;
       animation-duration: 172s;
@@ -453,7 +485,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.7754335103105174vmin currentColor;
     }
     &:nth-child(40) {
-      color: $color_2;
+      color: $bg-color2;
       top: 33%;
       left: 28%;
       animation-duration: 312s;
@@ -462,7 +494,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 3.070345706512321vmin currentColor;
     }
     &:nth-child(41) {
-      color: $color_2;
+      color: $bg-color2;
       top: 48%;
       left: 78%;
       animation-duration: 228s;
@@ -471,7 +503,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.5102345821595295vmin currentColor;
     }
     &:nth-child(42) {
-      color: $color_1;
+      color: $bg-color1;
       top: 33%;
       left: 87%;
       animation-duration: 77s;
@@ -480,7 +512,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.4790530268116138vmin currentColor;
     }
     &:nth-child(43) {
-      color: $color_1;
+      color: $bg-color1;
       top: 66%;
       left: 30%;
       animation-duration: 330s;
@@ -489,7 +521,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 2.7076301971905092vmin currentColor;
     }
     &:nth-child(44) {
-      color: $color_1;
+      color: $bg-color1;
       top: 7%;
       left: 33%;
       animation-duration: 191s;
@@ -498,7 +530,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 3.1428386869512037vmin currentColor;
     }
     &:nth-child(45) {
-      color: $color_1;
+      color: $bg-color1;
       top: 21%;
       left: 87%;
       animation-duration: 148s;
@@ -507,7 +539,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 2.5796095055805726vmin currentColor;
     }
     &:nth-child(46) {
-      color: $color_1;
+      color: $bg-color1;
       top: 90%;
       left: 58%;
       animation-duration: 206s;
@@ -516,7 +548,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 2.2969623004979933vmin currentColor;
     }
     &:nth-child(47) {
-      color: $color_2;
+      color: $bg-color2;
       top: 90%;
       left: 4%;
       animation-duration: 379s;
@@ -525,7 +557,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: -18vmin 0 2.909734240854454vmin currentColor;
     }
     &:nth-child(48) {
-      color: $color_1;
+      color: $bg-color1;
       top: 45%;
       left: 72%;
       animation-duration: 383s;
@@ -534,7 +566,7 @@ $base-breakpoint-480px: 480px;
       box-shadow: 18vmin 0 2.8943995464941885vmin currentColor;
     }
     &:nth-child(49) {
-      color: $color_1;
+      color: $bg-color1;
       top: 52%;
       left: 66%;
       animation-duration: 123s;
@@ -542,26 +574,5 @@ $base-breakpoint-480px: 480px;
       transform-origin: 4vw 4vh;
       box-shadow: -18vmin 0 2.820883937895498vmin currentColor;
     }
-  }
-}
-
-@keyframes glitch-it {
-  0% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-2px, 2px);
-  }
-  60% {
-    transform: translate(2px, 2px);
-  }
-  to {
-    transform: translate(0);
-  }
-}
-
-@keyframes move {
-  100% {
-    transform: translate3d(0, 0, 1px) rotate(360deg);
   }
 }

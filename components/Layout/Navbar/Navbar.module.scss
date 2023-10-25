@@ -11,8 +11,8 @@
   align-items: center;
 
   /* From https://css.glass */
-  background: rgba(0, 0, 0, 0.31);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: rgba(39, 39, 39, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(9.3px);
   -webkit-backdrop-filter: blur(9.3px);
 
@@ -24,9 +24,20 @@
     gap: 1rem;
 
     a {
+      color: $base-white;
       svg {
-        width: 2rem;
-        height: 2rem;
+        width: 1.6rem;
+        height: 1.6rem;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: $base-blue;
+        }
+
+        @media (max-width: 768px) {
+          width: 1.3rem;
+          height: 1.3rem;
+        }
       }
     }
   }
@@ -34,5 +45,34 @@
   &__right {
     display: flex;
     align-items: center;
+  }
+
+  &__menu {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+
+    @media (max-width: 480px) {
+      align-items: center;
+    }
+  }
+
+  &__menu_item {
+    font-size: 1.2rem;
+
+    a {
+      color: $base-white;
+      &:hover {
+        color: $base-blue;
+      }
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 }

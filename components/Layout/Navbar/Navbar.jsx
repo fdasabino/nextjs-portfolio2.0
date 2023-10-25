@@ -3,10 +3,12 @@ import { motion } from "framer-motion";
 import { Fade as Hamburger } from "hamburger-react";
 import React, { useState } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { useMediaQuery } from "react-responsive";
 import { Link } from "react-scroll";
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
   const [open, setOpen] = useState(false);
 
   const variants = {
@@ -70,46 +72,71 @@ const Navbar = () => {
           duration: 1.5,
         }}
       >
-        <Hamburger toggled={open} toggle={showDrawer} duration={0.8} color={"#666"} />
+        <Hamburger toggled={open} toggle={showDrawer} duration={0.8} color={"#fff"} />
       </motion.div>
       <Drawer
-        placement="left"
+        placement="right"
         onClose={onClose}
         open={open}
-        width={"fit-content"}
-        bodyStyle={{ backgroundColor: "#334155be" }}
-        headerStyle={{ backgroundColor: "#334155be", border: "none" }}
+        width={isMobile ? "100%" : "fit-content"}
+        bodyStyle={{ backgroundColor: "#000" }}
+        headerStyle={{ backgroundColor: "#000", border: "none" }}
         maskStyle={{
           backgroundColor: "rgba( 0, 0, 0, 0.65)",
           backdropFilter: "blur( 16px )",
         }}
       >
-        <div className="">
-          <motion.div variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+        <div className={styles.navbar__menu}>
+          <motion.div
+            className={styles.navbar__menu_item}
+            variants={variants}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <Link spy={true} isDynamic={true} to="hero" onClick={onClose} className="">
               Home
             </Link>
           </motion.div>
 
-          <motion.div variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          <motion.div
+            className={styles.navbar__menu_item}
+            variants={variants}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <Link spy={true} isDynamic={true} to="about" onClick={onClose} className="">
               About
             </Link>
           </motion.div>
 
-          <motion.div variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          <motion.div
+            className={styles.navbar__menu_item}
+            variants={variants}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <Link spy={true} isDynamic={true} to="projects" onClick={onClose} className="">
               Projects
             </Link>
           </motion.div>
 
-          <motion.div variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          <motion.div
+            className={styles.navbar__menu_item}
+            variants={variants}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <Link spy={true} isDynamic={true} to="testimonials" onClick={onClose} className="">
               Testimonials
             </Link>
           </motion.div>
 
-          <motion.div variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          <motion.div
+            className={styles.navbar__menu_item}
+            variants={variants}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <Link spy={true} isDynamic={true} to="contact" onClick={onClose} className="">
               Contact
             </Link>

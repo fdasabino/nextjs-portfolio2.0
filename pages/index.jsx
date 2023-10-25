@@ -1,16 +1,9 @@
 import Head from "next/head";
-
-import { BsChatText } from "react-icons/bs";
-import { PiTextAUnderlineBold } from "react-icons/pi";
-import { TbTools } from "react-icons/tb";
-
 import About from "../components/Sections/About/About";
 import Contact from "../components/Sections/Contact/Contact";
 import Hero from "../components/Sections/Hero/Hero";
 import Projects from "../components/Sections/Projects/Projects";
 import Testimonials from "../components/Sections/Testimonials/Testimonials";
-
-import { MdOutlineAlternateEmail } from "react-icons/md";
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {

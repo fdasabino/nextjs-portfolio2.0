@@ -41,7 +41,9 @@ const Hero = () => {
             />
           </div>
           <div className={styles.hero__text}>
-            <h1>{item.title}</h1>
+            <h1>
+              <span>{item.intro}</span> {item.title}
+            </h1>
             <h2>
               <span>{text}</span>
               <Cursor cursorColor="#14a085" />

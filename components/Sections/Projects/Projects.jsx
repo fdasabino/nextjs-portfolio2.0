@@ -34,7 +34,7 @@ const Projects = () => {
           modules={[Pagination, Navigation]}
           className="mySwiper"
         >
-          {ProjectsData.map((project, index) => (
+          {ProjectsData.map((project) => (
             <SwiperSlide key={project.id}>
               <div className="mySwiper__container">
                 <div className="mySwiper__wrapper">

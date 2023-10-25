@@ -1,15 +1,15 @@
 import { Timeline } from "antd";
 import { motion } from "framer-motion";
 import React from "react";
-import { BsChevronDoubleDown } from "react-icons/bs";
-import { Link } from "react-scroll";
+import { BsChatText, BsChevronDoubleDown } from "react-icons/bs";
 import { AboutData, TimeLineData } from "../../../constants/constants";
+import { scrollTo } from "../../../utils/globalFunctions";
+import Button from "../../Layout/Button/Button";
+import styles from "./About.module.scss";
 
 const About = () => {
   return (
-    <div className="">
-      <div className="sectionDivider" />
-      <h3 className="sectionTitle">About</h3>
+    <div className={styles.about}>
       <motion.div
         initial={{
           opacity: 0,
@@ -22,36 +22,30 @@ const About = () => {
           delay: 0.1,
         }}
       >
-        <div className="">
-          <div className="">
-            <div className="">
-              {AboutData.map((item) => (
-                <div className="" key={item.id}>
-                  <motion.img className="" src={item.image} />
-                  <div className="">
-                    <p className="">{item.text}</p>
-                    <br />
-                    <div>
-                      <Timeline>
-                        {TimeLineData?.map((item, index) => (
-                          <Timeline.Item key={index} className="">
-                            <span>{item.year}</span> {item.text}
-                          </Timeline.Item>
-                        ))}
-                      </Timeline>
-                    </div>
-                  </div>
+        <div className={styles.about__data}>
+          {AboutData.map((item) => (
+            <div className={styles.about__data_item} key={item.id}>
+              <motion.img src={item.image} />
+              <div className={styles.about__data_timeline}>
+                <p>{item.text}</p>
+                <br />
+                <div>
+                  <Timeline>
+                    {TimeLineData?.map((item, index) => (
+                      <Timeline.Item key={index} className="">
+                        <span>{item.year}</span> {item.text}
+                      </Timeline.Item>
+                    ))}
+                  </Timeline>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </motion.div>
-      <motion.div className="">
-        <Link to="projects">
-          <BsChevronDoubleDown />
-        </Link>
-      </motion.div>
+      <Button onClick={() => scrollTo("projects")}>
+        <BsChevronDoubleDown />
+      </Button>
     </div>
   );
 };

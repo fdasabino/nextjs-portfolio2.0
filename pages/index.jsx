@@ -1,9 +1,17 @@
 import Head from "next/head";
+
+import { BsChatText } from "react-icons/bs";
+import { PiTextAUnderlineBold } from "react-icons/pi";
+import { TbTools } from "react-icons/tb";
+
 import About from "../components/Sections/About/About";
 import Contact from "../components/Sections/Contact/Contact";
 import Hero from "../components/Sections/Hero/Hero";
 import Projects from "../components/Sections/Projects/Projects";
 import Testimonials from "../components/Sections/Testimonials/Testimonials";
+
+import { MdOutlineAlternateEmail } from "react-icons/md";
+import styles from "../styles/Home.module.scss";
 
 export default function Home() {
   return (
@@ -21,15 +29,27 @@ export default function Home() {
         <Hero />
       </section>
       <section id="about">
+        <h3 className={styles.section__title}>
+          About <BsChatText />
+        </h3>
         <About />
       </section>
       <section id="projects">
+        <h3 className={styles.section__title}>
+          Projects <TbTools />
+        </h3>
         <Projects />
       </section>
       <section id="testimonials">
+        <h3 className={styles.section__title}>
+          Testimonials <PiTextAUnderlineBold />
+        </h3>
         <Testimonials />
       </section>
       <section id="contact">
+        <h3 className={styles.section__title}>
+          Contact <MdOutlineAlternateEmail />
+        </h3>
         <Contact />
       </section>
     </div>

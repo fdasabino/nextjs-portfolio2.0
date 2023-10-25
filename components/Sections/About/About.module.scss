@@ -1,0 +1,23 @@
+.about {
+  width: 100%;
+  max-width: 100%;
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__data_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+    img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+}

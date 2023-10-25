@@ -13,15 +13,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 0.4rem;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: $base-grey;
+  display: none;
 }
 
 body {
@@ -32,13 +24,14 @@ body {
 }
 
 main {
+  max-width: 1200px;
   padding-top: 1rem;
-  min-height: 100vh;
-  margin: 0 0 5rem 0;
+  margin: 0 auto;
+  background-color: $base-dark-secondary;
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 p,

@@ -31,9 +31,12 @@
     width: 100%;
     max-width: 1000px;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
   }
 
   &__form_group {
+    position: relative;
     width: 100%;
     max-width: 100%;
 

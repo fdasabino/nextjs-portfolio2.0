@@ -110,12 +110,17 @@ $base-breakpoint-480px: 480px;
 
   .glitch {
     position: relative;
-    font-size: 30px;
+    font-size: 2rem;
     font-weight: bold;
     color: $base-dark;
     letter-spacing: 3px;
     text-transform: uppercase;
     z-index: 1;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+
     &:before,
     &:after {
       display: block;

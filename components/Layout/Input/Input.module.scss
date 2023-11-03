@@ -1,116 +1,129 @@
 .form_input {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  min-height: fit-content;
-
-  background: rgba($color: $base-dark, $alpha: 0.5);
-  border: 1px solid $base-dark-grey;
-
-  padding: 0.4rem 0.5rem;
-  margin: 10px 0;
-  border-radius: 5px;
-
-  display: grid;
-  grid-template-columns: 10% auto 10%;
-  justify-items: center;
-  align-items: center;
-
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  input[type="number"] {
-    -moz-appearance: textfield;
-    appearance: textfield;
-  }
-
-  &:focus-within {
-    outline: 1px solid $base-info;
-  }
-
-  svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    stroke: $base-blue;
-    fill: $base-blue;
-  }
-
-  textarea {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    padding: 0.5rem 0.5rem;
-    line-height: 1;
-    font-weight: 500;
-    font-size: 0.8rem;
-    color: $base-white;
-    width: 100%;
-    resize: none;
-    height: 150px !important;
-
-    &:disabled {
-      cursor: not-allowed;
-    }
-
-    &::placeholder {
-      color: $base-white;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      text-align: center;
-
-      @media (max-width: 480px) {
-        font-size: 0.6rem;
-      }
-    }
-  }
-
-  input {
     position: relative;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    padding: 0.5rem 0.5rem;
-    line-height: 1;
-    font-weight: 500;
-    font-size: 0.8rem;
-    color: $base-white;
     width: 100%;
+    max-width: 100%;
+    min-height: fit-content;
 
-    &:disabled {
-      cursor: not-allowed;
+    background: rgba($color: $base-dark, $alpha: 0.5);
+    border: 1px solid $base-dark-grey;
+
+    padding: 0.4rem 0.5rem;
+    margin: 10px 0;
+    border-radius: 5px;
+
+    display: grid;
+    grid-template-columns: 10% auto 10%;
+    justify-items: center;
+    align-items: center;
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
     }
 
-    &::placeholder {
-      color: $base-white;
-      text-transform: uppercase;
-      font-size: 0.7rem;
-      text-align: center;
-      @media (max-width: 480px) {
-        font-size: 0.6rem;
-      }
+    input[type="number"] {
+        -moz-appearance: textfield;
+        appearance: textfield;
     }
-  }
+
+    &:focus-within {
+        outline: 1px solid $base-info;
+    }
+
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        stroke: $base-blue;
+        fill: $base-blue;
+    }
+
+    textarea {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0.5rem 0.5rem;
+        line-height: 1;
+        font-weight: 500;
+        font-size: 0.8rem;
+        color: $base-white;
+        width: 100%;
+        resize: none;
+        height: 150px !important;
+
+        &:disabled {
+            cursor: not-allowed;
+        }
+
+        &::placeholder {
+            color: $base-white;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            text-align: center;
+
+            @media (max-width: 480px) {
+                font-size: 0.6rem;
+            }
+        }
+    }
+
+    input {
+        position: relative;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0.5rem 0.5rem;
+        line-height: 1;
+        font-weight: 500;
+        font-size: 0.8rem;
+        color: $base-white;
+        width: 100%;
+
+        &:disabled {
+            cursor: not-allowed;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        // autofill styles
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus {
+            -webkit-text-fill-color: $base-white !important;
+            -webkit-box-shadow: 0 0 0px 1000px rgba($color: $base-dark, $alpha: 0.1) inset !important;
+            transition: background-color 5000s ease-in-out 0s !important;
+        }
+
+        &::placeholder {
+            color: $base-white;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            text-align: center;
+            @media (max-width: 480px) {
+                font-size: 0.6rem;
+            }
+        }
+    }
 }
 
 .wrapper_error {
-  border: 1px solid $base-error;
+    border: 1px solid $base-error;
 
-  &:focus-within {
-    outline: 1px solid $base-error;
-  }
-
-  svg {
-    stroke: $base-error;
-    fill: $base-error;
-  }
-
-  .input_error {
-    &::placeholder {
-      color: $base-error;
-      font-weight: 600;
+    &:focus-within {
+        outline: 1px solid $base-error;
     }
-  }
+
+    svg {
+        stroke: $base-error;
+        fill: $base-error;
+    }
+
+    .input_error {
+        &::placeholder {
+            color: $base-error;
+            font-weight: 600;
+        }
+    }
 }

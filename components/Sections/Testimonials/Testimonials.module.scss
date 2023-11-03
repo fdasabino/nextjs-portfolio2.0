@@ -1,126 +1,126 @@
 .testimonials {
-  width: 100%;
-  max-width: 100%;
-  padding: 2rem;
-
-  &__data {
     width: 100%;
-    max-width: 1000px;
+    max-width: 100%;
     padding: 2rem;
-    margin: 0 auto;
-  }
 
-  &__swiper {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  &__swiper_top {
-    width: 100%;
-    max-width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 1rem;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-  }
-
-  &__swiper_top_left {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-    @media (max-width: 768px) {
-      justify-content: center;
+    &__data {
+        width: 100%;
+        max-width: 1000px;
+        padding: 2rem;
+        margin: 0 auto;
     }
 
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: $base-white;
-
-      @media (max-width: 768px) {
-        font-size: 1.2rem;
-      }
-    }
-  }
-
-  &__swiper_top_right {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 2rem;
-
-    p {
-      font-size: 0.9rem;
-      font-weight: 300;
-      color: $base-white;
-      font-weight: 600;
-
-      @media (max-width: 768px) {
-        font-size: 0.8rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      justify-content: center;
-    }
-  }
-
-  &__swiper_bottom {
-    width: 100%;
-    max-width: 100%;
-
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-    }
-  }
-
-  &__swiper_bottom_img {
-    width: 100%;
-    max-width: 300px;
-
-    img {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 1rem;
-      border: 2px solid $base-blue;
-      padding: 0.5rem;
-    }
-  }
-
-  &__swiper_bottom_text {
-    width: 100%;
-    max-width: 100%;
-
-    p {
-      font-size: 0.9rem;
-      font-weight: 300;
-      margin-bottom: 1rem;
-      text-align: justify;
-      line-height: 1.5rem;
-
-      @media (max-width: 768px) {
+    &__swiper {
+        width: 100%;
         max-width: 100%;
-        font-size: 0.8rem;
-      }
     }
-  }
+
+    &__swiper_top {
+        width: 100%;
+        max-width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 1rem;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+
+    &__swiper_top_left {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: $base-white;
+
+            @media (max-width: 768px) {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    &__swiper_top_right {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 2rem;
+
+        p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: $base-white;
+            font-weight: 600;
+
+            @media (max-width: 768px) {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+    }
+
+    &__swiper_bottom {
+        width: 100%;
+        max-width: 100%;
+
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+
+    &__swiper_bottom_img {
+        width: 100%;
+        max-width: 300px;
+
+        img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 1rem;
+            border: 2px solid $base-blue;
+            padding: 0.5rem;
+        }
+    }
+
+    &__swiper_bottom_text {
+        width: 100%;
+        max-width: 100%;
+
+        p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            text-align: justify;
+            line-height: 1.5rem;
+
+            @media (max-width: 768px) {
+                max-width: 100%;
+                font-size: 0.8rem;
+            }
+        }
+    }
 }

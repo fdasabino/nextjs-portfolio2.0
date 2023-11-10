@@ -16,7 +16,7 @@ export default function Home() {
                     name="viewport"
                     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
                 />
-                <meta httpEquiv="ScreenOrientation" contentS="autoRotate:disabled" />
+                <meta httpEquiv="ScreenOrientation" content="autoRotate:disabled" />
                 <meta name="description" content="Front End Developer - Stockholm" />
                 <meta name="keywords" content="HTML, CSS, JavaScript, React, NextJs" />
                 <meta name="author" content="Francisco Sabino" />

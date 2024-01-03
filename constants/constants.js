@@ -15,56 +15,96 @@ export const TechArray = [
     {
         id: 0,
         title: "HTML",
-        icon: <DiHtml5 color="#FF5733" size={"4rem"} />,
+        icon: (
+            <DiHtml5
+                color="#FF5733"
+                size={"4rem"}
+            />
+        ),
         skill: 85,
         label: "85%",
     },
     {
         id: 1,
         title: "CSS",
-        icon: <DiCss3 color="#1E90FF" size={"4rem"} />,
+        icon: (
+            <DiCss3
+                color="#1E90FF"
+                size={"4rem"}
+            />
+        ),
         skill: 85,
         label: "85%",
     },
     {
         id: 2,
         title: "JavaScript",
-        icon: <SiJavascript color="#FFD700" size={"4rem"} />,
+        icon: (
+            <SiJavascript
+                color="#FFD700"
+                size={"4rem"}
+            />
+        ),
         skill: 50,
         label: "50%",
     },
     {
         id: 3,
         title: "React",
-        icon: <DiReact color="#97c9fa" size={"4rem"} />,
+        icon: (
+            <DiReact
+                color="#97c9fa"
+                size={"4rem"}
+            />
+        ),
         skill: 50,
         label: "50%",
     },
     {
         id: 4,
         title: "NextJS",
-        icon: <SiNextdotjs color="#1E90FF" size={"4rem"} />,
+        icon: (
+            <SiNextdotjs
+                color="#1E90FF"
+                size={"4rem"}
+            />
+        ),
         skill: 50,
         label: "50%",
     },
     {
         id: 5,
         title: "Redux",
-        icon: <SiRedux color="#663399" size={"4rem"} />,
+        icon: (
+            <SiRedux
+                color="#663399"
+                size={"4rem"}
+            />
+        ),
         skill: 40,
         label: "40%",
     },
     {
         id: 6,
         title: "Tailwind",
-        icon: <SiTailwindcss color="#1E90FF" size={"4rem"} />,
+        icon: (
+            <SiTailwindcss
+                color="#1E90FF"
+                size={"4rem"}
+            />
+        ),
         skill: 60,
         label: "60%",
     },
     {
         id: 7,
         title: "Bootstrap",
-        icon: <SiBootstrap color="#663399" size={"4rem"} />,
+        icon: (
+            <SiBootstrap
+                color="#663399"
+                size={"4rem"}
+            />
+        ),
         skill: 60,
         label: "60%",
     },
@@ -89,18 +129,34 @@ export const AboutData = [
 
 export const ProjectsData = [
     {
-        title: "STOREADO - Eccomerce",
+        title: "ShoppyFlow - Eccomerce",
         description:
-            "STOREADO is an exemplary M-E-R-N (MongoDB, Express, React, and Node.js) full-stack project meticulously crafted to illustrate the implementation of a comprehensive front and back-end infrastructure. Developed from the ground up, this project showcases the seamless integration of React and Node, enabling a robust and efficient application. To expedite the development process, the implementation incorporates the utilization of Tailwind CSS, a powerful framework renowned for its expedited workflow.",
-        image: "https://res.cloudinary.com/frank2021/image/upload/v1679769452/portfolio/Storeado_rl7zeo.png",
+            "ShoppyFlow is an exemplary M-E-R-N (MongoDB, Express, React(next-js), and Node.js) full-stack project meticulously crafted to illustrate the implementation of a comprehensive front and back-end infrastructure. Developed from the ground up, this project showcases the seamless integration of React and Node, enabling a robust and efficient application. To expedite the development process, the implementation incorporates the utilization of SASS.",
+        image: "https://res.cloudinary.com/frank2021/image/upload/v1704284815/portfolio/wire_e5rra1.png",
         tags: [
-            <SiMongodb key={0} color="#4CAA3D" size={30} />,
-            <SiExpress key={1} color="#ccc" size={30} />,
-            <SiReact key={2} color="#5ED4F3" size={30} />,
-            <SiNodedotjs key={3} color="#659B60" size={30} />,
+            <SiMongodb
+                key={0}
+                color="#4CAA3D"
+                size={30}
+            />,
+            <SiExpress
+                key={1}
+                color="#ccc"
+                size={30}
+            />,
+            <SiNextdotjs
+                key={2}
+                color="#5ED4F3"
+                size={30}
+            />,
+            <SiNodedotjs
+                key={3}
+                color="#659B60"
+                size={30}
+            />,
         ],
-        source: "",
-        visit: "https://storeado.vercel.app/",
+        source: "https://github.com/fdasabino/next_ecommerce",
+        visit: "https://shoppyflowsweden.vercel.app/",
         id: 0,
     },
 
@@ -110,9 +166,21 @@ export const ProjectsData = [
             "This educational game was thoughtfully developed using fundamental web technologies, including HTML, CSS, and JavaScript, with the primary aim of nurturing and enhancing children's math skills. Its creation stemmed from a project undertaken at the esteemed Code Institute, showcasing the practical application of acquired knowledge and expertise. By leveraging the simplicity and versatility of HTML, the visual appeal of CSS, and the interactive functionality of JavaScript, this game offers an engaging and effective platform for children to practice and develop their mathematical proficiency.",
         image: "https://res.cloudinary.com/frank2021/image/upload/v1664667107/portfolio/math_game_hjfg9j.png",
         tags: [
-            <DiHtml5 key={0} size={30} color="#E34C26" />,
-            <DiCss3 key={1} size={30} color="#264DE4" />,
-            <SiJavascript key={2} size={30} color="#EFD81D" />,
+            <DiHtml5
+                key={0}
+                size={30}
+                color="#E34C26"
+            />,
+            <DiCss3
+                key={1}
+                size={30}
+                color="#264DE4"
+            />,
+            <SiJavascript
+                key={2}
+                size={30}
+                color="#EFD81D"
+            />,
         ],
         source: "https://github.com/fdasabino/Love-Maths",
         visit: "https://fdasabino.github.io/Love-Maths/",
@@ -125,9 +193,21 @@ export const ProjectsData = [
             "The development of this game entailed utilizing essential web technologies such as HTML, CSS, and JavaScript. Notably, the game boasts a fully responsive design, adapting seamlessly to various screen sizes and devices. Serving as an enjoyable alternative to the traditional rock, paper, scissors game, it offers a captivating and interactive experience. With its intuitive interface and engaging gameplay, players can revel in a dynamic and entertaining pastime while exploring the unique twists and features incorporated into this modern adaptation",
         image: "https://res.cloudinary.com/frank2021/image/upload/v1642764842/portfolio/screencapture-fdasabino-github-io-rock-paper-scissor-game-2022-01-21-12_31_18_epvy4f.png",
         tags: [
-            <DiHtml5 key={0} size={30} color="#E34C26" />,
-            <DiCss3 key={1} size={30} color="#264DE4" />,
-            <SiJavascript key={2} size={30} color="#EFD81D" />,
+            <DiHtml5
+                key={0}
+                size={30}
+                color="#E34C26"
+            />,
+            <DiCss3
+                key={1}
+                size={30}
+                color="#264DE4"
+            />,
+            <SiJavascript
+                key={2}
+                size={30}
+                color="#EFD81D"
+            />,
         ],
         source: "https://github.com/fdasabino/rock-paper-scissor_game",
         visit: "https://fdasabino.github.io/rock-paper-scissor_game/",
@@ -140,9 +220,21 @@ export const ProjectsData = [
             "This meticulously crafted page was developed using fundamental web technologies such as HTML, CSS, and JavaScript. It serves as the inaugural project undertaken at Hyper Island Stockholm (FED24), symbolizing the beginning of a remarkable learning journey. By harnessing the power of HTML, the page structure is defined, while CSS brings forth captivating visual aesthetics. JavaScript, on the other hand, contributes interactive elements and enhanced functionality to elevate the user experience.",
         image: "https://res.cloudinary.com/frank2021/image/upload/v1665056001/portfolio/hyper_models_white_rjjyhu.png",
         tags: [
-            <DiHtml5 key={0} size={30} color="#E34C26" />,
-            <DiCss3 key={1} size={30} color="#264DE4" />,
-            <SiJavascript key={2} size={30} color="#EFD81D" />,
+            <DiHtml5
+                key={0}
+                size={30}
+                color="#E34C26"
+            />,
+            <DiCss3
+                key={1}
+                size={30}
+                color="#264DE4"
+            />,
+            <SiJavascript
+                key={2}
+                size={30}
+                color="#EFD81D"
+            />,
         ],
         source: "https://github.com/fdasabino/90s_web_page",
         visit: "https://quiet-twilight-401223.netlify.app/",

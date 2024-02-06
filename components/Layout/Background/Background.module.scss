@@ -6,6 +6,7 @@
     left: 0;
     background: linear-gradient(45deg, $base-dark, $base-dark-secondary);
     overflow: hidden;
+    z-index: -1;
 
     span {
         width: 9vmin;

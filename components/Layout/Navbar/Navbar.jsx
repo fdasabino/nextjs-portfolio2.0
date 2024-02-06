@@ -1,8 +1,8 @@
-import { Drawer } from "antd";
+import { Drawer, Tooltip } from "antd";
 import { motion } from "framer-motion";
 import { Fade as Hamburger } from "hamburger-react";
 import React, { useState } from "react";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { BsDownload, BsGithub, BsLinkedin } from "react-icons/bs";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-scroll";
 import styles from "./Navbar.module.scss";
@@ -49,18 +49,28 @@ const Navbar = () => {
                 }}
                 transition={{
                     duration: 1.5,
-                }}
-            >
-                <a href="https://github.com/fdasabino" target="_blank" rel="noreferrer">
+                }}>
+                <a
+                    href="https://github.com/fdasabino"
+                    target="_blank"
+                    rel="noreferrer">
                     <BsGithub />
                 </a>
                 <a
                     href="https://www.linkedin.com/in/francisco-sabino/"
                     target="_blank"
-                    rel="noreferrer"
-                >
+                    rel="noreferrer">
                     <BsLinkedin />
                 </a>
+                {/* download my cv link */}
+                <Tooltip title="Download my CV">
+                    <a
+                        href="https://drive.google.com/file/d/1dBPQi0ldM98GB2MNRT5X4uNt5K0YZqUQ/view?usp=sharing"
+                        target="_blank"
+                        rel="noreferrer">
+                        <BsDownload />
+                    </a>
+                </Tooltip>
             </motion.div>
             <motion.div
                 className={styles.navbar__right}
@@ -74,9 +84,13 @@ const Navbar = () => {
                 }}
                 transition={{
                     duration: 1.5,
-                }}
-            >
-                <Hamburger toggled={open} toggle={showDrawer} duration={0.8} color={"#fff"} />
+                }}>
+                <Hamburger
+                    toggled={open}
+                    toggle={showDrawer}
+                    duration={0.8}
+                    color={"#fff"}
+                />
             </motion.div>
             <Drawer
                 placement="right"
@@ -88,16 +102,19 @@ const Navbar = () => {
                 maskStyle={{
                     backgroundColor: "rgba( 0, 0, 0, 0.65)",
                     backdropFilter: "blur( 16px )",
-                }}
-            >
+                }}>
                 <div className={styles.navbar__menu}>
                     <motion.div
                         className={styles.navbar__menu_item}
                         variants={variants}
                         whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <Link spy={true} isDynamic={true} to="hero" onClick={onClose} className="">
+                        whileTap={{ scale: 0.95 }}>
+                        <Link
+                            spy={true}
+                            isDynamic={true}
+                            to="hero"
+                            onClick={onClose}
+                            className="">
                             Home
                         </Link>
                     </motion.div>
@@ -106,9 +123,13 @@ const Navbar = () => {
                         className={styles.navbar__menu_item}
                         variants={variants}
                         whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <Link spy={true} isDynamic={true} to="about" onClick={onClose} className="">
+                        whileTap={{ scale: 0.95 }}>
+                        <Link
+                            spy={true}
+                            isDynamic={true}
+                            to="about"
+                            onClick={onClose}
+                            className="">
                             About
                         </Link>
                     </motion.div>
@@ -117,15 +138,13 @@ const Navbar = () => {
                         className={styles.navbar__menu_item}
                         variants={variants}
                         whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
+                        whileTap={{ scale: 0.95 }}>
                         <Link
                             spy={true}
                             isDynamic={true}
                             to="projects"
                             onClick={onClose}
-                            className=""
-                        >
+                            className="">
                             Projects
                         </Link>
                     </motion.div>
@@ -134,15 +153,13 @@ const Navbar = () => {
                         className={styles.navbar__menu_item}
                         variants={variants}
                         whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
+                        whileTap={{ scale: 0.95 }}>
                         <Link
                             spy={true}
                             isDynamic={true}
                             to="testimonials"
                             onClick={onClose}
-                            className=""
-                        >
+                            className="">
                             Testimonials
                         </Link>
                     </motion.div>
@@ -151,15 +168,13 @@ const Navbar = () => {
                         className={styles.navbar__menu_item}
                         variants={variants}
                         whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
+                        whileTap={{ scale: 0.95 }}>
                         <Link
                             spy={true}
                             isDynamic={true}
                             to="contact"
                             onClick={onClose}
-                            className=""
-                        >
+                            className="">
                             Contact
                         </Link>
                     </motion.div>

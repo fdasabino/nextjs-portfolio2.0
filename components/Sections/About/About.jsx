@@ -17,11 +17,12 @@ const About = () => {
                 transition={{
                     duration: 1.4,
                     delay: 0.1,
-                }}
-            >
+                }}>
                 <div className={`${styles.about__data} ${styles.base_blurry_background}`}>
                     {AboutData.map((item) => (
-                        <div className={styles.about__data_item} key={item.id}>
+                        <div
+                            className={styles.about__data_item}
+                            key={item.id}>
                             <div className={styles.about__data_img}>
                                 <motion.img src={item.image} />
                             </div>

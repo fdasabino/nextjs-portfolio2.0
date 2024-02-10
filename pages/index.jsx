@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Animation from "../components/Layout/Animation/Animation";
 import About from "../components/Sections/About/About";
 import Contact from "../components/Sections/Contact/Contact";
 import Hero from "../components/Sections/Hero/Hero";
@@ -16,10 +17,22 @@ export default function Home() {
                     name="viewport"
                     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
                 />
-                <meta httpEquiv="ScreenOrientation" content="autoRotate:disabled" />
-                <meta name="description" content="Front End Developer - Stockholm" />
-                <meta name="keywords" content="HTML, CSS, JavaScript, React, NextJs" />
-                <meta name="author" content="Francisco Sabino" />
+                <meta
+                    httpEquiv="ScreenOrientation"
+                    content="autoRotate:disabled"
+                />
+                <meta
+                    name="description"
+                    content="Front End Developer - Stockholm"
+                />
+                <meta
+                    name="keywords"
+                    content="HTML, CSS, JavaScript, React, NextJs"
+                />
+                <meta
+                    name="author"
+                    content="Francisco Sabino"
+                />
             </Head>
             <section id="hero">
                 <Hero />
@@ -27,7 +40,9 @@ export default function Home() {
 
             <section id="about">
                 <div className={styles.glitch_wrapper}>
-                    <div className={styles.glitch} data-text="About">
+                    <div
+                        className={styles.glitch}
+                        data-text="About">
                         About
                     </div>
                 </div>
@@ -36,7 +51,9 @@ export default function Home() {
 
             <section id="projects">
                 <div className={styles.glitch_wrapper}>
-                    <div className={styles.glitch} data-text="Projects">
+                    <div
+                        className={styles.glitch}
+                        data-text="Projects">
                         Projects
                     </div>
                 </div>
@@ -45,7 +62,9 @@ export default function Home() {
 
             <section id="testimonials">
                 <div className={styles.glitch_wrapper}>
-                    <div className={styles.glitch} data-text="Testimonials">
+                    <div
+                        className={styles.glitch}
+                        data-text="Testimonials">
                         Testimonials
                     </div>
                 </div>
@@ -54,7 +73,9 @@ export default function Home() {
 
             <section id="contact">
                 <div className={styles.glitch_wrapper}>
-                    <div className={styles.glitch} data-text="Contact">
+                    <div
+                        className={styles.glitch}
+                        data-text="Contact">
                         Contact
                     </div>
                 </div>

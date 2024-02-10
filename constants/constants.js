@@ -1,15 +1,60 @@
 import { DiCss3, DiHtml5, DiReact } from "react-icons/di";
 import {
+    SiAngular,
     SiBootstrap,
+    SiCss3,
+    SiDocker,
     SiExpress,
+    SiHtml5,
     SiJavascript,
     SiMongodb,
     SiNextdotjs,
     SiNodedotjs,
     SiReact,
     SiRedux,
+    SiSelenium,
     SiTailwindcss,
 } from "react-icons/si";
+
+export const animationIcons = [
+    // add icons with key prop
+    <SiHtml5
+        key={1}
+        color="#E34F26"
+    />, // HTML5 official color
+    <SiCss3
+        key={2}
+        color="#1572B6"
+    />, // CSS3 official color
+    <SiJavascript
+        key={3}
+        color="#F7DF1E"
+    />, // JavaScript official color
+    <SiAngular
+        key={9}
+        color="#DD0031" // Angular official color
+    />,
+    <SiReact
+        key={4}
+        color="#61DAFB"
+    />, // React official color
+    <SiRedux
+        key={5}
+        color="#764ABC"
+    />, // Redux official color
+    <SiNextdotjs
+        key={6}
+        color="#ffffff"
+    />, // Next.js official color
+    <SiDocker
+        key={7}
+        color="#2496ED"
+    />, // Docker official color
+    <SiSelenium
+        key={8}
+        color="#43B02A"
+    />, // Selenium official color
+];
 
 export const TechArray = [
     {

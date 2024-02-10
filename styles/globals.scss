@@ -1,45 +1,45 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *:before,
 *:after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 body {
-  font-family: "Quicksand", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  user-select: none;
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    user-select: none;
 }
 
 main {
-  padding-top: 1rem;
-  margin: 0 auto;
+    padding-top: 1rem;
+    margin: 0 auto;
 }
 
 section {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 1rem;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
 
-  @media (max-width: 768px) {
-    padding: 0.5rem;
-  }
+    @media (max-width: 768px) {
+        padding: 0.5rem;
+    }
 }
 
 p,
@@ -52,9 +52,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Quicksand", sans-serif;
-  font-weight: 500;
-  color: $base-white;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    color: $base-white;
 }
 
 p,
@@ -64,49 +64,49 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
-  color: $base-white;
+    overflow-wrap: break-word;
+    color: $base-white;
 }
 
 textarea,
 select,
 option,
 label {
-  transition: all 0.5s linear;
-  font-family: "Quicksand", sans-serif !important;
+    transition: all 0.5s linear;
+    font-family: "Quicksand", sans-serif !important;
 }
 
 img,
 video,
 canvas,
 svg {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 a {
-  text-decoration: none;
-  color: $base-dark;
+    text-decoration: none;
+    color: $base-dark;
 }
 
 ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  color: $base-white;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: $base-white;
 }
 
 li {
-  color: $base-white;
+    color: $base-white;
 }
 
 button {
-  border: none;
-  outline: none;
-  cursor: pointer;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
 hr {
-  margin: 2rem 0;
-  border: none;
-  border-top: 1px solid $base-grey;
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid $base-grey;
 }

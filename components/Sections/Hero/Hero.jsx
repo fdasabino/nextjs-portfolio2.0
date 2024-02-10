@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import { HeroData } from "../../../constants/constants";
+import { HeroData, animationIcons } from "../../../constants/constants";
 import { scrollTo } from "../../../utils/globalFunctions";
+import Animation from "../../Layout/Animation/Animation";
 import Button from "../../Layout/Button/Button";
 import styles from "./Hero.module.scss";
 
@@ -26,10 +27,11 @@ const Hero = () => {
             transition={{
                 duration: 1.4,
                 delay: 0.6,
-            }}
-        >
+            }}>
             {HeroData?.map((item) => (
-                <div key={item.id} className={styles.hero__wrapper}>
+                <div
+                    key={item.id}
+                    className={styles.hero__wrapper}>
                     <div className={styles.hero__image}>
                         <Image
                             priority
@@ -52,6 +54,11 @@ const Hero = () => {
                             Contact <MdOutlineAlternateEmail />
                         </Button>
                     </div>
+                    <Animation>
+                        {animationIcons?.map((icon) => {
+                            return <span key={icon.key}>{icon}</span>;
+                        })}
+                    </Animation>
                 </div>
             ))}
         </motion.div>

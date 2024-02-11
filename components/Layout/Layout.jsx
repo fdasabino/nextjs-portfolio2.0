@@ -1,6 +1,7 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import React from "react";
 import { Toaster } from "react-hot-toast";
+import { animationIcons } from "../../constants/constants";
 import Background from "./Background/Background";
 import Footer from "./Footer/Footer";
 import styles from "./Layout.module.scss";
@@ -16,8 +17,15 @@ export default function Layout({ children }) {
 
     return (
         <>
-            <motion.div className={styles.progress_bar} style={{ scaleX }} />
-            <Background />
+            <motion.div
+                className={styles.progress_bar}
+                style={{ scaleX }}
+            />
+            <Background>
+                {animationIcons.map((icon) => {
+                    return <span key={icon.key}>{icon}</span>;
+                })}
+            </Background>
             <Navbar />
             <main>{children}</main>
             <Footer />

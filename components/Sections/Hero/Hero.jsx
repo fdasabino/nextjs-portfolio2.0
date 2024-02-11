@@ -2,9 +2,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import { HeroData, animationIcons } from "../../../constants/constants";
+import { HeroData } from "../../../constants/constants";
 import { scrollTo } from "../../../utils/globalFunctions";
-import Animation from "../../Layout/Animation/Animation";
 import Button from "../../Layout/Button/Button";
 import styles from "./Hero.module.scss";
 
@@ -54,11 +53,6 @@ const Hero = () => {
                             Contact <MdOutlineAlternateEmail />
                         </Button>
                     </div>
-                    <Animation>
-                        {animationIcons?.map((icon) => {
-                            return <span key={icon.key}>{icon}</span>;
-                        })}
-                    </Animation>
                 </div>
             ))}
         </motion.div>

@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Animation from "../components/Layout/Animation/Animation";
 import About from "../components/Sections/About/About";
 import Contact from "../components/Sections/Contact/Contact";
 import Hero from "../components/Sections/Hero/Hero";

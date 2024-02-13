@@ -7,6 +7,33 @@
     align-items: center;
     gap: 1rem;
 
+    // &__atropos {
+    //     border-radius: 50% !important;
+
+    //     .atropos-scale {
+    //         background: transparent !important;
+    //         border-radius: 50% !important;
+    //     }
+    //     .atropos-rotate {
+    //         background: transparent !important;
+    //         border-radius: 50% !important;
+    //         .atropos-inner {
+    //             background: transparent !important;
+    //             border-radius: 50% !important;
+
+    //             .atropos-highlight {
+    //                 background: transparent !important;
+    //                 border-radius: 50% !important;
+    //             }
+    //             .atropos-shadow {
+    //                 box-shadow: none !important;
+    //                 background: transparent !important;
+    //                 border-radius: 50% !important;
+    //             }
+    //         }
+    //     }
+    // }
+
     &__wrapper {
         display: flex;
         flex-direction: column;

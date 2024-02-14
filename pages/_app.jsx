@@ -1,4 +1,5 @@
 import "antd/dist/antd.min.css";
+import "atropos/css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";

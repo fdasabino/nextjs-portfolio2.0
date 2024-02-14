@@ -1,3 +1,4 @@
+import Atropos from "atropos/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { MdOutlineAlternateEmail } from "react-icons/md";
@@ -27,34 +28,44 @@ const Hero = () => {
                 duration: 1.4,
                 delay: 0.6,
             }}>
-            {HeroData?.map((item) => (
-                <div
-                    key={item.id}
-                    className={styles.hero__wrapper}>
-                    <div className={styles.hero__image}>
-                        <Image
-                            priority
-                            height={600}
-                            width={600}
-                            key={item.id}
-                            src={item.image}
-                            alt={item.title}
-                        />
+            <Atropos
+                alwaysActive={true}
+                activeOffset={100}
+                duration={300}
+                shadow={false}
+                highlight={false}
+                draggable={true}
+                rotateXMax={0}
+                rotateYMax={50}>
+                {HeroData?.map((item) => (
+                    <div
+                        key={item.id}
+                        className={styles.hero__wrapper}>
+                        <div className={styles.hero__image}>
+                            <Image
+                                priority
+                                height={600}
+                                width={600}
+                                key={item.id}
+                                src={item.image}
+                                alt={item.title}
+                            />
+                        </div>
+                        <div className={styles.hero__text}>
+                            <h1>
+                                <span>{item.intro}</span> {item.title}
+                            </h1>
+                            <h2>
+                                <span>{text}</span>
+                                <Cursor cursorColor="#14a085" />
+                            </h2>
+                            <Button onClick={() => scrollTo("contact")}>
+                                Contact <MdOutlineAlternateEmail />
+                            </Button>
+                        </div>
                     </div>
-                    <div className={styles.hero__text}>
-                        <h1>
-                            <span>{item.intro}</span> {item.title}
-                        </h1>
-                        <h2>
-                            <span>{text}</span>
-                            <Cursor cursorColor="#14a085" />
-                        </h2>
-                        <Button onClick={() => scrollTo("contact")}>
-                            Contact <MdOutlineAlternateEmail />
-                        </Button>
-                    </div>
-                </div>
-            ))}
+                ))}
+            </Atropos>
         </motion.div>
     );
 };

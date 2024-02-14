@@ -29,14 +29,14 @@ const Hero = () => {
                 delay: 0.6,
             }}>
             <Atropos
-                alwaysActive={true}
-                activeOffset={100}
-                duration={300}
+                scaleChildren={false}
+                shadowScale={false}
+                duration={600}
                 shadow={false}
                 highlight={false}
                 draggable={true}
                 rotateXMax={0}
-                rotateYMax={50}>
+                rotateYMax={360}>
                 {HeroData?.map((item) => (
                     <div
                         key={item.id}

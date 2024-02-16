@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { MdOutlineAlternateEmail } from "react-icons/md";
+import { useMediaQuery } from "react-responsive";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { HeroData } from "../../../constants/constants";
 import { scrollTo } from "../../../utils/globalFunctions";
@@ -9,6 +10,7 @@ import Button from "../../Layout/Button/Button";
 import styles from "./Hero.module.scss";
 
 const Hero = () => {
+    const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
     const [text] = useTypewriter({
         words: ["<Front End Developer at Iquest/>", "<Student at Hyper Island/>"],
         loop: true,
@@ -26,8 +28,8 @@ const Hero = () => {
                     opacity: 1,
                 }}
                 transition={{
-                    duration: 3,
-                    delay: 3,
+                    duration: isMobile ? 0.5 : 2.5,
+                    delay: isMobile ? 0.5 : 2.5,
                 }}>
                 {HeroData?.map((item) => (
                     <div

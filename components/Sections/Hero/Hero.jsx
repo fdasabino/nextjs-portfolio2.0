@@ -1,10 +1,10 @@
-import Atropos from "atropos/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { HeroData } from "../../../constants/constants";
 import { scrollTo } from "../../../utils/globalFunctions";
+import Animation from "../../Layout/Animation/Animation";
 import Button from "../../Layout/Button/Button";
 import styles from "./Hero.module.scss";
 
@@ -16,27 +16,19 @@ const Hero = () => {
     });
 
     return (
-        <motion.div
-            className={styles.hero}
-            initial={{
-                opacity: 0,
-            }}
-            whileInView={{
-                opacity: 1,
-            }}
-            transition={{
-                duration: 1.4,
-                delay: 0.6,
-            }}>
-            <Atropos
-                scaleChildren={false}
-                shadowScale={false}
-                duration={600}
-                shadow={false}
-                highlight={false}
-                draggable={true}
-                rotateXMax={0}
-                rotateYMax={360}>
+        <Animation>
+            <motion.div
+                className={styles.hero}
+                initial={{
+                    opacity: 0,
+                }}
+                whileInView={{
+                    opacity: 1,
+                }}
+                transition={{
+                    duration: 3,
+                    delay: 3,
+                }}>
                 {HeroData?.map((item) => (
                     <div
                         key={item.id}
@@ -65,8 +57,8 @@ const Hero = () => {
                         </div>
                     </div>
                 ))}
-            </Atropos>
-        </motion.div>
+            </motion.div>
+        </Animation>
     );
 };
 

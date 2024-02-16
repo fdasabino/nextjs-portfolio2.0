@@ -1,4 +1,3 @@
-import { DiCss3, DiHtml5, DiReact } from "react-icons/di";
 import {
     SiAngular,
     SiBootstrap,
@@ -8,52 +7,70 @@ import {
     SiHtml5,
     SiJavascript,
     SiMongodb,
+    SiMysql,
     SiNextdotjs,
     SiNodedotjs,
     SiReact,
     SiRedux,
+    SiSass,
     SiSelenium,
+    SiSqlite,
     SiTailwindcss,
 } from "react-icons/si";
 
 export const animationIcons = [
-    // add icons with key prop
     <SiHtml5
         key={1}
         color="#E34F26"
-    />, // HTML5 official color
+    />,
     <SiCss3
-        key={2}
+        key={9}
         color="#1572B6"
-    />, // CSS3 official color
+    />,
+    <SiSass
+        key={2}
+        color="#CC6699"
+    />,
     <SiJavascript
         key={3}
         color="#F7DF1E"
-    />, // JavaScript official color
+    />,
     <SiAngular
         key={9}
-        color="#DD0031" // Angular official color
+        color="#DD0031"
     />,
     <SiReact
         key={4}
         color="#61DAFB"
-    />, // React official color
+    />,
     <SiRedux
         key={5}
         color="#764ABC"
-    />, // Redux official color
+    />,
     <SiNextdotjs
         key={6}
         color="#ffffff"
-    />, // Next.js official color
+    />,
     <SiDocker
         key={7}
         color="#2496ED"
-    />, // Docker official color
+    />,
     <SiSelenium
         key={8}
         color="#43B02A"
-    />, // Selenium official color
+    />,
+    <SiMongodb
+        key={10}
+        color="#47A248"
+    />,
+    <SiBootstrap
+        key={10}
+        color="#563D7C"
+    />,
+    <SiMysql
+        key={10}
+        color="#4479A1"
+    />,
 ];
 
 export const TechArray = [
@@ -61,7 +78,7 @@ export const TechArray = [
         id: 0,
         title: "HTML",
         icon: (
-            <DiHtml5
+            <SiHtml5
                 color="#FF5733"
                 size={"4rem"}
             />
@@ -73,7 +90,7 @@ export const TechArray = [
         id: 1,
         title: "CSS",
         icon: (
-            <DiCss3
+            <SiCss3
                 color="#1E90FF"
                 size={"4rem"}
             />
@@ -97,7 +114,7 @@ export const TechArray = [
         id: 3,
         title: "React",
         icon: (
-            <DiReact
+            <SiReact
                 color="#97c9fa"
                 size={"4rem"}
             />
@@ -158,7 +175,7 @@ export const TechArray = [
 export const HeroData = [
     {
         id: 0,
-        image: "https://res.cloudinary.com/frank2021/image/upload/v1664808618/portfolio/IMG_0100_abrxzc.jpg",
+        image: "https://res.cloudinary.com/frank2021/image/upload/v1708101961/portfolio/xyofuywxd0ynzwkzbpxj.jpg",
         intro: "Hello, I'm ",
         title: "Francisco Sabino",
     },
@@ -211,12 +228,12 @@ export const ProjectsData = [
             "This educational game was thoughtfully developed using fundamental web technologies, including HTML, CSS, and JavaScript, with the primary aim of nurturing and enhancing children's math skills. Its creation stemmed from a project undertaken at the esteemed Code Institute, showcasing the practical application of acquired knowledge and expertise. By leveraging the simplicity and versatility of HTML, the visual appeal of CSS, and the interactive functionality of JavaScript, this game offers an engaging and effective platform for children to practice and develop their mathematical proficiency.",
         image: "https://res.cloudinary.com/frank2021/image/upload/v1664667107/portfolio/math_game_hjfg9j.png",
         tags: [
-            <DiHtml5
+            <SiHtml5
                 key={0}
                 size={30}
                 color="#E34C26"
             />,
-            <DiCss3
+            <SiCss3
                 key={1}
                 size={30}
                 color="#264DE4"
@@ -238,12 +255,12 @@ export const ProjectsData = [
             "The development of this game entailed utilizing essential web technologies such as HTML, CSS, and JavaScript. Notably, the game boasts a fully responsive design, adapting seamlessly to various screen sizes and devices. Serving as an enjoyable alternative to the traditional rock, paper, scissors game, it offers a captivating and interactive experience. With its intuitive interface and engaging gameplay, players can revel in a dynamic and entertaining pastime while exploring the unique twists and features incorporated into this modern adaptation",
         image: "https://res.cloudinary.com/frank2021/image/upload/v1642764842/portfolio/screencapture-fdasabino-github-io-rock-paper-scissor-game-2022-01-21-12_31_18_epvy4f.png",
         tags: [
-            <DiHtml5
+            <SiHtml5
                 key={0}
                 size={30}
                 color="#E34C26"
             />,
-            <DiCss3
+            <SiCss3
                 key={1}
                 size={30}
                 color="#264DE4"
@@ -265,12 +282,12 @@ export const ProjectsData = [
             "This meticulously crafted page was developed using fundamental web technologies such as HTML, CSS, and JavaScript. It serves as the inaugural project undertaken at Hyper Island Stockholm (FED24), symbolizing the beginning of a remarkable learning journey. By harnessing the power of HTML, the page structure is defined, while CSS brings forth captivating visual aesthetics. JavaScript, on the other hand, contributes interactive elements and enhanced functionality to elevate the user experience.",
         image: "https://res.cloudinary.com/frank2021/image/upload/v1665056001/portfolio/hyper_models_white_rjjyhu.png",
         tags: [
-            <DiHtml5
+            <SiHtml5
                 key={0}
                 size={30}
                 color="#E34C26"
             />,
-            <DiCss3
+            <SiCss3
                 key={1}
                 size={30}
                 color="#264DE4"

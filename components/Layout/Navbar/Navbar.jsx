@@ -50,19 +50,22 @@ const Navbar = () => {
                 transition={{
                     duration: 1.5,
                 }}>
-                <a
-                    href="https://github.com/fdasabino"
-                    target="_blank"
-                    rel="noreferrer">
-                    <BsGithub />
-                </a>
-                <a
-                    href="https://www.linkedin.com/in/francisco-sabino/"
-                    target="_blank"
-                    rel="noreferrer">
-                    <BsLinkedin />
-                </a>
-                {/* download my cv link */}
+                <Tooltip title="Visit my Github profile">
+                    <a
+                        href="https://github.com/fdasabino"
+                        target="_blank"
+                        rel="noreferrer">
+                        <BsGithub />
+                    </a>
+                </Tooltip>
+                <Tooltip title="Visit my LinkedIn profile">
+                    <a
+                        href="https://www.linkedin.com/in/francisco-sabino/"
+                        target="_blank"
+                        rel="noreferrer">
+                        <BsLinkedin />
+                    </a>
+                </Tooltip>
                 <Tooltip title="Download my CV">
                     <a
                         href="https://drive.google.com/file/d/1dBPQi0ldM98GB2MNRT5X4uNt5K0YZqUQ/view?usp=sharing"

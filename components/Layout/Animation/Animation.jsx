@@ -15,7 +15,6 @@ const Animation = ({ children }) => {
                 const gsap = gsapModule.default;
                 const motionPathPluginModule = await import("gsap/MotionPathPlugin");
                 gsap.registerPlugin(motionPathPluginModule.MotionPathPlugin);
-
                 const icons = container.current.children;
                 const totalIcons = icons.length;
 
@@ -29,8 +28,8 @@ const Animation = ({ children }) => {
                 const angleIncrement = (2 * Math.PI) / totalIcons;
 
                 gsap.set(icons, {
-                    opacity: 0.5,
-                    zIndex: 1,
+                    opacity: 1,
+                    zIndex: 0,
                 });
 
                 // Animate icons along a circular path
@@ -38,6 +37,13 @@ const Animation = ({ children }) => {
                     const angle = i * angleIncrement;
                     const x = Math.cos(angle) * radius;
                     const y = Math.sin(angle) * radius;
+                    gsap.from(icons[i], {
+                        duration: 5,
+                        ease: "none", // Linear easing for a smooth animation
+                        x: x,
+                        y: y,
+                        opacity: 0,
+                    });
 
                     gsap.to(icons[i], {
                         duration: 25,
@@ -53,6 +59,7 @@ const Animation = ({ children }) => {
                             ],
                             autoRotate: true,
                         },
+
                         repeat: -1, // Infinite repeat
                     });
                 }

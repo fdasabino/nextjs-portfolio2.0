@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { MdOutlineAlternateEmail } from "react-icons/md";
-import { useMediaQuery } from "react-responsive";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { HeroData } from "../../../constants/constants";
 import { scrollTo } from "../../../utils/globalFunctions";
@@ -10,27 +9,33 @@ import Button from "../../Layout/Button/Button";
 import styles from "./Hero.module.scss";
 
 const Hero = () => {
-    const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
     const [text] = useTypewriter({
         words: ["<Front End Developer at Iquest/>", "<Student at Hyper Island/>"],
         loop: true,
         delaySpeed: 2000,
     });
 
+    const spring = {
+        type: "spring",
+        damping: 10,
+        stiffness: 100,
+    };
+
+    const animation = {
+        opacity: 1,
+        y: 0,
+        transition: {
+            delay: 0.5,
+            duration: 1,
+            ease: "easeInOut",
+        },
+    };
+
     return (
         <Animation>
             <motion.div
-                className={styles.hero}
-                initial={{
-                    opacity: 0,
-                }}
-                whileInView={{
-                    opacity: 1,
-                }}
-                transition={{
-                    duration: isMobile ? 0.5 : 2.5,
-                    delay: isMobile ? 0.5 : 2.5,
-                }}>
+                transition={spring}
+                animate={animation}>
                 {HeroData?.map((item) => (
                     <div
                         key={item.id}
@@ -51,7 +56,7 @@ const Hero = () => {
                             </h1>
                             <h2>
                                 <span>{text}</span>
-                                <Cursor cursorColor="#14a085" />
+                                <Cursor cursorColor="#00bbff" />
                             </h2>
                             <Button onClick={() => scrollTo("contact")}>
                                 Contact <MdOutlineAlternateEmail />

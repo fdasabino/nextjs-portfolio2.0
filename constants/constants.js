@@ -14,7 +14,6 @@ import {
     SiRedux,
     SiSass,
     SiSelenium,
-    SiSqlite,
     SiTailwindcss,
 } from "react-icons/si";
 

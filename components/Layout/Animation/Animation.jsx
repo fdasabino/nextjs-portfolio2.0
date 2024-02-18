@@ -20,7 +20,7 @@ const Animation = ({ children }) => {
 
                 // Function to calculate the radius based on media query
                 function getRadius() {
-                    return isDesktop ? 300 : isMobile ? 150 : 290;
+                    return isDesktop ? 350 : isMobile ? 150 : 290;
                 }
 
                 // Set initial position of icons
@@ -50,7 +50,7 @@ const Animation = ({ children }) => {
                         ease: "none", // Linear easing for a smooth animation
                         motionPath: {
                             path: [
-                                { x: 0, y: 0 },
+                                { x: 0, y: -50 },
                                 { x: x, y: y },
                                 { x: -y, y: x },
                                 { x: -x, y: -y },

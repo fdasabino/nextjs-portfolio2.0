@@ -103,7 +103,16 @@ $base-breakpoint-480px: 480px;
 
 .header {
     position: relative;
-    height: 100px;
+    height: 80px;
+    margin-top: 2rem;
+
+    @media (max-width: 768px) {
+        height: 75px;
+    }
+
+    @media (max-width: 480px) {
+        height: 40px;
+    }
 
     h2 {
         color: #fff;

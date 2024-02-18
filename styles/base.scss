@@ -113,7 +113,7 @@ $base-breakpoint-480px: 480px;
         transform: translate(-50%, -50%);
         font-family: "Poppins", sans-serif;
         text-transform: uppercase;
-        letter-spacing: 1rem;
+        letter-spacing: 0.8rem;
 
         @media (max-width: 768px) {
             font-size: 3rem;

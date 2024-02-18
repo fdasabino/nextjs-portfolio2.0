@@ -4,6 +4,7 @@ import Contact from "../components/Sections/Contact/Contact";
 import Hero from "../components/Sections/Hero/Hero";
 import Projects from "../components/Sections/Projects/Projects";
 import Testimonials from "../components/Sections/Testimonials/Testimonials";
+import styles from "../styles/Home.module.scss";
 
 export default function Home() {
     return (
@@ -37,18 +38,38 @@ export default function Home() {
             </section>
 
             <section id="about">
+                <div className={styles.header}>
+                    <h2>About</h2>
+                    <h2>About</h2>
+                </div>
+
                 <About />
             </section>
 
             <section id="projects">
+                <div className={styles.header}>
+                    <h2>Projects</h2>
+                    <h2>Projects</h2>
+                </div>
+
                 <Projects />
             </section>
 
             <section id="testimonials">
+                <div className={styles.header}>
+                    <h2>Testimonials</h2>
+                    <h2>Testimonials</h2>
+                </div>
+
                 <Testimonials />
             </section>
 
             <section id="contact">
+                <div className={styles.header}>
+                    <h2>Contact</h2>
+                    <h2>Contact</h2>
+                </div>
+
                 <Contact />
             </section>
         </div>

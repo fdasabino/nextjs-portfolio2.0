@@ -57,8 +57,8 @@ export default function Home() {
 
             <section id="testimonials">
                 <div className={styles.header}>
-                    <h2>Testimonials</h2>
-                    <h2>Testimonials</h2>
+                    <h2>References</h2>
+                    <h2>References</h2>
                 </div>
 
                 <Testimonials />

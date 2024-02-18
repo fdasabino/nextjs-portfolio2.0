@@ -103,12 +103,13 @@ $base-breakpoint-480px: 480px;
 
 .header {
     position: relative;
-    margin-bottom: 2rem;
+    height: 100px;
 
     h2 {
         color: #fff;
         font-size: 4rem;
         position: absolute;
+        top: 0;
         transform: translate(-50%, -50%);
         font-family: "Poppins", sans-serif;
         text-transform: uppercase;
@@ -119,7 +120,7 @@ $base-breakpoint-480px: 480px;
         }
 
         @media (max-width: 480px) {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
         }
 
         &:nth-child(1) {

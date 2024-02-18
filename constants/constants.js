@@ -174,7 +174,7 @@ export const TechArray = [
 export const HeroData = [
     {
         id: 0,
-        image: "https://res.cloudinary.com/frank2021/image/upload/v1708101961/portfolio/xyofuywxd0ynzwkzbpxj.jpg",
+        image: "https://res.cloudinary.com/frank2021/image/upload/v1708267815/uo2erokjtazdn4lou5py.jpg",
         intro: "Hello, I'm ",
         title: "Francisco Sabino",
     },

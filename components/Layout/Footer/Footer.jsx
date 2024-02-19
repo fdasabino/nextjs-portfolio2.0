@@ -72,7 +72,7 @@ const Footer = () => {
 
                 <div className={styles.footer__links_wrapper}>
                     <Link to="projects">Projects</Link>
-                    <Link to="testimonials">Testimonials</Link>
+                    <Link to="testimonials">References</Link>
                     <Link to="contact">Contact</Link>
                 </div>
             </div>

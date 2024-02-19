@@ -163,7 +163,7 @@ const Navbar = () => {
                             to="testimonials"
                             onClick={onClose}
                             className="">
-                            Testimonials
+                            References
                         </Link>
                     </motion.div>
 

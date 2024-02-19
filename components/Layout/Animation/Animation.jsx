@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import { animationIcons } from "../../../constants/constants";
 import styles from "./Animation.module.scss";
@@ -8,19 +8,19 @@ const Animation = ({ children }) => {
     const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
     const isDesktop = useMediaQuery({ query: "(min-width: 1200px)" });
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         // Dynamic import of GSAP
         import("gsap")
             .then(async (gsapModule) => {
                 const gsap = gsapModule.default;
                 const motionPathPluginModule = await import("gsap/MotionPathPlugin");
                 gsap.registerPlugin(motionPathPluginModule.MotionPathPlugin);
-                const icons = container.current.children;
+                const icons = container.current?.children || [];
                 const totalIcons = icons.length;
 
                 // Function to calculate the radius based on media query
                 function getRadius() {
-                    return isDesktop ? 350 : isMobile ? 150 : 290;
+                    return isDesktop ? 360 : isMobile ? 180 : 360;
                 }
 
                 // Set initial position of icons
@@ -39,7 +39,7 @@ const Animation = ({ children }) => {
                     const y = Math.sin(angle) * radius;
                     gsap.from(icons[i], {
                         duration: 5,
-                        ease: "none", // Linear easing for a smooth animation
+                        ease: "circ.out", // Linear easing for a smooth animation
                         x: x,
                         y: y,
                         opacity: 0,
@@ -47,10 +47,9 @@ const Animation = ({ children }) => {
 
                     gsap.to(icons[i], {
                         duration: 25,
-                        ease: "none", // Linear easing for a smooth animation
+                        ease: "circ", // Linear easing for a smooth animation
                         motionPath: {
                             path: [
-                                { x: 0, y: -50 },
                                 { x: x, y: y },
                                 { x: -y, y: x },
                                 { x: -x, y: -y },
@@ -68,22 +67,29 @@ const Animation = ({ children }) => {
     }, [isDesktop, isMobile]); // Dependencies
 
     return (
-        <div className={styles.animation_container}>
+        <>
             <div className={styles.content}>{children}</div>
-            {!isMobile && (
+            <div className={styles.animation_container}>
                 <div
                     className={styles.animation}
                     ref={container}>
                     {animationIcons.map((icon, index) => (
                         <span
                             key={index}
-                            style={{ position: "absolute" }}>
+                            style={{
+                                position: "absolute",
+                                left: "50%",
+                                top: "50%",
+                                transform: `translate(-50%, -50%) rotate(${
+                                    (360 / animationIcons.length) * index
+                                }deg)`,
+                            }}>
                             {icon}
                         </span>
                     ))}
                 </div>
-            )}
-        </div>
+            </div>
+        </>
     );
 };
 

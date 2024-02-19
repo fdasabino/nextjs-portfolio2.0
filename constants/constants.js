@@ -22,10 +22,6 @@ export const animationIcons = [
         key={1}
         color="#E34F26"
     />,
-    <SiCss3
-        key={9}
-        color="#1572B6"
-    />,
     <SiSass
         key={2}
         color="#CC6699"
@@ -33,10 +29,6 @@ export const animationIcons = [
     <SiJavascript
         key={3}
         color="#F7DF1E"
-    />,
-    <SiAngular
-        key={9}
-        color="#DD0031"
     />,
     <SiReact
         key={4}
@@ -58,17 +50,25 @@ export const animationIcons = [
         key={8}
         color="#43B02A"
     />,
+    <SiAngular
+        key={9}
+        color="#DD0031"
+    />,
     <SiMongodb
         key={10}
         color="#47A248"
     />,
     <SiBootstrap
-        key={10}
+        key={11}
         color="#563D7C"
     />,
     <SiMysql
-        key={10}
+        key={12}
         color="#4479A1"
+    />,
+    <SiCss3
+        key={13}
+        color="#1572B6"
     />,
 ];
 

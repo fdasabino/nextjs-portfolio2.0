@@ -33,9 +33,7 @@ const About = () => {
                                     <Timeline>
                                         {TimeLineData &&
                                             [...TimeLineData].reverse().map((item, index) => (
-                                                <Timeline.Item key={item.id}>
-                                                    {" "}
-                                                    {/* Assuming each `item` has a unique id */}
+                                                <Timeline.Item key={index}>
                                                     <p>
                                                         <span>{item.year}</span> {item.text}
                                                     </p>

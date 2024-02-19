@@ -31,13 +31,16 @@ const About = () => {
                                 <br />
                                 <div className={styles.item}>
                                     <Timeline>
-                                        {TimeLineData?.map((item, index) => (
-                                            <Timeline.Item key={index}>
-                                                <p>
-                                                    <span>{item.year}</span> {item.text}
-                                                </p>
-                                            </Timeline.Item>
-                                        ))}
+                                        {TimeLineData &&
+                                            [...TimeLineData].reverse().map((item, index) => (
+                                                <Timeline.Item key={item.id}>
+                                                    {" "}
+                                                    {/* Assuming each `item` has a unique id */}
+                                                    <p>
+                                                        <span>{item.year}</span> {item.text}
+                                                    </p>
+                                                </Timeline.Item>
+                                            ))}
                                     </Timeline>
                                 </div>
                             </div>

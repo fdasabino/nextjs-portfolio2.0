@@ -183,7 +183,7 @@ export const HeroData = [
 export const AboutData = [
     {
         id: 0,
-        image: "https://res.cloudinary.com/frank2021/image/upload/v1708438952/portfolio/me.ee24849d87fd96da986a_jqze0d_e_improve_iv5xbl.jpg",
+        image: "https://res.cloudinary.com/frank2021/image/upload/v1708440475/portfolio/IMG_0355_wzbbwb.jpg",
         text: "Welcome to my page, where I showcase my latest endeavor: a significant career transition. After years in the Hospitality Business, I've decided to pursue my passion for frontend development. I've immersed myself in HTML, CSS, and JavaScript, constantly honing my skills to create visually stunning and interactive web experiences. This shift represents an exhilarating new chapter in my life. I'm thrilled to apply my creativity, problem-solving abilities, and attention to detail in crafting intuitive user interfaces and seamless experiences. Join me on this journey of growth and discovery as we push boundaries and create impactful digital solutions together. Let's embark on this exciting adventure!",
     },
 ];
@@ -305,12 +305,16 @@ export const ProjectsData = [
 
 export const TimeLineData = [
     {
+        year: "2018/2022",
+        text: "Bartender at Haymarket by Scandic.",
+    },
+    {
         year: "2020",
-        text: "Started my journey, with youtube tutorials.",
+        text: "Started my journey, learning web development and programming during the pandemic, with online courses such as Udemy.",
     },
     {
         year: "2021",
-        text: "Code Institute Bootcamp. As well as some online courses such as Udemy.",
+        text: "Code Institute Bootcamp (E-commerce applications).",
     },
     {
         year: "2022/24",

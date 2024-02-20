@@ -30,6 +30,8 @@ const Animation = ({ children }) => {
                 gsap.set(icons, {
                     opacity: 1,
                     zIndex: 0,
+                    rotate: 360,
+                    repeat: -1,
                 });
 
                 // Animate icons along a circular path
@@ -38,16 +40,16 @@ const Animation = ({ children }) => {
                     const x = Math.cos(angle) * radius;
                     const y = Math.sin(angle) * radius;
                     gsap.from(icons[i], {
-                        duration: 5,
-                        ease: "circ.out", // Linear easing for a smooth animation
+                        duration: icons.length * 0.5,
+                        ease: "power4", // Linear easing for a smooth animation
                         x: x,
                         y: y,
                         opacity: 0,
                     });
 
                     gsap.to(icons[i], {
-                        duration: 25,
-                        ease: "circ", // Linear easing for a smooth animation
+                        duration: icons.length * 2,
+                        ease: "sine", // Linear easing for a smooth animation
                         motionPath: {
                             path: [
                                 { x: x, y: y },

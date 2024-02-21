@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
+import { ContactData } from "../../../constants/constants";
 import Button from "../../Layout/Button/Button";
 import Input from "../../Layout/Input/Input";
 import styles from "./Contact.module.scss";
@@ -69,11 +70,9 @@ const Contact = () => {
     return (
         <div className={styles.contact}>
             <div className={styles.contact__disclaimer}>
-                <h4>
-                    Just now, I am looking for projects or collaborations where I can show my skills
-                    and learn more. Send me a message if you have something in mind.{" "}
-                    <span>Let&apos;s chat!</span>
-                </h4>
+                {ContactData.map((item) => (
+                    <h4 key={item.id}>{item.text}</h4>
+                ))}
             </div>
 
             <motion.div
@@ -87,14 +86,12 @@ const Contact = () => {
                     duration: 1.4,
                     delay: 0.1,
                 }}
-                className={`${styles.contact__form} ${styles.base_blurry_background}`}
-            >
+                className={`${styles.contact__form} ${styles.base_blurry_background}`}>
                 <Formik
                     enableReinitialize
                     initialValues={{ name, email_address, phone_number, subject, message }}
                     validationSchema={messageValidation}
-                    onSubmit={handleSubmit}
-                >
+                    onSubmit={handleSubmit}>
                     {(form) => (
                         <Form>
                             <div className={styles.contact__form_group}>
@@ -140,7 +137,9 @@ const Contact = () => {
                                 onChange={handleChange}
                             />
                             <br />
-                            <Button type="submit" disabled={!form.isValid}>
+                            <Button
+                                type="submit"
+                                disabled={!form.isValid}>
                                 Send Message <span>🚀</span>
                             </Button>
                         </Form>

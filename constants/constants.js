@@ -344,3 +344,10 @@ export const TestimonialsData = [
         text: "I know Francisco Sabino personally since a few years back. Francisco is hard working, great at project management and has the ability of planning ahead. He is reliable, service minded, sociable, positive and always takes on a challenge with a smile on his face. I have been impressed with the dedication and drive Francisco has shown in regards to his career change. Francisco has always had a natural interest for IT and tech, and based on his talents I believe he will have a bright future as a Full stack developer. I can give Francisco Sabino my warmest recommendations.",
     },
 ];
+
+export const ContactData = [
+    {
+        id: 0,
+        text: "🌟 Are you in need of a talented frontend developer to elevate your projects? Look no further! I'm eager to collaborate, showcase my skills, and learn along the way. Let's connect and discuss how we can bring your ideas to life! 💼💡",
+    },
+];

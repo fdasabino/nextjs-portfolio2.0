@@ -1,9 +1,6 @@
-// Make the necessary imports
 import React, { useEffect, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import { animationIcons } from "../../../constants/constants";
-
-// Import or define your CSS modules styles appropriately
 import styles from "./Animation.module.scss";
 
 interface AnimationProps {
@@ -11,10 +8,9 @@ interface AnimationProps {
 }
 
 const Animation: React.FC<AnimationProps> = ({ children }) => {
-    // Specify the type for the `useRef` generic type argument
+    const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+    const isDesktop = useMediaQuery({ query: "(min-width: 800px)" });
     const container = useRef<HTMLDivElement>(null);
-    const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
-    const isDesktop = useMediaQuery({ query: "(min-width: 1200px)" });
 
     useEffect(() => {
         // Dynamic import of GSAP
@@ -31,7 +27,7 @@ const Animation: React.FC<AnimationProps> = ({ children }) => {
 
                 // Function to calculate the radius based on media query
                 function getRadius() {
-                    return isDesktop ? 360 : isMobile ? 180 : 360;
+                    return isDesktop ? 360 - totalIcons * 0.6 : 360 - totalIcons * 0.2;
                 }
 
                 // Set initial position of icons
@@ -76,30 +72,32 @@ const Animation: React.FC<AnimationProps> = ({ children }) => {
                 }
             })
             .catch((err) => console.error("Failed to load GSAP plugins:", err));
-    }, [isDesktop, isMobile]); // Dependencies
+    }, [isDesktop, isMobile, container]); // Dependencies
 
     return (
         <>
             <div className={styles.content}>{children}</div>
             <div className={styles.animation_container}>
-                <div
-                    className={styles.animation}
-                    ref={container}>
-                    {animationIcons.map((icon, index) => (
-                        <span
-                            key={index}
-                            style={{
-                                position: "absolute",
-                                left: "50%",
-                                top: "50%",
-                                transform: `translate(-50%, -50%) rotate(${
-                                    (360 / animationIcons.length) * index
-                                }deg)`,
-                            }}>
-                            {icon}
-                        </span>
-                    ))}
-                </div>
+                {!isMobile && (
+                    <div
+                        ref={container}
+                        className={styles.animation}>
+                        {animationIcons.map((icon, index) => (
+                            <span
+                                key={index}
+                                style={{
+                                    position: "absolute",
+                                    left: "50%",
+                                    top: "50%",
+                                    transform: `translate(-50%, -50%) rotate(${
+                                        (360 / animationIcons.length) * index
+                                    }deg)`,
+                                }}>
+                                {icon}
+                            </span>
+                        ))}
+                    </div>
+                )}
             </div>
         </>
     );

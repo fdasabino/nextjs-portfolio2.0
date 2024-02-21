@@ -7,7 +7,6 @@ import { scrollTo } from "../../../utils/globalFunctions";
 import Animation from "../../Layout/Animation/Animation";
 import Button from "../../Layout/Button/Button";
 import styles from "./Hero.module.scss";
-
 const Hero = () => {
     const [text] = useTypewriter({
         words: ["<Front End Developer at Iquest/>", "<Student at Hyper Island/>"],

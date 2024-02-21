@@ -5,7 +5,6 @@ import Hero from "../components/Sections/Hero/Hero";
 import Projects from "../components/Sections/Projects/Projects";
 import Testimonials from "../components/Sections/Testimonials/Testimonials";
 import styles from "../styles/Home.module.scss";
-
 export default function Home() {
     return (
         <div>

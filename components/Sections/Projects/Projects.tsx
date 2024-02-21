@@ -19,8 +19,7 @@ const Projects = () => {
                 transition={{
                     duration: 1.4,
                     delay: 0.1,
-                }}
-            >
+                }}>
                 <div className={`${styles.projects__data} ${styles.base_blurry_background}`}>
                     <Swiper
                         pagination={{
@@ -29,8 +28,7 @@ const Projects = () => {
                         grabCursor={true}
                         navigation={true}
                         modules={[Pagination, Navigation]}
-                        className={styles.projects__swiper}
-                    >
+                        className={styles.projects__swiper}>
                         {ProjectsData.map((project) => (
                             <SwiperSlide key={project.id}>
                                 <div className={styles.projects__swiper_top}>
@@ -48,22 +46,19 @@ const Projects = () => {
                                                 <a
                                                     href={project.source}
                                                     target="_blank"
-                                                    rel="noreferrer"
-                                                >
+                                                    rel="noreferrer">
                                                     Source Code
                                                 </a>
                                             )}
                                             <a
                                                 href={project.visit}
                                                 target="_blank"
-                                                rel="noreferrer"
-                                            >
+                                                rel="noreferrer">
                                                 Live Project
                                             </a>
                                         </div>
                                         <div
-                                            className={styles.projects__swiper_bottom__description}
-                                        >
+                                            className={styles.projects__swiper_bottom__description}>
                                             <p>{project.description}</p>
                                         </div>
                                     </div>

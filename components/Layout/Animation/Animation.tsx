@@ -1,10 +1,18 @@
-import { useEffect, useRef } from "react";
+// Make the necessary imports
+import React, { useEffect, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import { animationIcons } from "../../../constants/constants";
+
+// Import or define your CSS modules styles appropriately
 import styles from "./Animation.module.scss";
 
-const Animation = ({ children }) => {
-    const container = useRef();
+interface AnimationProps {
+    children: React.ReactNode;
+}
+
+const Animation: React.FC<AnimationProps> = ({ children }) => {
+    // Specify the type for the `useRef` generic type argument
+    const container = useRef<HTMLDivElement>(null);
     const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
     const isDesktop = useMediaQuery({ query: "(min-width: 1200px)" });
 
@@ -15,7 +23,10 @@ const Animation = ({ children }) => {
                 const gsap = gsapModule.default;
                 const motionPathPluginModule = await import("gsap/MotionPathPlugin");
                 gsap.registerPlugin(motionPathPluginModule.MotionPathPlugin);
-                const icons = container.current?.children || [];
+
+                // Ensure container.current is HTMLDivElement before accessing its children
+                if (!container.current) return;
+                const icons = Array.from(container.current.children);
                 const totalIcons = icons.length;
 
                 // Function to calculate the radius based on media query
@@ -40,16 +51,16 @@ const Animation = ({ children }) => {
                     const x = Math.cos(angle) * radius;
                     const y = Math.sin(angle) * radius;
                     gsap.from(icons[i], {
-                        duration: icons.length * 0.5,
-                        ease: "power4", // Linear easing for a smooth animation
+                        duration: totalIcons * 0.5,
+                        ease: "power4",
                         x: x,
                         y: y,
                         opacity: 0,
                     });
 
                     gsap.to(icons[i], {
-                        duration: icons.length * 2,
-                        ease: "sine", // Linear easing for a smooth animation
+                        duration: totalIcons * 2,
+                        ease: "sine",
                         motionPath: {
                             path: [
                                 { x: x, y: y },
@@ -60,7 +71,6 @@ const Animation = ({ children }) => {
                             ],
                             autoRotate: true,
                         },
-
                         repeat: -1, // Infinite repeat
                     });
                 }

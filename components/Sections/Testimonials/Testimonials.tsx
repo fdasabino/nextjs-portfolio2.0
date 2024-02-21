@@ -19,8 +19,7 @@ const Testimonials = () => {
                 transition={{
                     duration: 1.4,
                     delay: 0.1,
-                }}
-            >
+                }}>
                 <div className={`${styles.testimonials__data} ${styles.base_blurry_background}`}>
                     <Swiper
                         pagination={{
@@ -29,8 +28,7 @@ const Testimonials = () => {
                         grabCursor={true}
                         navigation={true}
                         modules={[Pagination, Navigation]}
-                        className={styles.testimonials__swiper}
-                    >
+                        className={styles.testimonials__swiper}>
                         {TestimonialsData.map((testimonial) => (
                             <SwiperSlide key={testimonial.id}>
                                 <div className={styles.testimonials__swiper_top}>

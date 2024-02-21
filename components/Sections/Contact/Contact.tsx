@@ -39,8 +39,8 @@ const Contact = () => {
 
     const handleSubmit = () => {
         sendEmail(
-            serviceID,
-            templateID,
+            serviceID as string,
+            templateID as string,
             {
                 name: name,
                 phone: phone_number,
@@ -48,16 +48,21 @@ const Contact = () => {
                 subject: subject,
                 message: message,
             },
-            userID
+            userID as string
         );
     };
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setUserMessage({ ...userMessage, [name]: value });
     };
 
-    const sendEmail = async (serviceID, templateID, variables, userID) => {
+    const sendEmail = async (
+        serviceID: string,
+        templateID: string,
+        variables: Record<string, unknown>,
+        userID: string
+    ) => {
         try {
             await emailjs.send(serviceID, templateID, variables, userID);
             toast.success("Message Sent Successfully!!!");

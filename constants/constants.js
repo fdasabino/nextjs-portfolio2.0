@@ -184,7 +184,7 @@ export const AboutData = [
     {
         id: 0,
         image: "https://res.cloudinary.com/frank2021/image/upload/v1708440475/portfolio/IMG_0355_wzbbwb.jpg",
-        text: "Welcome to my page, where I showcase my latest endeavor: a significant career transition. After years in the Hospitality Business, I've decided to pursue my passion for frontend development. I've immersed myself in HTML, CSS, and JavaScript, constantly honing my skills to create visually stunning and interactive web experiences. This shift represents an exhilarating new chapter in my life. I'm thrilled to apply my creativity, problem-solving abilities, and attention to detail in crafting intuitive user interfaces and seamless experiences. Join me on this journey of growth and discovery as we push boundaries and create impactful digital solutions together. Let's embark on this exciting adventure!",
+        text: "🌟 Welcome to my page! 🌟After a year of experience at iQuest, where I've learned a lot of new exciting things, I'm ready for my next adventure! 💼💻 I'm on a mission to craft visually stunning and interactive web experiences that captivate users and drive engagement. Now, I'm eagerly seeking new and exciting opportunities to apply my expertise and creativity in frontend development. 🎨🌐 Join me on this exhilarating journey as we push boundaries, solve problems, and create impactful digital solutions together. Let's make magic happen! ✨ I can't wait to connect with forward-thinking professionals and organizations who are ready to embark on this exciting adventure with me. Let's turn visions into reality! 🔍🔗",
     },
 ];
 

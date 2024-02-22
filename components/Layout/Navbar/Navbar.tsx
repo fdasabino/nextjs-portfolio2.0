@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import { BsDownload, BsGithub, BsLinkedin } from "react-icons/bs";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-scroll";
-
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {

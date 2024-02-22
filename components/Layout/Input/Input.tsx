@@ -15,7 +15,7 @@ const iconMap: Record<string, JSX.Element> = {
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
     icon?: keyof typeof iconMap;
-    name: string; // Make 'name' a required field
+    name: string;
     rows?: any;
     placeholder?: string;
     type?: "text" | "textarea" | "email" | "number" | "password" | "phone";

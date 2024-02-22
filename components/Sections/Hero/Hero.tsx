@@ -10,7 +10,7 @@ import styles from "./Hero.module.scss";
 
 const Hero = () => {
     const [text] = useTypewriter({
-        words: ["<Front End Developer at Iquest/>", "<Student at Hyper Island/>"],
+        words: ["<Front End Developer at Iquest/>", "<Student at Hyper Island/>", "<Freelancer/>"],
         loop: true,
         delaySpeed: 2000,
     });

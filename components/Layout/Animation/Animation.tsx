@@ -56,7 +56,7 @@ const Animation: React.FC<AnimationProps> = ({ children }) => {
 
                     gsap.to(icons[i], {
                         duration: totalIcons * 2,
-                        ease: "sine",
+                        ease: "sine.inOut",
                         motionPath: {
                             path: [
                                 { x: x, y: y },

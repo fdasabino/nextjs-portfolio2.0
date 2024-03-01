@@ -80,18 +80,7 @@ const Contact = () => {
                 ))}
             </div>
 
-            <motion.div
-                initial={{
-                    opacity: 0,
-                }}
-                whileInView={{
-                    opacity: 1,
-                }}
-                transition={{
-                    duration: 1.4,
-                    delay: 0.1,
-                }}
-                className={`${styles.contact__form} ${styles.base_blurry_background}`}>
+            <div className={`${styles.contact__form} ${styles.base_blurry_background}`}>
                 <Formik
                     enableReinitialize
                     initialValues={{ name, email_address, phone_number, subject, message }}
@@ -150,7 +139,7 @@ const Contact = () => {
                         </Form>
                     )}
                 </Formik>
-            </motion.div>
+            </div>
         </div>
     );
 };

@@ -1,8 +1,9 @@
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import React, { ReactNode } from "react";
 import { ToastPosition, Toaster } from "react-hot-toast";
-import Background from "./Background/Background";
+
 import Footer from "./Footer/Footer";
+import GeminiEffect from "./GeminiEffect/GeminiEffect";
 import styles from "./Layout.module.scss";
 import Navbar from "./Navbar/Navbar";
 
@@ -32,6 +33,13 @@ const toasterOptions = {
 
 export default function Layout({ children }: LayoutProps) {
     const { scrollYProgress } = useScroll();
+
+    const pathLengthFirst = useTransform(scrollYProgress, [0, 0.8], [0.2, 1.2]);
+    const pathLengthSecond = useTransform(scrollYProgress, [0, 0.8], [0.15, 1.2]);
+    const pathLengthThird = useTransform(scrollYProgress, [0, 0.8], [0.1, 1.2]);
+    const pathLengthFourth = useTransform(scrollYProgress, [0, 0.8], [0.05, 1.2]);
+    const pathLengthFifth = useTransform(scrollYProgress, [0, 0.8], [0, 1.2]);
+
     const scaleX = useSpring(scrollYProgress, {
         stiffness: 100,
         damping: 30,
@@ -44,7 +52,15 @@ export default function Layout({ children }: LayoutProps) {
                 className={styles.progress_bar}
                 style={{ scaleX }}
             />
-            <Background />
+            <GeminiEffect
+                pathLengths={[
+                    pathLengthFirst,
+                    pathLengthSecond,
+                    pathLengthThird,
+                    pathLengthFourth,
+                    pathLengthFifth,
+                ]}
+            />
             <Navbar />
             <main>{children}</main>
             <Footer />

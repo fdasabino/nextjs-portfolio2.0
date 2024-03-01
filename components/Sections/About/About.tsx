@@ -7,17 +7,7 @@ import styles from "./About.module.scss";
 const About = () => {
     return (
         <div className={styles.about}>
-            <motion.div
-                initial={{
-                    opacity: 0,
-                }}
-                whileInView={{
-                    opacity: 1,
-                }}
-                transition={{
-                    duration: 1.4,
-                    delay: 0.1,
-                }}>
+            <div>
                 <div className={`${styles.about__data} ${styles.base_blurry_background}`}>
                     {AboutData.map((item) => (
                         <div
@@ -45,7 +35,7 @@ const About = () => {
                         </div>
                     ))}
                 </div>
-            </motion.div>
+            </div>
         </div>
     );
 };

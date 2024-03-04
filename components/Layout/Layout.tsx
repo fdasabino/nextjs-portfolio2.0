@@ -1,4 +1,4 @@
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import React, { ReactNode } from "react";
 import { ToastPosition, Toaster } from "react-hot-toast";
 
@@ -34,11 +34,31 @@ const toasterOptions = {
 export default function Layout({ children }: LayoutProps) {
     const { scrollYProgress } = useScroll();
 
-    const pathLengthFirst = useTransform(scrollYProgress, [0, 0.8], [0.2, 1.2]);
-    const pathLengthSecond = useTransform(scrollYProgress, [0, 0.8], [0.15, 1.2]);
-    const pathLengthThird = useTransform(scrollYProgress, [0, 0.8], [0.1, 1.2]);
-    const pathLengthFourth = useTransform(scrollYProgress, [0, 0.8], [0.05, 1.2]);
-    const pathLengthFifth = useTransform(scrollYProgress, [0, 0.8], [0, 1.2]);
+    const pathLengthFirst = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
+    const pathLengthSecond = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
+    const pathLengthThird = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
+    const pathLengthFourth = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
+    const pathLengthFifth = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
 
     const scaleX = useSpring(scrollYProgress, {
         stiffness: 100,

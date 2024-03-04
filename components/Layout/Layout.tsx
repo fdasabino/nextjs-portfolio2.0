@@ -1,11 +1,13 @@
 import { motion, useScroll, useSpring } from "framer-motion";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useRef } from "react";
 import { ToastPosition, Toaster } from "react-hot-toast";
 
+import { useMediaQuery } from "react-responsive";
 import BackgroundBeams from "./BackgroundBeans/BackgroundBeams";
 import Footer from "./Footer/Footer";
 import styles from "./Layout.module.scss";
 import Navbar from "./Navbar/Navbar";
+import TracingBeam from "./TracingBeam/TracingBeam";
 
 interface LayoutProps {
     children: ReactNode;
@@ -32,6 +34,8 @@ const toasterOptions = {
 };
 
 export default function Layout({ children }: LayoutProps) {
+    const isMobile = useMediaQuery({ maxWidth: "768px" });
+    const contentRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll();
 
     const scaleX = useSpring(scrollYProgress, {
@@ -46,9 +50,10 @@ export default function Layout({ children }: LayoutProps) {
                 className={styles.progress_bar}
                 style={{ scaleX }}
             />
-            <BackgroundBeams />
+            {!isMobile && <BackgroundBeams />}
             <Navbar />
-            <main>{children}</main>
+            <TracingBeam contentRef={contentRef} />
+            <main ref={contentRef}>{children}</main>
             <Footer />
             <Toaster {...toasterOptions} />
         </>

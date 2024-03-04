@@ -42,8 +42,8 @@ $base-breakpoint-480px: 480px;
     left: 0;
     z-index: 50;
     height: 0.25rem;
-    background-image: linear-gradient(to right, $base-blue, $base-lilac);
-    transform-origin: left;
+    background-image: linear-gradient(to left, $base-blue, $base-lilac);
+    transform-origin: right;
 }
 
 .swiper {

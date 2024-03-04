@@ -94,10 +94,10 @@ const BackgroundBeams = () => {
                                 y2: ["0%", `${93 + Math.random() * 8}%`],
                             }}
                             transition={{
-                                duration: Math.random() * 10 + 10,
+                                duration: Math.random() * 10 + 15,
                                 ease: "easeInOut",
                                 repeat: Infinity,
-                                delay: Math.random() * 10,
+                                delay: Math.random() * 2,
                             }}>
                             <stop
                                 stopColor="#18CCFC"

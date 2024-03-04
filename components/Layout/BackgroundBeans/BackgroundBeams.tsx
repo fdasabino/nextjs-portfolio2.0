@@ -107,7 +107,7 @@ const BackgroundBeams = () => {
                                 offset="32.5%"
                                 stopColor="#6344F5"></stop>
                             <stop
-                                offset="100%"
+                                offset="50%"
                                 stopColor="#AE48FF"
                                 stopOpacity="0"></stop>
                         </motion.linearGradient>

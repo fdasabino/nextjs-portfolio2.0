@@ -37,6 +37,9 @@ section {
     flex-direction: column;
     padding: 1rem;
 
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+
     @media (max-width: 768px) {
         padding: 0.5rem;
     }

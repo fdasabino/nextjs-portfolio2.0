@@ -1,7 +1,8 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import React, { ReactNode } from "react";
 import { ToastPosition, Toaster } from "react-hot-toast";
-import Background from "./Background/Background";
+
+import BackgroundBeams from "./BackgroundBeans/BackgroundBeams";
 import Footer from "./Footer/Footer";
 import styles from "./Layout.module.scss";
 import Navbar from "./Navbar/Navbar";
@@ -32,6 +33,7 @@ const toasterOptions = {
 
 export default function Layout({ children }: LayoutProps) {
     const { scrollYProgress } = useScroll();
+
     const scaleX = useSpring(scrollYProgress, {
         stiffness: 100,
         damping: 30,
@@ -44,7 +46,7 @@ export default function Layout({ children }: LayoutProps) {
                 className={styles.progress_bar}
                 style={{ scaleX }}
             />
-            <Background />
+            <BackgroundBeams />
             <Navbar />
             <main>{children}</main>
             <Footer />

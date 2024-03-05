@@ -28,6 +28,10 @@ export default function Home() {
                     content="HTML, CSS, JavaScript, React, NextJs"
                 />
                 <meta
+                    name="robots"
+                    content="index, follow"
+                />
+                <meta
                     name="author"
                     content="Francisco Sabino"
                 />

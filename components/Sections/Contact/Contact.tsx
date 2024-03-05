@@ -1,6 +1,5 @@
 import emailjs from "@emailjs/browser";
 import { Form, Formik } from "formik";
-import { motion } from "framer-motion";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import * as Yup from "yup";

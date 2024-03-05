@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import { Navigation, Pagination } from "swiper";
@@ -56,7 +55,6 @@ const Projects = () => {
                                         width={600}
                                         height={600}
                                         alt={project.title}
-                                        className=""
                                     />
                                 </div>
                             </div>

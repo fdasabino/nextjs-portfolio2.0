@@ -1,7 +1,6 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import React, { ReactNode, useRef } from "react";
 import { ToastPosition, Toaster } from "react-hot-toast";
-
 import { useMediaQuery } from "react-responsive";
 import BackgroundBeams from "./BackgroundBeans/BackgroundBeams";
 import Footer from "./Footer/Footer";

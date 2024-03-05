@@ -40,7 +40,7 @@ const TracingBeam = ({ contentRef }: { contentRef: React.RefObject<HTMLDivElemen
                 <motion.path
                     d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.8} l -18 24V ${svgHeight}`}
                     fill="none"
-                    stroke="#9091A0"
+                    stroke="transparent"
                     strokeOpacity="0.16"
                     transition={{
                         duration: 10,
@@ -52,7 +52,7 @@ const TracingBeam = ({ contentRef }: { contentRef: React.RefObject<HTMLDivElemen
                     strokeWidth="1.25"
                     className="motion-reduce:hidden"
                     transition={{
-                        duration: 10,
+                        duration: 20,
                     }}></motion.path>
                 <defs>
                     <motion.linearGradient

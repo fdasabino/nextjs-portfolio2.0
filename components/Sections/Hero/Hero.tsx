@@ -4,7 +4,6 @@ import { MdOutlineAlternateEmail } from "react-icons/md";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { HeroData } from "../../../constants/constants";
 import { scrollTo } from "../../../utils/globalFunctions";
-import Animation from "../../Layout/Animation/Animation";
 import Button from "../../Layout/Button/Button";
 import styles from "./Hero.module.scss";
 
@@ -32,40 +31,38 @@ const Hero = () => {
     };
 
     return (
-        <Animation>
-            <motion.div
-                transition={spring}
-                animate={animation}>
-                {HeroData?.map((item) => (
-                    <div
-                        key={item.id}
-                        className={styles.hero__wrapper}>
-                        <div className={styles.hero__image}>
-                            <Image
-                                priority
-                                height={600}
-                                width={600}
-                                key={item.id}
-                                src={item.image}
-                                alt={item.title}
-                            />
-                        </div>
-                        <div className={styles.hero__text}>
-                            <h1>
-                                <span>{item.intro}</span> {item.title}
-                            </h1>
-                            <h2>
-                                <span>{text}</span>
-                                <Cursor cursorColor="#00bbff" />
-                            </h2>
-                            <Button onClick={() => scrollTo("contact")}>
-                                Contact <MdOutlineAlternateEmail />
-                            </Button>
-                        </div>
+        <motion.div
+            transition={spring}
+            animate={animation}>
+            {HeroData?.map((item) => (
+                <div
+                    key={item.id}
+                    className={styles.hero__wrapper}>
+                    <div className={styles.hero__image}>
+                        <Image
+                            priority
+                            height={600}
+                            width={600}
+                            key={item.id}
+                            src={item.image}
+                            alt={item.title}
+                        />
                     </div>
-                ))}
-            </motion.div>
-        </Animation>
+                    <div className={styles.hero__text}>
+                        <h1>
+                            <span>{item.intro}</span> {item.title}
+                        </h1>
+                        <h2>
+                            <span>{text}</span>
+                            <Cursor cursorColor="#00bbff" />
+                        </h2>
+                        <Button onClick={() => scrollTo("contact")}>
+                            Contact <MdOutlineAlternateEmail />
+                        </Button>
+                    </div>
+                </div>
+            ))}
+        </motion.div>
     );
 };
 

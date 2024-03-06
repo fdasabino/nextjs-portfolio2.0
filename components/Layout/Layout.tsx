@@ -2,7 +2,6 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import React, { ReactNode, useRef } from "react";
 import { ToastPosition, Toaster } from "react-hot-toast";
 import { useMediaQuery } from "react-responsive";
-import BackgroundBeams from "./BackgroundBeans/BackgroundBeams";
 import Footer from "./Footer/Footer";
 import styles from "./Layout.module.scss";
 import Navbar from "./Navbar/Navbar";
@@ -49,7 +48,6 @@ export default function Layout({ children }: LayoutProps) {
                 className={styles.progress_bar}
                 style={{ scaleX }}
             />
-            {!isMobile && <BackgroundBeams />}
             <Navbar />
             <TracingBeam contentRef={contentRef} />
             <main ref={contentRef}>{children}</main>

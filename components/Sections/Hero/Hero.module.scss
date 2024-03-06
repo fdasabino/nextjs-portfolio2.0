@@ -38,7 +38,7 @@
             height: 300px;
             border-radius: 50%;
             border: 2px solid $base-blue;
-            box-shadow: rgba(68, 1, 255, 0.56) 0px 0px 75px 10px;
+            animation: shadowEffect 6s ease infinite alternate;
             object-fit: cover;
             padding: 0.2rem;
 

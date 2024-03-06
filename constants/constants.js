@@ -192,8 +192,8 @@ export const ProjectsData = [
     {
         title: "ShoppyFlow - Eccomerce",
         description:
-            "ShoppyFlow is an exemplary M-E-R-N (MongoDB, Express, React(nextJS), and Node.js) full-stack project meticulously crafted to illustrate the implementation of a comprehensive front and back-end infrastructure. Developed from the ground up, this project showcases the seamless integration of React and Node, enabling a robust and efficient application. To expedite the development process, the implementation incorporates the utilization of SASS.",
-        image: "https://res.cloudinary.com/frank2021/image/upload/v1704284815/portfolio/wire_e5rra1.png",
+            "ShoppyFlow stands as a flagship MERN (MongoDB, Express, React (Next.js), and Node.js) full-stack endeavor, meticulously designed to showcase not only the architectural finesse but also the robust functionality of a comprehensive application. From its inception, this project has been engineered to seamlessly integrate React and Node, facilitating a dynamic and responsive user experience. Leveraging an array of powerful libraries and tools, such as redux for state management, next auth for secure authentication, and stripe for seamless payment processing, ShoppyFlow exemplifies a commitment to functional excellence. Furthermore, its utilization of vercel analytics ensures insightful tracking of user interactions, enhancing decision-making and user experience optimization. By prioritizing functionality at every stage of development.",
+        image: "https://res.cloudinary.com/frank2021/image/upload/v1709741159/portfolio/shoppyflow_ul4okz.png",
         tags: [
             <SiMongodb
                 key={0}

@@ -5,6 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import Footer from "./Footer/Footer";
 import styles from "./Layout.module.scss";
 import Navbar from "./Navbar/Navbar";
+import { SparklesComponent } from "./Sparkles/SparklesComponent";
 import TracingBeam from "./TracingBeam/TracingBeam";
 
 interface LayoutProps {
@@ -48,6 +49,7 @@ export default function Layout({ children }: LayoutProps) {
                 className={styles.progress_bar}
                 style={{ scaleX }}
             />
+            <SparklesComponent />
             <Navbar />
             <TracingBeam contentRef={contentRef} />
             <main ref={contentRef}>{children}</main>

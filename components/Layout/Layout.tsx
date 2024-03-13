@@ -1,4 +1,5 @@
 import { motion, useScroll, useSpring } from "framer-motion";
+import { useRouter } from "next/router";
 import React, { ReactNode, useRef } from "react";
 import { ToastPosition, Toaster } from "react-hot-toast";
 import { useMediaQuery } from "react-responsive";
@@ -7,7 +8,6 @@ import styles from "./Layout.module.scss";
 import Navbar from "./Navbar/Navbar";
 import { SparklesComponent } from "./Sparkles/SparklesComponent";
 import TracingBeam from "./TracingBeam/TracingBeam";
-
 interface LayoutProps {
     children: ReactNode;
 }
@@ -33,6 +33,7 @@ const toasterOptions = {
 };
 
 export default function Layout({ children }: LayoutProps) {
+    const router = useRouter();
     const isMobile = useMediaQuery({ maxWidth: "768px" });
     const contentRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll();
@@ -53,7 +54,7 @@ export default function Layout({ children }: LayoutProps) {
             <Navbar />
             <TracingBeam contentRef={contentRef} />
             <main ref={contentRef}>{children}</main>
-            <Footer />
+            {!router.pathname.startsWith("/admin") && <Footer />}
             <Toaster {...toasterOptions} />
         </>
     );

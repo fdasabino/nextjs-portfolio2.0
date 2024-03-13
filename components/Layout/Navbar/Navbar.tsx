@@ -1,13 +1,16 @@
 import { Drawer, Tooltip } from "antd";
 import { motion } from "framer-motion";
 import { Fade as Hamburger } from "hamburger-react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { BsDownload, BsGithub, BsLinkedin } from "react-icons/bs";
 import { useMediaQuery } from "react-responsive";
-import { Link } from "react-scroll";
+import { Link as ReactScrollLink } from "react-scroll";
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
+    const router = useRouter();
     const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
     const [open, setOpen] = useState(false);
 
@@ -107,80 +110,107 @@ const Navbar = () => {
                     backdropFilter: "blur( 16px )",
                 }}>
                 <div className={styles.navbar__menu}>
-                    <motion.div
-                        className={styles.navbar__menu_item}
-                        variants={variants}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}>
-                        <Link
-                            spy={true}
-                            isDynamic={true}
-                            to="hero"
-                            onClick={onClose}
-                            className="">
-                            Home
-                        </Link>
-                    </motion.div>
+                    {router.pathname === "/" ? (
+                        <>
+                            <motion.div
+                                className={styles.navbar__menu_item}
+                                variants={variants}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}>
+                                <ReactScrollLink
+                                    spy={true}
+                                    isDynamic={true}
+                                    to="hero"
+                                    onClick={onClose}
+                                    className="">
+                                    Home
+                                </ReactScrollLink>
+                            </motion.div>
 
-                    <motion.div
-                        className={styles.navbar__menu_item}
-                        variants={variants}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}>
-                        <Link
-                            spy={true}
-                            isDynamic={true}
-                            to="about"
-                            onClick={onClose}
-                            className="">
-                            About
-                        </Link>
-                    </motion.div>
+                            <motion.div
+                                className={styles.navbar__menu_item}
+                                variants={variants}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}>
+                                <ReactScrollLink
+                                    spy={true}
+                                    isDynamic={true}
+                                    to="about"
+                                    onClick={onClose}
+                                    className="">
+                                    About
+                                </ReactScrollLink>
+                            </motion.div>
 
-                    <motion.div
-                        className={styles.navbar__menu_item}
-                        variants={variants}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}>
-                        <Link
-                            spy={true}
-                            isDynamic={true}
-                            to="projects"
-                            onClick={onClose}
-                            className="">
-                            Projects
-                        </Link>
-                    </motion.div>
+                            <motion.div
+                                className={styles.navbar__menu_item}
+                                variants={variants}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}>
+                                <ReactScrollLink
+                                    spy={true}
+                                    isDynamic={true}
+                                    to="projects"
+                                    onClick={onClose}
+                                    className="">
+                                    Projects
+                                </ReactScrollLink>
+                            </motion.div>
 
-                    <motion.div
-                        className={styles.navbar__menu_item}
-                        variants={variants}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}>
-                        <Link
-                            spy={true}
-                            isDynamic={true}
-                            to="testimonials"
-                            onClick={onClose}
-                            className="">
-                            References
-                        </Link>
-                    </motion.div>
+                            <motion.div
+                                className={styles.navbar__menu_item}
+                                variants={variants}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}>
+                                <ReactScrollLink
+                                    spy={true}
+                                    isDynamic={true}
+                                    to="testimonials"
+                                    onClick={onClose}
+                                    className="">
+                                    References
+                                </ReactScrollLink>
+                            </motion.div>
 
-                    <motion.div
-                        className={styles.navbar__menu_item}
-                        variants={variants}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}>
-                        <Link
-                            spy={true}
-                            isDynamic={true}
-                            to="contact"
-                            onClick={onClose}
-                            className="">
-                            Contact
-                        </Link>
-                    </motion.div>
+                            <motion.div
+                                className={styles.navbar__menu_item}
+                                variants={variants}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}>
+                                <ReactScrollLink
+                                    spy={true}
+                                    isDynamic={true}
+                                    to="contact"
+                                    onClick={onClose}
+                                    className="">
+                                    Contact
+                                </ReactScrollLink>
+                            </motion.div>
+                            <motion.div
+                                className={styles.navbar__menu_item}
+                                variants={variants}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}>
+                                <Link
+                                    href="/admin/dashboard"
+                                    onClick={onClose}>
+                                    Admin Dashboard
+                                </Link>
+                            </motion.div>
+                        </>
+                    ) : (
+                        <motion.div
+                            className={styles.navbar__menu_item}
+                            variants={variants}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}>
+                            <Link
+                                href="/"
+                                onClick={onClose}>
+                                Portfolio
+                            </Link>
+                        </motion.div>
+                    )}
                 </div>
             </Drawer>
         </nav>

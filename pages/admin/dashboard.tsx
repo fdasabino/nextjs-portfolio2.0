@@ -5,7 +5,17 @@ import { CiCirclePlus } from "react-icons/ci";
 import { RiKakaoTalkLine, RiMessage2Line } from "react-icons/ri";
 import { TfiRulerAlt2 } from "react-icons/tfi";
 
+import About from "@/components/Admin/About/About";
+import Projects from "@/components/Admin/Projects/Projects";
+import Testimonials from "@/components/Admin/Testimonials/Testimonials";
+
 const AdminDashboard = () => {
+    const [active, setActive] = React.useState(1);
+
+    const handleSwitch = (item: number) => {
+        setActive(item);
+    };
+
     return (
         <div className={styles.dashboard}>
             <div className={styles.dashboard__header}>
@@ -27,7 +37,9 @@ const AdminDashboard = () => {
                             </p>
                         </div>
                         <div className={styles.dashboard__action__card__bottom}>
-                            <Button style="primary">
+                            <Button
+                                onClick={() => handleSwitch(1)}
+                                style="primary">
                                 About <CiCirclePlus />
                             </Button>
                         </div>
@@ -48,7 +60,9 @@ const AdminDashboard = () => {
                             </p>
                         </div>
                         <div className={styles.dashboard__action__card__bottom}>
-                            <Button style="secondary">
+                            <Button
+                                onClick={() => handleSwitch(2)}
+                                style="secondary">
                                 Project <CiCirclePlus />
                             </Button>
                         </div>
@@ -69,12 +83,20 @@ const AdminDashboard = () => {
                             </p>
                         </div>
                         <div className={styles.dashboard__action__card__bottom}>
-                            <Button style="tertiary">
+                            <Button
+                                onClick={() => handleSwitch(3)}
+                                style="tertiary">
                                 Testimonial <CiCirclePlus />
                             </Button>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className={styles.dashboard__forms}>
+                {active === 1 && <About />}
+                {active === 2 && <Projects />}
+                {active === 3 && <Testimonials />}
             </div>
         </div>
     );

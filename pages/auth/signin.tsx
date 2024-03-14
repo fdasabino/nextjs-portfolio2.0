@@ -4,8 +4,16 @@ import Loader from "@/components/Layout/Loader/Loader";
 import styles from "@/styles/pages/SignIn.module.scss";
 import { Form, Formik, FormikHelpers } from "formik";
 import { GetServerSidePropsContext } from "next";
-import { SessionProviderProps, getCsrfToken, getProviders, getSession } from "next-auth/react";
+import {
+    SessionProviderProps,
+    getCsrfToken,
+    getProviders,
+    getSession,
+    signIn,
+} from "next-auth/react";
+import { useRouter } from "next/router";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import * as Yup from "yup";
 
@@ -37,21 +45,56 @@ const signInValidation = Yup.object().shape({
         .max(20, `Password is too long (maximum ${MAX_PASSWORD_LENGTH} characters)`),
 });
 
-const SignIn = () => {
+const SignIn = ({ providers, callbackUrl, csrfToken }: SignInProps) => {
     const [loading, setLoading] = useState(false);
     const [user, setUser] = useState(initialValues);
     const { login_email, login_password } = user;
+    const router = useRouter();
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setUser({ ...user, [name]: value });
+    };
 
     const handleSignIn = async (
         values: { login_email: string; login_password: string },
         formikHelpers: FormikHelpers<{ login_email: string; login_password: string }>
     ) => {
-        console.log(values);
-    };
+        try {
+            setLoading(true);
+            let options = {
+                redirect: false,
+                email: values.login_email,
+                password: values.login_password,
+            };
+            const res = await signIn("credentials", options);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setUser({ ...user, [name]: value });
+            if (res?.error) {
+                toast.error(res?.error);
+                return;
+            }
+
+            // Update user state with received user data after successful sign-in
+            if (res) {
+                setUser(res.user);
+            }
+
+            toast.success("Successfully signed in!");
+            await new Promise((resolve) => setTimeout(resolve, 2000));
+            // Reset the form values after successful sign-in
+            formikHelpers.resetForm();
+            // Redirect the user to the specified callback URL or to the homepage
+            router.push(callbackUrl || "/");
+        } catch (error: any) {
+            if (error.response && error.response.data && error.response.data.message) {
+                toast.error(error.response.data.message);
+            } else {
+                toast.error("An error occurred");
+            }
+        } finally {
+            // Set loading state to false when the operation is complete
+            setLoading(false);
+        }
     };
 
     return (
@@ -81,6 +124,7 @@ const SignIn = () => {
                                     name="login_email"
                                     placeholder="Email address"
                                     setLoading={setLoading}
+                                    onChange={handleChange}
                                 />
                                 <Input
                                     type="password"
@@ -88,6 +132,7 @@ const SignIn = () => {
                                     name="login_password"
                                     placeholder="Password"
                                     setLoading={setLoading}
+                                    onChange={handleChange}
                                 />
                                 <Button
                                     type="submit"
@@ -121,7 +166,11 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
             };
         }
         return {
-            props: {},
+            props: {
+                providers,
+                callbackUrl,
+                csrfToken,
+            },
         };
     } catch (error) {
         console.error(error);

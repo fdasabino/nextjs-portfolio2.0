@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { BsDownload, BsGithub, BsLinkedin } from "react-icons/bs";
-import { MdDashboard, MdOutlineAdminPanelSettings } from "react-icons/md";
 import { useMediaQuery } from "react-responsive";
 import { Link as ReactScrollLink } from "react-scroll";
 import Button from "../Button/Button";
@@ -195,16 +194,26 @@ const Navbar = () => {
                             </div>
 
                             <div className={styles.navbar__menu__middle} />
-                            <div className={styles.navbar__menu_bottom}>
+                            <div className={styles.navbar__menu__bottom}>
                                 {session ? (
-                                    <Button
-                                        style="danger"
-                                        onClick={() => {
-                                            signOut();
-                                            onClose();
-                                        }}>
-                                        Sign Out
-                                    </Button>
+                                    <>
+                                        <motion.div
+                                            className={styles.navbar__menu__bottom__item}
+                                            variants={variants}
+                                            whileHover={{ scale: 1.1 }}
+                                            onClick={onClose}
+                                            whileTap={{ scale: 0.95 }}>
+                                            <Link href="/admin/dashboard">Dashboard</Link>
+                                        </motion.div>
+                                        <Button
+                                            style="danger"
+                                            onClick={() => {
+                                                signOut();
+                                                onClose();
+                                            }}>
+                                            Sign Out
+                                        </Button>
+                                    </>
                                 ) : (
                                     <Button
                                         style="primary"

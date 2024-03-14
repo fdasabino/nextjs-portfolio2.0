@@ -31,8 +31,8 @@ const initialValues = {
 const SignIn = ({ callbackUrl, csrfToken }: SignInProps) => {
     const [loading, setLoading] = useState(false);
     const [user, setUser] = useState(initialValues);
-    const { login_email, login_password } = user || initialValues;
     const router = useRouter();
+    const { login_email, login_password } = user || initialValues;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -84,44 +84,46 @@ const SignIn = ({ callbackUrl, csrfToken }: SignInProps) => {
             {loading ? (
                 <Loader />
             ) : (
-                <section className={styles.signin}>
-                    <h2 className={styles.heading}>Sign In</h2>
-                    <Formik
-                        enableReinitialize
-                        initialValues={{ login_email, login_password }}
-                        validationSchema={signInValidation}
-                        onSubmit={handleSignIn}>
-                        {(form) => (
-                            <Form
-                                method="post"
-                                action="/api/auth/signin/email">
-                                <input
-                                    name="csrfToken"
-                                    type="hidden"
-                                    defaultValue={csrfToken}
-                                />
-                                <Input
-                                    type="email"
-                                    icon="email"
-                                    name="login_email"
-                                    placeholder="Email address"
-                                    onChange={handleChange}
-                                />
-                                <Input
-                                    type="password"
-                                    icon="password"
-                                    name="login_password"
-                                    placeholder="Password"
-                                    onChange={handleChange}
-                                />
-                                <Button
-                                    type="submit"
-                                    style="primary">
-                                    Sign in <AiOutlineArrowRight />
-                                </Button>
-                            </Form>
-                        )}
-                    </Formik>
+                <section>
+                    <div className={styles.signin}>
+                        <h2>Sign In</h2>
+                        <Formik
+                            enableReinitialize
+                            initialValues={{ login_email, login_password }}
+                            validationSchema={signInValidation}
+                            onSubmit={handleSignIn}>
+                            {(form) => (
+                                <Form
+                                    method="post"
+                                    action="/api/auth/signin/email">
+                                    <input
+                                        name="csrfToken"
+                                        type="hidden"
+                                        defaultValue={csrfToken}
+                                    />
+                                    <Input
+                                        type="email"
+                                        icon="email"
+                                        name="login_email"
+                                        placeholder="Email address"
+                                        onChange={handleChange}
+                                    />
+                                    <Input
+                                        type="password"
+                                        icon="password"
+                                        name="login_password"
+                                        placeholder="Password"
+                                        onChange={handleChange}
+                                    />
+                                    <Button
+                                        type="submit"
+                                        style="primary">
+                                        Sign in <AiOutlineArrowRight />
+                                    </Button>
+                                </Form>
+                            )}
+                        </Formik>
+                    </div>
                 </section>
             )}
         </>

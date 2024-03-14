@@ -1,6 +1,6 @@
 import Button from "@/components/Layout/Button/Button";
 import styles from "@/styles/pages/Dashboard.module.scss";
-import React from "react";
+import React, { useState } from "react";
 import { CiCirclePlus } from "react-icons/ci";
 import { RiKakaoTalkLine, RiMessage2Line } from "react-icons/ri";
 import { TfiRulerAlt2 } from "react-icons/tfi";
@@ -10,7 +10,7 @@ import Projects from "@/components/Admin/Projects/Projects";
 import Testimonials from "@/components/Admin/Testimonials/Testimonials";
 
 const AdminDashboard = () => {
-    const [active, setActive] = React.useState(1);
+    const [active, setActive] = useState(0);
 
     const handleSwitch = (item: number) => {
         setActive(item);

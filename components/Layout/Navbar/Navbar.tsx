@@ -194,6 +194,7 @@ const Navbar = () => {
                             </div>
 
                             <div className={styles.navbar__menu__middle} />
+
                             <div className={styles.navbar__menu__bottom}>
                                 {session ? (
                                     <>
@@ -228,20 +229,34 @@ const Navbar = () => {
                         </div>
                     </>
                 )}
+
                 {router.pathname !== "/" && (
                     <>
                         <div className={styles.navbar__menu}>
-                            <motion.div
-                                className={styles.navbar__menu_item}
-                                variants={variants}
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.95 }}>
-                                <Link
-                                    href="/"
-                                    onClick={onClose}>
-                                    Home
-                                </Link>
-                            </motion.div>
+                            <div className={styles.navbar__menu__top}>
+                                <motion.div
+                                    className={styles.navbar__menu__top__item}
+                                    variants={variants}
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.95 }}>
+                                    <Link
+                                        href="/"
+                                        onClick={onClose}>
+                                        Home
+                                    </Link>
+                                </motion.div>
+                                <Button
+                                    style="danger"
+                                    onClick={() => {
+                                        signOut();
+                                        onClose();
+                                    }}>
+                                    Sign Out
+                                </Button>
+                            </div>
+
+                            <div className={styles.navbar__menu__middle} />
+                            <div className={styles.navbar__menu__bottom}></div>
                         </div>
                     </>
                 )}

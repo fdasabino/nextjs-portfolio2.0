@@ -122,7 +122,7 @@ const Contact = () => {
                             </div>
 
                             <Input
-                                rows="10"
+                                rows={10}
                                 type="textarea"
                                 icon="message"
                                 name="message"
@@ -131,6 +131,7 @@ const Contact = () => {
                             />
                             <br />
                             <Button
+                                style="primary"
                                 type="submit"
                                 disabled={!form.isValid}>
                                 Send Message <span>🚀</span>

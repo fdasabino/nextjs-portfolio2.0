@@ -207,6 +207,7 @@ const Navbar = () => {
                                     </Button>
                                 ) : (
                                     <Button
+                                        style="primary"
                                         onClick={() => {
                                             signIn();
                                             onClose();

@@ -57,7 +57,14 @@
         }
 
         &__top {
-            height: 40vh;
+            height: 100%;
+            min-height: 20vh;
+            max-height: 30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 1rem;
+            padding: 1rem;
 
             &__item {
                 font-size: 1.2rem;
@@ -75,11 +82,10 @@
             }
         }
     }
-    &__middle {
-        height: 30vh;
-    }
     &__bottom {
-        height: 30vh;
+        height: 100%;
+        min-height: 20vh;
+        max-height: 30vh;
         display: flex;
         align-items: flex-end;
         justify-content: center;

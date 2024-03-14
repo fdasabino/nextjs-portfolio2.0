@@ -2,6 +2,7 @@ import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import Loader from "@/components/Layout/Loader/Loader";
 import styles from "@/styles/pages/SignIn.module.scss";
+import { signInValidation } from "@/utils/signInValidation";
 import { Form, Formik, FormikHelpers } from "formik";
 import { GetServerSidePropsContext } from "next";
 import {
@@ -15,10 +16,6 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import * as Yup from "yup";
-
-const MIN_PASSWORD_LENGTH = 6;
-const MAX_PASSWORD_LENGTH = 20;
 
 interface SignInProps {
     providers: Record<string, SessionProviderProps>;
@@ -29,23 +26,9 @@ interface SignInProps {
 const initialValues = {
     login_email: "",
     login_password: "",
-    full_name: "",
-    signup_email: "",
-    signup_password: "",
-    signup_confirm_password: "",
 };
 
-const signInValidation = Yup.object().shape({
-    login_email: Yup.string()
-        .email("Please enter a valid email address...")
-        .required("Email address is required..."),
-    login_password: Yup.string()
-        .required("Password is required...")
-        .min(6, `Password is too short (minimun ${MIN_PASSWORD_LENGTH} characters)`)
-        .max(20, `Password is too long (maximum ${MAX_PASSWORD_LENGTH} characters)`),
-});
-
-const SignIn = ({ providers, callbackUrl, csrfToken }: SignInProps) => {
+const SignIn = ({ callbackUrl, csrfToken }: SignInProps) => {
     const [loading, setLoading] = useState(false);
     const [user, setUser] = useState(initialValues);
     const { login_email, login_password } = user;
@@ -67,22 +50,21 @@ const SignIn = ({ providers, callbackUrl, csrfToken }: SignInProps) => {
                 email: values.login_email,
                 password: values.login_password,
             };
-            const res = await signIn("credentials", options);
+            const res = (await signIn("credentials", options)) as { user?: any; error?: any };
 
             if (res?.error) {
                 toast.error(res?.error);
                 return;
             }
 
-            // Update user state with received user data after successful sign-in
-            if (res) {
-                setUser(res.user);
-            }
+            setUser(res.user);
 
             toast.success("Successfully signed in!");
             await new Promise((resolve) => setTimeout(resolve, 2000));
+
             // Reset the form values after successful sign-in
             formikHelpers.resetForm();
+
             // Redirect the user to the specified callback URL or to the homepage
             router.push(callbackUrl || "/");
         } catch (error: any) {
@@ -113,11 +95,11 @@ const SignIn = ({ providers, callbackUrl, csrfToken }: SignInProps) => {
                             <Form
                                 method="post"
                                 action="/api/auth/signin/email">
-                                {/* <input
-                            name="csrfToken"
-                            type="hidden"
-                            defaultValue={csrfToken}
-                        /> */}
+                                <input
+                                    name="csrfToken"
+                                    type="hidden"
+                                    defaultValue={csrfToken}
+                                />
                                 <Input
                                     type="email"
                                     icon="email"

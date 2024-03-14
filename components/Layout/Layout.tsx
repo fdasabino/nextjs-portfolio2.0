@@ -46,16 +46,24 @@ export default function Layout({ children }: LayoutProps) {
 
     return (
         <>
+            <Toaster {...toasterOptions} />
+
+            {!router.pathname.startsWith("/admin") && !router.pathname.startsWith("/auth") && (
+                <SparklesComponent />
+            )}
+
             <motion.div
                 className={styles.progress_bar}
                 style={{ scaleX }}
             />
-            <SparklesComponent />
+
             <Navbar />
+
             <TracingBeam contentRef={contentRef} />
+
             <main ref={contentRef}>{children}</main>
+
             {!router.pathname.startsWith("/admin") && <Footer />}
-            <Toaster {...toasterOptions} />
         </>
     );
 }

@@ -1,13 +1,15 @@
 import { useField } from "formik";
+import { SessionProviderProps } from "next-auth/react";
 import { BiMessageDots } from "react-icons/bi";
 import { FaUserAlt } from "react-icons/fa";
-import { MdEmail, MdPhone, MdSubject } from "react-icons/md";
+import { MdEmail, MdPassword, MdPhone, MdSubject } from "react-icons/md";
 import styles from "./Input.module.scss";
 
 // Define iconMap outside of the Input component to avoid re-creating the object on each render
 const iconMap: Record<string, JSX.Element> = {
     name: <FaUserAlt />,
     email: <MdEmail />,
+    password: <MdPassword />,
     phone: <MdPhone />,
     subject: <MdSubject />,
     message: <BiMessageDots />,
@@ -16,7 +18,7 @@ const iconMap: Record<string, JSX.Element> = {
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
     icon?: keyof typeof iconMap;
     name: string;
-    rows?: any;
+    rows?: number;
     placeholder?: string;
     type?: "text" | "textarea" | "email" | "number" | "password" | "phone";
     label?: string;
@@ -24,10 +26,14 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement | HTMLTe
     touched?: boolean;
     onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     onBlur?: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+    csrfToken?: string;
+    providers?: Record<string, SessionProviderProps>;
+    setLoading?: React.Dispatch<React.SetStateAction<boolean>>;
+    callbackUrl?: string;
 }
 
 const Input = ({ icon, placeholder, ...props }: InputProps) => {
-    const [field, meta] = useField(props.name);
+    const [field, meta] = useField(props.name as string);
     const isError = meta.touched && meta.error;
 
     // Create a base className once so it doesn't have to be repeated

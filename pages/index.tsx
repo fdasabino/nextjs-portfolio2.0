@@ -1,11 +1,12 @@
+import About from "@/components/Home/Sections/About/About";
+import Contact from "@/components/Home/Sections/Contact/Contact";
+import Hero from "@/components/Home/Sections/Hero/Hero";
+import Projects from "@/components/Home/Sections/Projects/Projects";
+import Testimonials from "@/components/Home/Sections/Testimonials/Testimonials";
 import Head from "next/head";
-import About from "../components/Sections/About/About";
-import Contact from "../components/Sections/Contact/Contact";
-import Hero from "../components/Sections/Hero/Hero";
-import Projects from "../components/Sections/Projects/Projects";
-import Testimonials from "../components/Sections/Testimonials/Testimonials";
 import styles from "../styles/Home.module.scss";
-export default function Home() {
+
+const Home = () => {
     return (
         <div>
             <Head>
@@ -77,4 +78,6 @@ export default function Home() {
             </section>
         </div>
     );
-}
+};
+
+export default Home;

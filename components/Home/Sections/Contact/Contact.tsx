@@ -1,11 +1,11 @@
+import Button from "@/components/Layout/Button/Button";
+import Input from "@/components/Layout/Input/Input";
+import { ContactData } from "@/constants/constants";
 import emailjs from "@emailjs/browser";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
-import { ContactData } from "../../../constants/constants";
-import Button from "../../Layout/Button/Button";
-import Input from "../../Layout/Input/Input";
 import styles from "./Contact.module.scss";
 
 const initialValues = {

@@ -1,11 +1,11 @@
+import Animation from "@/components/Layout/Animation/Animation";
+import Button from "@/components/Layout/Button/Button";
+import { HeroData } from "@/constants/constants";
+import { scrollTo } from "@/utils/globalFunctions";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import { HeroData } from "../../../constants/constants";
-import { scrollTo } from "../../../utils/globalFunctions";
-import Animation from "../../Layout/Animation/Animation";
-import Button from "../../Layout/Button/Button";
 import styles from "./Hero.module.scss";
 
 const Hero = () => {

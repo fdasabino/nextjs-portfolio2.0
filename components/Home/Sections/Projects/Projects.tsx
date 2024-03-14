@@ -1,8 +1,8 @@
+import { ProjectsData } from "@/constants/constants";
 import Image from "next/image";
 import React from "react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { ProjectsData } from "../../../constants/constants";
 import styles from "./Projects.module.scss";
 
 const Projects = () => {

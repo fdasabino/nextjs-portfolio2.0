@@ -1,7 +1,7 @@
+import { AboutData, TimeLineData } from "@/constants/constants";
 import { Timeline } from "antd";
 import { motion } from "framer-motion";
 import React from "react";
-import { AboutData, TimeLineData } from "../../../constants/constants";
 import styles from "./About.module.scss";
 
 const About = () => {

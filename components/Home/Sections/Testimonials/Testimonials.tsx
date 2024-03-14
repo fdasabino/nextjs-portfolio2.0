@@ -1,8 +1,8 @@
+import { TestimonialsData } from "@/constants/constants";
 import Image from "next/image";
 import React from "react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { TestimonialsData } from "../../../constants/constants";
 import styles from "./Testimonials.module.scss";
 
 const Testimonials = () => {

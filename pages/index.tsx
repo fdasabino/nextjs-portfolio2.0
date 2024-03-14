@@ -3,8 +3,8 @@ import Contact from "@/components/Home/Sections/Contact/Contact";
 import Hero from "@/components/Home/Sections/Hero/Hero";
 import Projects from "@/components/Home/Sections/Projects/Projects";
 import Testimonials from "@/components/Home/Sections/Testimonials/Testimonials";
+import styles from "@/styles/pages/Home.module.scss";
 import Head from "next/head";
-import styles from "../styles/Home.module.scss";
 
 const Home = () => {
     return (

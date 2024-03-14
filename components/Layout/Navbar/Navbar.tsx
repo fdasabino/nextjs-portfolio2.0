@@ -1,10 +1,12 @@
 import { Drawer, Tooltip } from "antd";
 import { motion } from "framer-motion";
 import { Fade as Hamburger } from "hamburger-react";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { BsDownload, BsGithub, BsLinkedin } from "react-icons/bs";
+import { MdOutlineAdminPanelSettings } from "react-icons/md";
 import { useMediaQuery } from "react-responsive";
 import { Link as ReactScrollLink } from "react-scroll";
 import styles from "./Navbar.module.scss";
@@ -75,6 +77,12 @@ const Navbar = () => {
                         target="_blank"
                         rel="noreferrer">
                         <BsDownload />
+                    </a>
+                </Tooltip>
+
+                <Tooltip title="Login">
+                    <a>
+                        <MdOutlineAdminPanelSettings onClick={() => signIn()} />
                     </a>
                 </Tooltip>
             </motion.div>

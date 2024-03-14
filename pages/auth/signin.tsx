@@ -31,7 +31,7 @@ const initialValues = {
 const SignIn = ({ callbackUrl, csrfToken }: SignInProps) => {
     const [loading, setLoading] = useState(false);
     const [user, setUser] = useState(initialValues);
-    const { login_email, login_password } = user;
+    const { login_email, login_password } = user || initialValues;
     const router = useRouter();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -105,7 +105,6 @@ const SignIn = ({ callbackUrl, csrfToken }: SignInProps) => {
                                     icon="email"
                                     name="login_email"
                                     placeholder="Email address"
-                                    setLoading={setLoading}
                                     onChange={handleChange}
                                 />
                                 <Input
@@ -113,7 +112,6 @@ const SignIn = ({ callbackUrl, csrfToken }: SignInProps) => {
                                     icon="password"
                                     name="login_password"
                                     placeholder="Password"
-                                    setLoading={setLoading}
                                     onChange={handleChange}
                                 />
                                 <Button

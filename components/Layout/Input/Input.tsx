@@ -28,7 +28,6 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement | HTMLTe
     onBlur?: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     csrfToken?: string;
     providers?: Record<string, SessionProviderProps>;
-    setLoading?: React.Dispatch<React.SetStateAction<boolean>>;
     callbackUrl?: string;
 }
 

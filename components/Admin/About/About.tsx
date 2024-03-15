@@ -17,12 +17,13 @@ const initialValues = {
 const About = () => {
     const [loading, setLoading] = useState(false);
     const [values, setValues] = useState(initialValues);
-    const { description, image, year, year_description } = initialValues;
+    const { description, image, year, year_description } = values || initialValues;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setValues({ ...values, [name]: value });
     };
+
     const handleSubmit = async (values: any, formikHelpers: any) => {};
 
     return (

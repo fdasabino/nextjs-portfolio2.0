@@ -46,6 +46,7 @@ const Input = ({ icon, placeholder, ...props }: InputProps) => {
     // Use a common function to return the icon element based on the icon prop
     const renderIcon = () => icon && iconMap[icon];
 
+    console.log(meta);
     // Conditional rendering for the text area or the input field
     const inputOrTextarea =
         props.type === "textarea" ? (

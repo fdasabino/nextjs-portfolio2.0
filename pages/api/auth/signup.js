@@ -1,7 +1,7 @@
 import User from "@/models/User";
 import db from "@/utils/db";
 import bcrypt from "bcrypt";
-import { validateEmail } from "../../../utils/validateEmail";
+import { validateEmail } from "../../../utils/globalFunctions";
 
 const handler = async (req, res) => {
     try {

@@ -51,19 +51,25 @@ section {
     }
 }
 
-p,
-a,
-small,
-span,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-family: "Poppins", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-weight: 500;
     color: $base-white;
+}
+
+p,
+a,
+small,
+span {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    color: $base-white;
+    letter-spacing: 0.025rem;
 }
 
 p,
@@ -77,12 +83,13 @@ h6 {
     color: $base-white;
 }
 
+button,
 textarea,
 select,
 option,
 label {
     transition: all 0.5s linear;
-    font-family: "Exo", sans-serif !important;
+    font-family: "Space Grotesk", sans-serif !important;
 }
 
 img,

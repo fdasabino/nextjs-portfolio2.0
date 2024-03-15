@@ -1,7 +1,8 @@
+import { toasterOptions } from "@/utils/globalFunctions";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useRouter } from "next/router";
 import React, { ReactNode, useRef } from "react";
-import { ToastPosition, Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { useMediaQuery } from "react-responsive";
 import Footer from "./Footer/Footer";
 import styles from "./Layout.module.scss";
@@ -12,27 +13,7 @@ interface LayoutProps {
     children: ReactNode;
 }
 
-const toasterOptions = {
-    position: "bottom-center" as ToastPosition,
-    reverseOrder: true,
-    gutter: 8,
-    toastOptions: {
-        duration: 5000,
-        style: {
-            background: "#363636",
-            color: "#fff",
-        },
-        success: {
-            duration: 3000,
-            theme: {
-                primary: "green",
-                secondary: "black",
-            },
-        },
-    },
-};
-
-export default function Layout({ children }: LayoutProps) {
+const Layout = ({ children }: LayoutProps) => {
     const router = useRouter();
     const isMobile = useMediaQuery({ maxWidth: "768px" });
     const contentRef = useRef<HTMLDivElement>(null);
@@ -47,23 +28,19 @@ export default function Layout({ children }: LayoutProps) {
     return (
         <>
             <Toaster {...toasterOptions} />
-
             {!router.pathname.startsWith("/admin") && !router.pathname.startsWith("/auth") && (
                 <SparklesComponent />
             )}
-
             <motion.div
                 className={styles.progress_bar}
                 style={{ scaleX }}
             />
-
             <Navbar />
-
             <TracingBeam contentRef={contentRef} />
-
             <main ref={contentRef}>{children}</main>
-
             {!router.pathname.startsWith("/admin") && <Footer />}
         </>
     );
-}
+};
+
+export default Layout;

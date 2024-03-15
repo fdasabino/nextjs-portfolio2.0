@@ -9,54 +9,36 @@
     .heading {
         color: $base-white;
         letter-spacing: 0.2em;
-        margin-bottom: 1em;
+        margin-top: 1em;
         font-size: 1.5rem;
     }
 
-    .loading {
-        display: flex;
-        width: 5em;
-        font-size: 2rem;
-        align-items: center;
-        justify-content: center;
-    }
+    .hypnotic {
+        width: 67.2px;
+        height: 28px;
+        border: 2.2px solid $base-white;
+        border-radius: 50%;
+        display: grid;
+        animation: hypnotic-ds34hk 2s infinite linear;
 
-    .load {
-        width: 5rem;
-        height: 3px;
-        background-color: $base-aqua;
-        animation: 1s move_5011 infinite;
-        border-radius: 5px;
-        margin: 0.1em;
-    }
+        &:before,
+        &:after {
+            content: "";
+            grid-area: 1/1;
+            border: inherit;
+            border-radius: 50%;
+            animation: inherit;
+            animation-duration: 3s;
+        }
 
-    .load:nth-child(1) {
-        animation-delay: 0.2s;
-    }
-
-    .load:nth-child(2) {
-        animation-delay: 0.4s;
-    }
-
-    .load:nth-child(3) {
-        animation-delay: 0.6s;
+        &:after {
+            --s: -1;
+        }
     }
 }
 
-@keyframes move_5011 {
-    0% {
-        width: 0.2em;
-    }
-
-    25% {
-        width: 0.7em;
-    }
-
-    50% {
-        width: 1.5em;
-    }
-
+@keyframes hypnotic-ds34hk {
     100% {
-        width: 0.2em;
+        transform: rotate(calc(var(--s, 1) * 1turn));
     }
 }

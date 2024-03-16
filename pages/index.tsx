@@ -3,10 +3,13 @@ import Contact from "@/components/Home/Sections/Contact/Contact";
 import Hero from "@/components/Home/Sections/Hero/Hero";
 import Projects from "@/components/Home/Sections/Projects/Projects";
 import Testimonials from "@/components/Home/Sections/Testimonials/Testimonials";
+import Project from "@/models/Projects";
 import styles from "@/styles/pages/Home.module.scss";
+import db from "@/utils/db";
 import Head from "next/head";
 
-const Home = () => {
+const Home = ({ projects }: { projects: (typeof Project)[] }) => {
+    console.log(projects);
     return (
         <div>
             <Head>
@@ -81,3 +84,16 @@ const Home = () => {
 };
 
 export default Home;
+
+export async function getServerSideProps() {
+    await db.connectDB();
+
+    try {
+        const projects = await Project.find({});
+        return {
+            props: {
+                projects: JSON.parse(JSON.stringify(projects)),
+            },
+        };
+    } catch (error) {}
+}

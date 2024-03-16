@@ -41,3 +41,8 @@ export const createAbout = (about: object) => {
     const res = axios.post("/api/admin/about", about);
     return res;
 };
+
+export const createProject = (project: object) => {
+    const res = axios.post("/api/admin/project", project);
+    return res;
+};

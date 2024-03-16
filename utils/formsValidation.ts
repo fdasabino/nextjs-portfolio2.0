@@ -22,14 +22,7 @@ export const projectValidation = Yup.object().shape({
         .required("Image URL is required"),
     techTags: Yup.string()
         .matches(/^[\w\s,]+$/, "Invalid tech tags format")
-        .required("Tech tags are required")
-        .transform((value, originalValue) => {
-            // Transforming the tech tags string into an array
-            if (typeof originalValue === "string") {
-                return originalValue.split(",").map((tag) => tag.trim());
-            }
-            return value;
-        }),
+        .required("Tech tags are required"),
     repository: Yup.string()
         .url("Invalid repository URL")
         .matches(/^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/, "Invalid repository URL")

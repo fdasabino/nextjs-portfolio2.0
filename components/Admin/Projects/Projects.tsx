@@ -2,8 +2,10 @@ import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import Loader from "@/components/Layout/Loader/Loader";
 import { projectValidation } from "@/utils/formsValidation";
+import { createProject } from "@/utils/globalFunctions";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { MdHideSource } from "react-icons/md";
 import styles from "./Projects.module.scss";
@@ -12,7 +14,7 @@ const initialValues = {
     name: "",
     description: "",
     image: "",
-    techTags: [],
+    techTags: "",
     repository: "",
     live_url: "",
 };
@@ -29,7 +31,27 @@ const Projects = ({
         setValues({ ...values, [name]: value });
     };
 
-    const handleSubmit = async (values: any, formikHelpers: any) => {};
+    const handleSubmit = async (values: any, formikHelpers: any) => {
+        setLoading(true);
+        try {
+            const { name, description, image, techTags, repository, live_url } = values;
+            const project = { name, description, image, techTags, repository, live_url };
+
+            const res = await createProject(project);
+            if (res.data) {
+                formikHelpers.resetForm();
+                setValues(initialValues);
+                console.log(res.data);
+
+                toast.success("About item created successfully");
+            }
+        } catch (error) {
+            console.log(error);
+            setLoading(false);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <div className={styles.admin__projects}>

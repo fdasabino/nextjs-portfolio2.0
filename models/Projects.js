@@ -31,7 +31,7 @@ const projectSchema = new mongoose.Schema(
         repository: {
             type: String,
         },
-        live: {
+        live_url: {
             type: String,
             required: true,
         },

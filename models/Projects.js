@@ -18,7 +18,7 @@ const projectSchema = new mongoose.Schema(
             type: String,
             required: true,
             minlength: [2, "must be at least 2 characters"],
-            maxlength: [750, "must be a maximum of 750 characters"],
+            maxlength: [2000, "must be a maximum of 2000 characters"],
         },
         image: {
             type: String,

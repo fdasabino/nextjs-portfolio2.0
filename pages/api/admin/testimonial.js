@@ -1,12 +1,12 @@
 import authMiddleware from "@/middleware/authMiddleware";
-import Project from "@/models/Projects";
+import Testimonial from "@/models/Testimonial";
 import db from "@/utils/db";
 import slugify from "slugify";
 
 const handler = async (req, res) => {
     await db.connectDB();
     const { method } = req;
-    const { name, description, image, techTags, repository, live_url } = req.body;
+    const { name, description, image, workplace, position } = req.body;
     console.log(req.body);
 
     try {
@@ -16,25 +16,22 @@ const handler = async (req, res) => {
                     return res.status(401).json({ error: "Unauthorized" });
                 }
 
-                if (!name || !description || !image || !techTags || !repository || !live_url) {
-                    console.log(name, description, image, techTags, repository, live_url);
+                if (!name || !description || !image || !workplace || !position) {
+                    console.log(name, description, image, workplace, position);
                     return res.status(400).json({ error: "Bad Request - Incomplete request" });
                 }
 
-                const techTagsArray = techTags.trim().replace(/,+$/, "").split(",");
-
-                const newProject = new Project({
+                const newTestimonial = new Testimonial({
                     name,
                     slug: slugify(name, { lower: true }),
                     description,
                     image,
-                    techTags: techTagsArray,
-                    repository,
-                    live_url,
+                    workplace,
+                    position,
                 });
 
-                await newProject.save();
-                return res.status(201).json({ ok: true, newProject });
+                await newTestimonial.save();
+                return res.status(201).json({ ok: true, newTestimonial });
             }
         });
     } catch (error) {

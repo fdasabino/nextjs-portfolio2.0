@@ -32,17 +32,6 @@ const handler = async (req, res) => {
                 await newAbout.save();
                 return res.status(201).json({ ok: true, newAbout });
             }
-
-            // update about post
-            if (method === "PATCH") {
-                const { id } = req.query;
-                await About.findByIdAndUpdate(id, {
-                    description,
-                    image,
-                    timeline,
-                });
-                return res.status(200).json({ ok: true, message: "About updated" });
-            }
         });
     } catch (error) {
         return res.status(500).json({ error: error.message, ok: false });

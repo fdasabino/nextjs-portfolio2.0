@@ -2,8 +2,10 @@ import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import Loader from "@/components/Layout/Loader/Loader";
 import { testimonialValidation } from "@/utils/formsValidation";
+import { createTestimonial } from "@/utils/globalFunctions";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { MdHideSource } from "react-icons/md";
 import styles from "./Testimonials.module.scss";
@@ -28,7 +30,27 @@ const Testimonials = ({
         setValues({ ...values, [name]: value });
     };
 
-    const handleSubmit = async (values: any, formikHelpers: any) => {};
+    const handleSubmit = async (values: any, formikHelpers: any) => {
+        setLoading(true);
+        try {
+            const { name, description, image, workplace, postion } = values;
+            const testimonial = { name, description, image, workplace, position };
+
+            const res = await createTestimonial(testimonial);
+            if (res.data) {
+                formikHelpers.resetForm();
+                setValues(initialValues);
+                console.log(res.data);
+
+                toast.success("Item created successfully");
+            }
+        } catch (error) {
+            console.log(error);
+            setLoading(false);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <div className={styles.admin__testimonials}>

@@ -43,7 +43,7 @@ const Projects = ({
                 setValues(initialValues);
                 console.log(res.data);
 
-                toast.success("About item created successfully");
+                toast.success("Item created successfully");
             }
         } catch (error) {
             console.log(error);

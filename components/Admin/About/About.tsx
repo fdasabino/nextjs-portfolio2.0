@@ -2,8 +2,10 @@ import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import Loader from "@/components/Layout/Loader/Loader";
 import { aboutValidation } from "@/utils/formsValidation";
+import { createAbout } from "@/utils/globalFunctions";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { MdHideSource } from "react-icons/md";
 import styles from "./About.module.scss";
@@ -25,7 +27,28 @@ const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: numb
         setValues({ ...values, [name]: value });
     };
 
-    const handleSubmit = async (values: any, formikHelpers: any) => {};
+    const handleSubmit = async (values: any, formikHelpers: any) => {
+        setLoading(true);
+        try {
+            const { description, image, year, year_description } = values;
+            const timeline = { year, description: year_description }; // Adjusting the structure
+            const about = { description, image, timeline };
+
+            const res = await createAbout(about);
+            if (res.data) {
+                formikHelpers.resetForm();
+                setValues(initialValues);
+                console.log(res.data);
+
+                toast.success("About item created successfully");
+            }
+        } catch (error) {
+            console.log(error);
+            setLoading(false);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <div className={styles.admin__about}>

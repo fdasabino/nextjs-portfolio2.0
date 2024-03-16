@@ -1,5 +1,5 @@
+import axios from "axios";
 import { ToastPosition } from "react-hot-toast";
-
 // Constants
 export const toasterOptions = {
     position: "bottom-center" as ToastPosition,
@@ -35,4 +35,9 @@ export const validateEmail = (email: string) => {
     const regexSt =
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regexSt.test(email);
+};
+
+export const createAbout = (about: object) => {
+    const res = axios.post("/api/admin/about", about);
+    return res;
 };

@@ -5,7 +5,6 @@ import db from "@/utils/db";
 const handler = async (req, res) => {
     await db.connectDB();
     const { method } = req;
-    const { description, image, timeline } = req.body;
 
     try {
         await authMiddleware(req, res, async () => {
@@ -14,15 +13,20 @@ const handler = async (req, res) => {
                     return res.status(401).json({ error: "Unauthorized" });
                 }
 
+                const { description, image, timeline } = req.body;
                 if (!description || !image || !timeline) {
+                    console.log(description, image, timeline);
                     return res.status(400).json({ error: "Bad Request - Incomplete request" });
                 }
+
+                // Construct timeline array
+                const timelineArray = [{ year: timeline.year, description: timeline.description }];
 
                 // create about post
                 const newAbout = new About({
                     description,
                     image,
-                    timeline,
+                    timeline: timelineArray,
                 });
 
                 await newAbout.save();

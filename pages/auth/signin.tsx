@@ -2,7 +2,7 @@ import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import Loader from "@/components/Layout/Loader/Loader";
 import styles from "@/styles/pages/SignIn.module.scss";
-import { signInValidation } from "@/utils/signInValidation";
+import { signInValidation } from "@/utils/formsValidation";
 import { Form, Formik, FormikHelpers } from "formik";
 import { GetServerSidePropsContext } from "next";
 import {

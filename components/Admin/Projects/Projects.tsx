@@ -1,7 +1,7 @@
 import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import Loader from "@/components/Layout/Loader/Loader";
-import { projectValidation } from "@/utils/projectValidation";
+import { projectValidation } from "@/utils/formsValidation";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";

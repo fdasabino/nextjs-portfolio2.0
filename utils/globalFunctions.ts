@@ -1,14 +1,6 @@
 import { ToastPosition } from "react-hot-toast";
 
-export const scrollTo = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-        element.scrollIntoView({
-            behavior: "smooth",
-        });
-    }
-};
-
+// Constants
 export const toasterOptions = {
     position: "bottom-center" as ToastPosition,
     reverseOrder: true,
@@ -27,6 +19,16 @@ export const toasterOptions = {
             },
         },
     },
+};
+
+// Functions
+export const scrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+        element.scrollIntoView({
+            behavior: "smooth",
+        });
+    }
 };
 
 export const validateEmail = (email: string) => {

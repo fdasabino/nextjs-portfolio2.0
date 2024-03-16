@@ -5,6 +5,7 @@ import { aboutValidation } from "@/utils/aboutValidation";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { MdHideSource } from "react-icons/md";
 import styles from "./About.module.scss";
 
 const initialValues = {
@@ -14,7 +15,7 @@ const initialValues = {
     year_description: "",
 };
 
-const About = () => {
+const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: number) => void }>) => {
     const [loading, setLoading] = useState(false);
     const [values, setValues] = useState(initialValues);
     const { description, image, year, year_description } = values || initialValues;
@@ -28,13 +29,14 @@ const About = () => {
 
     return (
         <div className={styles.admin__about}>
-            Creation About Post
             <>
                 {loading ? (
                     <Loader />
                 ) : (
-                    <div className={styles.admin__about}>
-                        <h2>Enter about information</h2>
+                    <>
+                        <h2>
+                            Enter about information <MdHideSource onClick={() => setActive(0)} />
+                        </h2>
                         <Formik
                             enableReinitialize
                             initialValues={{ description, image, year, year_description }}
@@ -78,7 +80,7 @@ const About = () => {
                                 </Form>
                             )}
                         </Formik>
-                    </div>
+                    </>
                 )}
             </>
         </div>

@@ -1,10 +1,11 @@
 import { useField } from "formik";
 import { SessionProviderProps } from "next-auth/react";
 import { BiMessageDots } from "react-icons/bi";
-import { FaImage, FaUserAlt } from "react-icons/fa";
-import { Md123, MdEmail, MdPassword, MdPhone, MdSubject } from "react-icons/md";
+import { FaGithub, FaGlobe, FaImage, FaUserAlt } from "react-icons/fa";
+import { FaTags, FaUserGraduate } from "react-icons/fa6";
+import { Md123, MdEmail, MdHomeWork, MdPassword, MdPhone, MdSubject } from "react-icons/md";
+import { TfiRulerAlt2 } from "react-icons/tfi";
 import styles from "./Input.module.scss";
-
 // Define iconMap outside of the Input component to avoid re-creating the object on each render
 const iconMap: Record<string, JSX.Element> = {
     name: <FaUserAlt />,
@@ -16,6 +17,12 @@ const iconMap: Record<string, JSX.Element> = {
     image: <FaImage />,
     year: <Md123 />,
     description: <BiMessageDots />,
+    project: <TfiRulerAlt2 />,
+    tags: <FaTags />,
+    live_url: <FaGlobe />,
+    repository: <FaGithub />,
+    workplace: <MdHomeWork />,
+    position: <FaUserGraduate />,
 };
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {

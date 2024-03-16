@@ -1,13 +1,12 @@
 import * as Yup from "yup";
 
-export const aboutValidation = Yup.object().shape({
+export const testimonialValidation = Yup.object().shape({
+    name: Yup.string().min(2).max(50).required("Name is required"),
     description: Yup.string().min(2).max(750).required("Description is required"),
     image: Yup.string()
         .url("Invalid image URL")
         .matches(/^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/, "Invalid image URL")
         .required("Image URL is required"),
-    year: Yup.string()
-        .matches(/^[0-9]{4}$/, "Invalid year format")
-        .required("Year is required"),
-    year_description: Yup.string().required("Year description is required"),
+    workplace: Yup.string().min(2).max(50).required("Workplace is required"),
+    position: Yup.string().min(2).max(50).required("Position is required"),
 });

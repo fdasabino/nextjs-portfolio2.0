@@ -94,9 +94,9 @@ const AdminDashboard = () => {
             </div>
 
             <div className={styles.dashboard__forms}>
-                {active === 1 && <About />}
-                {active === 2 && <Projects />}
-                {active === 3 && <Testimonials />}
+                {active === 1 && <About setActive={setActive} />}
+                {active === 2 && <Projects setActive={setActive} />}
+                {active === 3 && <Testimonials setActive={setActive} />}
             </div>
         </div>
     );

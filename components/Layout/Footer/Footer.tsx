@@ -67,6 +67,7 @@ const Footer = () => {
                 <div className={styles.footer__links_wrapper}>
                     <Link to="hero">Home</Link>
                     <Link to="about">About</Link>
+                    <Link to="timeline">Timeline</Link>
                     <Link to="tech">Technologies</Link>
                 </div>
 

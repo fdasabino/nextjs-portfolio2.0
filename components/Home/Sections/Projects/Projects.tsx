@@ -1,11 +1,11 @@
+import { ProjectProps } from "@/types/types";
 import Image from "next/image";
 import React from "react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { ProjectsData } from "../../../constants/constants";
 import styles from "./Projects.module.scss";
 
-const Projects = () => {
+const ProjectComponent = ({ projects }: any) => {
     return (
         <div className={styles.projects}>
             <div className={`${styles.projects__data} ${styles.base_blurry_background}`}>
@@ -17,29 +17,29 @@ const Projects = () => {
                     navigation={true}
                     modules={[Pagination, Navigation]}
                     className={styles.projects__swiper}>
-                    {ProjectsData.map((project) => (
-                        <SwiperSlide key={project.id}>
+                    {projects.map((project: ProjectProps) => (
+                        <SwiperSlide key={project._id}>
                             <div className={styles.projects__swiper_top}>
-                                <h2>{project.title}</h2>
+                                <h2>{project.name}</h2>
                                 <div className={styles.projects__swiper_top_icons}>
-                                    {project.tags?.map((tag, index) => (
-                                        <span key={index}>{tag}</span>
-                                    ))}
+                                    {project.techTags?.map((icon, index) => {
+                                        return <span key={index}>{icon}</span>;
+                                    })}
                                 </div>
                             </div>
                             <div className={styles.projects__swiper_bottom}>
                                 <div className={styles.projects__swiper_bottom_items}>
                                     <div className={styles.projects__swiper_bottom__links}>
-                                        {project.source !== "" && (
+                                        {project.repository !== "" && (
                                             <a
-                                                href={project.source}
+                                                href={project.repository}
                                                 target="_blank"
                                                 rel="noreferrer">
                                                 Source Code
                                             </a>
                                         )}
                                         <a
-                                            href={project.visit}
+                                            href={project.live_url}
                                             target="_blank"
                                             rel="noreferrer">
                                             Live Project
@@ -54,7 +54,7 @@ const Projects = () => {
                                         src={project.image}
                                         width={600}
                                         height={600}
-                                        alt={project.title}
+                                        alt={project.name}
                                     />
                                 </div>
                             </div>
@@ -66,4 +66,4 @@ const Projects = () => {
     );
 };
 
-export default Projects;
+export default ProjectComponent;

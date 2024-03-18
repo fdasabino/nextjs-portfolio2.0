@@ -1,11 +1,33 @@
+// components
+import AboutComponent from "@/components/Home/Sections/About/About";
+import ContactComponent from "@/components/Home/Sections/Contact/Contact";
+import HeroComponent from "@/components/Home/Sections/Hero/Hero";
+import ProjectComponent from "@/components/Home/Sections/Projects/Projects";
+import TestimonialComponent from "@/components/Home/Sections/Testimonials/Testimonials";
+import TimelineComponent from "@/components/Home/Sections/Timeline/Timeline";
+
+// utils
+import styles from "@/styles/pages/Home.module.scss";
+import db from "@/utils/db";
 import Head from "next/head";
-import About from "../components/Sections/About/About";
-import Contact from "../components/Sections/Contact/Contact";
-import Hero from "../components/Sections/Hero/Hero";
-import Projects from "../components/Sections/Projects/Projects";
-import Testimonials from "../components/Sections/Testimonials/Testimonials";
-import styles from "../styles/Home.module.scss";
-export default function Home() {
+
+// models
+import About from "@/models/About";
+import Project from "@/models/Projects";
+import Testimonial from "@/models/Testimonial";
+import Timeline from "@/models/Timeline";
+
+const Home = ({
+    projects,
+    testimonials,
+    abouts,
+    timeline,
+}: {
+    projects: (typeof Project)[];
+    testimonials: (typeof Testimonial)[];
+    abouts: (typeof About)[];
+    timeline: (typeof Timeline)[];
+}) => {
     return (
         <div>
             <Head>
@@ -37,7 +59,7 @@ export default function Home() {
                 />
             </Head>
             <section id="hero">
-                <Hero />
+                <HeroComponent />
             </section>
 
             <section id="about">
@@ -46,7 +68,16 @@ export default function Home() {
                     <h2>About</h2>
                 </div>
 
-                <About />
+                <AboutComponent abouts={abouts} />
+            </section>
+
+            <section id="timeline">
+                <div className={styles.header}>
+                    <h2>Timeline</h2>
+                    <h2>Timeline</h2>
+                </div>
+
+                <TimelineComponent timeline={timeline} />
             </section>
 
             <section id="projects">
@@ -55,7 +86,7 @@ export default function Home() {
                     <h2>Projects</h2>
                 </div>
 
-                <Projects />
+                <ProjectComponent projects={projects} />
             </section>
 
             <section id="testimonials">
@@ -64,7 +95,7 @@ export default function Home() {
                     <h2>References</h2>
                 </div>
 
-                <Testimonials />
+                <TestimonialComponent testimonials={testimonials} />
             </section>
 
             <section id="contact">
@@ -73,8 +104,35 @@ export default function Home() {
                     <h2>Contact</h2>
                 </div>
 
-                <Contact />
+                <ContactComponent />
             </section>
         </div>
     );
+};
+
+export default Home;
+
+export async function getServerSideProps() {
+    await db.connectDB();
+
+    try {
+        const projects = await Project.find({});
+        const testimonials = await Testimonial.find({});
+        const abouts = await About.find({});
+        const timeline = await Timeline.find({});
+
+        return {
+            props: {
+                projects: JSON.parse(JSON.stringify(projects)),
+                testimonials: JSON.parse(JSON.stringify(testimonials)),
+                abouts: JSON.parse(JSON.stringify(abouts)),
+                timeline: JSON.parse(JSON.stringify(timeline)),
+            },
+        };
+    } catch (error) {
+        console.log(error);
+        return {
+            props: {},
+        };
+    }
 }

@@ -6,7 +6,7 @@
     border-radius: 4px;
     border: none;
     box-sizing: border-box;
-    color: #000;
+    color: #fff;
     text-transform: uppercase;
     flex-shrink: 0;
     font-size: 14px;
@@ -37,6 +37,11 @@
         cursor: not-allowed;
         touch-action: none;
         box-shadow: none;
+
+        &:hover {
+            transform: none;
+            pointer-events: none !important;
+        }
     }
 
     @media (max-width: 768px) {
@@ -64,17 +69,25 @@
     }
 }
 
-@mixin button-background($bgColor, $hoverColor, $activeScale) {
+@mixin button-background($bgColor, $hoverColor, $textColor, $textHoverColor, $activeScale) {
     background-color: $bgColor;
+    color: $textColor;
 
     &:hover {
         background-color: $hoverColor;
         box-shadow: $base-shadow-3;
+        color: $textHoverColor;
 
         &:disabled {
-            background-color: $bgColor;
+            opacity: 0.5;
+            cursor: not-allowed;
+            touch-action: none;
             box-shadow: none;
-            transform: none;
+
+            &:hover {
+                transform: none;
+                pointer-events: none !important;
+            }
         }
     }
 
@@ -90,25 +103,50 @@
 // Buttons
 .btnPrimary {
     @include button-styles;
-    @include button-background($base-blue, $base-grey, 0.98);
+    @include button-background($base-blue, $base-grey, $base-white, $base-dark-secondary, 0.98);
+    &[type="submit"],
+    &[type="reset"] {
+        @include button-styles;
+        @include button-background($base-blue, $base-grey, $base-white, $base-dark-secondary, 0.98);
+    }
 }
 
 .btnSecondary {
     @include button-styles;
-    @include button-background(#373738, #464647, 0.98);
+    @include button-background(#373738, $base-grey, $base-white, $base-dark-secondary, 0.98);
+    &[type="submit"],
+    &[type="reset"] {
+        @include button-styles;
+        @include button-background(#373738, $base-grey, $base-white, $base-dark-secondary, 0.98);
+    }
 }
 
 .btnTertiary {
     @include button-styles;
-    @include button-background(#1cbd3f, #30d74f, 0.98);
+    @include button-background(#1cbd3f, $base-grey, $base-white, $base-dark-secondary, 0.98);
+    &[type="submit"],
+    &[type="reset"] {
+        @include button-styles;
+        @include button-background(#1cbd3f, $base-grey, $base-white, $base-dark-secondary, 0.98);
+    }
 }
 
 .btnDanger {
     @include button-styles;
-    @include button-background(#bd1c1c, #d92a2a, 0.98);
+    @include button-background(#bd1c1c, $base-grey, $base-white, $base-dark-secondary, 0.98);
+    &[type="submit"],
+    &[type="reset"] {
+        @include button-styles;
+        @include button-background(#bd1c1c, $base-grey, $base-white, $base-dark-secondary, 0.98);
+    }
 }
 
 .btnGoogle {
     @include button-styles;
-    @include button-background(#0702ff, #0904ff, 0.98);
+    @include button-background(#0702ff, $base-grey, $base-white, $base-dark-secondary, 0.98);
+    &[type="submit"],
+    &[type="reset"] {
+        @include button-styles;
+        @include button-background(#0702ff, $base-grey, $base-white, $base-dark-secondary, 0.98);
+    }
 }

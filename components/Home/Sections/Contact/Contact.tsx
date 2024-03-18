@@ -1,11 +1,11 @@
+import Button from "@/components/Layout/Button/Button";
+import Input from "@/components/Layout/Input/Input";
+import { ContactData } from "@/constants/constants";
 import emailjs from "@emailjs/browser";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
-import { ContactData } from "../../../constants/constants";
-import Button from "../../Layout/Button/Button";
-import Input from "../../Layout/Input/Input";
 import styles from "./Contact.module.scss";
 
 const initialValues = {
@@ -28,7 +28,7 @@ const messageValidation = Yup.object().shape({
     message: Yup.string().required("Message is required"),
 });
 
-const Contact = () => {
+const ContactComponent = () => {
     const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID;
     const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
     const userID = process.env.NEXT_PUBLIC_USER_ID;
@@ -122,7 +122,7 @@ const Contact = () => {
                             </div>
 
                             <Input
-                                rows="10"
+                                rows={10}
                                 type="textarea"
                                 icon="message"
                                 name="message"
@@ -131,6 +131,7 @@ const Contact = () => {
                             />
                             <br />
                             <Button
+                                style="primary"
                                 type="submit"
                                 disabled={!form.isValid}>
                                 Send Message <span>🚀</span>
@@ -143,4 +144,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default ContactComponent;

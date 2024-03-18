@@ -14,8 +14,9 @@
         "isolatedModules": true,
         "noEmit": true,
         "incremental": true,
-        "jsx": "preserve"
+        "jsx": "preserve",
+        "paths": { "@/*": ["./*"] }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "utils/db.js"],
     "exclude": ["node_modules"]
 }

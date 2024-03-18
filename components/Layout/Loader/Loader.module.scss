@@ -1,0 +1,44 @@
+.loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+
+    .heading {
+        color: $base-white;
+        letter-spacing: 0.2em;
+        margin-top: 1em;
+        font-size: 1.5rem;
+    }
+
+    .hypnotic {
+        width: 67.2px;
+        height: 28px;
+        border: 2.2px solid $base-white;
+        border-radius: 50%;
+        display: grid;
+        animation: hypnotic-ds34hk 2s infinite linear;
+
+        &:before,
+        &:after {
+            content: "";
+            grid-area: 1/1;
+            border: inherit;
+            border-radius: 50%;
+            animation: inherit;
+            animation-duration: 3s;
+        }
+
+        &:after {
+            --s: -1;
+        }
+    }
+}
+
+@keyframes hypnotic-ds34hk {
+    100% {
+        transform: rotate(calc(var(--s, 1) * 1turn));
+    }
+}

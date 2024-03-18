@@ -1,3 +1,7 @@
+/**
+    Interface for project props 
+ */
+
 export interface ProjectProps {
     _id: string;
     name: string;
@@ -22,4 +26,9 @@ export interface AboutProps {
     description: string;
     image: string;
     active: boolean;
+}
+export interface TimelineProps {
+    _id: string;
+    year: string;
+    description: string;
 }

@@ -59,14 +59,13 @@ const SignIn = ({ callbackUrl, csrfToken }: SignInProps) => {
 
             setUser(res.user);
 
-            toast.success("Successfully signed in!");
-            await new Promise((resolve) => setTimeout(resolve, 2000));
-
-            // Reset the form values after successful sign-in
             formikHelpers.resetForm();
 
-            // Redirect the user to the specified callback URL or to the homepage
             router.push(callbackUrl || "/");
+
+            setTimeout(() => {
+                toast.success("Successfully signed in!");
+            }, 2000);
         } catch (error: any) {
             if (error.response && error.response.data && error.response.data.message) {
                 toast.error(error.response.data.message);

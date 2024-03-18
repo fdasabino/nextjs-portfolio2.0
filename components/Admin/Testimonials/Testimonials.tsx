@@ -61,7 +61,7 @@ const Testimonials = ({
                 ) : (
                     <>
                         <h2 id="reference">
-                            Enter reference information{" "}
+                            Create reference{" "}
                             {isMobile && (
                                 <FaRegEyeSlash
                                     onClick={() => {

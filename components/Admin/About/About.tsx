@@ -57,7 +57,7 @@ const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: numb
                 ) : (
                     <>
                         <h2 id="about">
-                            Enter about information{" "}
+                            Create about{" "}
                             {isMobile && (
                                 <FaRegEyeSlash
                                     onClick={() => {

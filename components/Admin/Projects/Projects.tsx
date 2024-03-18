@@ -63,7 +63,7 @@ const Projects = ({
                 ) : (
                     <>
                         <h2 id="project">
-                            Enter project information{" "}
+                            Create project{" "}
                             {isMobile && (
                                 <FaRegEyeSlash
                                     onClick={() => {

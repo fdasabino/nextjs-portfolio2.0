@@ -58,7 +58,7 @@ const Timeline = ({
                 ) : (
                     <>
                         <h2 id="timeline">
-                            Enter timeline information{" "}
+                            Create timeline{" "}
                             {isMobile && (
                                 <FaRegEyeSlash
                                     onClick={() => {

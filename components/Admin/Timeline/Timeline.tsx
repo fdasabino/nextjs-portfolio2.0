@@ -18,7 +18,11 @@ const initialValues = {
 
 const Timeline = ({
     setActive,
-}: React.PropsWithChildren<{ setActive: (active: number) => void }>) => {
+    setBorder,
+}: React.PropsWithChildren<{
+    setActive: (active: number) => void;
+    setBorder: (border: number) => void;
+}>) => {
     const [loading, setLoading] = useState(false);
     const [values, setValues] = useState(initialValues);
     const { description, year } = values || initialValues;
@@ -62,6 +66,7 @@ const Timeline = ({
                             {isMobile && (
                                 <FaRegEyeSlash
                                     onClick={() => {
+                                        setBorder(0);
                                         scrollToTop();
                                         setActive(0);
                                     }}

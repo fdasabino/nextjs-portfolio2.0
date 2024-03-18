@@ -20,7 +20,11 @@ const initialValues = {
 
 const Testimonials = ({
     setActive,
-}: React.PropsWithChildren<{ setActive: (active: number) => void }>) => {
+    setBorder,
+}: React.PropsWithChildren<{
+    setActive: (active: number) => void;
+    setBorder: (border: number) => void;
+}>) => {
     const [loading, setLoading] = useState(false);
     const [values, setValues] = useState(initialValues);
     const { name, description, image, workplace, position } = values || initialValues;
@@ -65,6 +69,7 @@ const Testimonials = ({
                             {isMobile && (
                                 <FaRegEyeSlash
                                     onClick={() => {
+                                        setBorder(0);
                                         scrollToTop();
                                         setActive(0);
                                     }}

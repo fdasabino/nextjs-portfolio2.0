@@ -16,7 +16,13 @@ const initialValues = {
     image: "",
 };
 
-const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: number) => void }>) => {
+const About = ({
+    setActive,
+    setBorder,
+}: React.PropsWithChildren<{
+    setActive: (active: number) => void;
+    setBorder: (border: number) => void;
+}>) => {
     const [loading, setLoading] = useState(false);
     const [values, setValues] = useState(initialValues);
     const { description, image } = values || initialValues;
@@ -61,6 +67,7 @@ const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: numb
                             {isMobile && (
                                 <FaRegEyeSlash
                                     onClick={() => {
+                                        setBorder(0);
                                         scrollToTop();
                                         setActive(0);
                                     }}

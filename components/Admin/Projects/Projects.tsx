@@ -22,7 +22,11 @@ const initialValues = {
 
 const Projects = ({
     setActive,
-}: React.PropsWithChildren<{ setActive: (active: number) => void }>) => {
+    setBorder,
+}: React.PropsWithChildren<{
+    setActive: (active: number) => void;
+    setBorder: (border: number) => void;
+}>) => {
     const [loading, setLoading] = useState(false);
     const [values, setValues] = useState(initialValues);
     const { name, description, image, techTags, repository, live_url } = values || initialValues;
@@ -67,6 +71,7 @@ const Projects = ({
                             {isMobile && (
                                 <FaRegEyeSlash
                                     onClick={() => {
+                                        setBorder(0);
                                         scrollToTop();
                                         setActive(0);
                                     }}

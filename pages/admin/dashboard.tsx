@@ -78,10 +78,30 @@ const AdminDashboard = () => {
                 <div className={styles.dashboard__actions__bottom}>
                     {active !== 0 && (
                         <div className={styles.dashboard__forms}>
-                            {active === 1 && <About setActive={setActive} />}
-                            {active === 2 && <Timeline setActive={setActive} />}
-                            {active === 3 && <Projects setActive={setActive} />}
-                            {active === 4 && <Testimonials setActive={setActive} />}
+                            {active === 1 && (
+                                <About
+                                    setActive={setActive}
+                                    setBorder={setBorder}
+                                />
+                            )}
+                            {active === 2 && (
+                                <Timeline
+                                    setActive={setActive}
+                                    setBorder={setBorder}
+                                />
+                            )}
+                            {active === 3 && (
+                                <Projects
+                                    setActive={setActive}
+                                    setBorder={setBorder}
+                                />
+                            )}
+                            {active === 4 && (
+                                <Testimonials
+                                    setActive={setActive}
+                                    setBorder={setBorder}
+                                />
+                            )}
                         </div>
                     )}
                 </div>

@@ -19,7 +19,10 @@ const handler = async (req, res) => {
                     return res.status(400).json({ error: "Bad Request - Incomplete request" });
                 }
 
-                const techTagsArray = techTags.trim().replace(/,+$/, "").split(",");
+                const techTagsArray = techTags
+                    .split(",")
+                    .map((tag) => tag.trim())
+                    .filter((tag) => tag !== "");
 
                 const newProject = new Project({
                     name,

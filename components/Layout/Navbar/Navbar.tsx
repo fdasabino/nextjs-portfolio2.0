@@ -16,7 +16,6 @@ const Navbar = () => {
     const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
     const [open, setOpen] = useState(false);
     const { data: session } = useSession();
-    console.log(session);
 
     const variants = {
         open: {

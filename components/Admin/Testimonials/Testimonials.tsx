@@ -8,8 +8,8 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { FaRegEyeSlash } from "react-icons/fa";
+import { useMediaQuery } from "react-responsive";
 import styles from "./Testimonials.module.scss";
-
 const initialValues = {
     name: "",
     description: "",
@@ -24,6 +24,7 @@ const Testimonials = ({
     const [loading, setLoading] = useState(false);
     const [values, setValues] = useState(initialValues);
     const { name, description, image, workplace, position } = values || initialValues;
+    const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -61,12 +62,14 @@ const Testimonials = ({
                     <>
                         <h2 id="reference">
                             Enter reference information{" "}
-                            <FaRegEyeSlash
-                                onClick={() => {
-                                    scrollToTop();
-                                    setActive(0);
-                                }}
-                            />
+                            {isMobile && (
+                                <FaRegEyeSlash
+                                    onClick={() => {
+                                        scrollToTop();
+                                        setActive(0);
+                                    }}
+                                />
+                            )}
                         </h2>
                         <Formik
                             enableReinitialize

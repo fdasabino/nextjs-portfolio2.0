@@ -8,6 +8,7 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { FaRegEyeSlash } from "react-icons/fa";
+import { useMediaQuery } from "react-responsive";
 import styles from "./About.module.scss";
 
 const initialValues = {
@@ -19,6 +20,7 @@ const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: numb
     const [loading, setLoading] = useState(false);
     const [values, setValues] = useState(initialValues);
     const { description, image } = values || initialValues;
+    const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -56,12 +58,14 @@ const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: numb
                     <>
                         <h2 id="about">
                             Enter about information{" "}
-                            <FaRegEyeSlash
-                                onClick={() => {
-                                    scrollToTop();
-                                    setActive(0);
-                                }}
-                            />
+                            {isMobile && (
+                                <FaRegEyeSlash
+                                    onClick={() => {
+                                        scrollToTop();
+                                        setActive(0);
+                                    }}
+                                />
+                            )}
                         </h2>
                         <Formik
                             enableReinitialize

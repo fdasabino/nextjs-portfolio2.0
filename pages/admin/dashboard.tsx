@@ -6,16 +6,28 @@ import Timeline from "@/components/Admin/Timeline/Timeline";
 import styles from "@/styles/pages/Dashboard.module.scss";
 import { scrollToId } from "@/utils/globalFunctions";
 import Head from "next/head";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 const AdminDashboard = () => {
     const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
-    const [active, setActive] = useState(isMobile ? 0 : 1);
+    const [active, setActive] = useState(1);
+    const [border, setBorder] = useState(1);
 
     const handleSwitch = (item: number) => {
         setActive(item);
+        setBorder(item);
     };
+
+    useEffect(() => {
+        if (isMobile) {
+            setActive(0);
+            setBorder(0);
+        } else {
+            setActive(1);
+            setBorder(1);
+        }
+    }, [isMobile]);
 
     return (
         <div className={styles.dashboard}>
@@ -35,6 +47,7 @@ const AdminDashboard = () => {
                         title="About"
                         id="about"
                         active={1}
+                        border={border}
                     />
 
                     <AdminCard
@@ -43,6 +56,7 @@ const AdminDashboard = () => {
                         title="Timeline"
                         id="timeline"
                         active={2}
+                        border={border}
                     />
                     <AdminCard
                         scrollToId={scrollToId}
@@ -50,6 +64,7 @@ const AdminDashboard = () => {
                         title="Project"
                         id="project"
                         active={3}
+                        border={border}
                     />
                     <AdminCard
                         scrollToId={scrollToId}
@@ -57,6 +72,7 @@ const AdminDashboard = () => {
                         title="Reference"
                         id="reference"
                         active={4}
+                        border={border}
                     />
                 </div>
                 <div className={styles.dashboard__actions__bottom}>

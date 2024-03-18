@@ -1,5 +1,4 @@
-import { AboutData, TimeLineData } from "@/constants/constants";
-import { Timeline } from "antd";
+import { AboutData } from "@/constants/constants";
 import { motion } from "framer-motion";
 import React from "react";
 import styles from "./About.module.scss";
@@ -15,21 +14,8 @@ const AboutComponent = () => {
                         <div className={styles.about__data_img}>
                             <motion.img src={item.image} />
                         </div>
-                        <div className={styles.about__data_timeline}>
+                        <div className={styles.about__data_about}>
                             <p>{item.text}</p>
-                            <br />
-                            <div className={styles.item}>
-                                <Timeline>
-                                    {TimeLineData &&
-                                        [...TimeLineData].reverse().map((item, index) => (
-                                            <Timeline.Item key={index}>
-                                                <p>
-                                                    <span>{item.year}</span> {item.text}
-                                                </p>
-                                            </Timeline.Item>
-                                        ))}
-                                </Timeline>
-                            </div>
                         </div>
                     </div>
                 ))}

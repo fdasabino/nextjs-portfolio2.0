@@ -111,10 +111,11 @@ $base-breakpoint-480px: 480px;
 
 .base_blurry_background {
     /* From https://css.glass */
-    background: rgba(0, 0, 0, 0.211);
+    background: rgba(103, 103, 103, 0.211);
     animation: shadowEffect 6s ease infinite alternate;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+    padding: 1rem;
 }
 
 .ant-drawer-close {

@@ -11,6 +11,7 @@ import db from "@/utils/db";
 import Head from "next/head";
 
 // models
+import TimelineComponent from "@/components/Home/Sections/Timeline/Timeline";
 import Project from "@/models/Projects";
 import Testimonial from "@/models/Testimonial";
 
@@ -63,6 +64,15 @@ const Home = ({
                 </div>
 
                 <AboutComponent />
+            </section>
+
+            <section id="timeline">
+                <div className={styles.header}>
+                    <h2>Timeline</h2>
+                    <h2>Timeline</h2>
+                </div>
+
+                <TimelineComponent />
             </section>
 
             <section id="projects">

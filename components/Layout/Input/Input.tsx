@@ -30,7 +30,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement | HTMLTe
     name: string;
     rows?: number;
     placeholder?: string;
-    type?: "text" | "textarea" | "email" | "number" | "password" | "phone";
+    type?: "text" | "textarea" | "email" | "number" | "password" | "phone" | "checkbox";
     label?: string;
     error?: string;
     touched?: boolean;

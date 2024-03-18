@@ -13,20 +13,18 @@ const handler = async (req, res) => {
                     return res.status(401).json({ error: "Unauthorized" });
                 }
 
-                const { description, image, timeline } = req.body;
-                if (!description || !image || !timeline) {
-                    console.log(description, image, timeline);
+                const { description, image } = req.body;
+                console.log(req.body);
+                if (!description || !image) {
+                    console.log(description, image);
                     return res.status(400).json({ error: "Bad Request - Incomplete request" });
                 }
-
-                // Construct timeline array
-                const timelineArray = [{ year: timeline.year, description: timeline.description }];
 
                 // create about post
                 const newAbout = new About({
                     description,
                     image,
-                    timeline: timelineArray,
+                    active: false,
                 });
 
                 await newAbout.save();

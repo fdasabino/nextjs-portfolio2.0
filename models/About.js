@@ -10,26 +10,12 @@ const aboutSchema = new mongoose.Schema(
         },
         active: {
             type: Boolean,
-            default: true,
+            default: false,
         },
         image: {
             type: String,
             required: true,
         },
-        timeline: [
-            {
-                year: {
-                    type: String,
-                    required: true,
-                },
-                description: {
-                    type: String,
-                    required: true,
-                    minlength: [2, "must be at least 2 characters"],
-                    maxlength: [200, "must be a maximum of 200 characters"],
-                },
-            },
-        ],
     },
     {
         timestamps: true,

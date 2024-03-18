@@ -13,14 +13,12 @@ import styles from "./About.module.scss";
 const initialValues = {
     description: "",
     image: "",
-    year: "",
-    year_description: "",
 };
 
 const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: number) => void }>) => {
     const [loading, setLoading] = useState(false);
     const [values, setValues] = useState(initialValues);
-    const { description, image, year, year_description } = values || initialValues;
+    const { description, image } = values || initialValues;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -30,9 +28,8 @@ const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: numb
     const handleSubmit = async (values: any, formikHelpers: any) => {
         setLoading(true);
         try {
-            const { description, image, year, year_description } = values;
-            const timeline = { year, description: year_description }; // Adjusting the structure
-            const about = { description, image, timeline };
+            const { description, image } = values;
+            const about = { description, image };
 
             const res = await createAbout(about);
             if (res.data) {
@@ -62,7 +59,7 @@ const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: numb
                         </h2>
                         <Formik
                             enableReinitialize
-                            initialValues={{ description, image, year, year_description }}
+                            initialValues={{ description, image }}
                             validationSchema={aboutValidation}
                             onSubmit={handleSubmit}>
                             {(form) => (
@@ -79,20 +76,6 @@ const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: numb
                                         icon="image"
                                         name="image"
                                         placeholder="Paste image url"
-                                        onChange={handleChange}
-                                    />
-                                    <Input
-                                        type="text"
-                                        icon="year"
-                                        name="year"
-                                        placeholder="Year: example: 2021"
-                                        onChange={handleChange}
-                                    />
-                                    <Input
-                                        type="text"
-                                        icon="message"
-                                        name="year_description"
-                                        placeholder="Year description"
                                         onChange={handleChange}
                                     />
                                     <Button

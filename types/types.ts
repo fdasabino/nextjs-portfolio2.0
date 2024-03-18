@@ -21,6 +21,5 @@ export interface AboutProps {
     _id: string;
     description: string;
     image: string;
-    timeline: [{ year: string; description: string }];
     active: boolean;
 }

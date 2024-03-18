@@ -14,7 +14,7 @@ const handler = async (req, res) => {
                 }
 
                 const { description, image } = req.body;
-                console.log(req.body);
+
                 if (!description || !image) {
                     console.log(description, image);
                     return res.status(400).json({ error: "Bad Request - Incomplete request" });

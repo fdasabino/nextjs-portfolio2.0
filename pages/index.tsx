@@ -4,6 +4,7 @@ import ContactComponent from "@/components/Home/Sections/Contact/Contact";
 import HeroComponent from "@/components/Home/Sections/Hero/Hero";
 import ProjectComponent from "@/components/Home/Sections/Projects/Projects";
 import TestimonialComponent from "@/components/Home/Sections/Testimonials/Testimonials";
+import TimelineComponent from "@/components/Home/Sections/Timeline/Timeline";
 
 // utils
 import styles from "@/styles/pages/Home.module.scss";
@@ -11,18 +12,20 @@ import db from "@/utils/db";
 import Head from "next/head";
 
 // models
-import TimelineComponent from "@/components/Home/Sections/Timeline/Timeline";
+import About from "@/models/About";
 import Project from "@/models/Projects";
 import Testimonial from "@/models/Testimonial";
 
 const Home = ({
     projects,
     testimonials,
+    abouts,
 }: {
     projects: (typeof Project)[];
     testimonials: (typeof Testimonial)[];
+    abouts: (typeof About)[];
 }) => {
-    console.log(projects);
+    console.log(abouts);
     return (
         <div>
             <Head>
@@ -63,7 +66,7 @@ const Home = ({
                     <h2>About</h2>
                 </div>
 
-                <AboutComponent />
+                <AboutComponent abouts={abouts} />
             </section>
 
             <section id="timeline">
@@ -113,11 +116,13 @@ export async function getServerSideProps() {
     try {
         const projects = await Project.find({});
         const testimonials = await Testimonial.find({});
+        const abouts = await About.find({});
 
         return {
             props: {
                 projects: JSON.parse(JSON.stringify(projects)),
                 testimonials: JSON.parse(JSON.stringify(testimonials)),
+                abouts: JSON.parse(JSON.stringify(abouts)),
             },
         };
     } catch (error) {

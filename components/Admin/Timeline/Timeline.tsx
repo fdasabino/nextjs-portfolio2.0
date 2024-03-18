@@ -2,7 +2,7 @@ import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import Loader from "@/components/Layout/Loader/Loader";
 import { timelineValidation } from "@/utils/formsValidation";
-import { createAbout } from "@/utils/globalFunctions";
+import { createTimeline } from "@/utils/globalFunctions";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
@@ -31,9 +31,9 @@ const Timeline = ({
         setLoading(true);
         try {
             const { description, year } = values;
-            const about = { description, year };
+            const timeline = { description, year };
 
-            const res = await createAbout(about);
+            const res = await createTimeline(timeline);
             if (res.data) {
                 formikHelpers.resetForm();
                 setValues(initialValues);
@@ -76,7 +76,7 @@ const Timeline = ({
                                         type="textarea"
                                         icon="message"
                                         name="description"
-                                        placeholder="Write about yourself"
+                                        placeholder="Year description"
                                         onChange={handleChange}
                                     />
                                     <Button

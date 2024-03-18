@@ -37,6 +37,7 @@ export const validateEmail = (email: string) => {
     return regexSt.test(email);
 };
 
+// post requests
 export const createAbout = (about: object) => {
     const res = axios.post("/api/admin/about", about);
     return res;
@@ -49,5 +50,10 @@ export const createProject = (project: object) => {
 
 export const createTestimonial = (testimonial: object) => {
     const res = axios.post("/api/admin/testimonial", testimonial);
+    return res;
+};
+
+export const createTimeline = (timeline: object) => {
+    const res = axios.post("/api/admin/timeline", timeline);
     return res;
 };

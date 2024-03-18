@@ -155,6 +155,21 @@ const Navbar = () => {
                                     <ReactScrollLink
                                         spy={true}
                                         isDynamic={true}
+                                        to="timeline"
+                                        onClick={onClose}
+                                        className="">
+                                        Timeline
+                                    </ReactScrollLink>
+                                </motion.div>
+
+                                <motion.div
+                                    className={styles.navbar__menu__top__item}
+                                    variants={variants}
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.95 }}>
+                                    <ReactScrollLink
+                                        spy={true}
+                                        isDynamic={true}
                                         to="projects"
                                         onClick={onClose}
                                         className="">

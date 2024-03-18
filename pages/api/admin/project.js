@@ -7,7 +7,6 @@ const handler = async (req, res) => {
     await db.connectDB();
     const { method } = req;
     const { name, description, image, techTags, repository, live_url } = req.body;
-    console.log(req.body);
 
     try {
         await authMiddleware(req, res, async () => {
@@ -17,7 +16,6 @@ const handler = async (req, res) => {
                 }
 
                 if (!name || !description || !image || !techTags || !repository || !live_url) {
-                    console.log(name, description, image, techTags, repository, live_url);
                     return res.status(400).json({ error: "Bad Request - Incomplete request" });
                 }
 

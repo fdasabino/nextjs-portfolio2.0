@@ -25,7 +25,6 @@ const Home = ({
     testimonials: (typeof Testimonial)[];
     abouts: (typeof About)[];
 }) => {
-    console.log(abouts);
     return (
         <div>
             <Head>

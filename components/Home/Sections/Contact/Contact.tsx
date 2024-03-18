@@ -28,7 +28,7 @@ const messageValidation = Yup.object().shape({
     message: Yup.string().required("Message is required"),
 });
 
-const Contact = () => {
+const ContactComponent = () => {
     const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID;
     const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
     const userID = process.env.NEXT_PUBLIC_USER_ID;
@@ -144,4 +144,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default ContactComponent;

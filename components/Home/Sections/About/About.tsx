@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import styles from "./About.module.scss";
 
-const About = () => {
+const AboutComponent = () => {
     return (
         <div className={styles.about}>
             <div className={`${styles.about__data} ${styles.base_blurry_background}`}>
@@ -38,4 +38,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default AboutComponent;

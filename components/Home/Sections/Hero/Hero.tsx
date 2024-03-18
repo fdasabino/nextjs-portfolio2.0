@@ -8,7 +8,7 @@ import { MdOutlineAlternateEmail } from "react-icons/md";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import styles from "./Hero.module.scss";
 
-const Hero = () => {
+const HeroComponent = () => {
     const [text] = useTypewriter({
         words: ["<Front End Developer at Iquest/>", "<Student at Hyper Island/>", "<Freelancer/>"],
         loop: true,
@@ -69,4 +69,4 @@ const Hero = () => {
     );
 };
 
-export default Hero;
+export default HeroComponent;

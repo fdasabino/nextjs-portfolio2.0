@@ -1,11 +1,12 @@
 import { TestimonialsData } from "@/constants/constants";
+import { TestimonialProps } from "@/types/types";
 import Image from "next/image";
 import React from "react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./Testimonials.module.scss";
 
-const Testimonials = () => {
+const TestimonialComponent = ({ testimonials }: any) => {
     return (
         <div className={styles.testimonials}>
             <div className={`${styles.testimonials__data} ${styles.base_blurry_background}`}>
@@ -17,29 +18,29 @@ const Testimonials = () => {
                     navigation={true}
                     modules={[Pagination, Navigation]}
                     className={styles.testimonials__swiper}>
-                    {TestimonialsData.map((testimonial) => (
-                        <SwiperSlide key={testimonial.id}>
+                    {testimonials.map((testimonial: TestimonialProps) => (
+                        <SwiperSlide key={testimonial._id}>
                             <div className={styles.testimonials__swiper_top}>
                                 <div className={styles.testimonials__swiper_top_left}>
                                     <h2>{testimonial.name}</h2>
                                 </div>
                                 <div className={styles.testimonials__swiper_top_right}>
                                     <p>{testimonial.position}</p>
-                                    <p>{testimonial.company}</p>
+                                    <p>{testimonial.workplace}</p>
                                 </div>
                             </div>
 
                             <div className={styles.testimonials__swiper_bottom}>
                                 <div className={styles.testimonials__swiper_bottom_img}>
                                     <Image
-                                        src={testimonial.img}
+                                        src={testimonial.image}
                                         width={600}
                                         height={600}
                                         alt={testimonial.name}
                                     />
                                 </div>
                                 <div className={styles.testimonials__swiper_bottom_text}>
-                                    <p>{testimonial.text}</p>
+                                    <p>{testimonial.description}</p>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -50,4 +51,4 @@ const Testimonials = () => {
     );
 };
 
-export default Testimonials;
+export default TestimonialComponent;

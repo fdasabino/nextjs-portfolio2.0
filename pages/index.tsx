@@ -1,14 +1,26 @@
-import About from "@/components/Home/Sections/About/About";
-import Contact from "@/components/Home/Sections/Contact/Contact";
-import Hero from "@/components/Home/Sections/Hero/Hero";
-import Projects from "@/components/Home/Sections/Projects/Projects";
-import Testimonials from "@/components/Home/Sections/Testimonials/Testimonials";
-import Project from "@/models/Projects";
+// components
+import AboutComponent from "@/components/Home/Sections/About/About";
+import ContactComponent from "@/components/Home/Sections/Contact/Contact";
+import HeroComponent from "@/components/Home/Sections/Hero/Hero";
+import ProjectComponent from "@/components/Home/Sections/Projects/Projects";
+import TestimonialComponent from "@/components/Home/Sections/Testimonials/Testimonials";
+
+// utils
 import styles from "@/styles/pages/Home.module.scss";
 import db from "@/utils/db";
 import Head from "next/head";
 
-const Home = ({ projects }: { projects: (typeof Project)[] }) => {
+// models
+import Project from "@/models/Projects";
+import Testimonial from "@/models/Testimonial";
+
+const Home = ({
+    projects,
+    testimonials,
+}: {
+    projects: (typeof Project)[];
+    testimonials: (typeof Testimonial)[];
+}) => {
     console.log(projects);
     return (
         <div>
@@ -41,7 +53,7 @@ const Home = ({ projects }: { projects: (typeof Project)[] }) => {
                 />
             </Head>
             <section id="hero">
-                <Hero />
+                <HeroComponent />
             </section>
 
             <section id="about">
@@ -50,7 +62,7 @@ const Home = ({ projects }: { projects: (typeof Project)[] }) => {
                     <h2>About</h2>
                 </div>
 
-                <About />
+                <AboutComponent />
             </section>
 
             <section id="projects">
@@ -59,7 +71,7 @@ const Home = ({ projects }: { projects: (typeof Project)[] }) => {
                     <h2>Projects</h2>
                 </div>
 
-                <Projects />
+                <ProjectComponent projects={projects} />
             </section>
 
             <section id="testimonials">
@@ -68,7 +80,7 @@ const Home = ({ projects }: { projects: (typeof Project)[] }) => {
                     <h2>References</h2>
                 </div>
 
-                <Testimonials />
+                <TestimonialComponent testimonials={testimonials} />
             </section>
 
             <section id="contact">
@@ -77,7 +89,7 @@ const Home = ({ projects }: { projects: (typeof Project)[] }) => {
                     <h2>Contact</h2>
                 </div>
 
-                <Contact />
+                <ContactComponent />
             </section>
         </div>
     );
@@ -90,10 +102,18 @@ export async function getServerSideProps() {
 
     try {
         const projects = await Project.find({});
+        const testimonials = await Testimonial.find({});
+
         return {
             props: {
                 projects: JSON.parse(JSON.stringify(projects)),
+                testimonials: JSON.parse(JSON.stringify(testimonials)),
             },
         };
-    } catch (error) {}
+    } catch (error) {
+        console.log(error);
+        return {
+            props: {},
+        };
+    }
 }

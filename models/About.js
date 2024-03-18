@@ -8,6 +8,10 @@ const aboutSchema = new mongoose.Schema(
             minlength: [2, "must be at least 2 characters"],
             maxlength: [750, "must be a maximum of 750 characters"],
         },
+        active: {
+            type: Boolean,
+            default: true,
+        },
         image: {
             type: String,
             required: true,

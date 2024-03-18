@@ -1,4 +1,3 @@
-import { TestimonialsData } from "@/constants/constants";
 import { TestimonialProps } from "@/types/types";
 import Image from "next/image";
 import React from "react";
@@ -18,7 +17,7 @@ const TestimonialComponent = ({ testimonials }: any) => {
                     navigation={true}
                     modules={[Pagination, Navigation]}
                     className={styles.testimonials__swiper}>
-                    {testimonials.map((testimonial: TestimonialProps) => (
+                    {[...testimonials].reverse().map((testimonial: TestimonialProps) => (
                         <SwiperSlide key={testimonial._id}>
                             <div className={styles.testimonials__swiper_top}>
                                 <div className={styles.testimonials__swiper_top_left}>

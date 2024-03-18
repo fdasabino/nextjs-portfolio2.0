@@ -333,7 +333,7 @@ export const TestimonialsData = [
         position: "General Manager",
         company: "Haymarket by Scandic",
         img: "https://res.cloudinary.com/frank2021/image/upload/v1652792468/portfolio/jessica.15b9d7aeb955fdc3771b_dcu5yf.jpg",
-        text: "Since 2018, I have the pleasure of having Mr Francisco Sabino in my hotel team, Haymarket, Stockholm. He holds the position of professional bartender at the cocktail bar Americain. Mr Sabino is a very appreciated colleague and he is considered one of our top employees. He is known for providing our guests with professional and caring five star service, and he shares positive energy with the team mates and the guests at the bar. He is punctual and his appearance is always professional, neat and tidy. I have followed Francisco's studying with interest and I feel proud of how he takes on his life as a dedicated student, while still holding a job at the hotel. With his disciplined hard work and commitment, I am sure Mr Sabino will be appreciated also in his new career as a Fullstack Web Developer.",
+        text: "Since 2018, I have the pleasure of having Mr Francisco Sabino in my hotel team, Haymarket, Stockholm. He holds the position of professional bartender at the cocktail bar Americain. Mr Sabino is a very appreciated colleague and he is considered one of our top employees. He is known for providing our guests with professional and caring five star service, and he shares positive energy with the team mates and the guests at the bar. He is punctual and his appearance is always professional, neat and tidy. I have followed Francisco's studying with interest and I feel proud of how he takes on his life as a dedicated student, while still holding a job at the hotel. With his disciplined hard work and commitment, I am sure Mr Sabino will be appreciated also in his new career as a Developer.",
     },
     {
         id: 1,
@@ -341,7 +341,7 @@ export const TestimonialsData = [
         position: "Media Manager",
         company: "Arla Foods",
         img: "https://res.cloudinary.com/frank2021/image/upload/v1652792468/portfolio/linda.ba3c7e269a0b60095db4_za9dny.jpg",
-        text: "I know Francisco Sabino personally since a few years back. Francisco is hard working, great at project management and has the ability of planning ahead. He is reliable, service minded, sociable, positive and always takes on a challenge with a smile on his face. I have been impressed with the dedication and drive Francisco has shown in regards to his career change. Francisco has always had a natural interest for IT and tech, and based on his talents I believe he will have a bright future as a Full stack developer. I can give Francisco Sabino my warmest recommendations.",
+        text: "I know Francisco Sabino personally since a few years back. Francisco is hard working, great at project management and has the ability of planning ahead. He is reliable, service minded, sociable, positive and always takes on a challenge with a smile on his face. I have been impressed with the dedication and drive Francisco has shown in regards to his career change. Francisco has always had a natural interest for IT and tech, and based on his talents I believe he will have a bright future as a developer. I can give Francisco Sabino my warmest recommendations.",
     },
 ];
 

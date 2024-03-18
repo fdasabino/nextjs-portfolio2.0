@@ -1,20 +1,26 @@
 import { TimeLineData } from "@/constants/constants";
+import { TimelineProps } from "@/types/types";
 import { Timeline } from "antd";
 import React from "react";
+import { FaArrowRight } from "react-icons/fa";
 import styles from "./Timeline.module.scss";
 
-const TimelineComponent = () => {
+const TimelineComponent = ({ timeline }: any) => {
     return (
         <div className={`${styles.timeline} ${styles.base_blurry_background}`}>
             <Timeline>
-                {TimeLineData &&
-                    [...TimeLineData].reverse().map((item, index) => (
-                        <Timeline.Item key={index}>
-                            <p>
-                                <span>{item.year}</span> {item.text}
-                            </p>
+                {timeline.length ? (
+                    [...timeline].reverse().map((item: TimelineProps) => (
+                        <Timeline.Item key={item._id}>
+                            <div className={styles.timeline__item}>
+                                <span>{item.year}</span>
+                                <p>{item.description}</p>
+                            </div>
                         </Timeline.Item>
-                    ))}
+                    ))
+                ) : (
+                    <p>No Timeline Data</p>
+                )}
             </Timeline>
         </div>
     );

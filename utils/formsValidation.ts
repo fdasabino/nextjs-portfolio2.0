@@ -35,7 +35,7 @@ export const projectValidation = Yup.object().shape({
 
 export const testimonialValidation = Yup.object().shape({
     name: Yup.string().min(2).max(50).required("Name is required"),
-    description: Yup.string().min(2).max(750).required("Description is required"),
+    description: Yup.string().min(2).max(2000).required("Description is required"),
     image: Yup.string()
         .url("Invalid image URL")
         .matches(/^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/, "Invalid image URL")

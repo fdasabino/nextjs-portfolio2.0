@@ -1,6 +1,6 @@
 .timeline {
     width: 100%;
-    max-width: 100%;
+    max-width: 1200px;
 
     display: flex;
     justify-content: flex-start;
@@ -12,50 +12,39 @@
         align-items: center;
     }
 
-    p {
+    &__item {
         width: 100%;
-        max-width: 700px;
+        max-width: 100%;
         font-size: 0.9rem;
         font-weight: 300;
         margin-bottom: 1rem;
-        text-align: justify;
-        line-height: 1.5rem;
+
+        span {
+            flex: 1;
+            color: $base-blue;
+            font-weight: 600;
+            font-size: 1.1rem;
+
+            text-decoration: underline;
+            text-decoration-color: $base-blue;
+            text-decoration-thickness: 0.1rem;
+            text-underline-offset: 0.2rem;
+            margin-bottom: 0.5rem;
+
+            svg {
+                width: 1.5rem;
+                height: 1.5rem;
+                fill: $base-blue;
+            }
+        }
+
+        p {
+            flex: 2;
+        }
 
         @media (max-width: 768px) {
             max-width: 100%;
             font-size: 0.8rem;
-        }
-    }
-
-    .item {
-        width: 100%;
-        max-width: 500px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 1rem;
-
-        p {
-            width: 100%;
-            max-width: 100%;
-            font-size: 0.9rem;
-            margin: 0.2rem;
-
-            span {
-                width: 100%;
-                max-width: 100px;
-                font-weight: 300;
-                color: $base-blue;
-            }
-
-            @media (max-width: 768px) {
-                font-size: 0.8rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            flex-direction: column;
-            gap: 1rem;
         }
     }
 }

@@ -15,15 +15,18 @@ import Head from "next/head";
 import About from "@/models/About";
 import Project from "@/models/Projects";
 import Testimonial from "@/models/Testimonial";
+import Timeline from "@/models/Timeline";
 
 const Home = ({
     projects,
     testimonials,
     abouts,
+    timeline,
 }: {
     projects: (typeof Project)[];
     testimonials: (typeof Testimonial)[];
     abouts: (typeof About)[];
+    timeline: (typeof Timeline)[];
 }) => {
     return (
         <div>
@@ -74,7 +77,7 @@ const Home = ({
                     <h2>Timeline</h2>
                 </div>
 
-                <TimelineComponent />
+                <TimelineComponent timeline={timeline} />
             </section>
 
             <section id="projects">
@@ -116,12 +119,14 @@ export async function getServerSideProps() {
         const projects = await Project.find({});
         const testimonials = await Testimonial.find({});
         const abouts = await About.find({});
+        const timeline = await Timeline.find({});
 
         return {
             props: {
                 projects: JSON.parse(JSON.stringify(projects)),
                 testimonials: JSON.parse(JSON.stringify(testimonials)),
                 abouts: JSON.parse(JSON.stringify(abouts)),
+                timeline: JSON.parse(JSON.stringify(timeline)),
             },
         };
     } catch (error) {

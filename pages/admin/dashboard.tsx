@@ -8,6 +8,7 @@ import { TfiRulerAlt2 } from "react-icons/tfi";
 import About from "@/components/Admin/About/About";
 import Projects from "@/components/Admin/Projects/Projects";
 import Testimonials from "@/components/Admin/Testimonials/Testimonials";
+import Timeline from "@/components/Admin/Timeline/Timeline";
 
 const AdminDashboard = () => {
     const [active, setActive] = useState(0);
@@ -39,8 +40,31 @@ const AdminDashboard = () => {
                         <div className={styles.dashboard__action__card__bottom}>
                             <Button
                                 onClick={() => handleSwitch(1)}
-                                style="primary">
+                                style="secondary">
                                 About <CiCirclePlus />
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+
+                <div className={styles.dashboard__action}>
+                    <div
+                        className={`${styles.dashboard__action__card} ${styles.base_blurry_background}`}>
+                        <div className={styles.dashboard__action__card__top}>
+                            <h2>
+                                Timeline <RiMessage2Line />
+                            </h2>
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore
+                                soluta laboriosam ducimus assumenda modi hic, doloribus quae rerum
+                                corrupti voluptatum!
+                            </p>
+                        </div>
+                        <div className={styles.dashboard__action__card__bottom}>
+                            <Button
+                                onClick={() => handleSwitch(2)}
+                                style="secondary">
+                                Timeline <CiCirclePlus />
                             </Button>
                         </div>
                     </div>
@@ -61,7 +85,7 @@ const AdminDashboard = () => {
                         </div>
                         <div className={styles.dashboard__action__card__bottom}>
                             <Button
-                                onClick={() => handleSwitch(2)}
+                                onClick={() => handleSwitch(3)}
                                 style="secondary">
                                 Project <CiCirclePlus />
                             </Button>
@@ -74,7 +98,7 @@ const AdminDashboard = () => {
                         className={`${styles.dashboard__action__card} ${styles.base_blurry_background}`}>
                         <div className={styles.dashboard__action__card__top}>
                             <h2>
-                                Testimonial <RiKakaoTalkLine />
+                                Reference <RiKakaoTalkLine />
                             </h2>
                             <p>
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore
@@ -84,9 +108,9 @@ const AdminDashboard = () => {
                         </div>
                         <div className={styles.dashboard__action__card__bottom}>
                             <Button
-                                onClick={() => handleSwitch(3)}
-                                style="tertiary">
-                                Testimonial <CiCirclePlus />
+                                onClick={() => handleSwitch(4)}
+                                style="secondary">
+                                Reference <CiCirclePlus />
                             </Button>
                         </div>
                     </div>
@@ -95,8 +119,9 @@ const AdminDashboard = () => {
 
             <div className={styles.dashboard__forms}>
                 {active === 1 && <About setActive={setActive} />}
-                {active === 2 && <Projects setActive={setActive} />}
-                {active === 3 && <Testimonials setActive={setActive} />}
+                {active === 2 && <Timeline setActive={setActive} />}
+                {active === 3 && <Projects setActive={setActive} />}
+                {active === 4 && <Testimonials setActive={setActive} />}
             </div>
         </div>
     );

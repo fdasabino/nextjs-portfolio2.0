@@ -51,3 +51,8 @@ export const aboutValidation = Yup.object().shape({
         .matches(/^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/, "Invalid image URL")
         .required("Image URL is required"),
 });
+
+export const timelineValidation = Yup.object().shape({
+    year: Yup.string().min(2).max(50).required("Year is required"),
+    description: Yup.string().min(2).max(400).required("Description is required"),
+});

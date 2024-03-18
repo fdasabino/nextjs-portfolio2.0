@@ -35,8 +35,8 @@ const Layout = ({ children }: LayoutProps) => {
                 className={styles.progress_bar}
                 style={{ scaleX }}
             />
+            {router.pathname === "/" && <TracingBeam contentRef={contentRef} />}
             <Navbar />
-            <TracingBeam contentRef={contentRef} />
             <main ref={contentRef}>{children}</main>
             {!router.pathname.startsWith("/admin") && <Footer />}
         </>

@@ -31,7 +31,7 @@ const Home = ({
     return (
         <div>
             <Head>
-                <title>Francisco Sabino - Portfolio</title>
+                <title>Francisco Sabino | Front-End Developer Portfolio</title>
                 <meta charSet="utf-8" />
                 <meta
                     name="viewport"
@@ -43,7 +43,7 @@ const Home = ({
                 />
                 <meta
                     name="description"
-                    content="Front End Developer - Stockholm"
+                    content="Explore the portfolio of Francisco Sabino, a front-end developer based in Stockholm, known for creating visually stunning and interactive web experiences."
                 />
                 <meta
                     name="keywords"

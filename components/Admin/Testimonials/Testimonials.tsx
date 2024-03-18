@@ -7,7 +7,7 @@ import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { MdHideSource } from "react-icons/md";
+import { FaRegEyeSlash } from "react-icons/fa";
 import styles from "./Testimonials.module.scss";
 
 const initialValues = {
@@ -61,7 +61,7 @@ const Testimonials = ({
                     <>
                         <h2 id="reference">
                             Enter reference information{" "}
-                            <MdHideSource
+                            <FaRegEyeSlash
                                 onClick={() => {
                                     scrollToTop();
                                     setActive(0);

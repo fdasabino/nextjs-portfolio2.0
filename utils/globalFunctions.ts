@@ -1,5 +1,6 @@
 import axios from "axios";
 import { ToastPosition } from "react-hot-toast";
+
 // Constants
 export const toasterOptions = {
     position: "bottom-center" as ToastPosition,

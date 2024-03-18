@@ -22,9 +22,9 @@ const ProjectComponent = ({ projects }: any) => {
                             <div className={styles.projects__swiper_top}>
                                 <h2>{project.name}</h2>
                                 <div className={styles.projects__swiper_top_icons}>
-                                    {project.techTags?.map((tag, index) => (
-                                        <span key={index}>{tag}</span>
-                                    ))}
+                                    {project.techTags?.map((icon, index) => {
+                                        return <span key={index}>{icon}</span>;
+                                    })}
                                 </div>
                             </div>
                             <div className={styles.projects__swiper_bottom}>

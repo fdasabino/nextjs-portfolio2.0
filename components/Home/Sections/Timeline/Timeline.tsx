@@ -1,4 +1,3 @@
-import { TimeLineData } from "@/constants/constants";
 import { TimelineProps } from "@/types/types";
 import { Timeline } from "antd";
 import React from "react";

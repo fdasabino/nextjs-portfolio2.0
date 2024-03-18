@@ -2,7 +2,7 @@ import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import Loader from "@/components/Layout/Loader/Loader";
 import { projectValidation } from "@/utils/formsValidation";
-import { createProject } from "@/utils/globalFunctions";
+import { createProject, scrollToTop } from "@/utils/globalFunctions";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
@@ -60,8 +60,14 @@ const Projects = ({
                     <Loader />
                 ) : (
                     <>
-                        <h2>
-                            Enter project information <MdHideSource onClick={() => setActive(0)} />
+                        <h2 id="project">
+                            Enter project information{" "}
+                            <MdHideSource
+                                onClick={() => {
+                                    scrollToTop();
+                                    setActive(0);
+                                }}
+                            />
                         </h2>
                         <Formik
                             enableReinitialize

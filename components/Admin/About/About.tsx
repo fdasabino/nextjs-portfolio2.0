@@ -2,7 +2,7 @@ import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import Loader from "@/components/Layout/Loader/Loader";
 import { aboutValidation } from "@/utils/formsValidation";
-import { createAbout } from "@/utils/globalFunctions";
+import { createAbout, scrollToTop } from "@/utils/globalFunctions";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
@@ -54,8 +54,14 @@ const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: numb
                     <Loader />
                 ) : (
                     <>
-                        <h2>
-                            Enter about information <MdHideSource onClick={() => setActive(0)} />
+                        <h2 id="about">
+                            Enter about information{" "}
+                            <MdHideSource
+                                onClick={() => {
+                                    scrollToTop();
+                                    setActive(0);
+                                }}
+                            />
                         </h2>
                         <Formik
                             enableReinitialize

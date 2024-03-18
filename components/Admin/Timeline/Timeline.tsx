@@ -2,7 +2,7 @@ import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import Loader from "@/components/Layout/Loader/Loader";
 import { timelineValidation } from "@/utils/formsValidation";
-import { createTimeline } from "@/utils/globalFunctions";
+import { createTimeline, scrollToTop } from "@/utils/globalFunctions";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
@@ -55,8 +55,14 @@ const Timeline = ({
                     <Loader />
                 ) : (
                     <>
-                        <h2>
-                            Enter timeline information <MdHideSource onClick={() => setActive(0)} />
+                        <h2 id="timeline">
+                            Enter timeline information{" "}
+                            <MdHideSource
+                                onClick={() => {
+                                    scrollToTop();
+                                    setActive(0);
+                                }}
+                            />
                         </h2>
                         <Formik
                             enableReinitialize

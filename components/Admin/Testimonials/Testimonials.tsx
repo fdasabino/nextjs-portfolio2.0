@@ -2,7 +2,7 @@ import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import Loader from "@/components/Layout/Loader/Loader";
 import { testimonialValidation } from "@/utils/formsValidation";
-import { createTestimonial } from "@/utils/globalFunctions";
+import { createTestimonial, scrollToTop } from "@/utils/globalFunctions";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
@@ -59,9 +59,14 @@ const Testimonials = ({
                     <Loader />
                 ) : (
                     <>
-                        <h2>
+                        <h2 id="reference">
                             Enter reference information{" "}
-                            <MdHideSource onClick={() => setActive(0)} />
+                            <MdHideSource
+                                onClick={() => {
+                                    scrollToTop();
+                                    setActive(0);
+                                }}
+                            />
                         </h2>
                         <Formik
                             enableReinitialize

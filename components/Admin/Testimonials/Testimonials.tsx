@@ -2,14 +2,14 @@ import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import Loader from "@/components/Layout/Loader/Loader";
 import { testimonialValidation } from "@/utils/formsValidation";
-import { createTestimonial } from "@/utils/globalFunctions";
+import { createTestimonial, scrollToTop } from "@/utils/globalFunctions";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { MdHideSource } from "react-icons/md";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { useMediaQuery } from "react-responsive";
 import styles from "./Testimonials.module.scss";
-
 const initialValues = {
     name: "",
     description: "",
@@ -24,6 +24,7 @@ const Testimonials = ({
     const [loading, setLoading] = useState(false);
     const [values, setValues] = useState(initialValues);
     const { name, description, image, workplace, position } = values || initialValues;
+    const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -59,9 +60,16 @@ const Testimonials = ({
                     <Loader />
                 ) : (
                     <>
-                        <h2>
+                        <h2 id="reference">
                             Enter reference information{" "}
-                            <MdHideSource onClick={() => setActive(0)} />
+                            {isMobile && (
+                                <FaRegEyeSlash
+                                    onClick={() => {
+                                        scrollToTop();
+                                        setActive(0);
+                                    }}
+                                />
+                            )}
                         </h2>
                         <Formik
                             enableReinitialize

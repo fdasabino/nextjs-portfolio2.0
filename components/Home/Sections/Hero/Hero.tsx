@@ -1,7 +1,7 @@
 import Animation from "@/components/Layout/Animation/Animation";
 import Button from "@/components/Layout/Button/Button";
 import { HeroData } from "@/constants/constants";
-import { scrollTo } from "@/utils/globalFunctions";
+import { scrollToId } from "@/utils/globalFunctions";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { MdOutlineAlternateEmail } from "react-icons/md";
@@ -58,7 +58,7 @@ const HeroComponent = () => {
                                 <span>{text}</span>
                                 <Cursor cursorColor="#00bbff" />
                             </h2>
-                            <Button onClick={() => scrollTo("contact")}>
+                            <Button onClick={() => scrollToId("contact")}>
                                 Contact <MdOutlineAlternateEmail />
                             </Button>
                         </div>

@@ -2,12 +2,13 @@ import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import Loader from "@/components/Layout/Loader/Loader";
 import { aboutValidation } from "@/utils/formsValidation";
-import { createAbout } from "@/utils/globalFunctions";
+import { createAbout, scrollToTop } from "@/utils/globalFunctions";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { MdHideSource } from "react-icons/md";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { useMediaQuery } from "react-responsive";
 import styles from "./About.module.scss";
 
 const initialValues = {
@@ -19,6 +20,7 @@ const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: numb
     const [loading, setLoading] = useState(false);
     const [values, setValues] = useState(initialValues);
     const { description, image } = values || initialValues;
+    const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -54,8 +56,16 @@ const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: numb
                     <Loader />
                 ) : (
                     <>
-                        <h2>
-                            Enter about information <MdHideSource onClick={() => setActive(0)} />
+                        <h2 id="about">
+                            Enter about information{" "}
+                            {isMobile && (
+                                <FaRegEyeSlash
+                                    onClick={() => {
+                                        scrollToTop();
+                                        setActive(0);
+                                    }}
+                                />
+                            )}
                         </h2>
                         <Formik
                             enableReinitialize

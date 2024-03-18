@@ -23,13 +23,22 @@ export const toasterOptions = {
 };
 
 // Functions
-export const scrollTo = (id: string) => {
+export const scrollToId = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
         element.scrollIntoView({
             behavior: "smooth",
+            block: "center", // Ensure the element is scrolled to the center of the viewport
+            inline: "center", // Ensure the element is horizontally centered in the viewport
         });
     }
+};
+
+export const scrollToTop = () => {
+    window.scroll({
+        top: 0,
+        behavior: "smooth",
+    });
 };
 
 export const validateEmail = (email: string) => {

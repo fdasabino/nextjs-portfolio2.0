@@ -2,12 +2,13 @@ import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import Loader from "@/components/Layout/Loader/Loader";
 import { projectValidation } from "@/utils/formsValidation";
-import { createProject } from "@/utils/globalFunctions";
+import { createProject, scrollToTop } from "@/utils/globalFunctions";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { MdHideSource } from "react-icons/md";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { useMediaQuery } from "react-responsive";
 import styles from "./Projects.module.scss";
 
 const initialValues = {
@@ -25,6 +26,7 @@ const Projects = ({
     const [loading, setLoading] = useState(false);
     const [values, setValues] = useState(initialValues);
     const { name, description, image, techTags, repository, live_url } = values || initialValues;
+    const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -60,8 +62,16 @@ const Projects = ({
                     <Loader />
                 ) : (
                     <>
-                        <h2>
-                            Enter project information <MdHideSource onClick={() => setActive(0)} />
+                        <h2 id="project">
+                            Enter project information{" "}
+                            {isMobile && (
+                                <FaRegEyeSlash
+                                    onClick={() => {
+                                        scrollToTop();
+                                        setActive(0);
+                                    }}
+                                />
+                            )}
                         </h2>
                         <Formik
                             enableReinitialize

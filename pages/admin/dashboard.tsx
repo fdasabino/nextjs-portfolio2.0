@@ -7,9 +7,11 @@ import styles from "@/styles/pages/Dashboard.module.scss";
 import { scrollToId } from "@/utils/globalFunctions";
 import Head from "next/head";
 import React, { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const AdminDashboard = () => {
-    const [active, setActive] = useState(1);
+    const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
+    const [active, setActive] = useState(isMobile ? 0 : 1);
 
     const handleSwitch = (item: number) => {
         setActive(item);

@@ -28,13 +28,13 @@ const Layout = ({ children }: LayoutProps) => {
     return (
         <>
             <Toaster {...toasterOptions} />
-            {!router.pathname.startsWith("/admin") && !router.pathname.startsWith("/auth") && (
-                <SparklesComponent />
-            )}
             <motion.div
                 className={styles.progress_bar}
                 style={{ scaleX }}
             />
+            {!router.pathname.startsWith("/admin") && !router.pathname.startsWith("/auth") && (
+                <SparklesComponent />
+            )}
             {router.pathname === "/" && <TracingBeam contentRef={contentRef} />}
             <Navbar />
             <main ref={contentRef}>{children}</main>

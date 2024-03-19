@@ -1,6 +1,6 @@
 .about {
     width: 100%;
-    max-width: 100%;
+    max-width: 1000px;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -9,7 +9,7 @@
 
     &__data {
         width: 100%;
-        max-width: 1200px;
+        max-width: 100%;
         padding: 2rem;
     }
 

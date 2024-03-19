@@ -192,26 +192,26 @@ $base-breakpoint-480px: 480px;
     .swiper-button-prev,
     .swiper-button-next {
         position: absolute;
-        top: 90% !important;
+        top: 2.2rem !important;
         transition: all 0.2s ease-in-out 0s !important;
-        width: 50px !important;
-        height: 50px !important;
+        width: 40px !important;
+        height: 40px !important;
         color: $base-blue !important;
         background-color: rgba(0, 0, 0, 0) !important;
         scale: 0.5 !important;
 
         &:hover {
             background-color: rgba(0, 0, 0, 0.1) !important;
-            scale: 1 !important;
+            scale: 0.6 !important;
         }
     }
 
     .swiper-button-prev {
-        left: 0 !important;
+        left: -0.9rem !important;
     }
 
     .swiper-button-next {
-        right: 0 !important;
+        right: -0.9rem !important;
     }
     .swiper-pagination-bullet,
     .swiper-pagination-bullet-active {

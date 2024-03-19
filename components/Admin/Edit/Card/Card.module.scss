@@ -1,0 +1,74 @@
+.card {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    min-height: 300px;
+    max-height: 300px;
+    margin: 2rem;
+
+    &__header {
+        width: 100%;
+        max-width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        h2 {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            text-align: center;
+
+            svg {
+                width: 1.5rem;
+                height: 1.5rem;
+                cursor: pointer;
+                fill: $base-blue;
+                stroke: $base-blue;
+            }
+        }
+
+        &__icons {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+
+            svg {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+    }
+
+    &__body {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        &__item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            p {
+                font-size: 0.9rem;
+                cursor: pointer;
+            }
+
+            a {
+                font-size: 0.8rem;
+                cursor: pointer;
+                color: $base-aqua;
+            }
+        }
+    }
+}

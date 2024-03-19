@@ -182,13 +182,6 @@ const selectIcon = (icon: string) => {
                     color="#fff"
                 />
             );
-        case "Redux":
-            return (
-                <SiRedux
-                    size={32}
-                    color="#fff"
-                />
-            );
         case "SASS":
             return (
                 <SiSass

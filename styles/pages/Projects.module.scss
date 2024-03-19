@@ -1,0 +1,35 @@
+.edit__projects {
+    margin-top: 5rem;
+
+    &__header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+            svg {
+                fill: $base-aqua;
+                stroke: $base-aqua;
+                cursor: pointer;
+            }
+
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+        }
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        gap: 2rem;
+
+        @media (max-width: 680px) {
+            grid-template-columns: 1fr;
+        }
+    }
+}

@@ -1,8 +1,8 @@
-import About from "@/components/Admin/About/About";
-import AdminCard from "@/components/Admin/AdminCard/AdminCard";
-import Projects from "@/components/Admin/Projects/Projects";
-import Testimonials from "@/components/Admin/Testimonials/Testimonials";
-import Timeline from "@/components/Admin/Timeline/Timeline";
+import About from "@/components/Admin/Create/About/About";
+import AdminCard from "@/components/Admin/Create/AdminCard/AdminCard";
+import Projects from "@/components/Admin/Create/Projects/Projects";
+import Testimonials from "@/components/Admin/Create/Testimonials/Testimonials";
+import Timeline from "@/components/Admin/Create/Timeline/Timeline";
 import styles from "@/styles/pages/Dashboard.module.scss";
 import { scrollToId } from "@/utils/globalFunctions";
 import Head from "next/head";

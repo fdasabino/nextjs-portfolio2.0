@@ -42,7 +42,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className={`${styles.navbar} ${styles.base_blurry_background}`}>
+        <nav className={`${styles.navbar}`}>
             <motion.div
                 className={styles.navbar__left}
                 initial={{

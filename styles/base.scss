@@ -155,7 +155,10 @@ $base-breakpoint-480px: 480px;
 }
 
 .ant-modal-title {
+    text-transform: uppercase;
     color: $base-white;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .ant-btn-default {

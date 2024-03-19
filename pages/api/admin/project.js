@@ -55,7 +55,6 @@ const handler = async (req, res) => {
 
             if (method === "PATCH") {
                 const { _id, name, description, image, techTags, repository, live_url } = req.body;
-                console.log(req.body);
 
                 const project = await Project.findById(_id);
 

@@ -1,3 +1,15 @@
+import Button from "@/components/Layout/Button/Button";
+import Input from "@/components/Layout/Input/Input";
+import { ProjectProps } from "@/types/types";
+import { projectValidation } from "@/utils/formsValidation";
+import { deleteProject, updateProject } from "@/utils/globalFunctions";
+import { Modal, Tooltip } from "antd";
+import { Form, Formik } from "formik";
+import Image from "next/image";
+import React, { useState } from "react";
+import toast from "react-hot-toast";
+import { CiWarning } from "react-icons/ci";
+import { FaRegEdit, FaTimes, FaTrashAlt } from "react-icons/fa";
 import {
     SiAngular,
     SiBootstrap,
@@ -16,25 +28,129 @@ import {
     SiSelenium,
     SiTailwindcss,
 } from "react-icons/si";
-
-import Button from "@/components/Layout/Button/Button";
-import Input from "@/components/Layout/Input/Input";
-import { ProjectProps } from "@/types/types";
-import { projectValidation } from "@/utils/formsValidation";
-import { deleteProject, updateProject } from "@/utils/globalFunctions";
-import { Modal, Tooltip } from "antd";
-import { Form, Formik } from "formik";
-import Image from "next/image";
-import React, { useState } from "react";
-import toast from "react-hot-toast";
-import { CiWarning } from "react-icons/ci";
-import { FaRegEdit, FaTimes, FaTrashAlt } from "react-icons/fa";
 import styles from "./Card.module.scss";
+
+const selectIcon = (icon: string) => {
+    switch (icon) {
+        case "Angular":
+            return (
+                <SiAngular
+                    size={32}
+                    color="#fff"
+                />
+            );
+        case "Bootstrap":
+            return (
+                <SiBootstrap
+                    size={32}
+                    color="#fff"
+                />
+            );
+        case "CSS":
+            return (
+                <SiCss3
+                    size={32}
+                    color="#fff"
+                />
+            );
+        case "Docker":
+            return (
+                <SiDocker
+                    size={32}
+                    color="#fff"
+                />
+            );
+        case "Express":
+            return (
+                <SiExpress
+                    size={32}
+                    color="#fff"
+                />
+            );
+        case "HTML":
+            return (
+                <SiHtml5
+                    size={32}
+                    color="#fff"
+                />
+            );
+        case "JavaScript":
+            return (
+                <SiJavascript
+                    size={32}
+                    color="#fff"
+                />
+            );
+        case "MongoDB":
+            return (
+                <SiMongodb
+                    size={32}
+                    color="#fff"
+                />
+            );
+        case "Mysql":
+            return (
+                <SiMysql
+                    size={32}
+                    color="#fff"
+                />
+            );
+        case "NextJs":
+            return (
+                <SiNextdotjs
+                    size={32}
+                    color="#fff"
+                />
+            );
+        case "React":
+            return (
+                <SiReact
+                    size={32}
+                    color="#fff"
+                />
+            );
+        case "NodeJS":
+            return (
+                <SiNodedotjs
+                    size={32}
+                    color="#fff"
+                />
+            );
+        case "Redux":
+            return (
+                <SiRedux
+                    size={32}
+                    color="#fff"
+                />
+            );
+        case "SASS":
+            return (
+                <SiSass
+                    size={32}
+                    color="#fff"
+                />
+            );
+        case "Selenium":
+            return (
+                <SiSelenium
+                    size={32}
+                    color="#fff"
+                />
+            );
+        case "TailwindCSS":
+            return (
+                <SiTailwindcss
+                    size={32}
+                    color="#fff"
+                />
+            );
+    }
+};
 
 const Card = ({ project }: { project: ProjectProps }) => {
     const [showEditModal, setShowEditModal] = useState(false);
 
-    const handleSubmit = async (values: any, formikHelpers: any) => {
+    const handleSubmit = async (values: ProjectProps) => {
         try {
             const updatedProject = {
                 _id: project._id,
@@ -152,7 +268,6 @@ const Card = ({ project }: { project: ProjectProps }) => {
                     </Tooltip>
                 </div>
             </div>
-
             <Modal
                 closable={true}
                 centered={true}
@@ -213,123 +328,6 @@ const Card = ({ project }: { project: ProjectProps }) => {
             </Modal>
         </div>
     );
-};
-
-const selectIcon = (icon: string) => {
-    switch (icon) {
-        case "Angular":
-            return (
-                <SiAngular
-                    size={32}
-                    color="#fff"
-                />
-            );
-        case "Bootstrap":
-            return (
-                <SiBootstrap
-                    size={32}
-                    color="#fff"
-                />
-            );
-        case "CSS":
-            return (
-                <SiCss3
-                    size={32}
-                    color="#fff"
-                />
-            );
-        case "Docker":
-            return (
-                <SiDocker
-                    size={32}
-                    color="#fff"
-                />
-            );
-        case "Express":
-            return (
-                <SiExpress
-                    size={32}
-                    color="#fff"
-                />
-            );
-        case "HTML":
-            return (
-                <SiHtml5
-                    size={32}
-                    color="#fff"
-                />
-            );
-        case "JavaScript":
-            return (
-                <SiJavascript
-                    size={32}
-                    color="#fff"
-                />
-            );
-        case "MongoDB":
-            return (
-                <SiMongodb
-                    size={32}
-                    color="#fff"
-                />
-            );
-        case "Mysql":
-            return (
-                <SiMysql
-                    size={32}
-                    color="#fff"
-                />
-            );
-        case "NextJs":
-            return (
-                <SiNextdotjs
-                    size={32}
-                    color="#fff"
-                />
-            );
-        case "React":
-            return (
-                <SiReact
-                    size={32}
-                    color="#fff"
-                />
-            );
-        case "NodeJS":
-            return (
-                <SiNodedotjs
-                    size={32}
-                    color="#fff"
-                />
-            );
-        case "Redux":
-            return (
-                <SiRedux
-                    size={32}
-                    color="#fff"
-                />
-            );
-        case "SASS":
-            return (
-                <SiSass
-                    size={32}
-                    color="#fff"
-                />
-            );
-        case "Selenium":
-            return (
-                <SiSelenium
-                    size={32}
-                    color="#fff"
-                />
-            );
-        case "TailwindCSS":
-            return (
-                <SiTailwindcss
-                    size={32}
-                    color="#fff"
-                />
-            );
-    }
 };
 
 export default Card;

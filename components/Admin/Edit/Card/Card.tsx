@@ -1,7 +1,8 @@
 import { ProjectProps } from "@/types/types";
 import { Tooltip } from "antd";
+import Image from "next/image";
 import React from "react";
-import { FaRegEdit } from "react-icons/fa";
+import { FaRegEdit, FaTrashAlt } from "react-icons/fa";
 import {
     SiAngular,
     SiBootstrap,
@@ -25,15 +26,29 @@ import styles from "./Card.module.scss";
 const Card = ({ project }: { project: ProjectProps }) => {
     return (
         <div className={`${styles.card} ${styles.base_blurry_background}`}>
-            <div className={styles.card__header}>
-                <h2>
-                    {project.name}
+            <div className={styles.card__ctas}>
+                <div className={styles.card__ctas__item}>
+                    <Tooltip
+                        placement="top"
+                        title="Delete item">
+                        <span>
+                            Delete <FaTrashAlt />
+                        </span>
+                    </Tooltip>
+                </div>
+
+                <div className={styles.card__ctas__item}>
                     <Tooltip
                         placement="top"
                         title="Edit item">
-                        <FaRegEdit />
+                        <span>
+                            Edit <FaRegEdit />
+                        </span>
                     </Tooltip>
-                </h2>
+                </div>
+            </div>
+            <div className={styles.card__header}>
+                <h2>{project.name}</h2>
                 <div className={styles.card__header__icons}>
                     {project.techTags?.map((icon: string, index: number) => {
                         return <span key={index}>{selectIcon(icon)}</span>;
@@ -41,6 +56,14 @@ const Card = ({ project }: { project: ProjectProps }) => {
                 </div>
             </div>
             <div className={styles.card__body}>
+                <div className={styles.card__body__item}>
+                    <Image
+                        width={200}
+                        height={200}
+                        src={project.image}
+                        alt={project.name}
+                    />
+                </div>
                 <div className={styles.card__body__item}>
                     <Tooltip
                         placement="top"

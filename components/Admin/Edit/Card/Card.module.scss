@@ -5,7 +5,35 @@
     min-height: 300px;
     max-height: 300px;
     margin: 2rem;
+    padding: 0;
 
+    &__ctas {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid $base-grey;
+        padding: 1rem;
+
+        &__item {
+            width: 100%;
+            max-width: 100%;
+
+            span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.2rem;
+                cursor: pointer;
+                color: $base-aqua;
+
+                svg {
+                    width: 1.1rem;
+                    height: 1.1rem;
+                }
+            }
+        }
+    }
     &__header {
         width: 100%;
         max-width: 100%;
@@ -23,14 +51,6 @@
             margin-top: 1rem;
             font-size: 0.9rem;
             text-align: center;
-
-            svg {
-                width: 1.5rem;
-                height: 1.5rem;
-                cursor: pointer;
-                fill: $base-blue;
-                stroke: $base-blue;
-            }
         }
 
         &__icons {
@@ -59,9 +79,15 @@
             justify-content: center;
             gap: 1rem;
 
+            img {
+                width: 4rem;
+                height: auto;
+            }
+
             p {
                 font-size: 0.9rem;
                 cursor: pointer;
+                color: $base-aqua;
             }
 
             a {

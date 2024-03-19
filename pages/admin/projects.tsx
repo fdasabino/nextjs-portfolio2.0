@@ -19,7 +19,10 @@ const ManageProjects = ({ projects }: { projects: any }) => {
                     <Tooltip
                         placement="top"
                         title="Go back">
-                        <FaCircleChevronLeft onClick={() => router.push("/admin/dashboard")} />
+                        <span>
+                            {" "}
+                            <FaCircleChevronLeft onClick={() => router.push("/admin/dashboard")} />
+                        </span>
                     </Tooltip>{" "}
                     Manage Projects
                 </h2>

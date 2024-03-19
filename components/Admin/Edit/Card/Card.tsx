@@ -37,8 +37,8 @@ const Card = ({ project }: { project: ProjectProps }) => {
             <div className={styles.card__body}>
                 <div className={styles.card__body__item}>
                     <Image
-                        width={200}
-                        height={200}
+                        width={500}
+                        height={500}
                         src={project.image}
                         alt={project.name}
                     />

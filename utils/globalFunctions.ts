@@ -48,28 +48,34 @@ export const validateEmail = (email: string) => {
 };
 
 // post requests
-export const createAbout = (about: object) => {
-    const res = axios.post("/api/admin/about", about);
+export const createAbout = async (about: object) => {
+    const res = await axios.post("/api/admin/about", about);
     return res;
 };
 
-export const createProject = (project: object) => {
-    const res = axios.post("/api/admin/project", project);
+export const createProject = async (project: object) => {
+    const res = await axios.post("/api/admin/project", project);
     return res;
 };
 
-export const createTestimonial = (testimonial: object) => {
-    const res = axios.post("/api/admin/testimonial", testimonial);
+export const createTestimonial = async (testimonial: object) => {
+    const res = await axios.post("/api/admin/testimonial", testimonial);
     return res;
 };
 
-export const createTimeline = (timeline: object) => {
-    const res = axios.post("/api/admin/timeline", timeline);
+export const createTimeline = async (timeline: object) => {
+    const res = await axios.post("/api/admin/timeline", timeline);
     return res;
 };
 
 // delete requests
-export const deleteProject = (id: string) => {
-    const res = axios.put("/api/admin/project", { id });
+export const deleteProject = async (id: string) => {
+    const res = await axios.put("/api/admin/project", { id });
+    return res;
+};
+
+// update requests
+export const updateProject = async (project: object) => {
+    const res = await axios.patch("/api/admin/project", project);
     return res;
 };

@@ -26,27 +26,6 @@ import styles from "./Card.module.scss";
 const Card = ({ project }: { project: ProjectProps }) => {
     return (
         <div className={`${styles.card} ${styles.base_blurry_background}`}>
-            <div className={styles.card__ctas}>
-                <div className={styles.card__ctas__item}>
-                    <Tooltip
-                        placement="top"
-                        title="Delete item">
-                        <span>
-                            Delete <FaTrashAlt />
-                        </span>
-                    </Tooltip>
-                </div>
-
-                <div className={styles.card__ctas__item}>
-                    <Tooltip
-                        placement="top"
-                        title="Edit item">
-                        <span>
-                            Edit <FaRegEdit />
-                        </span>
-                    </Tooltip>
-                </div>
-            </div>
             <div className={styles.card__header}>
                 <h2>{project.name}</h2>
                 <div className={styles.card__header__icons}>
@@ -92,6 +71,28 @@ const Card = ({ project }: { project: ProjectProps }) => {
                             rel="noreferrer">
                             Live Project
                         </a>
+                    </Tooltip>
+                </div>
+            </div>
+
+            <div className={styles.card__ctas}>
+                <div className={styles.card__ctas__item}>
+                    <Tooltip
+                        placement="top"
+                        title="Delete item">
+                        <span>
+                            <FaTrashAlt />
+                        </span>
+                    </Tooltip>
+                </div>
+
+                <div className={styles.card__ctas__item}>
+                    <Tooltip
+                        placement="top"
+                        title="Edit item">
+                        <span>
+                            <FaRegEdit />
+                        </span>
                     </Tooltip>
                 </div>
             </div>

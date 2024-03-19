@@ -28,7 +28,7 @@ import {
     SiSelenium,
     SiTailwindcss,
 } from "react-icons/si";
-import styles from "./Card.module.scss";
+import styles from "./ProjectCard.module.scss";
 
 const selectIcon = (icon: string) => {
     switch (icon) {
@@ -147,7 +147,7 @@ const selectIcon = (icon: string) => {
     }
 };
 
-const Card = ({ project }: { project: ProjectProps }) => {
+const ProjectCard = ({ project }: { project: ProjectProps }) => {
     const [showEditModal, setShowEditModal] = useState(false);
 
     const handleSubmit = async (values: ProjectProps) => {
@@ -330,4 +330,4 @@ const Card = ({ project }: { project: ProjectProps }) => {
     );
 };
 
-export default Card;
+export default ProjectCard;

@@ -1,4 +1,4 @@
-import Card from "@/components/Admin/Edit/Card/Card";
+import ProjectCard from "@/components/Admin/Edit/ProjectCard/ProjectCard";
 import Project from "@/models/Projects";
 import styles from "@/styles/pages/Projects.module.scss";
 import { ProjectProps } from "@/types/types";
@@ -28,7 +28,7 @@ const ManageProjects = ({ projects }: { projects: any }) => {
             </div>
             <div className={styles.edit__projects__body}>
                 {projects.map((project: ProjectProps) => (
-                    <Card
+                    <ProjectCard
                         key={project._id}
                         project={project}
                     />

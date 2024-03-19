@@ -218,9 +218,10 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
                 </div>
                 <div className={styles.card__body__item}>
                     <Tooltip
+                        trigger="click"
                         placement="top"
                         title={project.description}>
-                        <p>Hover for description</p>
+                        <p>Click for Description</p>
                     </Tooltip>
                 </div>
                 <div className={styles.card__body__item}>
@@ -248,25 +249,29 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
                 </div>
             </div>
             <div className={styles.card__ctas}>
-                <div className={styles.card__ctas__item}>
-                    <Tooltip
-                        placement="top"
-                        title="Delete item">
-                        <span>
-                            <FaTrashAlt onClick={openDeleteModal} />
-                        </span>
-                    </Tooltip>
-                </div>
+                <Tooltip
+                    placement="top"
+                    title="Delete item">
+                    <div className={styles.card__ctas__left}>
+                        <Button
+                            style="danger"
+                            onClick={openDeleteModal}>
+                            <FaTrashAlt />
+                        </Button>
+                    </div>
+                </Tooltip>
 
-                <div className={styles.card__ctas__item}>
-                    <Tooltip
-                        placement="top"
-                        title="Edit item">
-                        <span>
-                            <FaRegEdit onClick={() => setShowEditModal(true)} />
-                        </span>
-                    </Tooltip>
-                </div>
+                <Tooltip
+                    placement="top"
+                    title="Edit item">
+                    <div className={styles.card__ctas__right}>
+                        <Button
+                            style="primary"
+                            onClick={() => setShowEditModal(true)}>
+                            <FaRegEdit />
+                        </Button>
+                    </div>
+                </Tooltip>
             </div>
             <Modal
                 closable={true}

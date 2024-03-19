@@ -111,12 +111,21 @@ $base-breakpoint-480px: 480px;
 
 .base_blurry_background {
     /* From https://css.glass */
-    background: rgba(36, 36, 36, 0.26);
-    animation: shadowEffect 6s ease infinite alternate;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background: rgba(28, 28, 28, 0.93);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(28, 28, 28, 0.97);
     padding: 2rem;
-    border-radius: 1rem;
+}
+
+.ant-drawer-mask,
+.ant-modal-mask {
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.44);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
 }
 
 .ant-drawer-close {
@@ -128,6 +137,43 @@ $base-breakpoint-480px: 480px;
         color: $base-blue !important;
         transform: rotate(90deg) !important;
     }
+}
+.ant-modal-content {
+    /* From https://css.glass */
+    background: rgba(28, 28, 28, 0.93);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(28, 28, 28, 0.97);
+}
+.ant-modal-confirm-body-wrapper {
+    width: 100%;
+    max-width: 100%;
+    color: $base-white;
+}
+.ant-modal-confirm-body {
+    display: flex;
+    gap: 1rem;
+    svg {
+        width: 2rem;
+        height: 2rem;
+        fill: $base-error;
+        stroke: $base-error;
+    }
+
+    .ant-modal-confirm-title {
+        font-size: 0.9rem;
+        color: $base-white;
+    }
+}
+.ant-btn-default {
+    border: none !important;
+    background: $base-blue !important;
+}
+.ant-btn-dangerous {
+    border: none !important;
+    background: $base-error !important;
 }
 
 .header {

@@ -6,11 +6,12 @@ import slugify from "slugify";
 const handler = async (req, res) => {
     await db.connectDB();
     const { method } = req;
-    const { name, description, image, techTags, repository, live_url } = req.body;
 
     try {
         await authMiddleware(req, res, async () => {
             if (method === "POST") {
+                const { name, description, image, techTags, repository, live_url } = req.body;
+
                 if (!req.user) {
                     return res.status(401).json({ error: "Unauthorized" });
                 }
@@ -36,6 +37,20 @@ const handler = async (req, res) => {
 
                 await newProject.save();
                 return res.status(201).json({ ok: true, newProject });
+            }
+
+            if (method === "PUT") {
+                const { id } = req.body;
+
+                const project = await Project.findByIdAndDelete(id);
+                if (!project) {
+                    return res.status(400).json({ error: "Project not found.", ok: false });
+                }
+                const projects = await Project.find().sort({ createdAt: -1 }).exec();
+
+                return res
+                    .status(200)
+                    .json({ message: "Project deleted successfully.", projects, ok: true });
             }
         });
     } catch (error) {

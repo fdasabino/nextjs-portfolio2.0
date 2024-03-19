@@ -67,3 +67,9 @@ export const createTimeline = (timeline: object) => {
     const res = axios.post("/api/admin/timeline", timeline);
     return res;
 };
+
+// delete requests
+export const deleteProject = (id: string) => {
+    const res = axios.put("/api/admin/project", { id });
+    return res;
+};

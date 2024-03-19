@@ -1,7 +1,9 @@
 import { ProjectProps } from "@/types/types";
-import { Tooltip } from "antd";
+import { deleteProject } from "@/utils/globalFunctions";
+import { Modal, Tooltip } from "antd";
 import Image from "next/image";
 import React from "react";
+import { CiWarning } from "react-icons/ci";
 import { FaRegEdit, FaTrashAlt } from "react-icons/fa";
 import {
     SiAngular,
@@ -24,6 +26,24 @@ import {
 import styles from "./Card.module.scss";
 
 const Card = ({ project }: { project: ProjectProps }) => {
+    const openDeleteModal = () => {
+        Modal.confirm({
+            title: "Are you sure you want to delete this project?",
+            icon: <CiWarning />,
+            okText: "Yes",
+            closable: true,
+            centered: true,
+            maskClosable: true,
+            mask: true,
+            okType: "danger",
+            cancelText: "No",
+            onOk: () => {
+                deleteProject(project._id);
+                window.location.reload();
+            },
+        });
+    };
+
     return (
         <div className={`${styles.card} ${styles.base_blurry_background}`}>
             <div className={styles.card__header}>
@@ -81,7 +101,7 @@ const Card = ({ project }: { project: ProjectProps }) => {
                         placement="top"
                         title="Delete item">
                         <span>
-                            <FaTrashAlt />
+                            <FaTrashAlt onClick={openDeleteModal} />
                         </span>
                     </Tooltip>
                 </div>

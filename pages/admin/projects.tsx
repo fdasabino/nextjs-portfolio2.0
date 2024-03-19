@@ -9,7 +9,6 @@ import React from "react";
 import { FaCircleChevronLeft } from "react-icons/fa6";
 
 const ManageProjects = ({ projects }: { projects: any }) => {
-    console.log(projects);
     const router = useRouter();
 
     return (

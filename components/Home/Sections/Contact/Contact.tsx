@@ -109,7 +109,7 @@ const ContactComponent = () => {
                                     type="phone"
                                     icon="phone"
                                     name="phone_number"
-                                    placeholder="Phone number"
+                                    placeholder="Phone number  (+461234567891)"
                                     onChange={handleChange}
                                 />
                                 <Input

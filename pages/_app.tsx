@@ -1,5 +1,5 @@
 import Loader from "@/components/Layout/Loader/Loader";
-import "antd/dist/antd.min.css";
+import "antd/dist/antd.css";
 import "atropos/css";
 import { SessionProvider } from "next-auth/react";
 import { AppProps } from "next/app";

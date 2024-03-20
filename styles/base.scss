@@ -35,33 +35,6 @@ $base-button-transition: all 1s linear;
 $base-breakpoint-768px: 768px;
 $base-breakpoint-480px: 480px;
 
-@keyframes shadowEffect {
-    0% {
-        box-shadow: none;
-    }
-    15% {
-        box-shadow: rgba(36, 36, 36, 0.1) 0px 0px 15px 5px;
-    }
-    30% {
-        box-shadow: rgba(3, 3, 3, 0.2) 0px 0px 20px 10px;
-    }
-    45% {
-        box-shadow: rgba(20, 20, 20, 0.3) 0px 0px 15px 5px;
-    }
-    60% {
-        box-shadow: rgba(17, 17, 17, 0.4) 0px 0px 20px 10px;
-    }
-    75% {
-        box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px 5px;
-    }
-    90% {
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 20px 10px;
-    }
-    100% {
-        box-shadow: none;
-    }
-}
-
 .progress_bar {
     position: fixed;
     top: 75px;
@@ -73,67 +46,21 @@ $base-breakpoint-480px: 480px;
     transform-origin: right;
 }
 
-.swiper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    max-height: fit-content !important;
-
-    .swiper-button-prev,
-    .swiper-button-next {
-        position: absolute;
-        top: 90% !important;
-        transition: all 0.2s ease-in-out 0s !important;
-        width: 50px !important;
-        height: 50px !important;
-        color: $base-blue !important;
-        background-color: rgba(0, 0, 0, 0) !important;
-        scale: 0.5 !important;
-
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.1) !important;
-            scale: 1 !important;
-        }
-    }
-
-    .swiper-button-prev {
-        left: 0 !important;
-    }
-
-    .swiper-button-next {
-        right: 0 !important;
-    }
-    .swiper-pagination-bullet,
-    .swiper-pagination-bullet-active {
-        background-color: rgba(0, 0, 0, 0.5) !important;
-    }
-}
-
 .base_blurry_background {
     /* From https://css.glass */
-    background: rgba(36, 36, 36, 0.26);
-    animation: shadowEffect 6s ease infinite alternate;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background: rgba(28, 28, 28, 0.93);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(28, 28, 28, 0.97);
     padding: 2rem;
-    border-radius: 1rem;
-}
-
-.ant-drawer-close {
-    color: $base-white !important;
-    font-size: 1.5rem !important;
-    transition: all 0.3s ease-in-out !important;
-
-    &:hover {
-        color: $base-blue !important;
-        transform: rotate(90deg) !important;
-    }
 }
 
 .header {
     position: relative;
     height: 80px;
-    margin-top: 2rem;
+    margin-top: 4rem;
 
     @media (max-width: 768px) {
         height: 75px;
@@ -171,6 +98,127 @@ $base-breakpoint-480px: 480px;
     }
 }
 
+//styles overrides
+.ant-drawer-mask,
+.ant-modal-mask {
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.44);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+}
+
+.ant-drawer-close {
+    color: $base-white !important;
+    font-size: 1.5rem !important;
+    transition: all 0.3s ease-in-out !important;
+
+    &:hover {
+        color: $base-blue !important;
+        transform: rotate(90deg) !important;
+    }
+}
+
+.ant-modal-content {
+    /* From https://css.glass */
+    background: rgba(28, 28, 28, 0.93);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(28, 28, 28, 0.97);
+}
+
+.ant-modal-confirm-body-wrapper {
+    width: 100%;
+    max-width: 100%;
+    color: $base-white;
+}
+
+.ant-modal-confirm-body {
+    display: flex;
+    gap: 1rem;
+    svg {
+        width: 2rem;
+        height: 2rem;
+        fill: $base-error;
+        stroke: $base-error;
+    }
+
+    .ant-modal-confirm-title {
+        font-size: 0.9rem;
+        color: $base-white;
+    }
+}
+
+.ant-modal-header {
+    background: rgba(28, 28, 28, 0.93);
+}
+
+.ant-modal-title {
+    text-transform: uppercase;
+    color: $base-white;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.ant-btn-default {
+    border: none !important;
+    background: $base-blue !important;
+}
+
+.ant-btn-dangerous {
+    border: none !important;
+    background: $base-error !important;
+}
+
+.ant-modal-close {
+    color: $base-white !important;
+}
+
+.ant-modal-close-x {
+    margin-top: 1rem;
+}
+
+.ant-tooltip-inner {
+    background-color: $base-dark !important;
+}
+
+.swiper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: fit-content !important;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: absolute;
+        top: 2.2rem !important;
+        transition: all 0.2s ease-in-out 0s !important;
+        width: 40px !important;
+        height: 40px !important;
+        color: $base-blue !important;
+        background-color: rgba(0, 0, 0, 0) !important;
+        scale: 0.5 !important;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1) !important;
+            scale: 0.6 !important;
+        }
+    }
+
+    .swiper-button-prev {
+        left: -0.9rem !important;
+    }
+
+    .swiper-button-next {
+        right: -0.9rem !important;
+    }
+    .swiper-pagination-bullet,
+    .swiper-pagination-bullet-active {
+        background-color: rgba(0, 0, 0, 0.5) !important;
+    }
+}
+
 @keyframes animate {
     0%,
     100% {
@@ -199,5 +247,32 @@ $base-breakpoint-480px: 480px;
             100% 100%,
             0% 100%
         );
+    }
+}
+
+@keyframes shadowEffect {
+    0% {
+        box-shadow: none;
+    }
+    15% {
+        box-shadow: rgba(36, 36, 36, 0.1) 0px 0px 15px 5px;
+    }
+    30% {
+        box-shadow: rgba(3, 3, 3, 0.2) 0px 0px 20px 10px;
+    }
+    45% {
+        box-shadow: rgba(20, 20, 20, 0.3) 0px 0px 15px 5px;
+    }
+    60% {
+        box-shadow: rgba(17, 17, 17, 0.4) 0px 0px 20px 10px;
+    }
+    75% {
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px 5px;
+    }
+    90% {
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 20px 10px;
+    }
+    100% {
+        box-shadow: none;
     }
 }

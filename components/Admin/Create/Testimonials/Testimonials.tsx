@@ -1,25 +1,33 @@
 import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import Loader from "@/components/Layout/Loader/Loader";
-import { aboutValidation } from "@/utils/formsValidation";
-import { createAbout, scrollToTop } from "@/utils/globalFunctions";
+import { testimonialValidation } from "@/utils/formsValidation";
+import { createTestimonial, scrollToTop } from "@/utils/globalFunctions";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { useMediaQuery } from "react-responsive";
-import styles from "./About.module.scss";
-
+import styles from "./Testimonials.module.scss";
 const initialValues = {
+    name: "",
     description: "",
     image: "",
+    workplace: "",
+    position: "",
 };
 
-const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: number) => void }>) => {
+const Testimonials = ({
+    setActive,
+    setBorder,
+}: React.PropsWithChildren<{
+    setActive: (active: number) => void;
+    setBorder: (border: number) => void;
+}>) => {
     const [loading, setLoading] = useState(false);
     const [values, setValues] = useState(initialValues);
-    const { description, image } = values || initialValues;
+    const { name, description, image, workplace, position } = values || initialValues;
     const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -30,10 +38,10 @@ const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: numb
     const handleSubmit = async (values: any, formikHelpers: any) => {
         setLoading(true);
         try {
-            const { description, image } = values;
-            const about = { description, image };
+            const { name, description, image, workplace, postion } = values;
+            const testimonial = { name, description, image, workplace, position };
 
-            const res = await createAbout(about);
+            const res = await createTestimonial(testimonial);
             if (res.data) {
                 formikHelpers.resetForm();
                 setValues(initialValues);
@@ -50,17 +58,18 @@ const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: numb
     };
 
     return (
-        <div className={styles.admin__about}>
+        <div className={styles.admin__testimonials}>
             <>
                 {loading ? (
                     <Loader />
                 ) : (
                     <>
-                        <h2 id="about">
-                            Enter about information{" "}
+                        <h2 id="reference">
+                            Create reference{" "}
                             {isMobile && (
                                 <FaRegEyeSlash
                                     onClick={() => {
+                                        setBorder(0);
                                         scrollToTop();
                                         setActive(0);
                                     }}
@@ -69,25 +78,54 @@ const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: numb
                         </h2>
                         <Formik
                             enableReinitialize
-                            initialValues={{ description, image }}
-                            validationSchema={aboutValidation}
+                            initialValues={{
+                                name,
+                                description,
+                                image,
+                                workplace,
+                                position,
+                            }}
+                            validationSchema={testimonialValidation}
                             onSubmit={handleSubmit}>
                             {(form) => (
                                 <Form>
                                     <Input
+                                        type="text"
+                                        icon="name"
+                                        name="name"
+                                        placeholder="Person's name..."
+                                        onChange={handleChange}
+                                    />
+                                    <Input
                                         type="textarea"
                                         icon="message"
                                         name="description"
-                                        placeholder="Write about yourself"
+                                        placeholder="Testimonial description..."
                                         onChange={handleChange}
                                     />
                                     <Input
                                         type="text"
                                         icon="image"
                                         name="image"
-                                        placeholder="Paste image url"
+                                        placeholder="Image url"
                                         onChange={handleChange}
                                     />
+                                    <Input
+                                        type="text"
+                                        icon="workplace"
+                                        name="workplace"
+                                        placeholder="Workplace..."
+                                        onChange={handleChange}
+                                    />
+
+                                    <Input
+                                        type="text"
+                                        icon="position"
+                                        name="position"
+                                        placeholder="Position..."
+                                        onChange={handleChange}
+                                    />
+
                                     <Button
                                         type="submit"
                                         style="primary">
@@ -103,4 +141,4 @@ const About = ({ setActive }: React.PropsWithChildren<{ setActive: (active: numb
     );
 };
 
-export default About;
+export default Testimonials;

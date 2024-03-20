@@ -42,7 +42,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className={`${styles.navbar} ${styles.base_blurry_background}`}>
+        <nav className={`${styles.navbar}`}>
             <motion.div
                 className={styles.navbar__left}
                 initial={{
@@ -256,7 +256,29 @@ const Navbar = () => {
                                     <Link
                                         href="/"
                                         onClick={onClose}>
-                                        Home
+                                        Portfolio
+                                    </Link>
+                                </motion.div>
+                                <motion.div
+                                    className={styles.navbar__menu__top__item}
+                                    variants={variants}
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.95 }}>
+                                    <Link
+                                        href="/admin/dashboard"
+                                        onClick={onClose}>
+                                        Dashboard
+                                    </Link>
+                                </motion.div>
+                                <motion.div
+                                    className={styles.navbar__menu__top__item}
+                                    variants={variants}
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.95 }}>
+                                    <Link
+                                        href="/admin/projects"
+                                        onClick={onClose}>
+                                        Manage Projects
                                     </Link>
                                 </motion.div>
                                 <Button

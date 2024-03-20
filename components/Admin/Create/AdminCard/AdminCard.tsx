@@ -8,15 +8,19 @@ const AdminCard = ({
     title,
     active,
     id,
+    border,
 }: {
     handleSwitch: (item: number) => void;
     scrollToId: (id: string) => void;
     title: string;
     active: number;
     id: string;
+    border: number;
 }) => {
     return (
-        <div className={`${styles.admin__card} ${styles.base_blurry_background}`}>
+        <div
+            style={border === active ? { border: "2px solid #047fa9" } : undefined}
+            className={`${styles.admin__card} ${styles.base_blurry_background}`}>
             <h2>
                 {title}{" "}
                 <CiCirclePlus

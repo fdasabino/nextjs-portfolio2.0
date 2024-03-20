@@ -8,7 +8,7 @@ const TimelineComponent = ({ timeline }: any) => {
     return (
         <div className={`${styles.timeline} ${styles.base_blurry_background}`}>
             <Timeline>
-                {timeline.length ? (
+                {timeline ? (
                     [...timeline].reverse().map((item: TimelineProps) => (
                         <Timeline.Item key={item._id}>
                             <div className={styles.timeline__item}>

@@ -1,5 +1,6 @@
 .footer {
-    position: relative;
+    position: static;
+    bottom: 0;
     width: 100%;
     max-width: 100%;
     height: fit-content;
@@ -11,6 +12,10 @@
     gap: 2rem;
     padding: 2rem 1rem;
     z-index: 1;
+    margin-top: 3rem;
+
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
 
     &__socials {
         width: 100%;

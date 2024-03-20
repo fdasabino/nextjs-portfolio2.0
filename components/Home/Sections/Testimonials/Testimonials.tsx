@@ -17,33 +17,35 @@ const TestimonialComponent = ({ testimonials }: any) => {
                     navigation={true}
                     modules={[Pagination, Navigation]}
                     className={styles.testimonials__swiper}>
-                    {[...testimonials].reverse().map((testimonial: TestimonialProps) => (
-                        <SwiperSlide key={testimonial._id}>
-                            <div className={styles.testimonials__swiper_top}>
-                                <div className={styles.testimonials__swiper_top_left}>
-                                    <h2>{testimonial.name}</h2>
-                                </div>
-                                <div className={styles.testimonials__swiper_top_right}>
-                                    <p>{testimonial.position}</p>
-                                    <p>{testimonial.workplace}</p>
-                                </div>
-                            </div>
+                    {testimonials
+                        ? [...testimonials].reverse().map((testimonial: TestimonialProps) => (
+                              <SwiperSlide key={testimonial._id}>
+                                  <div className={styles.testimonials__swiper_top}>
+                                      <div className={styles.testimonials__swiper_top_left}>
+                                          <h2>{testimonial.name}</h2>
+                                      </div>
+                                      <div className={styles.testimonials__swiper_top_right}>
+                                          <p>{testimonial.position}</p>
+                                          <p>{testimonial.workplace}</p>
+                                      </div>
+                                  </div>
 
-                            <div className={styles.testimonials__swiper_bottom}>
-                                <div className={styles.testimonials__swiper_bottom_img}>
-                                    <Image
-                                        src={testimonial.image}
-                                        width={600}
-                                        height={600}
-                                        alt={testimonial.name}
-                                    />
-                                </div>
-                                <div className={styles.testimonials__swiper_bottom_text}>
-                                    <p>{testimonial.description}</p>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    ))}
+                                  <div className={styles.testimonials__swiper_bottom}>
+                                      <div className={styles.testimonials__swiper_bottom_img}>
+                                          <Image
+                                              src={testimonial.image}
+                                              width={600}
+                                              height={600}
+                                              alt={testimonial.name}
+                                          />
+                                      </div>
+                                      <div className={styles.testimonials__swiper_bottom_text}>
+                                          <p>{testimonial.description}</p>
+                                      </div>
+                                  </div>
+                              </SwiperSlide>
+                          ))
+                        : "No Testimonials"}
                 </Swiper>
             </div>
         </div>

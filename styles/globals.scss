@@ -7,6 +7,7 @@
     margin: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    touch-action: manipulation; /* Ensure better touch responsiveness */
 }
 
 *:before,
@@ -29,9 +30,10 @@ body {
 }
 
 main {
-    padding-top: 1rem;
+    padding: 1rem;
     margin: 0 auto;
     position: relative;
+    width: 100%; /* Ensure main takes full width */
 }
 
 section {
@@ -59,7 +61,7 @@ h5,
 h6 {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 500;
-    color: $base-white;
+    color: #fff; /* Use a fallback color */
 }
 
 p,
@@ -68,19 +70,8 @@ small,
 span {
     font-family: "Manrope", sans-serif;
     font-weight: 400;
-    color: $base-white;
+    color: #fff; /* Use a fallback color */
     letter-spacing: 0.025rem;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    overflow-wrap: break-word;
-    color: $base-white;
 }
 
 button,
@@ -89,7 +80,8 @@ select,
 option,
 label {
     transition: all 0.5s linear;
-    font-family: "Space Grotesk", sans-serif !important;
+    font-family: "Manrope", sans-serif !important;
+    line-height: 1.1rem !important;
 }
 
 img,
@@ -97,22 +89,23 @@ video,
 canvas,
 svg {
     max-width: 100%;
+    height: auto; /* Ensure images and media adjust proportionally */
 }
 
 a {
     text-decoration: none;
-    color: $base-dark;
+    color: #000; /* Use a fallback color */
 }
 
 ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    color: $base-white;
+    color: #fff; /* Use a fallback color */
 }
 
 li {
-    color: $base-white;
+    color: #fff; /* Use a fallback color */
 }
 
 button {
@@ -124,5 +117,5 @@ button {
 hr {
     margin: 2rem 0;
     border: none;
-    border-top: 1px solid $base-grey;
+    border-top: 1px solid #ccc; /* Use a fallback color */
 }

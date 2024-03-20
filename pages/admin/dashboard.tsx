@@ -1,19 +1,33 @@
-import About from "@/components/Admin/About/About";
-import AdminCard from "@/components/Admin/AdminCard/AdminCard";
-import Projects from "@/components/Admin/Projects/Projects";
-import Testimonials from "@/components/Admin/Testimonials/Testimonials";
-import Timeline from "@/components/Admin/Timeline/Timeline";
+import About from "@/components/Admin/Create/About/About";
+import AdminCard from "@/components/Admin/Create/AdminCard/AdminCard";
+import Projects from "@/components/Admin/Create/Projects/Projects";
+import Testimonials from "@/components/Admin/Create/Testimonials/Testimonials";
+import Timeline from "@/components/Admin/Create/Timeline/Timeline";
 import styles from "@/styles/pages/Dashboard.module.scss";
 import { scrollToId } from "@/utils/globalFunctions";
 import Head from "next/head";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const AdminDashboard = () => {
+    const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
     const [active, setActive] = useState(1);
+    const [border, setBorder] = useState(1);
 
     const handleSwitch = (item: number) => {
         setActive(item);
+        setBorder(item);
     };
+
+    useEffect(() => {
+        if (isMobile) {
+            setActive(0);
+            setBorder(0);
+        } else {
+            setActive(1);
+            setBorder(1);
+        }
+    }, [isMobile]);
 
     return (
         <div className={styles.dashboard}>
@@ -33,6 +47,7 @@ const AdminDashboard = () => {
                         title="About"
                         id="about"
                         active={1}
+                        border={border}
                     />
 
                     <AdminCard
@@ -41,6 +56,7 @@ const AdminDashboard = () => {
                         title="Timeline"
                         id="timeline"
                         active={2}
+                        border={border}
                     />
                     <AdminCard
                         scrollToId={scrollToId}
@@ -48,6 +64,7 @@ const AdminDashboard = () => {
                         title="Project"
                         id="project"
                         active={3}
+                        border={border}
                     />
                     <AdminCard
                         scrollToId={scrollToId}
@@ -55,15 +72,36 @@ const AdminDashboard = () => {
                         title="Reference"
                         id="reference"
                         active={4}
+                        border={border}
                     />
                 </div>
                 <div className={styles.dashboard__actions__bottom}>
                     {active !== 0 && (
                         <div className={styles.dashboard__forms}>
-                            {active === 1 && <About setActive={setActive} />}
-                            {active === 2 && <Timeline setActive={setActive} />}
-                            {active === 3 && <Projects setActive={setActive} />}
-                            {active === 4 && <Testimonials setActive={setActive} />}
+                            {active === 1 && (
+                                <About
+                                    setActive={setActive}
+                                    setBorder={setBorder}
+                                />
+                            )}
+                            {active === 2 && (
+                                <Timeline
+                                    setActive={setActive}
+                                    setBorder={setBorder}
+                                />
+                            )}
+                            {active === 3 && (
+                                <Projects
+                                    setActive={setActive}
+                                    setBorder={setBorder}
+                                />
+                            )}
+                            {active === 4 && (
+                                <Testimonials
+                                    setActive={setActive}
+                                    setBorder={setBorder}
+                                />
+                            )}
                         </div>
                     )}
                 </div>

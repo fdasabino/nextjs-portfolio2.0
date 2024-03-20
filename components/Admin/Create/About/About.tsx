@@ -1,27 +1,31 @@
 import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import Loader from "@/components/Layout/Loader/Loader";
-import { timelineValidation } from "@/utils/formsValidation";
-import { createTimeline, scrollToTop } from "@/utils/globalFunctions";
+import { aboutValidation } from "@/utils/formsValidation";
+import { createAbout, scrollToTop } from "@/utils/globalFunctions";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { useMediaQuery } from "react-responsive";
-import styles from "./Timeline.module.scss";
+import styles from "./About.module.scss";
 
 const initialValues = {
     description: "",
-    year: "",
+    image: "",
 };
 
-const Timeline = ({
+const About = ({
     setActive,
-}: React.PropsWithChildren<{ setActive: (active: number) => void }>) => {
+    setBorder,
+}: React.PropsWithChildren<{
+    setActive: (active: number) => void;
+    setBorder: (border: number) => void;
+}>) => {
     const [loading, setLoading] = useState(false);
     const [values, setValues] = useState(initialValues);
-    const { description, year } = values || initialValues;
+    const { description, image } = values || initialValues;
     const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -32,13 +36,14 @@ const Timeline = ({
     const handleSubmit = async (values: any, formikHelpers: any) => {
         setLoading(true);
         try {
-            const { description, year } = values;
-            const timeline = { description, year };
+            const { description, image } = values;
+            const about = { description, image };
 
-            const res = await createTimeline(timeline);
+            const res = await createAbout(about);
             if (res.data) {
                 formikHelpers.resetForm();
                 setValues(initialValues);
+                console.log(res.data);
 
                 toast.success("Item created successfully");
             }
@@ -51,17 +56,18 @@ const Timeline = ({
     };
 
     return (
-        <div className={styles.admin__timeline}>
+        <div className={styles.admin__about}>
             <>
                 {loading ? (
                     <Loader />
                 ) : (
                     <>
-                        <h2 id="timeline">
-                            Enter timeline information{" "}
+                        <h2 id="about">
+                            Create about{" "}
                             {isMobile && (
                                 <FaRegEyeSlash
                                     onClick={() => {
+                                        setBorder(0);
                                         scrollToTop();
                                         setActive(0);
                                     }}
@@ -70,23 +76,23 @@ const Timeline = ({
                         </h2>
                         <Formik
                             enableReinitialize
-                            initialValues={{ description, year }}
-                            validationSchema={timelineValidation}
+                            initialValues={{ description, image }}
+                            validationSchema={aboutValidation}
                             onSubmit={handleSubmit}>
                             {(form) => (
                                 <Form>
                                     <Input
-                                        type="text"
-                                        icon="year"
-                                        name="year"
-                                        placeholder="Year"
-                                        onChange={handleChange}
-                                    />
-                                    <Input
                                         type="textarea"
                                         icon="message"
                                         name="description"
-                                        placeholder="Year description"
+                                        placeholder="Write about yourself"
+                                        onChange={handleChange}
+                                    />
+                                    <Input
+                                        type="text"
+                                        icon="image"
+                                        name="image"
+                                        placeholder="Paste image url"
                                         onChange={handleChange}
                                     />
                                     <Button
@@ -104,4 +110,4 @@ const Timeline = ({
     );
 };
 
-export default Timeline;
+export default About;

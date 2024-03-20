@@ -8,7 +8,6 @@ import Footer from "./Footer/Footer";
 import styles from "./Layout.module.scss";
 import Navbar from "./Navbar/Navbar";
 import { SparklesComponent } from "./Sparkles/SparklesComponent";
-import TracingBeam from "./TracingBeam/TracingBeam";
 interface LayoutProps {
     children: ReactNode;
 }
@@ -28,14 +27,13 @@ const Layout = ({ children }: LayoutProps) => {
     return (
         <>
             <Toaster {...toasterOptions} />
-            {!router.pathname.startsWith("/admin") && !router.pathname.startsWith("/auth") && (
-                <SparklesComponent />
-            )}
             <motion.div
                 className={styles.progress_bar}
                 style={{ scaleX }}
             />
-            {router.pathname === "/" && <TracingBeam contentRef={contentRef} />}
+            {!router.pathname.startsWith("/admin") && !router.pathname.startsWith("/auth") && (
+                <SparklesComponent />
+            )}
             <Navbar />
             <main ref={contentRef}>{children}</main>
             {!router.pathname.startsWith("/admin") && <Footer />}

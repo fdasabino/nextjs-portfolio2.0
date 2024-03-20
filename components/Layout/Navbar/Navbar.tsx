@@ -276,6 +276,17 @@ const Navbar = () => {
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.95 }}>
                                     <Link
+                                        href="/admin/timelines"
+                                        onClick={onClose}>
+                                        Manage Timelines
+                                    </Link>
+                                </motion.div>
+                                <motion.div
+                                    className={styles.navbar__menu__top__item}
+                                    variants={variants}
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.95 }}>
+                                    <Link
                                         href="/admin/projects"
                                         onClick={onClose}>
                                         Manage Projects

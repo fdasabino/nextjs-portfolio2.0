@@ -1,7 +1,7 @@
-import TestimonialCard from "@/components/Admin/Edit/TestimonialCard/TestimonialCard";
-import Testimonial from "@/models/Testimonial";
-import styles from "@/styles/pages/Testimonials.module.scss";
-import { TestimonialProps } from "@/types/types";
+import TimelineCard from "@/components/Admin/Edit/TimelineCard/TimelineCard";
+import Timeline from "@/models/Timeline";
+import styles from "@/styles/pages/Timelines.module.scss";
+import { TimelineProps } from "@/types/types";
 import db from "@/utils/db";
 import { Tooltip } from "antd";
 import Head from "next/head";
@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { FaCircleChevronLeft } from "react-icons/fa6";
 
-const ManageTestimonials = ({ testimonials }: { testimonials: any }) => {
+const ManageTestimonials = ({ timelines }: { timelines: any }) => {
     const router = useRouter();
     const renderHeadTags = () => {
         return (
@@ -26,8 +26,8 @@ const ManageTestimonials = ({ testimonials }: { testimonials: any }) => {
     return (
         <>
             {renderHeadTags()}
-            <section className={styles.edit__testimonials}>
-                <div className={styles.edit__testimonials__header}>
+            <section className={styles.edit__timelines}>
+                <div className={styles.edit__timelines__header}>
                     <h2>
                         <Tooltip
                             placement="top"
@@ -42,13 +42,10 @@ const ManageTestimonials = ({ testimonials }: { testimonials: any }) => {
                         Manage References
                     </h2>
                 </div>
-                <div className={styles.edit__testimonials__body}>
-                    {[...testimonials].reverse().map((testimonial: TestimonialProps) => (
-                        <div key={testimonial._id}>
-                            <TestimonialCard
-                                key={testimonial._id}
-                                testimonial={testimonial}
-                            />
+                <div className={styles.edit__timelines__body}>
+                    {timelines.map((timeline: TimelineProps) => (
+                        <div key={timeline._id}>
+                            <TimelineCard timeline={timeline} />
                         </div>
                     ))}
                 </div>
@@ -62,10 +59,10 @@ export default ManageTestimonials;
 export async function getServerSideProps() {
     await db.connectDB();
     try {
-        const testimonials = await Testimonial.find({});
+        const timelines = await Timeline.find({});
         return {
             props: {
-                testimonials: JSON.parse(JSON.stringify(testimonials)),
+                timelines: JSON.parse(JSON.stringify(timelines)),
             },
         };
     } catch (error) {

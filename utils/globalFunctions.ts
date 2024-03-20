@@ -79,6 +79,11 @@ export const deleteTestimonial = async (id: string) => {
     return res;
 };
 
+export const deleteTimeline = async (id: string) => {
+    const res = await axios.put("/api/admin/timeline", { id });
+    return res;
+};
+
 // update requests
 export const updateProject = async (project: object) => {
     const res = await axios.patch("/api/admin/project", project);
@@ -87,5 +92,10 @@ export const updateProject = async (project: object) => {
 
 export const updateTestimonial = async (testimonial: object) => {
     const res = await axios.patch("/api/admin/testimonial", testimonial);
+    return res;
+};
+
+export const updateTimeline = async (timeline: object) => {
+    const res = await axios.patch("/api/admin/timeline", timeline);
     return res;
 };

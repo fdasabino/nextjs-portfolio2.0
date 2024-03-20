@@ -50,11 +50,11 @@ const handler = async (req, res) => {
             }
 
             if (method === "PATCH") {
+                const { _id, name, description, image, workplace, position } = req.body;
+
                 if (!req.user) {
                     return res.status(401).json({ error: "Unauthorized" });
                 }
-
-                const { _id, name, description, image, workplace, position } = req.body;
 
                 const testimonial = await Testimonial.findById(_id);
 

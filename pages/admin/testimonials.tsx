@@ -10,7 +10,6 @@ import React from "react";
 import { FaCircleChevronLeft } from "react-icons/fa6";
 
 const ManageTestimonials = ({ testimonials }: { testimonials: any }) => {
-    console.log(testimonials);
     const router = useRouter();
     const renderHeadTags = () => {
         return (

@@ -8,7 +8,6 @@ import Footer from "./Footer/Footer";
 import styles from "./Layout.module.scss";
 import Navbar from "./Navbar/Navbar";
 import { SparklesComponent } from "./Sparkles/SparklesComponent";
-import TracingBeam from "./TracingBeam/TracingBeam";
 interface LayoutProps {
     children: ReactNode;
 }
@@ -35,7 +34,6 @@ const Layout = ({ children }: LayoutProps) => {
             {!router.pathname.startsWith("/admin") && !router.pathname.startsWith("/auth") && (
                 <SparklesComponent />
             )}
-            {router.pathname === "/" && <TracingBeam contentRef={contentRef} />}
             <Navbar />
             <main ref={contentRef}>{children}</main>
             {!router.pathname.startsWith("/admin") && <Footer />}

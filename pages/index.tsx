@@ -34,13 +34,15 @@ const Home = ({
                 <title>Francisco Sabino - Portfolio</title>
                 <meta charSet="utf-8" />
                 <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+                    name="author"
+                    content="Francisco Sabino"
                 />
+
                 <meta
-                    httpEquiv="ScreenOrientation"
-                    content="autoRotate:disabled"
+                    name="viewport"
+                    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
                 />
+
                 <meta
                     name="description"
                     content="Front End Developer - Stockholm"
@@ -48,14 +50,6 @@ const Home = ({
                 <meta
                     name="keywords"
                     content="HTML, CSS, JavaScript, React, NextJs"
-                />
-                <meta
-                    name="robots"
-                    content="index, follow"
-                />
-                <meta
-                    name="author"
-                    content="Francisco Sabino"
                 />
             </Head>
             <section id="hero">

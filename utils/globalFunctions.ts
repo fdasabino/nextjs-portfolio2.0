@@ -74,8 +74,18 @@ export const deleteProject = async (id: string) => {
     return res;
 };
 
+export const deleteTestimonial = async (id: string) => {
+    const res = await axios.put("/api/admin/testimonial", { id });
+    return res;
+};
+
 // update requests
 export const updateProject = async (project: object) => {
     const res = await axios.patch("/api/admin/project", project);
+    return res;
+};
+
+export const updateTestimonial = async (testimonial: object) => {
+    const res = await axios.patch("/api/admin/testimonial", testimonial);
     return res;
 };

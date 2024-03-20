@@ -29,12 +29,21 @@ const AdminDashboard = () => {
         }
     }, [isMobile]);
 
+    const renderHeadTags = () => {
+        return (
+            <Head>
+                <meta charSet="utf-8" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+                />
+            </Head>
+        );
+    };
+
     return (
         <div className={styles.dashboard}>
-            <Head>
-                <title>Francisco Sabino - Dashboard</title>
-                <meta charSet="utf-8" />
-            </Head>
+            {renderHeadTags()}
             <div className={styles.dashboard__header}>
                 <h1>Dashboard</h1>
             </div>

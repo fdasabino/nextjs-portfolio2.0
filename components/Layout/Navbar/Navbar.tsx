@@ -281,6 +281,17 @@ const Navbar = () => {
                                         Manage Projects
                                     </Link>
                                 </motion.div>
+                                <motion.div
+                                    className={styles.navbar__menu__top__item}
+                                    variants={variants}
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.95 }}>
+                                    <Link
+                                        href="/admin/testimonials"
+                                        onClick={onClose}>
+                                        Manage References
+                                    </Link>
+                                </motion.div>
                                 <Button
                                     style="danger"
                                     onClick={() => {

@@ -41,6 +41,9 @@ const handler = async (req, res) => {
 
             if (method === "PUT") {
                 const { id } = req.body;
+                if (!req.user) {
+                    return res.status(401).json({ error: "Unauthorized" });
+                }
 
                 const project = await Project.findByIdAndDelete(id);
                 if (!project) {
@@ -57,6 +60,9 @@ const handler = async (req, res) => {
                 const { _id, name, description, image, techTags, repository, live_url } = req.body;
 
                 const project = await Project.findById(_id);
+                if (!req.user) {
+                    return res.status(401).json({ error: "Unauthorized" });
+                }
 
                 if (!project) {
                     return res.status(400).json({ error: "Project not found.", ok: false });

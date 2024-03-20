@@ -113,7 +113,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: TestimonialProps }) => 
                 closeIcon={<FaTimes />}
                 onCancel={() => setShowEditModal(false)}
                 open={showEditModal}
-                title="Edit project"
+                title="Edit reference"
                 footer={null}>
                 <Formik
                     enableReinitialize

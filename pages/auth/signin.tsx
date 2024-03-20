@@ -12,6 +12,7 @@ import {
     getSession,
     signIn,
 } from "next-auth/react";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -78,8 +79,21 @@ const SignIn = ({ callbackUrl, csrfToken }: SignInProps) => {
         }
     };
 
+    const renderHeadTags = () => {
+        return (
+            <Head>
+                <meta charSet="utf-8" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+                />
+            </Head>
+        );
+    };
+
     return (
         <>
+            {renderHeadTags()}
             {loading ? (
                 <Loader />
             ) : (

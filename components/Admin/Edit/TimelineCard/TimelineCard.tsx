@@ -1,11 +1,10 @@
 import Button from "@/components/Layout/Button/Button";
 import Input from "@/components/Layout/Input/Input";
 import { TimelineProps } from "@/types/types";
-import { testimonialValidation, timelineValidation } from "@/utils/formsValidation";
+import { timelineValidation } from "@/utils/formsValidation";
 import { deleteTimeline, updateTimeline } from "@/utils/globalFunctions";
 import { Modal, Tooltip } from "antd";
 import { Form, Formik } from "formik";
-import Image from "next/image";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { CiWarning } from "react-icons/ci";

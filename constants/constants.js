@@ -70,105 +70,10 @@ export const animationIcons = [
         key={13}
         color="#1572B6"
     />,
-];
-
-export const TechArray = [
-    {
-        id: 0,
-        title: "HTML",
-        icon: (
-            <SiHtml5
-                color="#FF5733"
-                size={"4rem"}
-            />
-        ),
-        skill: 85,
-        label: "85%",
-    },
-    {
-        id: 1,
-        title: "CSS",
-        icon: (
-            <SiCss3
-                color="#1E90FF"
-                size={"4rem"}
-            />
-        ),
-        skill: 85,
-        label: "85%",
-    },
-    {
-        id: 2,
-        title: "JavaScript",
-        icon: (
-            <SiJavascript
-                color="#FFD700"
-                size={"4rem"}
-            />
-        ),
-        skill: 50,
-        label: "50%",
-    },
-    {
-        id: 3,
-        title: "React",
-        icon: (
-            <SiReact
-                color="#97c9fa"
-                size={"4rem"}
-            />
-        ),
-        skill: 50,
-        label: "50%",
-    },
-    {
-        id: 4,
-        title: "NextJS",
-        icon: (
-            <SiNextdotjs
-                color="#1E90FF"
-                size={"4rem"}
-            />
-        ),
-        skill: 50,
-        label: "50%",
-    },
-    {
-        id: 5,
-        title: "Redux",
-        icon: (
-            <SiRedux
-                color="#663399"
-                size={"4rem"}
-            />
-        ),
-        skill: 40,
-        label: "40%",
-    },
-    {
-        id: 6,
-        title: "Tailwind",
-        icon: (
-            <SiTailwindcss
-                color="#1E90FF"
-                size={"4rem"}
-            />
-        ),
-        skill: 60,
-        label: "60%",
-    },
-    {
-        id: 7,
-        title: "Bootstrap",
-        icon: (
-            <SiBootstrap
-                color="#663399"
-                size={"4rem"}
-            />
-        ),
-        skill: 60,
-        label: "60%",
-    },
+    <SiExpress
+        key={14}
+        color="#fff"
+    />,
 ];
 
 export const HeroData = [

@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     return (
         <SessionProvider session={pageProps.session}>
-            <Layout>
+            <Layout loading={loading}>
                 {loading ? (
                     <Loader />
                 ) : (

@@ -12,31 +12,20 @@ interface LayoutProps {
     children: ReactNode;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, loading }: { children: ReactNode; loading: boolean }) => {
     const router = useRouter();
-    const isMobile = useMediaQuery({ maxWidth: "768px" });
     const contentRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll();
 
-    const scaleX = useSpring(scrollYProgress, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001,
-    });
-
+    console.log("loading: ", loading);
     return (
         <>
             <Toaster {...toasterOptions} />
-            <motion.div
-                className={styles.progress_bar}
-                style={{ scaleX }}
-            />
             {!router.pathname.startsWith("/admin") && !router.pathname.startsWith("/auth") && (
                 <SparklesComponent />
             )}
-            <Navbar />
+            {!loading && <Navbar />}
             <main ref={contentRef}>{children}</main>
-            {!router.pathname.startsWith("/admin") && <Footer />}
+            {!router.pathname.startsWith("/admin") && !loading && <Footer />}
         </>
     );
 };

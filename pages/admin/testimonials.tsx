@@ -15,6 +15,7 @@ const ManageTestimonials = ({ testimonials }: { testimonials: any }) => {
         return (
             <Head>
                 <meta charSet="utf-8" />
+                <title>Manage References</title>
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"

@@ -16,7 +16,6 @@ const Layout = ({ children, loading }: { children: ReactNode; loading: boolean }
     const router = useRouter();
     const contentRef = useRef<HTMLDivElement>(null);
 
-    console.log("loading: ", loading);
     return (
         <>
             <Toaster {...toasterOptions} />

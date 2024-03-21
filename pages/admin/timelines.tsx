@@ -39,7 +39,7 @@ const ManageTestimonials = ({ timelines }: { timelines: any }) => {
                                 />
                             </span>
                         </Tooltip>{" "}
-                        Manage References
+                        Manage Timeline
                     </h2>
                 </div>
                 <div className={styles.edit__timelines__body}>

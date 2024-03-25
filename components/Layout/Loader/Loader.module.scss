@@ -7,8 +7,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100vh;
-    overflow: hidden !important;
+    height: 90vh;
 
     .heading {
         color: $base-white;
@@ -17,32 +16,14 @@
         font-size: 1.5rem;
     }
 
-    .hypnotic {
-        width: 67.2px;
-        height: 28px;
-        border: 2.2px solid $base-white;
-        border-radius: 50%;
-        display: grid;
-        animation: hypnotic-ds34hk 2s infinite linear;
-
-        &:before,
-        &:after {
-            content: "";
-            grid-area: 1/1;
-            border: inherit;
-            border-radius: 50%;
-            animation: inherit;
-            animation-duration: 3s;
-        }
-
-        &:after {
-            --s: -1;
-        }
+    .reactLogo {
+        animation: rotate 4s infinite linear;
+        width: 100px;
     }
 }
 
-@keyframes hypnotic-ds34hk {
+@keyframes rotate {
     100% {
-        transform: rotate(calc(var(--s, 1) * 1turn));
+        transform: rotate(360deg);
     }
 }
